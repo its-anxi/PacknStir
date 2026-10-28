@@ -20,7 +20,7 @@ export function renderCheckoutModal() {
             <div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-700"></span>
-                <span class="text-xs uppercase tracking-widest text-emerald-800 font-bold">EcoPack Studio Secure Checkout</span>
+                <span class="text-xs uppercase tracking-widest text-emerald-800 font-bold">PackNStir Secure Checkout</span>
               </div>
               <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight">Finalize Your Order</h2>
             </div>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Bundle generator for EcoPack Studio.
+Bundle generator for PackNStir.
 Produces dist/app.bundle.js which runs flawlessly both locally and over HTTP.
 """
 
@@ -21,6 +21,7 @@ FILES_IN_ORDER = [
   'src/components/Navbar.js',
   'src/components/Footer.js',
   'src/views/HomeView.js',
+  'src/views/ShowcaseView.js',
   'src/views/ProductsView.js',
   'src/views/ProductDetailView.js',
   'src/views/AboutView.js',
@@ -32,7 +33,7 @@ FILES_IN_ORDER = [
 
 def bundle():
     output_parts = [
-        "// EcoPack Studio - Standalone Application Bundle",
+        "// PackNStir - Standalone Application Bundle",
         "// Generated automatically for seamless file:// and http:// execution\n",
         "(() => {\n"
     ]
@@ -46,14 +47,9 @@ def bundle():
         code = re.sub(r'import\s+[\'"][^\'"]+[\'"];?\n?', '', code)
 
         # Handle dynamic import in HomeView.js
-        # import('../data/products.js').then(...) -> replaced with direct call
         code = code.replace("import('../data/products.js').then(({ getProductById }) => {", "(() => {")
 
         # Strip export statements:
-        # 'export const' -> 'const'
-        # 'export function' -> 'function'
-        # 'export class' -> 'class'
-        # 'export default ...' -> ''
         code = re.sub(r'export\s+const\s+', 'const ', code)
         code = re.sub(r'export\s+function\s+', 'function ', code)
         code = re.sub(r'export\s+class\s+', 'class ', code)

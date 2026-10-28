@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-EcoPack Studio - Local Development Server
-Serves the modern ES modules web application with proper MIME types.
+PackNStir - Local Development Server
+Serves the modern web application with proper MIME types.
 """
 
 import http.server
@@ -11,7 +11,7 @@ import sys
 
 PORT = 3000
 
-class EcoPackHTTPHandler(http.server.SimpleHTTPRequestHandler):
+class PackNStirHTTPHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         # Enable CORS and caching headers for local development
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -32,7 +32,7 @@ class EcoPackHTTPHandler(http.server.SimpleHTTPRequestHandler):
 
 def run():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    handler = EcoPackHTTPHandler
+    handler = PackNStirHTTPHandler
     socketserver.TCPServer.allow_reuse_address = True
 
     port = PORT
@@ -40,7 +40,7 @@ def run():
         try:
             with socketserver.TCPServer(("", port), handler) as httpd:
                 print("\n" + "="*60)
-                print(" 🌱 ECOPACK STUDIO - SUSTAINABLE PACKAGING WEB APPLICATION")
+                print(" 🌱 PACKNSTIR - SUSTAINABLE PACKAGING WEB APPLICATION")
                 print("="*60)
                 print(f"  • Local URL:      http://localhost:{port}")
                 print(f"  • Network URL:    http://127.0.0.1:{port}")

@@ -1,4 +1,4 @@
-// EcoPack Studio - Reactive Shopping Cart & Checkout State Store
+// PackNStir - Reactive Shopping Cart & Checkout State Store
 
 class CartStore {
   constructor() {

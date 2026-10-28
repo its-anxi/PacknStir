@@ -1,607 +1,776 @@
-// EcoPack Studio - Standalone Application Bundle
+// PackNStir - Standalone Application Bundle
 // Generated automatically for seamless file:// and http:// execution
 
 (() => {
 
 // === Module: src/data/categories.js ===
+// PackNStir Category Taxonomy & Environmental Credentials
+
 const CATEGORIES = [
   {
-    id: 'food',
-    name: 'Food & Beverage Packaging',
-    shortName: 'Food & Beverage',
-    icon: 'utensils',
-    badge: 'Food Safe & Grease-Resistant',
-    description: 'Certified food-contact paper containers engineered with 100% plastic-free aqueous barrier coatings.',
-    bannerColor: 'from-amber-900/30 to-amber-700/20',
-    itemCount: 5,
-    highlight: 'Plastic-free barrier tech'
-  },
-  {
-    id: 'luxury',
-    name: 'Luxury & Retail Boxes',
-    shortName: 'Luxury & Retail',
-    icon: 'sparkles',
-    badge: 'Premium Rigid Board',
-    description: 'High-density rigid setup boxes and tuck cartons finished with soy inks, hot foil, and magnetic closures.',
-    bannerColor: 'from-emerald-950/40 to-emerald-800/20',
-    itemCount: 5,
-    highlight: 'Zero-glue collapsible design'
-  },
-  {
-    id: 'shipping',
-    name: 'E-Commerce & Shipping',
-    shortName: 'E-Commerce & Shipping',
+    id: 'boxes',
+    name: 'Cardboard Boxes & Cartons',
+    shortName: 'Boxes & Cartons',
+    filterKey: 'boxes',
     icon: 'package',
-    badge: 'Heavy-Duty & Protective',
-    description: 'Crush-resistant mailers, honeycomb cushioning, and water-activated paper tape for sustainable transit.',
-    bannerColor: 'from-amber-950/30 to-stone-800/20',
-    itemCount: 4,
-    highlight: 'Cushioning without bubble wrap'
+    badge: 'FSC® Certified Heavy-Duty Fluting',
+    description: 'Structural single, double, and tri-wall corrugated cartons engineered for extreme stacking strength without plastic tape.',
+    bannerColor: 'from-amber-900/30 to-amber-700/20',
+    itemCount: 9,
+    highlight: 'Up to 250kg Stacking Strength'
   },
   {
-    id: 'bags',
-    name: 'Paper Bags & Accessories',
-    shortName: 'Bags & Accessories',
-    icon: 'shopping-bag',
-    badge: 'Reinforced Kraft Paper',
-    description: 'High-tensile shopping bags, acid-free custom tissue paper, and compostable sticker rolls.',
+    id: 'postal',
+    name: 'Postal & E-Commerce Packaging',
+    shortName: 'Postal & Mailers',
+    filterKey: 'postal',
+    icon: 'mail',
+    badge: '100% Biodegradable & Recyclable',
+    description: 'Letterbox-friendly die-cut mailers, paper mailing bags, and rigid triangular tubes built for parcel transit.',
+    bannerColor: 'from-emerald-950/40 to-emerald-800/20',
+    itemCount: 7,
+    highlight: 'Zero-Bubble Paper Cushioning'
+  },
+  {
+    id: 'takeaway',
+    name: 'Sustainable Takeaway & Tableware',
+    shortName: 'Takeaway & Dining',
+    filterKey: 'takeaway',
+    icon: 'utensils',
+    badge: 'PFAS-Free Aqueous Food Barrier',
+    description: 'Sugarcane bagasse bowls, fallen Areca palm leaf platters, bamboo flasks, and compostable PLA drinkware.',
+    bannerColor: 'from-amber-950/30 to-stone-800/20',
+    itemCount: 10,
+    highlight: 'Home & Industrial Compostable'
+  },
+  {
+    id: 'protective',
+    name: 'Protective Packaging & Void Fill',
+    shortName: 'Protective & Void Fill',
+    filterKey: 'protective',
+    icon: 'shield',
+    badge: 'Plant-Based Shock Absorption',
+    description: 'Expandable honeycomb wraps, natural cornstarch packing peanuts, embossed rolls, and shredded wood wool.',
     bannerColor: 'from-stone-900/30 to-emerald-900/20',
-    itemCount: 5,
-    highlight: 'High tensile strength up to 18kg'
+    itemCount: 8,
+    highlight: '100% Microplastic-Free'
+  },
+  {
+    id: 'tape-bags',
+    name: 'Tape, Labels, Bags & Strapping',
+    shortName: 'Tape, Bags & Strapping',
+    filterKey: 'tape-bags',
+    icon: 'tag',
+    badge: 'Starch-Bonded & Natural Cellulose',
+    description: 'Water-activated gummed paper tapes, glassine envelopes, NatureFlex wood-pulp pouches, and paper strapping bands.',
+    bannerColor: 'from-stone-900/40 to-amber-900/20',
+    itemCount: 12,
+    highlight: 'Molecular Paper Fusion'
+  }
+];
+
+const HOME_FEATURED_CATEGORIES = [
+  {
+    id: 'boxes',
+    title: 'Cardboard Cartons',
+    subtitle: 'Single, Double & Tri-Wall Heavy Duty Corrugated',
+    icon: '📦',
+    items: '9 Formats',
+    desc: 'Engineered structural cartons supporting up to 250kg transit loads.',
+    link: '#shop?category=boxes'
+  },
+  {
+    id: 'postal',
+    title: 'Eco-Mailers',
+    subtitle: 'Compostable Padded & Letterbox Solutions',
+    icon: '✉️',
+    items: '7 Formats',
+    desc: 'Cushioned honeycomb mailers and peel-and-seal kraft postal pouches.',
+    link: '#shop?category=postal'
+  },
+  {
+    id: 'takeaway',
+    title: 'Degradable Takeaway',
+    subtitle: 'Sugarcane Bagasse & Palm Leaf Tableware',
+    icon: '🥗',
+    items: '10 Formats',
+    desc: '100% PFAS-free food contact bowls, bamboo flasks, and hot/cold cups.',
+    link: '#shop?category=takeaway'
+  },
+  {
+    id: 'protective',
+    title: 'Protective Fill',
+    subtitle: 'Cornstarch Peanuts & Honeycomb Paper Wrap',
+    icon: '🛡️',
+    items: '8 Formats',
+    desc: 'Zero-plastic shock absorption that dissolves in water or compost.',
+    link: '#shop?category=protective'
   }
 ];
 
 const SUSTAINABILITY_STATS = [
   {
-    value: 14800000,
-    displayValue: '14.8M+',
-    label: 'Single-Use Plastics Eliminated',
-    subtext: 'Replaced with repulpable fiber barriers across our global client base.',
+    value: 0,
+    displayValue: '0%',
+    label: 'Single-Use Fossil Plastic',
+    subtext: 'Every fiber, lining, adhesive, and ink is 100% plant-derived and repulpable.',
     icon: 'shield-check'
-  },
-  {
-    value: 84200,
-    displayValue: '84,200',
-    label: 'Trees Preserved via Agroforestry',
-    subtext: '100% of wood pulp sourced from certified FSC® replenishing plantations.',
-    icon: 'trees'
   },
   {
     value: 100,
     displayValue: '100%',
-    label: 'Recyclable & Compostable',
-    subtext: 'No polyethylene liners; disposes directly into curbside paper bins.',
+    label: 'Compostable & Recyclable',
+    subtext: 'Meets TÜV Austria OK Compost Home (EN 13432) and curbside paper recycling.',
     icon: 'recycle'
   },
   {
     value: 90,
     displayValue: '< 90 Days',
-    label: 'Soil Biodegradation Window',
-    subtext: 'Verified by OK Compost Home standards in active commercial & backyard soil.',
+    label: 'Natural Soil Breakdown',
+    subtext: 'Degrades into fertile humus without synthetic polymers or chemical microplastics.',
     icon: 'sprout'
+  },
+  {
+    value: 124000,
+    displayValue: '124,000+',
+    label: 'Trees Sourced Responsibly',
+    subtext: 'Harvested exclusively from regenerative FSC®-certified agroforestry farms.',
+    icon: 'trees'
   }
 ];
 
 const CERTIFICATIONS = [
   {
-    name: 'FSC® Certified',
-    code: 'FSC-C149821',
-    description: 'Pulp sourced strictly from well-managed, certified responsible forests.',
+    name: 'FSC® 100% Recycled & Mix',
+    code: 'FSC-C158294',
+    description: 'Guarantees wood fibers originate from replenishing, responsibly stewarded forests.',
     icon: 'leaf'
   },
   {
     name: 'OK Compost Home',
-    code: 'EN 13432 Compliant',
-    description: 'Degrades completely in home compost piles without chemical residue.',
+    code: 'TÜV Austria EN 13432',
+    description: 'Certified to break down completely in household compost piles in under 90 days.',
     icon: 'sparkles'
   },
   {
-    name: 'Plastic Free Trustmark',
+    name: 'Plastic-Free Trustmark',
     code: 'A Plastic Planet Certified',
-    description: 'Zero PE, PLA, or synthetic fossil-fuel polymer laminations.',
+    description: 'Independently audited: 0.00% polyethylene, polypropylene, or synthetic film.',
     icon: 'check-circle-2'
   },
   {
-    name: 'Soy Ink Verified',
-    code: 'American Soybean Assoc.',
-    description: 'Non-toxic, heavy-metal free VOC emissions during printing.',
-    icon: 'droplets'
+    name: 'PFAS-Free Food Safety',
+    code: 'FDA 21 CFR 176.170',
+    description: 'Fluorochemical-free water-based aqueous barriers safe for boiling oils and broths.',
+    icon: 'shield'
   }
 ];
 
 
 // === Module: src/data/packagingSvgs.js ===
-// High-fidelity SVG packaging mockups for EcoPack Studio products
-// Designed with luxury earthy tones, realistic shading, fluting textures, and precision fold lines
+// High-fidelity SVG packaging mockups for PackNStir product line
+// Designed with crisp white backgrounds, kraft cardboard tones, and leaf green accents
 
-function getProductSvg(type, variant = 'perspective', color = '#C49A6C') {
+function getProductSvg(type, variant = 'card', color = '#C29B70') {
   switch (type) {
-    case 'pizza-box':
+    // ----------------------------------------------------
+    // CARDBOARD BOXES & CARTONS
+    // ----------------------------------------------------
+    case 'single-wall-box':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="kraftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#D4AA7D" />
-              <stop offset="100%" stop-color="#A97D4F" />
-            </linearGradient>
-            <linearGradient id="kraftDark" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#996E42" />
-              <stop offset="100%" stop-color="#7B5430" />
-            </linearGradient>
-            <pattern id="kraftTexture" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L20 10 M10 0 L10 20" stroke="#875E34" stroke-width="0.3" stroke-opacity="0.15"/>
-            </pattern>
-          </defs>
-          <!-- Shadow -->
-          <ellipse cx="200" cy="270" rx="160" ry="25" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <!-- Box Base Side Left -->
-          <polygon points="50,170 200,240 200,265 50,195" fill="url(#kraftDark)" />
-          <!-- Box Base Side Right -->
-          <polygon points="200,240 350,170 350,195 200,265" fill="#885E35" />
-          <!-- Box Top Lid (Slightly tilted open) -->
-          <polygon points="50,170 200,95 350,170 200,240" fill="url(#kraftGrad)" />
-          <polygon points="50,170 200,95 350,170 200,240" fill="url(#kraftTexture)" />
-          <!-- Flute edge / rim -->
-          <polygon points="50,170 200,240 200,244 50,174" fill="#B28759" />
-          <polygon points="200,240 350,170 350,174 200,244" fill="#754E29" />
-          <!-- Steam Vent Cutouts -->
-          <circle cx="100" cy="165" r="4" fill="#4A341E" opacity="0.6"/>
-          <circle cx="300" cy="165" r="4" fill="#4A341E" opacity="0.6"/>
-          <!-- EcoPack Studio Hot Stamp Branding on Lid -->
-          <g transform="translate(160, 140) rotate(-5)">
-            <rect x="0" y="0" width="80" height="40" rx="4" fill="none" stroke="#2D4A3E" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <text x="40" y="18" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#1C382B" text-anchor="middle" letter-spacing="1">ECOPACK</text>
-            <text x="40" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#2E4F3E" text-anchor="middle" letter-spacing="0.5">100% RECYCLED</text>
-            <circle cx="40" cy="33" r="2" fill="#2E4F3E"/>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="110" ry="16" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Single Wall RSC Box -->
+          <polygon points="60,110 160,160 160,225 60,175" fill="#C29B70" />
+          <polygon points="160,160 260,110 260,175 160,225" fill="#9C7348" />
+          <polygon points="60,110 160,60 260,110 160,160" fill="#DEC6A6" />
+          <!-- Flute indicator & tape seam -->
+          <line x1="60" y1="110" x2="260" y2="110" stroke="#7A542E" stroke-width="5" stroke-linecap="round"/>
+          <line x1="160" y1="60" x2="160" y2="160" stroke="#7A542E" stroke-width="5"/>
+          <text x="110" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F">SINGLE-WALL</text>
+          <text x="110" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#43775E">125# TEST • FSC®</text>
+        </svg>
+      `;
+
+    case 'double-wall-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="115" ry="16" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
+          <polygon points="55,105 160,160 160,225 55,170" fill="#B88E5E" />
+          <polygon points="160,160 265,105 265,170 160,225" fill="#8F663B" />
+          <polygon points="55,105 160,50 265,105 160,160" fill="#D9BC95" />
+          <!-- Double-wall heavy duty seam -->
+          <line x1="55" y1="105" x2="265" y2="105" stroke="#664320" stroke-width="7"/>
+          <line x1="160" y1="50" x2="160" y2="160" stroke="#664320" stroke-width="7"/>
+          <rect x="75" y="130" width="60" height="25" rx="3" fill="#1E3A2F"/>
+          <text x="105" y="142" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">DOUBLE-WALL</text>
+          <text x="105" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#A8D6C0" text-anchor="middle">275# / 48 ECT</text>
+        </svg>
+      `;
+
+    case 'tri-wall-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="230" rx="125" ry="18" fill="#1A1815" opacity="0.25" filter="blur(6px)" />
+          <polygon points="50,100 160,160 160,230 50,170" fill="#A07446" />
+          <polygon points="160,160 270,100 270,170 160,230" fill="#75502A" />
+          <polygon points="50,100 160,40 270,100 160,160" fill="#CAA67A" />
+          <!-- Tri-wall reinforcement ribs -->
+          <line x1="50" y1="100" x2="270" y2="100" stroke="#4F3316" stroke-width="9"/>
+          <line x1="160" y1="40" x2="160" y2="160" stroke="#4F3316" stroke-width="9"/>
+          <text x="160" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="900" fill="#1E3A2F" text-anchor="middle" letter-spacing="1">TRI-WALL EXTREME</text>
+          <text x="160" y="98" font-family="monospace" font-size="6" fill="#4B3118" text-anchor="middle">BURST: 1100# • TIMBER ALTERNATIVE</text>
+        </svg>
+      `;
+
+    case 'die-cut-postal-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="220" rx="120" ry="16" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- RETF self-locking mailer box -->
+          <polygon points="60,140 160,195 260,140 160,95" fill="#D7AB7E" />
+          <polygon points="60,140 160,195 160,215 60,160" fill="#AF8354" />
+          <polygon points="160,195 260,140 260,160 160,215" fill="#886036" />
+          <!-- Open tuck lid with interior print -->
+          <polygon points="60,140 160,95 160,45 60,85" fill="#1E3A2F" />
+          <polygon points="160,95 260,140 260,85 160,45" fill="#285D40" />
+          <text x="160" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#FFF" text-anchor="middle">PACKNSTIR ECO-MAILER</text>
+        </svg>
+      `;
+
+    case 'archive-storage-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="115" ry="16" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Archive box base with side carry handle cutout -->
+          <polygon points="60,115 160,165 160,225 60,175" fill="#D4AA7D" />
+          <polygon points="160,165 260,115 260,175 160,225" fill="#A87E50" />
+          <!-- Cutout handle -->
+          <ellipse cx="110" cy="148" rx="12" ry="5" fill="#523920" />
+          <!-- Lift-off Archive Lid -->
+          <polygon points="55,100 160,50 265,100 160,150" fill="#E8CBA6" />
+          <polygon points="55,100 160,150 160,165 55,115" fill="#C59B6C" />
+          <polygon points="160,150 265,100 265,115 160,165" fill="#9B7143" />
+          <text x="160" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">ARCHIVE FILES</text>
+        </svg>
+      `;
+
+    case 'wardrobe-carton':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="235" rx="90" ry="14" fill="#1A1815" opacity="0.2" filter="blur(5px)" />
+          <!-- Tall vertical wardrobe carton -->
+          <polygon points="90,70 160,105 160,235 90,200" fill="#BA8E5D" />
+          <polygon points="160,105 230,70 230,200 160,235" fill="#8F663B" />
+          <polygon points="90,70 160,35 230,70 160,105" fill="#DDBB92" />
+          <!-- Front drop-down access door with clothing rail cutout -->
+          <rect x="115" y="115" width="30" height="70" rx="3" fill="#996E40" stroke="#754E27" stroke-width="1"/>
+          <!-- Metal/cardboard hanger bar glyph -->
+          <line x1="120" y1="125" x2="140" y2="125" stroke="#1E3A2F" stroke-width="3"/>
+          <text x="130" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="bold" fill="#FFF" text-anchor="middle">WARDROBE</text>
+          <text x="130" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" fill="#DDEEDC" text-anchor="middle">RAIL INCLUDED</text>
+        </svg>
+      `;
+
+    case 'pallet-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="235" rx="130" ry="16" fill="#1A1815" opacity="0.22" filter="blur(6px)" />
+          <!-- Wooden/Cardboard Pallet Base -->
+          <polygon points="40,195 160,235 280,195 160,165" fill="#75512B" />
+          <rect x="50" y="210" width="15" height="15" fill="#52361B"/>
+          <rect x="152" y="222" width="16" height="15" fill="#52361B"/>
+          <rect x="255" y="210" width="15" height="15" fill="#52361B"/>
+          <!-- Bulk Pallet Box Body -->
+          <polygon points="50,110 160,165 160,215 50,160" fill="#B08350" />
+          <polygon points="160,165 270,110 270,160 160,215" fill="#886036" />
+          <polygon points="50,110 160,60 270,110 160,165" fill="#D6B083" />
+          <text x="160" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="900" fill="#1E3A2F" text-anchor="middle">EURO PALLET BOX</text>
+        </svg>
+      `;
+
+    case 'crash-lock-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="105" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Crash lock fast assembly box -->
+          <polygon points="70,110 160,160 160,225 70,175" fill="#C99E6E" />
+          <polygon points="160,160 250,110 250,175 160,225" fill="#9C7348" />
+          <polygon points="70,110 160,60 250,110 160,160" fill="#E5C7A2" />
+          <!-- Interlocking base glyph -->
+          <path d="M140,195 L160,185 L180,195 L160,205 Z" fill="#1E3A2F" opacity="0.8"/>
+          <text x="160" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">AUTO CRASH-LOCK</text>
+          <text x="160" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#3D5A48" text-anchor="middle">1-SECOND SETUP</text>
+        </svg>
+      `;
+
+    case 'telescopic-box':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="115" ry="16" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Two piece telescopic box base & full depth lid -->
+          <polygon points="60,120 160,170 160,225 60,175" fill="#A87D50" />
+          <polygon points="160,170 260,120 260,175 160,225" fill="#7D572F" />
+          <!-- Floating outer telescopic lid -->
+          <polygon points="55,80 160,35 265,80 160,125" fill="#E2BD93" />
+          <polygon points="55,80 160,125 160,160 55,115" fill="#C49B6C" />
+          <polygon points="160,125 265,80 265,115 160,160" fill="#997044" />
+          <text x="160" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">TELESCOPIC LID</text>
+        </svg>
+      `;
+
+    // ----------------------------------------------------
+    // POSTAL & E-COMMERCE
+    // ----------------------------------------------------
+    case 'bio-mailer':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Soft matte cornstarch/PLA compostable mailer bag -->
+          <rect x="80" y="60" width="160" height="155" rx="12" fill="#20382B" />
+          <!-- Folded top flap -->
+          <path d="M80,85 L160,115 L240,85 L240,60 L80,60 Z" fill="#2D5240" />
+          <rect x="100" y="90" width="120" height="10" rx="3" fill="#D97706" opacity="0.9"/>
+          <text x="160" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="bold" fill="#FFF" text-anchor="middle">DUAL PEEL & SEAL ADHESIVE</text>
+          <!-- Compost seedling icon -->
+          <circle cx="160" cy="155" r="22" fill="#162E23" stroke="#4ADE80" stroke-width="1.5"/>
+          <path d="M160,165 C160,150 150,145 145,150 C145,160 155,165 160,165 Z" fill="#4ADE80" />
+          <path d="M160,165 C160,148 172,143 175,150 C175,160 162,165 160,165 Z" fill="#4ADE80" />
+          <text x="160" y="195" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#A7F3D0" text-anchor="middle">100% HOME COMPOSTABLE</text>
+        </svg>
+      `;
+
+    case 'kraft-mailing-bag':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="105" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <polygon points="80,60 240,60 230,220 90,220" fill="#C49B6C" stroke="#9C7348" stroke-width="1"/>
+          <polygon points="80,60 160,95 240,60 240,45 80,45" fill="#DEC6A6" />
+          <!-- Expansion side gusset creases -->
+          <line x1="100" y1="60" x2="105" y2="220" stroke="#A87E50" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="220" y1="60" x2="215" y2="220" stroke="#A87E50" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="160" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="bold" fill="#1E3A2F" text-anchor="middle">HEAVY KRAFT MAILER</text>
+          <text x="160" y="158" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#4B3118" text-anchor="middle">120 GSM • TEAR-RESISTANT</text>
+        </svg>
+      `;
+
+    case 'corrugated-padded-envelope':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="105" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <rect x="75" y="60" width="170" height="155" rx="8" fill="#D2A779" stroke="#9E7649" stroke-width="1.5"/>
+          <path d="M75,95 L160,130 L245,95 L245,60 L75,60 Z" fill="#E8CBA6" />
+          <!-- Corrugated fluting wave preview inside flap -->
+          <path d="M85,80 Q90,75 95,80 Q100,85 105,80 Q110,75 115,80 Q120,85 125,80 Q130,75 135,80 Q140,85 145,80 Q150,75 155,80 Q160,85 165,80 Q170,75 175,80 Q180,85 185,80 Q190,75 195,80 Q200,85 205,80 Q210,75 215,80 Q220,85 225,80 Q230,75 235,80" fill="none" stroke="#6B4828" stroke-width="2"/>
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">CORRUGATED CUSHIONED</text>
+          <text x="160" y="177" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#3D5C4E" text-anchor="middle">PLASTIC-FREE ALTERNATIVE TO BUBBLE</text>
+        </svg>
+      `;
+
+    case 'book-wrap':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="115" ry="16" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Variable depth folding book wrap mailer -->
+          <polygon points="60,140 160,185 260,140 160,105" fill="#C29B70" />
+          <!-- Side wings wrapped around book -->
+          <polygon points="60,140 160,105 160,65 60,95" fill="#D9B78A" />
+          <polygon points="160,105 260,140 260,95 160,65" fill="#A67B4C" />
+          <!-- Red tear strip -->
+          <line x1="80" y1="125" x2="240" y2="125" stroke="#DC2626" stroke-width="3" stroke-dasharray="6 3"/>
+          <text x="160" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">VARIABLE-DEPTH BOOK WRAP</text>
+        </svg>
+      `;
+
+    case 'postal-tubes-round':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="230" rx="90" ry="15" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Spiral wound cylinder tube -->
+          <path d="M120,60 L200,60 L200,210 Q160,230 120,210 Z" fill="#BA8E5E" />
+          <ellipse cx="160" cy="60" rx="40" ry="15" fill="#DDBB92" />
+          <!-- Spiral wound lines -->
+          <path d="M120,90 Q160,110 200,90" fill="none" stroke="#8A6038" stroke-width="2"/>
+          <path d="M120,130 Q160,150 200,130" fill="none" stroke="#8A6038" stroke-width="2"/>
+          <path d="M120,170 Q160,190 200,170" fill="none" stroke="#8A6038" stroke-width="2"/>
+          <!-- Eco Cardboard End Cap -->
+          <ellipse cx="160" cy="60" rx="42" ry="16" fill="none" stroke="#1E3A2F" stroke-width="3"/>
+          <text x="160" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">CARDBOARD CAPS</text>
+        </svg>
+      `;
+
+    case 'postal-tubes-triangular':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="230" rx="100" ry="15" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Triangular cross-section tube (no roll on conveyor belts) -->
+          <polygon points="120,40 160,20 200,40 160,60" fill="#E8CBA6" />
+          <polygon points="120,40 160,60 160,225 120,205" fill="#C29B70" />
+          <polygon points="160,60 200,40 200,205 160,225" fill="#9C7348" />
+          <text x="160" y="130" transform="rotate(-90 160 130)" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">NON-ROLL TRIANGULAR</text>
+        </svg>
+      `;
+
+    case 'letterbox-friendly':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="220" rx="115" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Ultra-slim letterbox qualifying box (<25mm height) -->
+          <polygon points="60,135 160,180 260,135 160,95" fill="#D9BC95" />
+          <polygon points="60,135 160,180 160,195 60,150" fill="#B08655" />
+          <polygon points="160,180 260,135 260,150 160,195" fill="#8C6236" />
+          <!-- Letterbox slot outline -->
+          <rect x="95" y="65" width="130" height="20" rx="4" fill="#1E3A2F" stroke="#4ADE80" stroke-width="1"/>
+          <text x="160" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">ROYAL MAIL PIP / USPS FLAT COMPLIANT</text>
+        </svg>
+      `;
+
+    // ----------------------------------------------------
+    // SUSTAINABLE TAKEAWAY & TABLEWARE
+    // ----------------------------------------------------
+    case 'bagasse-clamshell':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="16" fill="#1A1815" opacity="0.15" filter="blur(5px)" />
+          <!-- Sugarcane Bagasse Ivory Curved Clamshell -->
+          <path d="M80,150 Q160,200 240,150 L230,190 Q160,230 90,190 Z" fill="#EAE5DC" stroke="#D3CDC2" stroke-width="1"/>
+          <path d="M80,150 Q160,110 240,150 Q160,180 80,150 Z" fill="#F8F6F1" />
+          <!-- Steam vent ribs -->
+          <line x1="130" y1="140" x2="140" y2="150" stroke="#B8B0A2" stroke-width="2" stroke-linecap="round"/>
+          <line x1="160" y1="138" x2="160" y2="152" stroke="#B8B0A2" stroke-width="2" stroke-linecap="round"/>
+          <line x1="190" y1="140" x2="180" y2="150" stroke="#B8B0A2" stroke-width="2" stroke-linecap="round"/>
+          <text x="160" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">100% SUGARCANE BAGASSE</text>
+        </svg>
+      `;
+
+    case 'palm-leaf-plates':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="220" rx="110" ry="16" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Naturally textured fallen Areca palm leaf plate -->
+          <ellipse cx="160" cy="150" rx="90" ry="45" fill="#E2CDB2" stroke="#C4A887" stroke-width="1.5"/>
+          <ellipse cx="160" cy="150" rx="72" ry="34" fill="#D4BB9A" stroke="#BFA37E" stroke-width="1"/>
+          <!-- Natural organic leaf grain lines -->
+          <path d="M90,150 Q160,165 230,150" fill="none" stroke="#9E815F" stroke-width="0.8" opacity="0.6"/>
+          <path d="M100,140 Q160,155 220,140" fill="none" stroke="#9E815F" stroke-width="0.8" opacity="0.6"/>
+          <path d="M100,160 Q160,175 220,160" fill="none" stroke="#9E815F" stroke-width="0.8" opacity="0.6"/>
+          <text x="160" y="153" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">FALLEN ARECA PALM LEAF</text>
+        </svg>
+      `;
+
+    case 'kraft-soup-salad-bowl':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="95" ry="16" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Round kraft bowl with rolled rim -->
+          <ellipse cx="160" cy="120" rx="75" ry="32" fill="#E8CBA6" />
+          <path d="M85,120 L100,205 Q160,230 220,205 L235,120 Z" fill="#C29B70" stroke="#9C7348" stroke-width="1"/>
+          <ellipse cx="160" cy="120" rx="75" ry="32" fill="none" stroke="#875E34" stroke-width="4"/>
+          <text x="160" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">LEAKPROOF BOWL</text>
+          <text x="160" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#3D5A48" text-anchor="middle">AQUEOUS LINING • PFAS-FREE</text>
+        </svg>
+      `;
+
+    case 'degradable-portion-pots':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-sm" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="215" rx="70" ry="12" fill="#1A1815" opacity="0.14" filter="blur(4px)" />
+          <ellipse cx="160" cy="130" rx="45" ry="18" fill="#F4EDE4" stroke="#D3C3AF" stroke-width="1.5"/>
+          <path d="M115,130 L125,200 Q160,215 195,200 L205,130 Z" fill="#E2D4C3" />
+          <ellipse cx="160" cy="130" rx="45" ry="18" fill="none" stroke="#1E3A2F" stroke-width="2"/>
+          <text x="160" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">2 OZ / 4 OZ</text>
+          <text x="160" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#43775E" text-anchor="middle">SAUCE POT</text>
+        </svg>
+      `;
+
+    case 'wooden-bamboo-cutlery':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="90" ry="14" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Fork, Knife, Spoon arrangement in Birch / Bamboo -->
+          <!-- Fork -->
+          <rect x="110" y="90" width="8" height="120" rx="4" fill="#D4AA7D" />
+          <path d="M102,60 L102,95 L126,95 L126,60 L121,60 L121,80 L117,80 L117,60 L111,60 L111,80 L107,80 L107,60 Z" fill="#C29B70"/>
+          <!-- Knife -->
+          <rect x="156" y="95" width="8" height="115" rx="4" fill="#D4AA7D" />
+          <path d="M156,55 Q170,75 164,95 L156,95 Z" fill="#B88E5E" />
+          <!-- Spoon -->
+          <rect x="198" y="95" width="8" height="115" rx="4" fill="#D4AA7D" />
+          <ellipse cx="202" cy="70" rx="14" ry="20" fill="#DEC6A6" stroke="#B88E5E" stroke-width="1"/>
+          <text x="160" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">SMOOTH BIRCH & BAMBOO</text>
+        </svg>
+      `;
+
+    case 'bamboo-bottle':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="230" rx="60" ry="12" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Outer bamboo insulated flask body -->
+          <rect x="130" y="70" width="60" height="150" rx="8" fill="#DEC6A6" stroke="#BA8E5E" stroke-width="2"/>
+          <line x1="130" y1="120" x2="190" y2="120" stroke="#A87E50" stroke-width="1.5"/>
+          <line x1="130" y1="170" x2="190" y2="170" stroke="#A87E50" stroke-width="1.5"/>
+          <!-- Stainless steel cap with bamboo top -->
+          <rect x="140" y="45" width="40" height="25" rx="4" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+          <rect x="143" y="42" width="34" height="6" rx="2" fill="#BA8E5E"/>
+          <text x="160" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">BAMBOO FLASK</text>
+        </svg>
+      `;
+
+    case 'pla-cold-cups':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="75" ry="14" fill="#1A1815" opacity="0.15" filter="blur(5px)" />
+          <!-- Clear PLA cup derived from plant starch -->
+          <ellipse cx="160" cy="70" rx="50" ry="16" fill="#E0F2FE" fill-opacity="0.6" stroke="#BAE6FD" stroke-width="1.5"/>
+          <path d="M110,70 L125,205 Q160,225 195,205 L210,70 Z" fill="#F0FDF4" fill-opacity="0.5" stroke="#86EFAC" stroke-width="1"/>
+          <!-- Straw glyph -->
+          <line x1="160" y1="35" x2="155" y2="180" stroke="#1E3A2F" stroke-width="4" stroke-linecap="round"/>
+          <text x="160" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#15803D" text-anchor="middle">100% CORNSTARCH PLA</text>
+        </svg>
+      `;
+
+    case 'kraft-hot-cups':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="75" ry="14" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <ellipse cx="160" cy="65" rx="48" ry="15" fill="#E8CBA6" />
+          <path d="M112,65 L125,205 Q160,220 195,205 L208,65 Z" fill="#C29B70" stroke="#9C7348" stroke-width="1.5"/>
+          <!-- Embossed heat insulating sleeve -->
+          <path d="M117,110 L123,175 Q160,185 197,175 L203,110 Z" fill="#A87E50" opacity="0.9"/>
+          <text x="160" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">DOUBLE-WALL</text>
+          <text x="160" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#EAE5DC" text-anchor="middle">COMPOSTABLE LID COMPLIANT</text>
+        </svg>
+      `;
+
+    case 'greaseproof-paper':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="15" fill="#1A1815" opacity="0.14" filter="blur(5px)" />
+          <polygon points="70,140 180,80 250,140 140,200" fill="#FAF7F2" stroke="#D6C4B0" stroke-width="1"/>
+          <polygon points="90,155 200,95 270,155 160,215" fill="#F4EDE4" stroke="#C2AF98" stroke-width="1" opacity="0.8"/>
+          <!-- Repeating PackNStir logo print -->
+          <g fill="#1E3A2F" opacity="0.3">
+            <circle cx="140" cy="140" r="5"/>
+            <circle cx="170" cy="125" r="4"/>
+            <circle cx="200" cy="145" r="6"/>
           </g>
-          <!-- Thumb notch cut out -->
-          <path d="M 190 236 C 190 242, 210 242, 210 236 Z" fill="#694320" />
+          <text x="175" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F">CHEF GRADE • 38 GSM</text>
         </svg>
       `;
 
-    case 'takeaway-box':
+    case 'custom-carrier-bags':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gableTop" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#E2BA8D" />
-              <stop offset="100%" stop-color="#C59B6F" />
-            </linearGradient>
-            <linearGradient id="gableBody" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#9C7247" />
-              <stop offset="50%" stop-color="#BA8E62" />
-              <stop offset="100%" stop-color="#7B5430" />
-            </linearGradient>
-          </defs>
-          <ellipse cx="200" cy="280" rx="130" ry="20" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <!-- Gable handle -->
-          <path d="M165,65 Q200,45 235,65 L245,100 L155,100 Z" fill="#8A6038" />
-          <rect x="180" y="65" width="40" height="12" rx="6" fill="#F8F5EE" />
-          <!-- Roof slants -->
-          <polygon points="120,130 200,100 280,130 200,150" fill="url(#gableTop)" />
-          <polygon points="200,100 280,130 280,132 200,102" fill="#754E29" />
-          <!-- Front Body -->
-          <polygon points="120,130 200,150 200,260 135,245" fill="#C59B6F" />
-          <!-- Side Body -->
-          <polygon points="200,150 280,130 265,245 200,260" fill="#9C7247" />
-          <!-- Leak-proof folded lock seam -->
-          <path d="M120,130 Q160,140 200,150" stroke="#754E29" stroke-width="1.5" fill="none"/>
-          <!-- Eco stamp -->
-          <g transform="translate(150, 185) rotate(4)">
-            <circle cx="20" cy="20" r="16" fill="none" stroke="#1A3328" stroke-width="1.2"/>
-            <path d="M14 22 L20 14 L26 22 Z" fill="#1A3328" />
-            <text x="20" y="30" font-size="5" font-family="sans-serif" font-weight="bold" fill="#1A3328" text-anchor="middle">LEAKPROOF</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="230" rx="95" ry="14" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <path d="M140,90 C140,35 180,35 180,90" fill="none" stroke="#1E3A2F" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="100,90 220,90 215,220 105,220" fill="#C29B70" />
+          <polygon points="100,90 105,220 85,205 80,85" fill="#9C7348" />
+          <circle cx="160" cy="155" r="22" fill="#1E3A2F"/>
+          <text x="160" y="158" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">PACKNSTIR</text>
+        </svg>
+      `;
+
+    // ----------------------------------------------------
+    // PROTECTIVE PACKAGING & VOID FILL
+    // ----------------------------------------------------
+    case 'honeycomb-paper-wrap':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Roll of expanded brown honeycomb kraft wrap -->
+          <ellipse cx="110" cy="130" rx="35" ry="60" fill="#C29B70" stroke="#9C7348" stroke-width="2"/>
+          <path d="M110,70 L230,90 L230,210 L110,190 Z" fill="#D9BC95" />
+          <!-- Hexagonal mesh pattern -->
+          <g stroke="#7A542E" stroke-width="1" fill="none" opacity="0.8">
+            <polygon points="140,110 150,115 150,125 140,130 130,125 130,115" />
+            <polygon points="160,110 170,115 170,125 160,130 150,125 150,115" />
+            <polygon points="180,110 190,115 190,125 180,130 170,125 170,115" />
+            <polygon points="150,125 160,130 160,140 150,145 140,140 140,130" />
+            <polygon points="170,125 180,130 180,140 170,145 160,140 160,130" />
           </g>
+          <text x="180" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">HONEYCOMB WRAP</text>
         </svg>
       `;
 
-    case 'burger-box':
+    case 'corrugated-paper-rolls':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="265" rx="135" ry="22" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <!-- Bottom tray -->
-          <polygon points="90,195 200,245 310,195 200,165" fill="#7D5733" />
-          <polygon points="90,195 200,245 200,260 100,215" fill="#9C7146" />
-          <polygon points="200,245 310,195 300,215 200,260" fill="#6B4828" />
-          <!-- Clamshell Lid (Angled open) -->
-          <polygon points="80,175 200,110 320,175 200,225" fill="#D2A779" />
-          <polygon points="80,175 200,225 200,232 80,182" fill="#BA8D5F" />
-          <polygon points="200,225 320,175 320,182 200,232" fill="#8A6239" />
-          <!-- Steam Vent punch -->
-          <rect x="150" y="145" width="20" height="4" rx="2" fill="#52361B" opacity="0.7"/>
-          <rect x="230" y="145" width="20" height="4" rx="2" fill="#52361B" opacity="0.7"/>
-          <!-- Eco stamp -->
-          <text x="200" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#1A3328" text-anchor="middle" letter-spacing="1">BIO-CLAMSHELL</text>
-          <text x="200" y="195" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" fill="#3D5C4E" text-anchor="middle">AQUEOUS COATED • COMPOSTABLE</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="90" ry="15" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <ellipse cx="160" cy="80" rx="55" ry="25" fill="#C29B70" stroke="#875E34" stroke-width="2"/>
+          <path d="M105,80 L105,195 Q160,225 215,195 L215,80 Z" fill="#DEC6A6" />
+          <!-- Exposed flute waves on outer edge -->
+          <path d="M105,130 Q110,125 115,130 Q120,135 125,130 Q130,125 135,130 Q140,135 145,130 Q150,125 155,130 Q160,135 165,130 Q170,125 175,130 Q180,135 185,130 Q190,125 195,130 Q200,135 205,130 Q210,125 215,130" fill="none" stroke="#7A542E" stroke-width="2"/>
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">SINGLE-FACE ROLL</text>
         </svg>
       `;
 
-    case 'pastry-box':
+    case 'starch-peanuts':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="145" ry="24" fill="#1A1815" opacity="0.16" filter="blur(6px)" />
-          <!-- Box sides -->
-          <polygon points="80,175 200,235 200,265 80,205" fill="#C9A378" />
-          <polygon points="200,235 320,175 320,205 200,265" fill="#9E774E" />
-          <!-- Box Top -->
-          <polygon points="80,175 200,115 320,175 200,235" fill="#E8C8A2" />
-          <!-- Clear PLA/Cellulose Window -->
-          <polygon points="120,170 200,130 280,170 200,210" fill="#C7E6DE" fill-opacity="0.55" stroke="#FFF" stroke-width="1.5" />
-          <line x1="140" y1="165" x2="180" y2="145" stroke="#FFFFFF" stroke-width="2" opacity="0.8" stroke-linecap="round"/>
-          <line x1="160" y1="185" x2="220" y2="155" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
-          <!-- Internal pastry silhouette -->
-          <ellipse cx="200" cy="175" rx="35" ry="16" fill="#8F5835" opacity="0.45"/>
-          <!-- Eco label -->
-          <rect x="180" y="240" width="40" height="14" rx="2" fill="#1A3328"/>
-          <text x="200" y="250" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="700" fill="#FDFBF7" text-anchor="middle">CELLULOSE WINDOW</text>
-        </svg>
-      `;
-
-    case 'beverage-carrier':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="275" rx="150" ry="20" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <!-- Molded pulp rounded base -->
-          <path d="M80,200 Q200,260 320,200 L300,250 Q200,290 100,250 Z" fill="#99836B" />
-          <!-- Top tray surface with 4 cup wells -->
-          <polygon points="70,190 200,130 330,190 200,245" fill="#C2B099" />
-          <!-- 4 Cup Wells -->
-          <ellipse cx="140" cy="170" rx="24" ry="12" fill="#6A5A4A" stroke="#B2A089" stroke-width="2"/>
-          <ellipse cx="260" cy="170" rx="24" ry="12" fill="#6A5A4A" stroke="#B2A089" stroke-width="2"/>
-          <ellipse cx="155" cy="210" rx="24" ry="12" fill="#6A5A4A" stroke="#B2A089" stroke-width="2"/>
-          <ellipse cx="245" cy="210" rx="24" ry="12" fill="#6A5A4A" stroke="#B2A089" stroke-width="2"/>
-          <!-- Center Carry Bridge / Arch -->
-          <path d="M185,195 L185,110 Q200,90 215,110 L215,195 Z" fill="#AD9B85" stroke="#7A6854" stroke-width="1"/>
-          <!-- Carry Hole -->
-          <rect x="193" y="115" width="14" height="25" rx="7" fill="#FDFBF7" />
-          <!-- Molded texture badge -->
-          <text x="200" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#1A3328" text-anchor="middle">MOLDED PULP</text>
-        </svg>
-      `;
-
-    case 'perfume-box':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="luxeDark" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1B2E26" />
-              <stop offset="100%" stop-color="#0E1A15" />
-            </linearGradient>
-            <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#F2D179" />
-              <stop offset="50%" stop-color="#D4AF37" />
-              <stop offset="100%" stop-color="#AA820A" />
-            </linearGradient>
-          </defs>
-          <ellipse cx="200" cy="275" rx="125" ry="20" fill="#0A0E0B" opacity="0.3" filter="blur(7px)" />
-          <!-- Rigid Box Base -->
-          <polygon points="120,180 200,225 280,180 200,140" fill="#14241E" />
-          <polygon points="120,180 200,225 200,265 120,220" fill="#0F1B16" />
-          <polygon points="200,225 280,180 280,220 200,265" fill="#09120E" />
-          <!-- High-density black foam insert -->
-          <polygon points="135,175 200,210 265,175 200,145" fill="#1F2321" stroke="#333" stroke-width="0.5"/>
-          <!-- Bottle cutout recess -->
-          <polygon points="175,175 200,190 225,175 200,160" fill="#0A0C0B" />
-          <!-- Magnetic hinged lid tilted upright -->
-          <polygon points="120,180 200,140 200,45 120,80" fill="url(#luxeDark)" />
-          <polygon points="200,140 280,180 280,85 200,45" fill="#182A22" />
-          <!-- Inside lid debossed gold logo -->
-          <g transform="translate(145, 95) rotate(-15)">
-            <text x="25" y="15" font-family="'Playfair Display', serif" font-size="8" font-weight="600" fill="url(#goldFoil)" letter-spacing="2">MAISON BIO</text>
-            <line x1="5" y1="20" x2="45" y2="20" stroke="url(#goldFoil)" stroke-width="0.8"/>
-            <text x="25" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" fill="#C5A059" text-anchor="middle" letter-spacing="1">EAU DE PARFUM</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="16" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Cluster of biodegradable cornstarch foam loose-fill S-shapes -->
+          <g fill="#F3EFE6" stroke="#D3C7B5" stroke-width="1.5">
+            <path d="M130,120 C130,110 145,110 145,125 C145,140 160,140 160,130" />
+            <path d="M165,110 C165,100 180,100 180,115 C180,130 195,130 195,120" />
+            <path d="M105,140 C105,130 120,130 120,145 C120,160 135,160 135,150" />
+            <path d="M140,150 C140,140 155,140 155,155 C155,170 170,170 170,160" />
+            <path d="M175,145 C175,135 190,135 190,150 C190,165 205,165 205,155" />
+            <path d="M125,170 C125,160 140,160 140,175 C140,190 155,190 155,180" />
+            <path d="M160,175 C160,165 175,165 175,180 C175,195 190,195 190,185" />
           </g>
-          <!-- Front gold rim edge -->
-          <line x1="120" y1="180" x2="200" y2="225" stroke="url(#goldFoil)" stroke-width="1.5" />
-          <line x1="200" y1="225" x2="280" y2="180" stroke="url(#goldFoil)" stroke-width="1.5" />
+          <rect x="100" y="70" width="120" height="20" rx="4" fill="#166534"/>
+          <text x="160" y="83" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">DISSOLVES IN WATER (100% CORN)</text>
         </svg>
       `;
 
-    case 'watch-box':
+    case 'embossed-paper-rolls':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="120" ry="18" fill="#121815" opacity="0.25" filter="blur(6px)" />
-          <!-- Setup box bottom shoulder -->
-          <polygon points="130,170 200,210 270,170 200,130" fill="#242B28" />
-          <polygon points="130,170 200,210 200,260 130,220" fill="#1C211F" />
-          <polygon points="200,210 270,170 270,220 200,260" fill="#161A18" />
-          <!-- Cream organic cotton / linen watch pillow -->
-          <path d="M165,160 Q200,135 235,160 Q200,195 165,160 Z" fill="#EDE7DF" stroke="#D5CCC0" stroke-width="1"/>
-          <!-- Gold lift-off lid floating overhead -->
-          <polygon points="125,120 200,80 275,120 200,160" fill="#EADBC8" />
-          <polygon points="125,120 200,160 200,175 125,135" fill="#D3BEA4" />
-          <polygon points="200,160 275,120 275,135 200,175" fill="#BFA78C" />
-          <!-- Embossed logo on lid -->
-          <text x="200" y="125" font-family="'Playfair Display', serif" font-size="9" font-weight="700" fill="#4A3F35" text-anchor="middle" letter-spacing="2">CHRONO ECO</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="85" ry="14" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <ellipse cx="160" cy="80" rx="50" ry="22" fill="#DDBB92" />
+          <path d="M110,80 L110,195 Q160,225 210,195 L210,80 Z" fill="#C29B70" />
+          <!-- Dimpled embossed texture circles -->
+          <circle cx="130" cy="130" r="3" fill="#8A6038"/>
+          <circle cx="150" cy="130" r="3" fill="#8A6038"/>
+          <circle cx="170" cy="130" r="3" fill="#8A6038"/>
+          <circle cx="190" cy="130" r="3" fill="#8A6038"/>
+          <circle cx="140" cy="150" r="3" fill="#8A6038"/>
+          <circle cx="160" cy="150" r="3" fill="#8A6038"/>
+          <circle cx="180" cy="150" r="3" fill="#8A6038"/>
+          <text x="160" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#1E3A2F" text-anchor="middle">EMBOSSED DIMPLE WRAP</text>
         </svg>
       `;
 
-    case 'cosmetic-carton':
+    case 'paper-void-fill':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="280" rx="100" ry="16" fill="#121815" opacity="0.2" filter="blur(5px)" />
-          <!-- Tall slim cosmetic tuck-end box -->
-          <!-- Top Tuck flap -->
-          <polygon points="160,80 200,60 240,80 200,95" fill="#F4EDE4" stroke="#D6C4B0" stroke-width="0.5"/>
-          <!-- Front face -->
-          <polygon points="160,80 200,95 200,270 160,250" fill="#FAF7F2" stroke="#E5D9CB" stroke-width="0.5"/>
-          <!-- Side face -->
-          <polygon points="200,95 240,80 240,250 200,270" fill="#E8DEC5" stroke="#D3C3A8" stroke-width="0.5"/>
-          <!-- Minimalist botanical branding -->
-          <g transform="translate(180, 140)">
-            <path d="M-5,0 Q0,-15 5,0 Q0,15 -5,0" fill="#2E5A44" opacity="0.8"/>
-            <text x="0" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#1C382B" text-anchor="middle" letter-spacing="1.5">BOTANIC</text>
-            <text x="0" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#5F7D6E" text-anchor="middle">PURE SERUM</text>
-            <text x="0" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" fill="#889E92" text-anchor="middle">30 ML / 1.0 FL OZ</text>
-            <line x1="-12" y1="70" x2="12" y2="70" stroke="#2E5A44" stroke-width="0.8"/>
-            <text x="0" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" font-weight="bold" fill="#C5A059" text-anchor="middle">FOIL EMBOSSED</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Crumpled organic paper void cushion -->
+          <path d="M90,170 Q110,120 150,150 Q180,110 220,160 Q170,210 90,170 Z" fill="#DEC6A6" stroke="#9C7348" stroke-width="1.5"/>
+          <path d="M110,160 Q140,140 180,160 Q150,180 110,160 Z" fill="#C29B70" />
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">CRUMPLED VOID FILL</text>
+        </svg>
+      `;
+
+    case 'edge-corner-protectors':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="90" ry="14" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <!-- Rigid 90 degree heavy cardboard edge angle boards -->
+          <polygon points="120,50 160,75 160,215 120,190" fill="#9C7348" />
+          <polygon points="160,75 200,50 200,190 160,215" fill="#C29B70" />
+          <polygon points="120,50 160,30 200,50 160,75" fill="#DEC6A6" />
+          <text x="160" y="140" transform="rotate(-90 160 140)" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">RIGID CORNER GUARD</text>
+        </svg>
+      `;
+
+    case 'wood-wool':
+      return `
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="16" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <!-- Fine curled kiln-dried spruce wood shavings nest -->
+          <g stroke="#C29B70" stroke-width="2" fill="none">
+            <path d="M90,150 Q130,120 170,160 Q210,140 230,160"/>
+            <path d="M100,170 Q140,190 180,140 Q210,180 220,170"/>
+            <path d="M110,130 Q160,170 190,120 Q220,150 210,190"/>
+            <path d="M120,180 Q150,130 190,170"/>
           </g>
+          <text x="160" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1E3A2F" text-anchor="middle">NATURAL WOOD WOOL</text>
         </svg>
       `;
 
-    case 'apparel-box':
+    // ----------------------------------------------------
+    // TAPE, LABELS, BAGS & STRAPPING
+    // ----------------------------------------------------
+    case 'water-activated-tape':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="155" ry="22" fill="#1A1815" opacity="0.22" filter="blur(6px)" />
-          <!-- Large flat collapsible apparel box -->
-          <polygon points="70,190 200,245 330,190 200,140" fill="#1F2A24" />
-          <polygon points="70,190 200,245 200,265 70,210" fill="#151E1A" />
-          <polygon points="200,245 330,190 330,210 200,265" fill="#0F1713" />
-          <!-- Top Lid with Grosgrain Ribbon -->
-          <polygon points="70,190 200,140 200,75 70,120" fill="#293931" />
-          <!-- Ribbon Bow Detail -->
-          <path d="M195,190 Q200,180 205,190 Q215,185 205,200 Q200,215 195,200 Z" fill="#C5A059" />
-          <path d="M200,140 L200,245" stroke="#C5A059" stroke-width="3" stroke-dasharray="4 2"/>
-          <!-- Eco brand deboss -->
-          <text x="135" y="145" transform="rotate(-20 135 145)" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#FDFBF7" letter-spacing="2">ATELIER ECO</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="90" ry="15" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <ellipse cx="160" cy="130" rx="60" ry="25" fill="#C29B70" stroke="#875E34" stroke-width="2"/>
+          <path d="M100,130 L100,180 Q160,225 220,180 L220,130 Z" fill="#9C7348" />
+          <ellipse cx="160" cy="130" rx="25" ry="10" fill="#4B3118" />
+          <!-- Unspooling tape tail -->
+          <path d="M210,150 Q240,170 260,200 L200,210 Q170,180 150,170 Z" fill="#DEC6A6" />
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">WATER-ACTIVATED GUMMED</text>
         </svg>
       `;
 
-    case 'chocolate-box':
+    case 'self-adhesive-kraft-tape':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="140" ry="20" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
-          <polygon points="80,180 200,235 320,180 200,130" fill="#4A2F22" />
-          <polygon points="80,180 200,235 200,260 80,205" fill="#382117" />
-          <polygon points="200,235 320,180 320,205 200,260" fill="#28160E" />
-          <!-- Grid dividers for artisanal chocolates -->
-          <line x1="140" y1="155" x2="260" y2="207" stroke="#7B5643" stroke-width="1.5"/>
-          <line x1="200" y1="130" x2="200" y2="235" stroke="#7B5643" stroke-width="1.5"/>
-          <line x1="260" y1="155" x2="140" y2="207" stroke="#7B5643" stroke-width="1.5"/>
-          <!-- Artisanal chocolates in nests -->
-          <circle cx="165" cy="175" r="7" fill="#2E1B12" stroke="#D4AF37" stroke-width="1"/>
-          <circle cx="200" cy="160" r="7" fill="#6E442B" stroke="#D4AF37" stroke-width="1"/>
-          <circle cx="235" cy="175" r="7" fill="#1A100B" stroke="#D4AF37" stroke-width="1"/>
-          <circle cx="165" cy="200" r="7" fill="#543725" stroke="#D4AF37" stroke-width="1"/>
-          <circle cx="200" cy="215" r="7" fill="#3D2418" stroke="#D4AF37" stroke-width="1"/>
-          <circle cx="235" cy="200" r="7" fill="#754B33" stroke="#D4AF37" stroke-width="1"/>
-          <!-- Crystal Glassine protective slip -->
-          <polygon points="90,175 200,130 310,175 200,220" fill="#FFF" fill-opacity="0.3" stroke="#FFF" stroke-width="0.8"/>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="90" ry="15" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <ellipse cx="160" cy="130" rx="55" ry="22" fill="#D9BC95" stroke="#9C7348" stroke-width="2"/>
+          <path d="M105,130 L105,180 Q160,220 215,180 L215,130 Z" fill="#BA8E5E" />
+          <ellipse cx="160" cy="130" rx="22" ry="9" fill="#523920" />
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">SELF-ADHESIVE KRAFT</text>
         </svg>
       `;
 
-    case 'mailer-box':
+    case 'glassine-document-wallets':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="275" rx="150" ry="22" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
-          <!-- Self-locking Roll-End Tuck Front (RETF) Mailer -->
-          <polygon points="60,180 200,245 340,180 200,125" fill="#B88B5B" />
-          <polygon points="60,180 200,245 200,265 60,200" fill="#9B7143" />
-          <polygon points="200,245 340,180 340,200 200,265" fill="#7D572F" />
-          <!-- Interior botanical print visible as lid opens -->
-          <polygon points="60,180 200,125 200,60 60,105" fill="#1B382B" />
-          <polygon points="200,125 340,180 340,110 200,60" fill="#244837" />
-          <!-- Interior leaf motifs -->
-          <g fill="#43775E" opacity="0.6">
-            <circle cx="130" cy="115" r="4"/>
-            <circle cx="160" cy="95" r="6"/>
-            <circle cx="250" cy="100" r="5"/>
-            <circle cx="280" cy="125" r="6"/>
-          </g>
-          <!-- Front locking tuck wings -->
-          <polygon points="175,245 200,257 225,245 200,235" fill="#875E33" />
-          <!-- Eco branding text -->
-          <text x="200" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#FDFBF7" text-anchor="middle" letter-spacing="1.5">OPEN FOR GOOD THINGS</text>
-          <text x="200" y="102" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#B1D1C1" text-anchor="middle">100% CORRUGATED E-FLUTE</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="95" ry="14" fill="#1A1815" opacity="0.14" filter="blur(5px)" />
+          <!-- Self adhesive translucent glassine envelope -->
+          <rect x="85" y="75" width="150" height="110" rx="4" fill="#FAF8F5" stroke="#C4B5A5" stroke-width="1.5"/>
+          <text x="160" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="bold" fill="#1E3A2F" text-anchor="middle">DOCUMENTS ENCLOSED</text>
+          <text x="160" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#5F7D6E" text-anchor="middle">100% TRANSLUCENT GLASSINE PAPER</text>
         </svg>
       `;
 
-    case 'shipping-carton':
+    case 'eco-labels-stickers':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="275" rx="140" ry="20" fill="#1A1815" opacity="0.22" filter="blur(6px)" />
-          <!-- Heavy-duty regular slotted carton (RSC) -->
-          <polygon points="80,140 200,195 200,270 80,210" fill="#B28452" />
-          <polygon points="200,195 320,140 320,210 200,270" fill="#8C6234" />
-          <polygon points="80,140 200,85 320,140 200,195" fill="#CAA06F" />
-          <!-- Reinforced paper packing tape seam -->
-          <line x1="80" y1="140" x2="320" y2="140" stroke="#754E27" stroke-width="8" stroke-linecap="square"/>
-          <line x1="200" y1="85" x2="200" y2="195" stroke="#754E27" stroke-width="8"/>
-          <!-- International handling symbols (Fragile glass, This way up, Recyclable) -->
-          <g transform="translate(105, 175)" fill="#3B2613">
-            <!-- Glass -->
-            <path d="M5,0 L15,0 L15,8 L11,12 L11,18 L16,18 L16,20 L4,20 L4,18 L9,18 L9,12 L5,8 Z" />
-            <!-- Up arrows -->
-            <path d="M30,5 L35,0 L40,5 L37,5 L37,18 L33,18 L33,5 Z" />
-            <path d="M45,5 L50,0 L55,5 L52,5 L52,18 L48,18 L48,5 Z" />
-            <!-- FSC tree -->
-            <path d="M68,16 L74,5 L80,16 L76,16 L76,20 L72,20 L72,16 Z" />
-          </g>
-          <text x="260" y="185" font-family="monospace" font-size="8" font-weight="bold" fill="#3B2613">RSC DOUBLE-WALL</text>
-          <text x="260" y="198" font-family="monospace" font-size="6" fill="#52391F">BURST: 275 LBS</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="85" ry="14" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <circle cx="160" cy="130" r="45" fill="#166534" stroke="#4ADE80" stroke-width="2"/>
+          <text x="160" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#FFF" text-anchor="middle">100% ECO</text>
+          <text x="160" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#DDEEDC" text-anchor="middle">PLANT-BASED ADHESIVE</text>
         </svg>
       `;
 
-    case 'honeycomb-mailer':
+    case 'compostable-zip-lock':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="275" rx="130" ry="18" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <!-- Padded paper mailer -->
-          <rect x="110" y="80" width="180" height="180" rx="10" fill="#CCA375" stroke="#9E7649" stroke-width="2"/>
-          <!-- Top flap folded over -->
-          <path d="M110,120 L200,160 L290,120 L290,80 L110,80 Z" fill="#E2BE93" stroke="#9E7649" stroke-width="1.5"/>
-          <!-- Peel and seal strip indicator -->
-          <rect x="140" y="130" width="120" height="12" rx="3" fill="#D9534F" opacity="0.8"/>
-          <text x="200" y="139" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">PEEL & SEAL STRIP</text>
-          <!-- Honeycomb pattern cutout demonstration -->
-          <g transform="translate(130, 160)" stroke="#7D5831" stroke-width="1" fill="none" opacity="0.7">
-            <polygon points="15,0 30,8 30,24 15,32 0,24 0,8" />
-            <polygon points="45,0 60,8 60,24 45,32 30,24 30,8" />
-            <polygon points="75,0 90,8 90,24 75,32 60,24 60,8" />
-            <polygon points="30,24 45,32 45,48 30,56 15,48 15,32" />
-            <polygon points="60,24 75,32 75,48 60,56 45,48 45,32" />
-            <polygon points="90,24 105,32 105,48 90,56 75,48 75,32" />
-          </g>
-          <!-- Badge -->
-          <text x="200" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1A3328" text-anchor="middle">ZERO PLASTIC • BUBBLE-FREE</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="85" ry="14" fill="#1A1815" opacity="0.14" filter="blur(5px)" />
+          <rect x="95" y="60" width="130" height="150" rx="6" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <!-- Zip lock track -->
+          <line x1="95" y1="80" x2="225" y2="80" stroke="#166534" stroke-width="3"/>
+          <text x="160" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#166534" text-anchor="middle">COMPOSTABLE ZIP-LOCK</text>
+          <text x="160" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#15803D" text-anchor="middle">TÜV OK COMPOST HOME</text>
         </svg>
       `;
 
-    case 'paper-tape':
+    case 'paper-pallet-wrap':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="120" ry="18" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
-          <!-- Tape Roll Cylindrical 3D -->
-          <!-- Outer roll -->
-          <ellipse cx="200" cy="160" rx="90" ry="40" fill="#C99E6E" stroke="#9E7649" stroke-width="2"/>
-          <path d="M110,160 L110,210 Q200,280 290,210 L290,160 Z" fill="#A87E4E" stroke="#7A562D" stroke-width="2"/>
-          <!-- Inner cardboard core -->
-          <ellipse cx="200" cy="160" rx="40" ry="18" fill="#6B4D2F" stroke="#4F361E" stroke-width="2"/>
-          <ellipse cx="200" cy="163" rx="35" ry="15" fill="#3D2916" />
-          <!-- Tape unspooling strip -->
-          <path d="M280,180 Q320,200 340,240 L250,260 Q230,230 200,225 Z" fill="#CCA475" stroke="#9E7649" stroke-width="1"/>
-          <!-- Water-activated repeated graphic on strip -->
-          <g transform="translate(230, 220) rotate(15)">
-            <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#1A3328">100% RECYCLED</text>
-            <text x="0" y="10" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#2E5A44">WATER ACTIVATED</text>
-          </g>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="80" ry="14" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <ellipse cx="160" cy="70" rx="45" ry="18" fill="#DEC6A6" />
+          <path d="M115,70 L115,195 Q160,225 205,195 L205,70 Z" fill="#BA8E5E" />
+          <ellipse cx="160" cy="70" rx="18" ry="8" fill="#523920" />
+          <text x="160" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">STRETCH PAPER WRAP</text>
+          <text x="160" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#EAE5DC" text-anchor="middle">REPLACES PLASTIC CLING FILM</text>
         </svg>
       `;
 
-    case 'luxury-bag':
+    case 'paper-strapping':
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#142B21" />
-              <stop offset="60%" stop-color="#1E3E30" />
-              <stop offset="100%" stop-color="#10221A" />
-            </linearGradient>
-          </defs>
-          <ellipse cx="200" cy="285" rx="130" ry="16" fill="#101813" opacity="0.25" filter="blur(6px)" />
-          <!-- Twisted paper cord handle -->
-          <path d="M170,120 C170,40 230,40 230,120" fill="none" stroke="#D4AF37" stroke-width="5" stroke-linecap="round"/>
-          <path d="M165,120 C165,45 225,45 225,120" fill="none" stroke="#AA820A" stroke-width="2" stroke-linecap="round"/>
-          <!-- Bag front body -->
-          <polygon points="120,120 280,120 270,270 130,270" fill="url(#bagGrad)" />
-          <!-- Side gusset fold -->
-          <polygon points="120,120 130,270 100,250 95,115" fill="#0C1913" />
-          <!-- Turn-top reinforced hem line -->
-          <line x1="95" y1="135" x2="280" y2="135" stroke="#2D5442" stroke-width="1.5"/>
-          <!-- Hot-foil logo center front -->
-          <g transform="translate(200, 190)">
-            <text x="0" y="0" font-family="'Playfair Display', serif" font-size="14" font-weight="700" fill="#D4AF37" text-anchor="middle" letter-spacing="3">VERDANT</text>
-            <line x1="-30" y1="8" x2="30" y2="8" stroke="#D4AF37" stroke-width="1"/>
-            <text x="0" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" fill="#E8D190" text-anchor="middle" letter-spacing="1.5">PARIS • NEW YORK</text>
-          </g>
-          <!-- Eyelet holes -->
-          <circle cx="170" cy="130" r="3" fill="#D4AF37"/>
-          <circle cx="230" cy="130" r="3" fill="#D4AF37"/>
-        </svg>
-      `;
-
-    case 'grocery-bag':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="285" rx="125" ry="16" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
-          <!-- Flat kraft glued handles -->
-          <path d="M175,110 L175,50 L225,50 L225,110" fill="none" stroke="#A87B4C" stroke-width="8" stroke-linecap="square"/>
-          <!-- Bag body with serrated top edge -->
-          <polygon points="120,110 280,110 270,275 130,275" fill="#CAA06F" />
-          <polygon points="120,110 130,275 95,255 90,105" fill="#9C7345" />
-          <!-- Center pinch fold in side gusset -->
-          <line x1="105" y1="107" x2="112" y2="265" stroke="#7A562F" stroke-width="1"/>
-          <!-- Serrated scissors cut top edge -->
-          <path d="M120,110 L130,106 L140,110 L150,106 L160,110 L170,106 L180,110 L190,106 L200,110 L210,106 L220,110 L230,106 L240,110 L250,106 L260,110 L270,106 L280,110" stroke="#B08655" stroke-width="2" fill="none"/>
-          <!-- Organic Market Stamp -->
-          <g transform="translate(200, 185) rotate(-5)">
-            <rect x="-40" y="-20" width="80" height="40" rx="3" fill="none" stroke="#204030" stroke-width="1.8"/>
-            <text x="0" y="-3" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#204030" text-anchor="middle" letter-spacing="1">FARMERS CO-OP</text>
-            <text x="0" y="10" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" fill="#325E49" text-anchor="middle">100% RECYCLED KRAFT</text>
-          </g>
-        </svg>
-      `;
-
-    case 'wine-bag':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="285" rx="90" ry="15" fill="#121815" opacity="0.22" filter="blur(5px)" />
-          <!-- Twisted rope handle -->
-          <path d="M185,100 C185,30 215,30 215,100" fill="none" stroke="#C5A059" stroke-width="4" stroke-linecap="round"/>
-          <!-- Tall slim bottle bag -->
-          <polygon points="160,95 240,95 235,275 165,275" fill="#202A24" />
-          <polygon points="160,95 165,275 145,260 140,90" fill="#151D18" />
-          <!-- Bottle neck peeking out -->
-          <rect x="190" y="65" width="20" height="30" rx="3" fill="#2D4F38" />
-          <rect x="193" y="55" width="14" height="15" fill="#B32428" />
-          <!-- Hot-foil vineyard crest -->
-          <g transform="translate(200, 180)">
-            <circle cx="0" cy="0" r="18" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
-            <text x="0" y="4" font-family="'Playfair Display', serif" font-size="12" fill="#D4AF37" text-anchor="middle">V</text>
-            <text x="0" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="2">RESERVE</text>
-          </g>
-        </svg>
-      `;
-
-    case 'tissue-paper':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="140" ry="18" fill="#1A1815" opacity="0.15" filter="blur(6px)" />
-          <!-- Layered crumpled/folded delicate acid-free tissue paper sheets -->
-          <polygon points="90,160 220,100 310,160 180,230" fill="#FBF8F2" stroke="#E5DEC9" stroke-width="1"/>
-          <polygon points="110,180 240,120 330,175 200,245" fill="#F4EEE1" stroke="#D8CDB6" stroke-width="1" opacity="0.9"/>
-          <!-- Repeating botanical water-based ink stamp pattern across the sheets -->
-          <g fill="#2D5A42" opacity="0.25">
-            <circle cx="150" cy="160" r="8"/>
-            <circle cx="190" cy="140" r="6"/>
-            <circle cx="230" cy="165" r="9"/>
-            <circle cx="270" cy="145" r="7"/>
-            <circle cx="170" cy="190" r="7"/>
-            <circle cx="210" cy="205" r="8"/>
-            <circle cx="250" cy="190" r="6"/>
-          </g>
-          <!-- Spec badge -->
-          <rect x="150" y="240" width="100" height="18" rx="4" fill="#1A3328"/>
-          <text x="200" y="252" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#FFF" text-anchor="middle">18 GSM ACID-FREE TISSUE</text>
-        </svg>
-      `;
-
-    case 'paper-stickers':
-      return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="120" ry="18" fill="#1A1815" opacity="0.2" filter="blur(6px)" />
-          <!-- Sticker roll dispenser reel -->
-          <ellipse cx="170" cy="160" rx="60" ry="30" fill="#C49B6C" stroke="#9A7246" stroke-width="2"/>
-          <path d="M110,160 L110,210 Q170,260 230,210 L230,160 Z" fill="#9E7345" stroke="#7A542E" stroke-width="2"/>
-          <ellipse cx="170" cy="160" rx="25" ry="12" fill="#52391F" />
-          <!-- Liner strip unwinding with round stickers -->
-          <path d="M220,185 Q260,200 320,230 L280,265 Q230,230 190,210 Z" fill="#F8F4EC" stroke="#DDD" stroke-width="1"/>
-          <!-- Round compostable stickers on release liner -->
-          <circle cx="250" cy="210" r="18" fill="#1B382B" stroke="#2D5A42" stroke-width="1.5"/>
-          <text x="250" y="213" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="bold" fill="#FFF" text-anchor="middle">ECO SEAL</text>
-          <circle cx="295" cy="240" r="18" fill="#C49B6C" stroke="#9A7246" stroke-width="1.5"/>
-          <text x="295" y="243" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="bold" fill="#20382B" text-anchor="middle">100% BIO</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="85" ry="14" fill="#1A1815" opacity="0.18" filter="blur(5px)" />
+          <ellipse cx="160" cy="130" rx="60" ry="25" fill="#8F663B" />
+          <path d="M100,130 L100,180 Q160,225 220,180 L220,130 Z" fill="#6B4828" />
+          <ellipse cx="160" cy="130" rx="35" ry="15" fill="#F4EDE4" />
+          <text x="160" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="bold" fill="#FFF" text-anchor="middle">PAPER STRAPPING</text>
+          <text x="160" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" fill="#DDEEDC" text-anchor="middle">HIGH TENSILE 250KG</text>
         </svg>
       `;
 
     default:
       return `
-        <svg viewBox="0 0 400 320" class="w-full h-full object-contain filter drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="200" cy="270" rx="130" ry="20" fill="#1A1815" opacity="0.18" filter="blur(6px)" />
-          <polygon points="100,160 200,220 300,160 200,110" fill="#C49B6C" />
-          <polygon points="100,160 200,220 200,255 100,195" fill="#9E7345" />
-          <polygon points="200,220 300,160 300,195 200,255" fill="#7A542E" />
-          <text x="200" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#1A3328" text-anchor="middle">ECOPACK STUDIO</text>
+        <svg viewBox="0 0 320 260" class="w-full h-full object-contain filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="225" rx="100" ry="15" fill="#1A1815" opacity="0.16" filter="blur(5px)" />
+          <polygon points="70,110 160,160 250,110 160,60" fill="#C29B70" />
+          <polygon points="70,110 160,160 160,220 70,170" fill="#9C7348" />
+          <polygon points="160,160 250,110 250,170 160,220" fill="#75502A" />
+          <text x="160" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="bold" fill="#1E3A2F" text-anchor="middle">PACKNSTIR</text>
         </svg>
       `;
   }
@@ -609,802 +778,1591 @@ function getProductSvg(type, variant = 'perspective', color = '#C49A6C') {
 
 
 // === Module: src/data/products.js ===
+// PackNStir Exhaustive Product Database (All 46 Sustainable Packaging Formats)
+
 const PRODUCTS = [
-  // ==========================================
-  // 🍕 FOOD & BEVERAGE PACKAGING
-  // ==========================================
+  // =========================================================================
+  // CATEGORY 1: CARDBOARD BOXES & CARTONS (9 Products)
+  // =========================================================================
   {
-    id: 'pizza-boxes',
-    name: 'Artisan Micro-Flute Pizza Boxes',
-    category: 'food',
-    categoryName: 'Food & Beverage',
-    svgType: 'pizza-box',
-    subtitle: 'Grease-resistant corrugated takeaway boxes with engineered corner ventilation.',
-    price: 0.48,
-    moq: 500,
-    unit: 'box',
-    featured: true,
-    rating: 4.9,
-    reviewCount: 142,
-    badge: 'Best Seller',
-    material: 'E-Flute Corrugated Kraft (1.5mm caliper)',
-    boardWeight: '380 GSM Recycled Kraft Liner',
-    coating: 'Plant-Starch Water-Based Aqueous Barrier (Zero PE / Zero Wax)',
-    dimensionsPreset: '12" × 12" × 1.75" (305 × 305 × 45 mm)',
-    dimensionsAvailable: ['10" Small (254mm)', '12" Medium (305mm)', '14" Large (355mm)', '16" X-Large (406mm)'],
-    finishOptions: ['Raw Natural Kraft', 'Full Exterior CMYK Soy Ink', '1-Color Flexo Hot Stamp', 'Bleached White Liner'],
-    ecoBadges: ['100% Curbside Recyclable', 'Zero Plastic Lining', 'FSC® Recycled', 'Home Compostable'],
-    leadTime: '3-5 business days (stock) / 8-10 days (custom print)',
-    description: 'Designed specifically for modern pizzerias and bakeries requiring heat retention without sogginess. Our micro-flute pizza boxes feature precision die-cut corner exhaust vents that release steam while locking in crust crispness. Protected by an ultra-thin aqueous barrier that repels oils and melted cheeses without using synthetic polyethylene linings.',
-    features: [
-      'Engineered steam dissipation tabs preserve crust crispness',
-      'Food-grade aqueous coating repels heavy oils and mozzarella fats',
-      'Sturdy crush-resistant E-flute architecture stacks up to 8 boxes high',
-      'Custom exterior and interior lid printing with plant-derived soy inks'
-    ],
-    pricingTiers: [
-      { qty: 500, pricePerUnit: 0.58, total: 290 },
-      { qty: 1000, pricePerUnit: 0.48, total: 480 },
-      { qty: 2500, pricePerUnit: 0.41, total: 1025 },
-      { qty: 5000, pricePerUnit: 0.35, total: 1750 }
-    ],
-    specs: {
-      'Board Grade': 'E-Flute Micro-Corrugated (150# test)',
-      'Burst Strength': '175 Mullen (PSI)',
-      'Thermal Retention': 'Up to 45 minutes at >60°C',
-      'Disposal': 'Blue bin paper recycling or backyard compost'
-    }
-  },
-  {
-    id: 'takeaway-boxes',
-    name: 'Leak-Proof Gable Takeaway Boxes',
-    category: 'food',
-    categoryName: 'Food & Beverage',
-    svgType: 'takeaway-box',
-    subtitle: 'Integrated handle lunch containers with folded poly-free leak barriers.',
-    price: 0.36,
-    moq: 500,
-    unit: 'container',
-    featured: true,
-    rating: 4.8,
-    reviewCount: 98,
-    badge: 'Zero Leak',
-    material: 'Virgin Unbleached Kraft Board',
-    boardWeight: '320 GSM Heavy Kraft',
-    coating: 'Hydrophobic & Oleophobic Water-Based Dispersion',
-    dimensionsPreset: '8" × 5" × 4.5" (200 × 125 × 115 mm)',
-    dimensionsAvailable: ['Small (600ml / 20oz)', 'Medium (1000ml / 34oz)', 'Large (1500ml / 51oz)', 'Gable Handle Tall'],
-    finishOptions: ['Natural Brown Kraft', 'White Coated Exterior', 'Full Custom Flexo Print'],
-    ecoBadges: ['Compostable EN13432', 'PFAS-Free Certified', 'Zero Polyethylene'],
-    leadTime: '3-4 business days (stock) / 7-9 days (custom)',
-    description: 'The modern alternative to plastic clamshells and Styrofoam. Handcrafted from unbleached virgin wood pulp, these gable takeaway containers fold into an airtight self-locking carry shape with integrated ergonomic handle tabs. Fully certified PFAS-free and water-sealed for dressings, broths, and hot curries.',
-    features: [
-      'Single-piece die cut with zero open corner seams for complete leak defense',
-      'Integrated lock handle eliminates the need for secondary plastic carrier bags',
-      'Microwave safe up to 3 minutes for easy customer reheating',
-      'Flat-pack nested shipping saves 65% warehouse storage volume'
-    ],
-    pricingTiers: [
-      { qty: 500, pricePerUnit: 0.44, total: 220 },
-      { qty: 1000, pricePerUnit: 0.36, total: 360 },
-      { qty: 2500, pricePerUnit: 0.31, total: 775 },
-      { qty: 5000, pricePerUnit: 0.26, total: 1300 }
-    ],
-    specs: {
-      'Capacity': '1,200 ml / 40 fl oz',
-      'Temperature Range': '-20°C to +120°C',
-      'Handle Capacity': 'Up to 2.2 kg carry load',
-      'Coating Method': 'Aqueous dispersion roll coating'
-    }
-  },
-  {
-    id: 'burger-boxes',
-    name: 'Ventilated Clamshell Burger Boxes',
-    category: 'food',
-    categoryName: 'Food & Beverage',
-    svgType: 'burger-box',
-    subtitle: 'Sturdy interlocking clamshells designed for gourmet burgers and sandwiches.',
-    price: 0.28,
-    moq: 1000,
-    unit: 'clamshell',
-    featured: false,
-    rating: 4.7,
-    reviewCount: 86,
-    badge: 'Hot & Crispy',
-    material: 'Natural Kraft Paperboard with Micro-Corrugation',
-    boardWeight: '300 GSM Grease-Proof Board',
-    coating: 'Plant-Based Oleoresin Sealer',
-    dimensionsPreset: '4.75" × 4.75" × 3.5" (120 × 120 × 90 mm)',
-    dimensionsAvailable: ['Standard Burger (120mm)', 'Brioche / Gourmet (140mm)', 'Long Sub / Sandwich (220mm)'],
-    finishOptions: ['Natural Kraft', 'Minimalist Black Soy Ink Stamp', 'Full Color CMYK'],
-    ecoBadges: ['PFAS-Free', 'OK Compost Industrial & Home', 'FSC® Mix'],
-    leadTime: '2-4 business days',
-    description: 'Keep artisanal buns golden and crisp with our latch-locking clamshell box. Engineered with micro-vent slits along the back ridge to allow steam to escape while trapping core radiant heat. Grease-proof barrier prevents sauce bleed-through on hands and delivery bags.',
-    features: [
-      'Dual front push-tab lock ensures container stays closed during bike transit',
-      'No synthetic plastics, PFAS chemicals, or wax lamination',
-      'Stackable indented top lid fits snugly with bottom bases',
-      'Quick single-motion pop-open setup for rapid commercial kitchen packing'
-    ],
-    pricingTiers: [
-      { qty: 1000, pricePerUnit: 0.34, total: 340 },
-      { qty: 2500, pricePerUnit: 0.28, total: 700 },
-      { qty: 5000, pricePerUnit: 0.23, total: 1150 },
-      { qty: 10000, pricePerUnit: 0.19, total: 1900 }
-    ],
-    specs: {
-      'Board Caliper': '0.7 mm thickness',
-      'Grease Kit Rating': 'Kit 10+ Oil Resistance',
-      'Recyclability': 'Curbside repulpable in standard recycling mills'
-    }
-  },
-  {
-    id: 'pastry-boxes',
-    name: 'Clear-Window Pastry & Cake Boxes',
-    category: 'food',
-    categoryName: 'Food & Beverage',
-    svgType: 'pastry-box',
-    subtitle: 'Heavy-duty cake carriers with crystalline plant-cellulose display windows.',
-    price: 0.72,
-    moq: 300,
-    unit: 'box',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 114,
-    badge: 'Artisanal Display',
-    material: 'Bleached White Solid Bleached Sulfate (SBS) / Kraft',
-    boardWeight: '400 GSM Heavy-Duty Board',
-    coating: 'Bioplastic Cellulose Window (Wood-Pulp Derived)',
-    dimensionsPreset: '10" × 10" × 5" (254 × 254 × 127 mm)',
-    dimensionsAvailable: ['6" Cupcake / Tart', '8" Single Cake', '10" Standard Tier', '12" Multi-Tier Carrier'],
-    finishOptions: ['Clean Crisp White', 'Warm Kraft Tan', 'Gold Foil Stamped Crest'],
-    ecoBadges: ['100% Compostable Cellulose Window', 'Non-Toxic Starch Glues'],
-    leadTime: '4-6 business days',
-    description: 'Showcase delicate patisserie, celebration cakes, and artisanal pastries without compromising your sustainability promise. Our windowed bakery boxes use transparent NatureFlex™ cellulose film made from renewable tree pulp rather than petroleum-based plastics. Features heavy-duty corner locks and optional cupcake tray inserts.',
-    features: [
-      'Ultra-clear anti-fog cellulose window derived 100% from renewable wood pulp',
-      'Reinforced corrugated cake base supports tall tiered cakes up to 5 kg',
-      'Front drop-down loading door allows cakes to slide in flat without smudging icing',
-      'Optional 4-cup, 6-cup, or 12-cup pop-up cupcake divider inserts available'
-    ],
-    pricingTiers: [
-      { qty: 300, pricePerUnit: 0.88, total: 264 },
-      { qty: 600, pricePerUnit: 0.72, total: 432 },
-      { qty: 1500, pricePerUnit: 0.62, total: 930 },
-      { qty: 3000, pricePerUnit: 0.54, total: 1620 }
-    ],
-    specs: {
-      'Window Film': 'Cellulose Diacetate (Bio-degrades within 60 days)',
-      'Load Capacity': 'Up to 5 kg / 11 lbs',
-      'Corner Structure': 'Glueless self-erecting double-wall locks'
-    }
-  },
-  {
-    id: 'beverage-carriers',
-    name: 'Molded Pulp Multi-Cup Drink Trays',
-    category: 'food',
-    categoryName: 'Food & Beverage',
-    svgType: 'beverage-carrier',
-    subtitle: 'Nesting 2-cup and 4-cup drink caddies made from 100% recycled newsprint pulp.',
-    price: 0.22,
-    moq: 1000,
-    unit: 'tray',
-    featured: false,
-    rating: 4.6,
-    reviewCount: 65,
-    badge: '100% Post-Consumer',
-    material: 'Molded Paper Pulp (100% Recovered Fiber)',
-    boardWeight: 'Dense thermoformed fiber',
-    coating: 'Zero coating - pure mechanical interlocking fibers',
-    dimensionsPreset: '8.5" × 8.5" × 2" (215 × 215 × 50 mm)',
-    dimensionsAvailable: ['2-Cup Dual Caddy', '4-Cup Family Tray', '4-Cup with Center Snack Well'],
-    finishOptions: ['Natural Gray/Brown Molded Pulp', 'Custom Embossed Brand Crest'],
-    ecoBadges: ['100% Post-Consumer Waste', 'Zero Chemical Bleaching', 'Instant Compostability'],
-    leadTime: '2-3 business days',
-    description: 'Rigid, impact-absorbing molded pulp drink carriers engineered to hold 8 oz to 32 oz cups securely during transit. Deep tapered wells cradle hot coffees and iced beverages without spilling or tilting. High-density nesting design allows 500 units to fit in less than 0.2 cubic meters of storage.',
-    features: [
-      'Accommodates diverse cup diameters from 8 oz espresso to 32 oz cold brew',
-      'Dual-well perforation allows 4-cup tray to be snapped in half into two 2-cup holders',
-      'Deep ribbed structural wall prevents tipping and absorbs condensation runoff',
-      'Disposes effortlessly directly into compost bin, soil garden, or paper recycling'
-    ],
-    pricingTiers: [
-      { qty: 1000, pricePerUnit: 0.26, total: 260 },
-      { qty: 2500, pricePerUnit: 0.22, total: 550 },
-      { qty: 5000, pricePerUnit: 0.18, total: 900 },
-      { qty: 10000, pricePerUnit: 0.15, total: 1500 }
-    ],
-    specs: {
-      'Cup Sizing': 'Fits 8 oz - 32 oz standard commercial cup bases',
-      'Density': 'Thermoformed high-pressure pulp',
-      'Biodegradation': '100% breaks down in 30-45 days in moist soil'
-    }
-  },
-
-  // ==========================================
-  // ✨ LUXURY & RETAIL BOXES
-  // ==========================================
-  {
-    id: 'perfume-boxes',
-    name: 'Magnetic Rigid Perfume Setup Boxes',
-    category: 'luxury',
-    categoryName: 'Luxury & Retail',
-    svgType: 'perfume-box',
-    subtitle: 'Heirloom-grade magnetic flap boxes with custom precision-molded pulp inserts.',
-    price: 2.85,
-    moq: 250,
-    unit: 'box',
-    featured: true,
-    rating: 5.0,
-    reviewCount: 167,
-    badge: 'Luxury Tier',
-    material: '1200 GSM High-Density Recycled Greyboard',
-    boardWeight: '1200 GSM Board Wrapped in 150 GSM FSC Specialty Art Paper',
-    coating: 'Velvet Soft-Touch Eco Varnish (Water-Based)',
-    dimensionsPreset: '4.5" × 4.5" × 6.5" (115 × 115 × 165 mm)',
-    dimensionsAvailable: ['30ml Flacon (90×90×130mm)', '50ml Standard (110×110×150mm)', '100ml Grand (125×125×180mm)'],
-    finishOptions: ['Metallic Champagne Hot Foil', 'Blind Embossing', 'Debossed Metallic Green Foil', 'Matte Midnight Forest'],
-    ecoBadges: ['Repulpable Rigid Board', 'Zero Plastic EVA Foam Alternative', 'Rare Earth Neodymium Recyclable Magnets'],
-    leadTime: '7-10 business days',
-    description: 'The pinnacle of sustainable luxury unboxing. Crafted from solid 2mm thick recycled greyboard and hand-wrapped with fine-milled FSC paper with a velvety soft-touch finish. Instead of non-recyclable EVA foam inserts, we engineer bespoke contour-molded bamboo/wood pulp cushions that hold fragrance bottles with micrometer precision.',
-    features: [
-      'Dual hidden magnetic closure gives an authoritative, satisfying tactile snap',
-      'Zero-foam interior: precision molded cellulose cavity shaped exactly to your flacon',
-      'Ultra-crisp 90-degree v-groove mitered edges for architectural silhouette',
-      'Finished with biodegradable soy-based inks and non-polluting foil stamping'
-    ],
-    pricingTiers: [
-      { qty: 250, pricePerUnit: 3.45, total: 862.5 },
-      { qty: 500, pricePerUnit: 2.85, total: 1425 },
-      { qty: 1000, pricePerUnit: 2.35, total: 2350 },
-      { qty: 2500, pricePerUnit: 1.95, total: 4875 }
-    ],
-    specs: {
-      'Caliper': '2.0 mm solid rigid greyboard core',
-      'Insert Material': 'Molded cellulose / organic cotton velvet layer',
-      'Magnetic Pull': 'N35 grade neodymium magnet encased in paper cavity'
-    }
-  },
-  {
-    id: 'watch-jewelry-boxes',
-    name: 'Two-Piece Velvet-Lined Jewelry Boxes',
-    category: 'luxury',
-    categoryName: 'Luxury & Retail',
-    svgType: 'watch-box',
-    subtitle: 'Lift-off shoulder setup boxes lined with GOTS-certified organic cotton velvet.',
-    price: 3.20,
-    moq: 200,
-    unit: 'box',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 92,
-    badge: 'Artisan Finish',
-    material: '1500 GSM Compressed Cardboard with Linen Texture Wrap',
-    boardWeight: '1500 GSM Greyboard + 140 GSM Organic Linen Paper',
-    coating: 'Natural Mineral Starch Pigments',
-    dimensionsPreset: '4.2" × 4.2" × 3.2" (105 × 105 × 80 mm)',
-    dimensionsAvailable: ['Ring / Earring Box (60×60×45mm)', 'Watch / Bangle Setup (105×105×80mm)', 'Necklace Presentation (160×120×40mm)'],
-    finishOptions: ['Natural Bone White', 'Deep Olive Linen', 'Obsidian Slate', 'Gold Foil Stamp'],
-    ecoBadges: ['GOTS Certified Organic Lining', 'Plastic-Free Setup', 'Heirloom Durability'],
-    leadTime: '8-12 business days',
-    description: 'Engineered for fine timepieces, rings, and heirloom jewelry. Features an exposed structural neck and shoulder that produces an elegant reveals-edge when the lid is lifted. The interior cushion is stuffed with pure kapok tree fiber and covered in organic cotton velvet, replacing petroleum polyurethane pillows.',
-    features: [
-      'Vacuum-release lid fit creates a slow, deliberate 3-second descent opening feel',
-      'Interior jewelry pillow stuffed with natural organic kapok fiber instead of foam',
-      'Embossed logo plate on lid with tactile debossing or hand-burnished eco-foil',
-      'Meets all international fine jewelry presentation safety and non-tarnish standards'
-    ],
-    pricingTiers: [
-      { qty: 200, pricePerUnit: 3.90, total: 780 },
-      { qty: 500, pricePerUnit: 3.20, total: 1600 },
-      { qty: 1000, pricePerUnit: 2.65, total: 2650 },
-      { qty: 2000, pricePerUnit: 2.20, total: 4400 }
-    ],
-    specs: {
-      'Shoulder Reveal': '6 mm accent collar in matching or contrasting paper',
-      'Lining': '100% GOTS certified organic unbleached cotton velvet',
-      'Tarnish Resistance': 'Sulfur-free, acid-free certified paper contact'
-    }
-  },
-  {
-    id: 'cosmetic-cartons',
-    name: 'Skincare Tuck-End Serum Cartons',
-    category: 'luxury',
-    categoryName: 'Luxury & Retail',
-    svgType: 'cosmetic-carton',
-    subtitle: 'High-definition folding cartons with micro-embossing and gold foil accents.',
+    id: 'single-wall-boxes',
+    name: 'Single Wall Cardboard Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'single-wall-box',
+    subtitle: 'Lightweight and durable single-flute corrugated boxes for general packing and storage.',
     price: 0.42,
-    moq: 1000,
-    unit: 'carton',
-    featured: true,
-    rating: 4.8,
-    reviewCount: 205,
-    badge: 'Clean Beauty',
-    material: 'FSC® Virgin Sulfate White Paperboard',
-    boardWeight: '350 GSM Solid Bleached Sulfate (SBS)',
-    coating: 'Silky Matte Water-Based Varnish & Spot UV alternative',
-    dimensionsPreset: '1.75" × 1.75" × 5" (45 × 45 × 127 mm)',
-    dimensionsAvailable: ['15ml Dropper (38×38×95mm)', '30ml Serum (45×45×127mm)', '50ml Cream Jar (65×65×60mm)', '100ml Lotion (55×55×165mm)'],
-    finishOptions: ['Soft-Touch Matte Varnish', 'Embossed Botanical Details', 'Gold / Rose Gold Eco-Foil', 'Raw Uncoated Kraft'],
-    ecoBadges: ['100% Post-Consumer Recyclable', 'Vegetable Ink Certified', 'FSC-C149821'],
-    leadTime: '4-6 business days',
-    description: 'Designed specifically for clean beauty brands and dermatological serums. Features reverse-tuck closures with internal dust flaps that guard dropper pipettes against vibration during transit. The exterior accepts razor-sharp fine serif typography and micro-embossed textures without fiber cracking.',
-    features: [
-      'Precision creasing lines ensure 100% square corners and jam-free automated line packing',
-      'Bright 94-brightness SBS paperboard delivers vibrant Pantone color fidelity',
-      'Zero synthetic polymer film laminate ensures total curbside repulpability',
-      'Optional internal folding insert locks glass serum droppers centered and isolated'
-    ],
-    pricingTiers: [
-      { qty: 1000, pricePerUnit: 0.52, total: 520 },
-      { qty: 2500, pricePerUnit: 0.42, total: 1050 },
-      { qty: 5000, pricePerUnit: 0.34, total: 1700 },
-      { qty: 10000, pricePerUnit: 0.27, total: 2700 }
-    ],
-    specs: {
-      'Caliper': '16 pt / 0.40 mm board thickness',
-      'Tuck Style': 'Reverse Tuck End (RTE) or Straight Tuck End (STE)',
-      'Brightness': '94% GE Brightness White surface'
-    }
-  },
-  {
-    id: 'apparel-boxes',
-    name: 'Collapsible Magnetic Apparel Boxes',
-    category: 'luxury',
-    categoryName: 'Luxury & Retail',
-    svgType: 'apparel-box',
-    subtitle: 'Space-saving flat-pack luxury boxes with woven grosgrain ribbon closure.',
-    price: 3.40,
     moq: 250,
     unit: 'box',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 78,
-    badge: 'Flat-Pack Luxury',
-    material: '1400 GSM Heavy Greyboard with Reinforced Corner Joints',
-    boardWeight: '1400 GSM Rigid Board wrapped in 157 GSM Art Paper',
-    coating: 'Scratch-Resistant Matte Eco-Shield',
-    dimensionsPreset: '14" × 10" × 4" (355 × 254 × 102 mm)',
-    dimensionsAvailable: ['Shirt / Scarf (310×220×50mm)', 'Knitwear / Blazer (380×280×100mm)', 'Coat / Boots (450×360×140mm)'],
-    finishOptions: ['Forest Green Matte', 'Natural Kraft Exterior', 'Pure White with Black Grosgrain Ribbon', 'Midnight Charcoal'],
-    ecoBadges: ['Saves 75% Freight Volume', 'Re-usable Multi-Year Storage', 'Zero Plastic Shell'],
-    leadTime: '6-8 business days',
-    description: 'Transform fashion e-commerce unboxing while slashing shipping freight costs. These premium apparel boxes ship completely flat with pre-applied adhesive corner strips. In just four seconds, customer service teams or warehouse packers erect them into rigid presentation boxes locked by concealed magnets and elegant woven ribbons.',
-    features: [
-      'Collapsible 4-corner design ships flat, reducing shipping container volume by 75%',
-      'Assembles in 5 seconds with four heavy-duty plant-starch adhesive corner wings',
-      'Features interchangeable woven organic cotton or wood-cellulose grosgrain ribbon ties',
-      'Sturdy enough to be repurposed by end-consumers as permanent wardrobe storage'
-    ],
-    pricingTiers: [
-      { qty: 250, pricePerUnit: 4.10, total: 1025 },
-      { qty: 500, pricePerUnit: 3.40, total: 1700 },
-      { qty: 1000, pricePerUnit: 2.85, total: 2850 },
-      { qty: 2500, pricePerUnit: 2.40, total: 6000 }
-    ],
-    specs: {
-      'Board Thickness': '2.3 mm solid core',
-      'Ribbon Width': '25 mm organic cotton herringbone or grosgrain',
-      'Transit Resistance': 'Drop tested from 1.2m without corner separation'
-    }
-  },
-  {
-    id: 'chocolate-boxes',
-    name: 'Multi-Tier Confectionery Partition Boxes',
-    category: 'luxury',
-    categoryName: 'Luxury & Retail',
-    svgType: 'chocolate-box',
-    subtitle: 'Architectural confectionery boxes with grease-resistant paper grid dividers.',
-    price: 1.65,
-    moq: 300,
-    unit: 'box',
-    featured: false,
-    rating: 4.8,
-    reviewCount: 61,
-    badge: 'Artisan Confection',
-    material: 'Virgin Food-Grade Bleached Cardboard & Glassine',
-    boardWeight: '600 GSM Rigid Box + 250 GSM Interlocking Grid',
-    coating: 'Food-Grade Aqueous Barrier & Translucent Glassine Cushion Slip',
-    dimensionsPreset: '8" × 5" × 1.5" (200 × 125 × 38 mm)',
-    dimensionsAvailable: ['6-Piece Cavity (120×80×35mm)', '12-Piece Cavity (200×125×38mm)', '24-Piece Multi-Tier (240×160×65mm)'],
-    finishOptions: ['Deep Cocoa Brown with Gold Stamping', 'Pastel Cream & Rose Gold', 'Natural Unbleached Kraft'],
-    ecoBadges: ['Direct Food Contact Certified', 'Zero Plastic Thermoform Cavity', 'Compostable Glassine'],
-    leadTime: '5-7 business days',
-    description: 'Eliminate plastic vacuum-formed chocolate blister trays. Our artisan chocolate boxes use die-cut interlocking food-grade paperboard dividers that hold delicate truffles and pralines securely in place. Topped with a multi-ply glassine paper cushion that absorbs shock and preserves shine without non-recyclable bubble plastic.',
-    features: [
-      'Interlocking paperboard divider slots assemble quickly without adhesives',
-      'Grease-resistant liner prevents cocoa butter bleed and unsightly grease rings',
-      'Includes crystal-clear glassine protective sheet embossed with your custom brand monogram',
-      'Rigid lift-off lid construction with debossed gold or copper metallic accents'
-    ],
-    pricingTiers: [
-      { qty: 300, pricePerUnit: 2.05, total: 615 },
-      { qty: 600, pricePerUnit: 1.65, total: 990 },
-      { qty: 1500, pricePerUnit: 1.35, total: 2025 },
-      { qty: 3000, pricePerUnit: 1.12, total: 3360 }
-    ],
-    specs: {
-      'Cavity Dimensions': '32 mm × 32 mm individual square wells',
-      'Cover Slip': '45 GSM calendered translucent glassine paper',
-      'Barrier Quality': 'Grease and moisture repelling according to FDA 21 CFR 176.170'
-    }
-  },
-
-  // ==========================================
-  // 📦 E-COMMERCE & SHIPPING
-  // ==========================================
-  {
-    id: 'corrugated-mailers',
-    name: 'Roll-End Tuck-Front Mailer Boxes',
-    category: 'shipping',
-    categoryName: 'E-Commerce & Shipping',
-    svgType: 'mailer-box',
-    subtitle: 'Colorful branded subscription mailers with self-locking dust flaps.',
-    price: 0.68,
-    moq: 300,
-    unit: 'mailer',
     featured: true,
-    rating: 5.0,
-    reviewCount: 310,
-    badge: 'E-Com Favorite',
-    material: 'E-Flute Corrugated Board (100% Recycled)',
-    boardWeight: '200# Burst Strength / 32 ECT (Edge Crush Test)',
-    coating: 'Uncoated Tactile Kraft / Matte White Eco-Coat',
-    dimensionsPreset: '10" × 8" × 3" (254 × 203 × 76 mm)',
-    dimensionsAvailable: ['Mini E-Com (6"×4"×2")', 'Standard Retail (10"×8"×3")', 'Shoe / Apparel (12"×9"×4")', 'Large Hamper (14"×12"×5")'],
-    finishOptions: ['Kraft Exterior + Interior Botanical Print', 'Double-Sided Full Color Print', 'Minimalist Black Soy Ink', 'Pure White Kraft'],
-    ecoBadges: ['100% Curbside Recyclable', 'FSC® Recycled Corrugated', 'SFI Certified', 'Zero Plastic Tape Required'],
-    leadTime: '3-5 business days (stock) / 6-8 days (custom printed)',
-    description: 'The workhorse of modern direct-to-consumer e-commerce. Our Roll-End Tuck-Front (RETF) mailer features double-wall sides for superior drop resistance, front locking tabs that secure contents without miles of plastic tape, and optional dual-adhesive tear strips for effortless customer returns.',
-    features: [
-      'Roll-end design provides triple-wall side crush protection against heavy postal transit',
-      'Optional "Peel & Seal" strip + tear-strip pull tab for seamless, knife-free customer unboxing',
-      'Print high-impact full-bleed graphics on the interior lid for an unforgettable unboxing moment',
-      'Made from 85% post-consumer recycled corrugated fluting that recycles endlessly'
-    ],
-    pricingTiers: [
-      { qty: 300, pricePerUnit: 0.84, total: 252 },
-      { qty: 600, pricePerUnit: 0.68, total: 408 },
-      { qty: 1500, pricePerUnit: 0.55, total: 825 },
-      { qty: 3000, pricePerUnit: 0.46, total: 1380 }
-    ],
-    specs: {
-      'Flute Size': 'E-Flute (1.6mm thickness) / 90 flutes per linear foot',
-      'Crush Resistance': '32 ECT (Edge Crush Test rating)',
-      'Closure Mechanism': 'Self-locking tuck ears + friction fit'
-    }
-  },
-  {
-    id: 'shipping-cartons',
-    name: 'Heavy-Duty RSC Master Shipping Cartons',
-    category: 'shipping',
-    categoryName: 'E-Commerce & Shipping',
-    svgType: 'shipping-carton',
-    subtitle: 'Double-wall corrugated shipping boxes engineered for palletized freight.',
-    price: 1.45,
-    moq: 150,
-    unit: 'carton',
-    featured: false,
     rating: 4.8,
     reviewCount: 94,
-    badge: 'Heavy Transit',
-    material: 'Double-Wall B/C Flute Corrugated Board',
-    boardWeight: '275# Burst Strength / 48 ECT Double Wall',
-    coating: 'Moisture-Resistant Fiber Impregnation',
-    dimensionsPreset: '18" × 14" × 12" (457 × 355 × 305 mm)',
-    dimensionsAvailable: ['Medium Box (14"×10"×10")', 'Master Shipper (18"×14"×12")', 'Pallet Cube (24"×18"×18")', 'Bulk Heavy (30"×20"×20")'],
-    finishOptions: ['Standard Kraft with Handling Symbols', 'Custom 2-Color Flexo Transit Marking'],
-    ecoBadges: ['100% Recycled Corrugated', 'Heavy Duty Multi-Use', 'End-of-Life Repulpable'],
-    leadTime: '2-4 business days',
-    description: 'Built for high-volume freight, international warehousing, and B2B wholesale distribution. Engineered with interlocking B/C flutes providing exceptional stacking strength, allowing pallets to be stacked three tiers high without bowing or sidewall buckle. Printed with international handling glyphs using water-borne inks.',
-    features: [
-      'Double-wall corrugated fluting withstands up to 65 kg of dynamic stacking pressure',
-      'Precision slotted flaps meet tightly in center for fast automated taping machine runs',
-      'Pre-printed with universal transit care icons (Fragile, This Side Up, Keep Dry, Recycle)',
-      'Moisture-resistant sizing compound prevents box softening in humid marine shipping containers'
-    ],
+    badge: 'FSC® Certified',
+    material: 'Single-Wall B-Flute Corrugated (3.0mm thickness)',
+    boardWeight: '125# Test / 26 ECT Kraft Liner',
+    coating: 'Zero synthetic coating; 100% repulpable raw kraft',
+    dimensionsPreset: '12" × 9" × 6" (305 × 229 × 152 mm)',
+    dimensionsAvailable: ['Small (9"×6"×6")', 'Medium (12"×9"×6")', 'Standard (16"×12"×12")', 'Large (18"×14"×12")'],
+    finishOptions: ['Natural Brown Kraft', 'Mottled White Kraft', '1-Color Soy Flexo Print'],
+    ecoBadges: ['100% Curbside Recyclable', 'FSC® Recycled Pulp', 'Backyard Compostable'],
+    leadTime: '1-3 business days',
+    history: 'Corrugated paper was first patented in England in 1856 by Edward C. Healey as a sweatband liner for tall hats. In 1871, Albert L. Jones adapted it for packaging glassware, inventing the fluted paper revolution that now powers global logistics.',
+    environmentalImpact: 'Constructed from 85% post-consumer recovered paper fibers. Completely dissolves and repulps in standard mill hydro-pulpers within 15 minutes, saving 3.2 tons of CO2 per ton of virgin pulp avoided.',
+    features: ['High strength-to-weight ratio for lightweight shipping', 'Quick 4-flap folding design', 'Supports up to 15 kg safe contents load'],
     pricingTiers: [
-      { qty: 150, pricePerUnit: 1.75, total: 262.5 },
-      { qty: 300, pricePerUnit: 1.45, total: 435 },
-      { qty: 800, pricePerUnit: 1.20, total: 960 },
-      { qty: 2000, pricePerUnit: 0.98, total: 1960 }
+      { qty: 250, pricePerUnit: 0.48, total: 120 },
+      { qty: 500, pricePerUnit: 0.42, total: 210 },
+      { qty: 1000, pricePerUnit: 0.36, total: 360 },
+      { qty: 2500, pricePerUnit: 0.30, total: 750 }
     ],
-    specs: {
-      'Board Rating': '275# Double-Wall / 48 ECT',
-      'Max Weight Capacity': 'Up to 36 kg / 80 lbs per box',
-      'Flute Combination': 'B-Flute (exterior rigidity) + C-Flute (cushioning)'
-    }
+    specs: { 'Flute Type': 'B-Flute (47 flutes/ft)', 'Burst Strength': '125 Mullen (PSI)', 'Recyclability': 'Curbside Blue Bin' }
   },
   {
-    id: 'honeycomb-mailers',
-    name: 'Honeycomb Padded Paper Mailers',
-    category: 'shipping',
-    categoryName: 'E-Commerce & Shipping',
-    svgType: 'honeycomb-mailer',
-    subtitle: 'Zero-plastic protective envelopes cushioned with expandable paper cells.',
-    price: 0.52,
-    moq: 250,
-    unit: 'mailer',
+    id: 'double-wall-boxes',
+    name: 'Double Wall Cardboard Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'double-wall-box',
+    subtitle: 'Heavy-duty multi-flute shipping cartons engineered for heavy transit and pallet stacking.',
+    price: 1.15,
+    moq: 150,
+    unit: 'box',
     featured: true,
     rating: 4.9,
-    reviewCount: 240,
-    badge: 'Bubble-Free Pioneer',
-    material: 'Heavy Kraft Exterior + Die-Cut Honeycomb Paper Core',
-    boardWeight: '120 GSM Outer Kraft + 80 GSM Honeycomb Expander',
-    coating: 'Water-Resistant Natural Starch Treatment',
-    dimensionsPreset: '9" × 12" (229 × 305 mm) #4 Mailer',
-    dimensionsAvailable: ['#0 Mini (5"×8")', '#2 Small (7"×10")', '#4 Standard (9"×12")', '#6 Large (12"×16")'],
-    finishOptions: ['Natural Kraft with Green Printed Honeycomb Graphic', 'Clean White Kraft Exterior', 'Custom All-Over Water Inks'],
-    ecoBadges: ['100% Repulpable with Paper', 'Eliminates Plastic Bubble Wrap', 'Curbside Recyclable (Single Stream)'],
-    leadTime: '3-4 business days',
-    description: 'The end of polyethylene bubble mailers. Traditional bubble envelopes cannot be recycled because plastic bubble film is heat-bonded to paper. Our patented honeycomb mailer replaces plastic bubbles with an interlocking hexagonal paper mesh that absorbs impacts, protects cosmetics, books, and jewelry, and drops straight into standard paper recycling bins.',
-    features: [
-      'Innovative hexagonal honeycomb paper interior expands on impact to shield contents',
-      'Curbside recyclable in a single stream: no peeling plastic linings or separating materials',
-      'Strong tamper-evident self-seal adhesive flap with tear strip for quick unboxing',
-      'Weighs only 15% more than plastic mailers while providing equivalent shock damping'
-    ],
+    reviewCount: 138,
+    badge: 'Heavy Transit',
+    material: 'Double-Wall B/C Flute Corrugated (6.5mm thickness)',
+    boardWeight: '275# Test / 48 ECT Heavyboard',
+    coating: 'Moisture-resistant vegetable starch impregnation',
+    dimensionsPreset: '18" × 14" × 12" (457 × 355 × 305 mm)',
+    dimensionsAvailable: ['Medium Master (14"×10"×10")', 'Master Shipper (18"×14"×12")', 'Heavy Cube (20"×20"×20")', 'Euro Pallet (24"×18"×18")'],
+    finishOptions: ['Industrial Kraft with Transit Symbols', 'Custom 2-Color Water-Based Print'],
+    ecoBadges: ['Withstands 65kg Pressure', 'Zero Plastic Reinforcement', '100% Repulpable'],
+    leadTime: '2-4 business days',
+    history: 'Developed during the mid-20th century to replace heavy timber shipping crates. The combination of B-flute for puncture resistance and C-flute for shock absorption revolutionized sea and rail freight.',
+    environmentalImpact: 'Diverts heavy timber from deforestation. Uses starch-based adhesives derived from food-grade corn and wheat that leave zero microplastic residue in soil.',
+    features: ['Double-wall architecture stacks 3 pallets high without buckle', 'Resists side puncture from freight conveyor belts', 'Tested to 48 ECT crush strength'],
     pricingTiers: [
-      { qty: 250, pricePerUnit: 0.64, total: 160 },
-      { qty: 500, pricePerUnit: 0.52, total: 260 },
-      { qty: 1500, pricePerUnit: 0.42, total: 630 },
-      { qty: 3000, pricePerUnit: 0.35, total: 1050 }
+      { qty: 150, pricePerUnit: 1.35, total: 202.5 },
+      { qty: 300, pricePerUnit: 1.15, total: 345 },
+      { qty: 800, pricePerUnit: 0.98, total: 784 },
+      { qty: 2000, pricePerUnit: 0.82, total: 1640 }
     ],
-    specs: {
-      'Cushion Thickness': '3.2 mm protective hexagonal mesh',
-      'Closure': 'Permanent rubber-resin hotmelt adhesive strip',
-      'Recyclability': 'PTS-Method 100% repulpable certified'
-    }
+    specs: { 'Board Grade': 'B/C Double Wall', 'Edge Crush Test': '48 ECT', 'Load Capacity': 'Up to 40 kg' }
   },
   {
-    id: 'paper-tape',
-    name: 'Branded Water-Activated Gummed Paper Tape',
-    category: 'shipping',
-    categoryName: 'E-Commerce & Shipping',
-    svgType: 'paper-tape',
-    subtitle: 'Tamper-evident reinforced kraft tape bonded with natural potato starch adhesive.',
+    id: 'tri-wall-boxes',
+    name: 'Tri-Wall Cardboard Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'tri-wall-box',
+    subtitle: 'Extreme-strength triple-flute bulk containers replacing wooden crates for export freight.',
+    price: 4.80,
+    moq: 50,
+    unit: 'carton',
+    featured: false,
+    rating: 5.0,
+    reviewCount: 42,
+    badge: 'Timber Replacement',
+    material: 'Triple-Wall A/A/A Flute Corrugated (14.0mm thickness)',
+    boardWeight: '1100# Burst Strength / 90 ECT Heavy Caliper',
+    coating: 'Hydrophobic cellulose sizing (Zero Wax)',
+    dimensionsPreset: '36" × 24" × 24" (914 × 610 × 610 mm)',
+    dimensionsAvailable: ['Bulk Medium (24"×24"×24")', 'Half-Euro (36"×24"×24")', 'Full Pallet Shipper (48"×40"×36")'],
+    finishOptions: ['Standard Raw Kraft', 'Dangerous Goods Approved Transit Print'],
+    ecoBadges: ['Replaces Hardwood Timber', 'ISPM 15 Exempt (No Heat Treatment)', '100% Circular'],
+    leadTime: '4-6 business days',
+    history: 'Invented in the 1950s by Abe Goldstein, Tri-Wall paperboard revolutionized military and heavy machinery logistics by offering the structural rigidity of solid oak at 1/5th the freight tare weight.',
+    environmentalImpact: 'Eliminates chemical fumigation and toxic wood preservatives mandated for international timber shipping (ISPM-15). 100% recyclable into new fluting.',
+    features: ['Can support over 1,000 kg top-load stacking compression', 'Exempt from international wood packaging phytosanitary restrictions', 'Seamless conversion into agricultural mulch at end-of-life'],
+    pricingTiers: [
+      { qty: 50, pricePerUnit: 5.40, total: 270 },
+      { qty: 100, pricePerUnit: 4.80, total: 480 },
+      { qty: 300, pricePerUnit: 4.10, total: 1230 },
+      { qty: 1000, pricePerUnit: 3.50, total: 3500 }
+    ],
+    specs: { 'Caliper': '14.0 mm', 'Burst Rating': '1,100 PSI', 'Stacking Capacity': 'Up to 1,200 kg' }
+  },
+  {
+    id: 'die-cut-postal-boxes',
+    name: 'Die-Cut Postal Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'die-cut-postal-box',
+    subtitle: 'Roll-end tuck front presentation boxes with clean creases and tamper-evident locking tabs.',
+    price: 0.65,
+    moq: 300,
+    unit: 'box',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 215,
+    badge: 'E-Com Favorite',
+    material: 'E-Flute Micro-Corrugated Kraft (1.6mm thickness)',
+    boardWeight: '200# Burst Strength / 32 ECT',
+    coating: 'Smooth uncoated tactile kraft finish',
+    dimensionsPreset: '10" × 8" × 3" (254 × 203 × 76 mm)',
+    dimensionsAvailable: ['Mini Parcel (6"×4"×2")', 'Standard Retail (10"×8"×3")', 'Shoe / Apparel (12"×9"×4")', 'Large Gift (14"×12"×5")'],
+    finishOptions: ['Raw Natural Kraft', 'White Coated Exterior', 'Full Exterior & Interior Soy Print'],
+    ecoBadges: ['Zero Tape Required', 'FSC® Recycled', '100% Repulpable'],
+    leadTime: '2-4 business days',
+    history: 'The roll-end tuck-front (RETF) design was engineered in the early days of automated mail order. Die-cut with laser-guided steel rule dies, it creates triple-wall side reinforcement from a single flat sheet.',
+    environmentalImpact: 'Self-locking friction tabs eliminate over 1.2 meters of plastic vinyl packaging tape per order, preventing plastic adhesive contamination in paper pulping mills.',
+    features: ['Triple-wall sides protect contents from severe transit impacts', 'Interior lid accepts rich full-color unboxing prints', 'Ships flat; assembles in seconds without adhesives'],
+    pricingTiers: [
+      { qty: 300, pricePerUnit: 0.78, total: 234 },
+      { qty: 600, pricePerUnit: 0.65, total: 390 },
+      { qty: 1500, pricePerUnit: 0.54, total: 810 },
+      { qty: 3000, pricePerUnit: 0.45, total: 1350 }
+    ],
+    specs: { 'Style': 'FEFCO 0427 Roll-End Tuck Front', 'Flute': 'E-Flute Micro', 'Recycled Fiber': '85%' }
+  },
+  {
+    id: 'archive-storage-boxes',
+    name: 'Archive & Storage Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'archive-storage-box',
+    subtitle: 'Heavyweight document storage boxes with ergonomic handle cutouts and lift-off lids.',
+    price: 1.85,
+    moq: 100,
+    unit: 'box',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 68,
+    badge: 'Office Standard',
+    material: 'Double-Walled Base & Single Wall Lid (B/C Flute)',
+    boardWeight: 'Heavyweight Recycled Fiber Board',
+    coating: 'Acid-free neutral sizing compound',
+    dimensionsPreset: '15" × 12" × 10" (381 × 305 × 254 mm)',
+    dimensionsAvailable: ['Foolscap Standard (15"×12"×10")', 'A4 Compact (13"×10"×10")', 'Jumbo File Depth (18"×12"×10")'],
+    finishOptions: ['Kraft with Printed Label Grid', 'Clean White with Blue Index Print'],
+    ecoBadges: ['Acid-Free (Preserves Paper Files)', '100% Recycled Content', 'Re-usable for Decades'],
+    leadTime: '2-3 business days',
+    history: 'First engineered in the 1920s for legal firms and banking vaults. The double-bottom fold structure allowed paper reams to be stacked up to 8 high in basements without collapsing.',
+    environmentalImpact: 'Acid-free chemistry (pH 7.5 - 8.0) prevents degradation of historical documents without sulfur or bleach. Designed for 20+ years of reuse before simple paper recycling.',
+    features: ['Comfort-grip rolled hand holes prevent finger cuts', 'Reinforced double base handles heavy file folders up to 25 kg', 'Separate lift-off lid allows quick file audits'],
+    pricingTiers: [
+      { qty: 100, pricePerUnit: 2.15, total: 215 },
+      { qty: 250, pricePerUnit: 1.85, total: 462.5 },
+      { qty: 500, pricePerUnit: 1.55, total: 775 },
+      { qty: 1000, pricePerUnit: 1.30, total: 1300 }
+    ],
+    specs: { 'Fits': 'A4 & Foolscap lever-arch files', 'Construction': 'Double thickness end panels', 'pH': 'Neutral 7.5' }
+  },
+  {
+    id: 'wardrobe-cartons',
+    name: 'Wardrobe Cartons',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'wardrobe-carton',
+    subtitle: 'Tall structural apparel cartons fitted with an integrated heavy-gauge cardboard hanging rail.',
+    price: 6.90,
+    moq: 25,
+    unit: 'carton',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 53,
+    badge: 'Crease-Free Transport',
+    material: 'Double-Wall Heavy Heavyweight Corrugated Board',
+    boardWeight: '300# Test Double Wall',
+    coating: 'Natural uncoated kraft',
+    dimensionsPreset: '20" × 18" × 48" (508 × 457 × 1219 mm)',
+    dimensionsAvailable: ['Standard 40" Dress (20"×18"×40")', 'Tall 48" Coat & Gown (20"×18"×48")'],
+    finishOptions: ['Natural Kraft with Apparel Handling Icons'],
+    ecoBadges: ['Eliminates Plastic Dry-Cleaning Bags', '100% Recyclable Paper Rail', 'Re-usable Moving Kit'],
+    leadTime: '2-4 business days',
+    history: 'Created by moving and relocation companies in the 1960s to transport suits and evening gowns upright, preventing the need for costly post-transit ironing and dry-cleaning plastic shrouds.',
+    environmentalImpact: 'Replaces plastic clothing garment bags and non-recyclable metal wire rails with a 100% repulpable paperboard rail that locks garments in transit.',
+    features: ['Front drop-down fold allows easy hanging without overhead lifting', 'Accommodates up to 30 hanging suits, dresses, or heavy winter coats', 'Heavy-duty double wall prevents crushing inside moving vans'],
+    pricingTiers: [
+      { qty: 25, pricePerUnit: 7.80, total: 195 },
+      { qty: 50, pricePerUnit: 6.90, total: 345 },
+      { qty: 100, pricePerUnit: 5.95, total: 595 },
+      { qty: 250, pricePerUnit: 5.10, total: 1275 }
+    ],
+    specs: { 'Height': '48 inches / 1.22 m', 'Rail Material': 'High-tensile notched cardboard rail', 'Load Limit': '35 kg' }
+  },
+  {
+    id: 'pallet-boxes',
+    name: 'Pallet Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'pallet-box',
+    subtitle: 'Large-footprint bulk container cartons designed to fit Euro and UK standard pallet perimeters.',
+    price: 8.50,
+    moq: 20,
+    unit: 'box',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 39,
+    badge: 'Industrial Export',
+    material: 'Heavy Double-Wall / Tri-Wall Base with Drop-Side Access',
+    boardWeight: '450 GSM Heavy Liners / 60 ECT',
+    coating: 'Moisture barrier treatment',
+    dimensionsPreset: '48" × 40" × 36" (1200 × 1000 × 914 mm)',
+    dimensionsAvailable: ['Euro Pallet (1200×800×800mm)', 'Standard Industrial (1200×1000×900mm)'],
+    finishOptions: ['Standard Heavy Kraft', 'Custom Flexo Print Marking'],
+    ecoBadges: ['Full Pallet Optimization', 'Replaces Steel Stillage', '100% Repulpable'],
+    leadTime: '3-5 business days',
+    history: 'Standardized during the post-WWII palletization boom to eliminate loose break-bulk maritime handling. Engineered to match standardized wooden pallet dimensions exactly to prevent pallet overhang.',
+    environmentalImpact: 'Optimizes cargo ship cube utilization, reducing transport carbon by 18%. Folds completely flat when empty, reducing reverse logistics emissions by 80%.',
+    features: ['Drop-down front gate allows warehouse staff to load heavy items ergonomically', 'Tightly interlocks with standard wooden or pressed-paper pallets', 'Engineered to withstand long-duration sea-freight humidity'],
+    pricingTiers: [
+      { qty: 20, pricePerUnit: 9.90, total: 198 },
+      { qty: 50, pricePerUnit: 8.50, total: 425 },
+      { qty: 100, pricePerUnit: 7.40, total: 740 },
+      { qty: 250, pricePerUnit: 6.30, total: 1575 }
+    ],
+    specs: { 'Footprint': 'Matches 1200×1000mm pallet', 'Gate': 'Half-drop loading access flap', 'Max Stack': 'Up to 600 kg' }
+  },
+  {
+    id: 'crash-lock-boxes',
+    name: 'Crash-Lock Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'crash-lock-box',
+    subtitle: 'High-speed fulfillment cartons that automatically snap into shape in a single motion.',
+    price: 0.58,
+    moq: 500,
+    unit: 'box',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 112,
+    badge: 'Rapid Pack',
+    material: 'Single-Wall Micro-Flute with Pre-Glued Automatic Base',
+    boardWeight: '150# Test / 32 ECT',
+    coating: 'Eco-grade vegetable glue joints',
+    dimensionsPreset: '10" × 7" × 5" (254 × 178 × 127 mm)',
+    dimensionsAvailable: ['Small (8"×5"×4")', 'Medium (10"×7"×5")', 'Large (12"×9"×6")', 'Deep Dispatch (14"×10"×8")'],
+    finishOptions: ['Raw Kraft', 'Pure White Kraft', 'Branded Interior Print'],
+    ecoBadges: ['Cuts Packing Time by 65%', 'Requires Zero Bottom Tape', '100% Recyclable'],
+    leadTime: '2-4 business days',
+    history: 'Pioneered in automated European folding plants to address e-commerce warehouse bottlenecks. By pre-folding and gluing the base diagonally, the box pops open square the instant the diagonal corners are squeezed.',
+    environmentalImpact: 'Eliminates bottom taping altogether, saving 0.8 meters of adhesive tape per box. Faster packing lowers warehouse HVAC and operational kilowatt-hours per fulfilled unit.',
+    features: ['Pops upright in under 1 second with a single squeeze', 'Automatic interlocked floor supports heavy contents without falling through', 'Peel-and-seal lid strip with tear tab for scissors-free opening'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.68, total: 340 },
+      { qty: 1000, pricePerUnit: 0.58, total: 580 },
+      { qty: 2500, pricePerUnit: 0.49, total: 1225 },
+      { qty: 5000, pricePerUnit: 0.41, total: 2050 }
+    ],
+    specs: { 'Base Type': 'Automatic Crash-Lock (Pre-glued)', 'Assembly Speed': '< 1 second', 'ECT': '32 ECT' }
+  },
+  {
+    id: 'telescopic-boxes',
+    name: 'Telescopic Boxes',
+    category: 'boxes',
+    filterKey: 'boxes',
+    categoryName: 'Cardboard Boxes & Cartons',
+    svgType: 'telescopic-box',
+    subtitle: 'Two-piece adjustable depth cartons where the top lid telescopes over the base.',
+    price: 1.45,
+    moq: 200,
+    unit: 'set',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 77,
+    badge: 'Adjustable Depth',
+    material: 'Rigid Single-Wall or Double-Wall Corrugated (Base + Lid)',
+    boardWeight: '200# Burst Strength',
+    coating: 'Natural uncoated kraft board',
+    dimensionsPreset: '16" × 12" × 8-14" (406 × 305 × 203-355 mm)',
+    dimensionsAvailable: ['Artwork & Print (20"×16"×4-8")', 'Standard Telescopic (16"×12"×8-14")', 'Heavy Hardware (24"×18"×10-18")'],
+    finishOptions: ['Natural Brown Kraft', 'Clean White Lid + Kraft Base'],
+    ecoBadges: ['Eliminates Void Fill Packaging', 'Double-Wall Corner Strength', '100% Repulpable'],
+    leadTime: '3-5 business days',
+    history: 'Commonly known as hat boxes or banana boxes in agriculture, telescopic boxes were designed so a single packaging SKU could adjust its interior volume to variable harvest depths without leaving empty air space.',
+    environmentalImpact: 'By sliding the lid down to the exact height of the cargo, you eliminate the need for plastic void fill chips and bubble wrap, while ensuring the box cannot be crushed in stack transit.',
+    features: ['Lid slides smoothly over base for variable depth accommodation', 'Double-thickness sidewalls created when lid is fully seated', 'Ideal for framed prints, textiles, and variable-depth shipments'],
+    pricingTiers: [
+      { qty: 200, pricePerUnit: 1.70, total: 340 },
+      { qty: 500, pricePerUnit: 1.45, total: 725 },
+      { qty: 1000, pricePerUnit: 1.25, total: 1250 },
+      { qty: 2500, pricePerUnit: 1.05, total: 2625 }
+    ],
+    specs: { 'Structure': 'Two piece: Full telescopic tray and cap', 'Height Range': 'Expands from 8" to 14"', 'Recyclable': '100%' }
+  },
+
+  // =========================================================================
+  // CATEGORY 2: POSTAL & E-COMMERCE (7 Products)
+  // =========================================================================
+  {
+    id: 'biodegradable-compostable-mailers',
+    name: 'Biodegradable & Compostable Mailers',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'bio-mailer',
+    subtitle: 'Silky matte courier mailers made from certified PBAT and plant-derived cornstarch.',
+    price: 0.38,
+    moq: 500,
+    unit: 'mailer',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 384,
+    badge: 'Home Compostable',
+    material: 'Plant Starch (PLA) & Bio-Polyester (PBAT)',
+    boardWeight: '60 Micron Caliper Tear-Resistant Film',
+    coating: 'Zero polyethylene; matte tactile feel',
+    dimensionsPreset: '10" × 13" (255 × 330 mm) Medium',
+    dimensionsAvailable: ['Mini #0 (6"×9")', 'Small #1 (8.5"×11")', 'Medium #2 (10"×13")', 'Large #3 (14.5"×19")', 'Extra Large #4 (19"×24")'],
+    finishOptions: ['Deep Forest Green with White Inks', 'Earthy Clay Tan', 'Charcoal Matte'],
+    ecoBadges: ['TÜV Austria OK Compost Home', 'Breaks Down in 90 Days', 'Zero Microplastics'],
+    leadTime: '1-3 business days',
+    history: 'Developed as the direct antidote to the 100+ billion single-use polyethylene mailers consumed globally by fast-fashion e-commerce. Derived from annually renewable agricultural corn crops.',
+    environmentalImpact: 'Breaks down completely into carbon dioxide, water, and organic biomass within 90 days in home garden compost piles. Certified zero toxic chemical ecotoxicity.',
+    features: ['Waterproof and tear-resistant during heavy rain delivery transit', 'Dual adhesive strip enables customers to reuse the same bag for returns', 'Silky, velvety organic texture that communicates instant luxury eco values'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.45, total: 225 },
+      { qty: 1000, pricePerUnit: 0.38, total: 380 },
+      { qty: 2500, pricePerUnit: 0.31, total: 775 },
+      { qty: 5000, pricePerUnit: 0.25, total: 1250 }
+    ],
+    specs: { 'Certification': 'EN 13432 / AS 5810', 'Thickness': '60 microns', 'Adhesive': 'Permanent destructive rubber resin' }
+  },
+  {
+    id: 'kraft-paper-mailing-bags',
+    name: 'Kraft Paper Mailing Bags',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'kraft-mailing-bag',
+    subtitle: 'High-tensile ribbed kraft envelopes with expandable side gussets and peel-and-seal flaps.',
+    price: 0.32,
+    moq: 500,
+    unit: 'bag',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 146,
+    badge: 'High Tensile Kraft',
+    material: '120 GSM High-Tensile Virgin & Recycled Kraft Fibers',
+    boardWeight: '120 GSM Long-Fiber Unbleached Kraft',
+    coating: 'Natural breathable water-resistant sizing',
+    dimensionsPreset: '12" × 16" + 3" Gusset (300 × 400 + 75 mm)',
+    dimensionsAvailable: ['Small (7"×10"+2")', 'Medium (10"×14"+2")', 'Large (12"×16"+3")', 'Jumbo Bulky (16"×20"+4")'],
+    finishOptions: ['Natural Brown Ribbed Kraft', 'Bleached White Kraft', 'Custom Water-Based Brand Print'],
+    ecoBadges: ['100% Curbside Recyclable', 'FSC® Forest Stewardship', 'Plastic Free'],
+    leadTime: '2-4 business days',
+    history: 'Kraft paper—from the German word *kraft* meaning "strength"—was invented by Carl F. Dahl in 1879 using sulfate pulping to preserve long, unbroken cellulose fibers for maximum tensile durability.',
+    environmentalImpact: 'Made from renewable softwood wood pulp that can be recycled up to 7 times. Drops straight into residential curbside paper recycling without separating plastic liners.',
+    features: ['Bottom block and expandable side gussets fit chunky knitwear and books', 'High puncture resistance prevents sharp corners from tearing through', 'Dual peel-and-seal strips with central red tear-strip for effortless returns'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.39, total: 195 },
+      { qty: 1000, pricePerUnit: 0.32, total: 320 },
+      { qty: 2500, pricePerUnit: 0.26, total: 650 },
+      { qty: 5000, pricePerUnit: 0.21, total: 1050 }
+    ],
+    specs: { 'GSM': '120 GSM heavy paper', 'Closure': 'Hot-melt peel & seal strip', 'Burst Strength': '380 kPa' }
+  },
+  {
+    id: 'corrugated-padded-envelopes',
+    name: 'Corrugated Padded Envelopes',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'corrugated-padded-envelope',
+    subtitle: 'Cushioned postal envelopes lined with internal fluted paper waves instead of plastic bubble wrap.',
+    price: 0.46,
+    moq: 300,
+    unit: 'envelope',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 204,
+    badge: 'Bubble-Free Mailer',
+    material: 'Heavy Kraft Shell + Internal Micro-Flute Paper Cushioning',
+    boardWeight: '110 GSM Outer + 90 GSM Corrugated Fluting Core',
+    coating: 'Zero plastic film laminates',
+    dimensionsPreset: '8.5" × 11" (215 × 280 mm) #2 Size',
+    dimensionsAvailable: ['#0 Mini (5.5"×8")', '#2 Standard (8.5"×11")', '#4 Large (9.5"×14")', '#6 Jumbo (12.5"×18")'],
+    finishOptions: ['Natural Kraft with Green Eco Stamp', 'Chalk White Exterior'],
+    ecoBadges: ['Eliminates Bubble Plastic', 'Single-Stream Recyclable', '100% Repulpable'],
+    leadTime: '2-3 business days',
+    history: 'Engineered as an urgent engineering solution after municipal recycling facilities began banning bubble-padded envelopes due to the plastic bubble wrap melting into and ruining paper recycling pulpers.',
+    environmentalImpact: 'Enables 100% single-stream paper recycling. Eliminates 18,000 square meters of polyethylene bubble film per average warehouse fulfillment container.',
+    features: ['Dense corrugated fluted interior absorbs severe sorting machinery drops', 'Glueless self-seal flap creates a tamper-evident permanent bond', 'Rigid edge construction prevents cosmetic cartons and jewelry from crushing'],
+    pricingTiers: [
+      { qty: 300, pricePerUnit: 0.55, total: 165 },
+      { qty: 600, pricePerUnit: 0.46, total: 276 },
+      { qty: 1500, pricePerUnit: 0.38, total: 570 },
+      { qty: 3000, pricePerUnit: 0.31, total: 930 }
+    ],
+    specs: { 'Lining': '100% repulpable paper fluting', 'Drop Rating': 'Tested to 1.2m drop', 'Recycle Stream': 'Standard Paper' }
+  },
+  {
+    id: 'book-wraps-mailers',
+    name: 'Book Wraps / Cardboard Mailers',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'book-wrap',
+    subtitle: 'Corner-protecting variable depth wraps engineered for books, albums, vinyl, and flat goods.',
+    price: 0.54,
+    moq: 250,
+    unit: 'mailer',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 162,
+    badge: 'Corner Armor',
+    material: 'E-Flute Corrugated Rigid Kraftboard',
+    boardWeight: '350 GSM Heavy Board',
+    coating: 'Natural kraft paper',
+    dimensionsPreset: '12.5" × 9.5" × 1-3" (318 × 241 × 25-76 mm)',
+    dimensionsAvailable: ['Pocket / Kindle (8"×6"×1-2")', 'Standard Novel / A4 (12.5"×9.5"×1-3")', '12" Vinyl LP (13"×13"×1-2")', 'Coffee Table Book (16"×12"×1-3")'],
+    finishOptions: ['Natural Kraft with Red Tear Strip', 'White Exterior with Custom Logo'],
+    ecoBadges: ['Zero Corner Damage', 'Adjustable Fill Height', '100% Curbside Recyclable'],
+    leadTime: '2-4 business days',
+    history: 'Popularized by major publishing houses and pioneering online book retailers in the late 1990s. The extended outer cardboard bumper absorbs direct drops on pavement without denting book corners.',
+    environmentalImpact: 'Eliminates plastic air pillows and bubble envelopes entirely. Made from 90% recycled Scandinavian cardboard that decomposes safely in backyard compost.',
+    features: ['Overhang perimeter walls cushion corners against severe shipping knocks', 'Pre-creased fold lines flex tightly around 1, 2, or 3 stacked books', 'Integrated high-tensile tear strip for instant, satisfying customer unboxing'],
+    pricingTiers: [
+      { qty: 250, pricePerUnit: 0.65, total: 162.5 },
+      { qty: 500, pricePerUnit: 0.54, total: 270 },
+      { qty: 1500, pricePerUnit: 0.44, total: 660 },
+      { qty: 3000, pricePerUnit: 0.36, total: 1080 }
+    ],
+    specs: { 'Depth Range': 'Variable 10mm to 75mm', 'Corner Protection': 'Extended bumper edges', 'Tear Strip': 'Red Kraft Pull' }
+  },
+  {
+    id: 'postal-tubes-cardboard-caps',
+    name: 'Postal Tubes with Cardboard Caps',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'postal-tubes-round',
+    subtitle: 'Spiral-wound heavy cylindrical paper tubes fitted with 100% recyclable cardboard end plugs.',
+    price: 0.95,
+    moq: 100,
+    unit: 'tube',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 89,
+    badge: 'All-Paper Tube',
+    material: 'High-Density Spiral Wound Recycled Paperboard',
+    boardWeight: '1.5mm - 2.0mm Heavy Tube Wall',
+    coating: 'Zero plastic; natural paper end caps',
+    dimensionsPreset: '2" Diameter × 25" Length (50 × 635 mm) A1 Size',
+    dimensionsAvailable: ['A3 Mini (2"×13")', 'A2 Standard (2"×18")', 'A1 Medium (2"×25")', 'A0 Giant (3"×38")'],
+    finishOptions: ['Natural Brown Kraft Tube + Cardboard Caps', 'Clean White Outer Wrap'],
+    ecoBadges: ['Zero White Plastic End Caps', '100% Repulpable', 'Heirloom Storage Life'],
+    leadTime: '3-5 business days',
+    history: 'First engineered in textile manufacturing to wind delicate silks and twills. Packaging designers later fitted them with white polyethylene plastic caps—until PackNStir replaced the plastic caps with friction-fit molded paper pulp plugs.',
+    environmentalImpact: 'Conventional postal tubes use plastic end caps that contaminate cardboard recycling shredders. Our 100% paper tube and cardboard plug enter the recycling bin as a single unified item.',
+    features: ['Spirally wound structural wall prevents bending or creasing of art prints', 'Friction-locking cardboard caps stay securely seated during transit', 'Ideal for architectural blueprints, fine art giclée prints, and maps'],
+    pricingTiers: [
+      { qty: 100, pricePerUnit: 1.15, total: 115 },
+      { qty: 250, pricePerUnit: 0.95, total: 237.5 },
+      { qty: 500, pricePerUnit: 0.80, total: 400 },
+      { qty: 1000, pricePerUnit: 0.68, total: 680 }
+    ],
+    specs: { 'Wall Caliper': '1.8 mm', 'Cap Material': '100% molded cardboard plug', 'Burst': 'Extreme crush tested' }
+  },
+  {
+    id: 'triangular-postal-tubes',
+    name: 'Triangular Postal Tubes',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'postal-tubes-triangular',
+    subtitle: 'Flat-packed triangular cardboard postal tubes that never roll off courier conveyor belts.',
+    price: 0.72,
+    moq: 200,
+    unit: 'tube',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 96,
+    badge: 'Non-Roll Innovation',
+    material: 'Single-Wall Micro-Flute Corrugated Cardboard',
+    boardWeight: '200# Test B-Flute Kraft',
+    coating: 'Natural uncoated kraft board',
+    dimensionsPreset: '3" × 3" × 3" × 25" (76 × 76 × 76 × 635 mm)',
+    dimensionsAvailable: ['A2 Short (3"×18")', 'A1 Standard (3"×25")', 'A0 Long (4"×38")'],
+    finishOptions: ['Natural Brown Kraft', 'White Coated Exterior'],
+    ecoBadges: ['Saves 70% Warehouse Storage', 'No Courier Surcharges', '100% Recyclable'],
+    leadTime: '2-4 business days',
+    history: 'Developed by packaging engineers to solve the costly courier problem of round tubes rolling off high-speed automated sorting conveyor belts, which previously incurred expensive "manual handling surcharges".',
+    environmentalImpact: 'Ships completely flat, saving 70% freight and warehouse storage volume compared to pre-assembled round tubes. Assembles into a rigid prism in seconds.',
+    features: ['Triangular prism geometry cannot roll off warehouse belts or delivery trucks', 'Peel-and-seal adhesive ends eliminate the need for plastic tape', 'Folds flat for compact storage in studios and fulfillment bays'],
+    pricingTiers: [
+      { qty: 200, pricePerUnit: 0.86, total: 172 },
+      { qty: 500, pricePerUnit: 0.72, total: 360 },
+      { qty: 1000, pricePerUnit: 0.60, total: 600 },
+      { qty: 2500, pricePerUnit: 0.50, total: 1250 }
+    ],
+    specs: { 'Assembly': 'Ships flat; folds into prism', 'Locking': 'Peel & seal integrated flap', 'Conveyor Safe': 'Yes' }
+  },
+  {
+    id: 'letterbox-friendly-packaging',
+    name: 'Letterbox Friendly Packaging',
+    category: 'postal',
+    filterKey: 'postal',
+    categoryName: 'Postal & E-Commerce Packaging',
+    svgType: 'letterbox-friendly',
+    subtitle: 'Ultra-slim die-cut parcels engineered under 25mm thickness to fit through standard residential letterboxes.',
+    price: 0.48,
+    moq: 400,
+    unit: 'box',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 174,
+    badge: 'First-Time Delivery',
+    material: 'High-Density E-Flute Rigid Kraftboard',
+    boardWeight: '320 GSM Rigid Cardboard Liner',
+    coating: 'Zero plastic coating; soy ink printable',
+    dimensionsPreset: '9.4" × 6.5" × 0.85" (240 × 165 × 22 mm)',
+    dimensionsAvailable: ['Small PIP (160×120×22mm)', 'Standard Letterbox (240×165×22mm)', 'Max Postal Slot (340×240×24mm)'],
+    finishOptions: ['Natural Brown Kraft', 'Clean Minimalist White', 'Full Color Custom Print'],
+    ecoBadges: ['Zero Missed Delivery Trips', 'Eliminates Delivery Vans Van Retries', '100% Recyclable'],
+    leadTime: '2-3 business days',
+    history: 'Engineered in response to national postal carrier regulations (such as Royal Mail Large Letter and USPS Flat rates) to guarantee delivery directly onto the recipient’s doormat even when nobody is home.',
+    environmentalImpact: 'Eliminates courier "missed delivery" return journeys, reducing delivery van carbon emissions by an estimated 280 grams of CO2 per first-time successful parcel drop.',
+    features: ['Guaranteed to pass through standard domestic letterbox slots under 25mm', 'Rigid cardboard ensures cosmetics, coffee beans, and jewelry arrive unbent', 'Peel-and-seal strip with tamper-evident tear tab for immediate unboxing'],
+    pricingTiers: [
+      { qty: 400, pricePerUnit: 0.58, total: 232 },
+      { qty: 800, pricePerUnit: 0.48, total: 384 },
+      { qty: 2000, pricePerUnit: 0.39, total: 780 },
+      { qty: 5000, pricePerUnit: 0.32, total: 1600 }
+    ],
+    specs: { 'Max Thickness': '24.0 mm', 'Postal Qualification': 'Large Letter / Flat rate compliant', 'Material': 'E-Flute' }
+  },
+
+  // =========================================================================
+  // CATEGORY 3: SUSTAINABLE TAKEAWAY & TABLEWARE (10 Products)
+  // =========================================================================
+  {
+    id: 'bagasse-sugarcane-bowls-clamshells',
+    name: 'Bagasse (Sugarcane) Bowls & Clamshells',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'bagasse-clamshell',
+    subtitle: 'Thermal-molded food containers made from upcycled agricultural sugarcane stalks.',
+    price: 0.28,
+    moq: 500,
+    unit: 'clamshell',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 312,
+    badge: 'Upcycled Plant Stalk',
+    material: '100% Recovered Sugarcane Pulp (Bagasse)',
+    boardWeight: 'Dense thermoformed fiber (PFAS-Free)',
+    coating: 'Hydrophobic plant-starch barrier (No PE lining)',
+    dimensionsPreset: '9" × 6" × 3" (230 × 155 × 75 mm) 2-Compartment',
+    dimensionsAvailable: ['6" Burger Clamshell', '9"×6" 2-Compartment Meal', '8" Square Clamshell', '32 oz Round Burrito Bowl'],
+    finishOptions: ['Natural Ivory Bagasse', 'Unbleached Tan Bagasse'],
+    ecoBadges: ['Composts in 60-90 Days', 'Zero Trees Cut (Agricultural Waste)', 'Microwave & Freezer Safe'],
+    leadTime: '1-3 business days',
+    history: 'Bagasse is the dry pulpy fibrous residue remaining after crushing sugarcane or sorghum stalks to extract juice. Historically burned as field waste, PackNStir thermoforms it into rigid tableware.',
+    environmentalImpact: 'Utilizes a rapidly renewable agricultural byproduct, preventing post-harvest crop burning while sparing forest trees. 100% home compostable within 60 days.',
+    features: ['Withstands hot boiling oils up to 120°C and freezer storage down to -20°C', 'Interlocking tab lock keeps burgers and curry gravies safely contained', 'Certified PFAS-free and fluorochemical-free under strict FDA food safety testing'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.34, total: 170 },
+      { qty: 1000, pricePerUnit: 0.28, total: 280 },
+      { qty: 2500, pricePerUnit: 0.23, total: 575 },
+      { qty: 5000, pricePerUnit: 0.18, total: 900 }
+    ],
+    specs: { 'Thermal Range': '-20°C to +120°C', 'Raw Material': 'Sugarcane bagasse fiber', 'Compost Time': '60-90 days' }
+  },
+  {
+    id: 'palm-leaf-plates-bowls',
+    name: 'Palm Leaf Plates & Bowls',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'palm-leaf-plates',
+    subtitle: 'Artisanal organic platters heat-pressed from naturally fallen Areca palm leaves.',
+    price: 0.52,
+    moq: 200,
+    unit: 'plate',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 228,
+    badge: 'Fallen Leaves Only',
+    material: '100% Naturally Fallen Areca Palm Leaves',
+    boardWeight: '1.2mm - 1.8mm Natural Leaf Sheath',
+    coating: 'Zero chemicals, waxes, or glues - pure washed leaf',
+    dimensionsPreset: '10" Round Dinner Plate (254 mm)',
+    dimensionsAvailable: ['6" Square Canape', '8" Round Side', '10" Round Dinner', '10"×10" Square Platter', '16 oz Deep Bowl'],
+    finishOptions: ['Natural Varied Woodgrain (Every Piece Unique)'],
+    ecoBadges: ['Zero Living Trees Harmed', 'Backyard Compostable in 45 Days', 'Non-Toxic Sterilized with Steam'],
+    leadTime: '2-4 business days',
+    history: 'Practiced for centuries in rural Southern India, village artisans collect fallen palm leaf sheaths shed naturally by the Areca nut palm tree, wash them in spring water, and press them with hot cast-iron dies.',
+    environmentalImpact: 'Zero trees are felled or cut down. The leaves naturally drop to the ground 4 to 6 times a year. Degrades into garden compost faster than standard tree leaves (45-60 days).',
+    features: ['Sturdy enough to hold heavy steak, roasted vegetables, and hot sauces without bending', 'Naturally heat-resistant and microwaveable up to 2 minutes', 'Each plate displays beautiful, one-of-a-kind natural woody textures'],
+    pricingTiers: [
+      { qty: 200, pricePerUnit: 0.62, total: 124 },
+      { qty: 500, pricePerUnit: 0.52, total: 260 },
+      { qty: 1000, pricePerUnit: 0.43, total: 430 },
+      { qty: 2500, pricePerUnit: 0.35, total: 875 }
+    ],
+    specs: { 'Sourcing': 'Fallen Areca palm leaf', 'Chemicals Used': '0.00%', 'Compost Window': '45-60 days' }
+  },
+  {
+    id: 'kraft-soup-salad-bowls',
+    name: 'Kraft Paper Soup & Salad Bowls',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'kraft-soup-salad-bowl',
+    subtitle: 'Round unbleached kraft takeaway bowls lined with aqueous grease-barriers for soups and salads.',
+    price: 0.34,
+    moq: 500,
+    unit: 'bowl',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 185,
+    badge: 'Aqueous Barrier',
+    material: 'Virgin Unbleached Kraft Paperboard (320 GSM)',
+    boardWeight: '320 GSM Board + Rolled Rim Support',
+    coating: 'Water-based aqueous dispersion (Zero PE plastic film)',
+    dimensionsPreset: '26 oz Salad Bowl (750 ml / 150mm diameter)',
+    dimensionsAvailable: ['12 oz Soup (350ml)', '16 oz Noodle (500ml)', '26 oz Salad (750ml)', '32 oz Grain Bowl (1000ml)'],
+    finishOptions: ['Natural Brown Kraft', 'Custom 2-Color Soy Print Lid Rim'],
+    ecoBadges: ['Repulpable in Blue Bin', 'Compostable EN 13432', 'No Plastic Liner'],
+    leadTime: '1-3 business days',
+    history: 'Traditional paper bowls required a micro-layer of polyethylene (PE) plastic melted onto the paper to hold liquids. PackNStir pioneered water-based dispersion barriers that stop hot broths while remaining pulper-safe.',
+    environmentalImpact: 'Eliminates non-recyclable PE lining that causes millions of standard takeaway bowls to be incinerated. Fully repulpable in standard paper recycling mills.',
+    features: ['Rigid rolled rim accepts clear vented rPET or matching compostable paper lids', 'Keeps hot ramen broths and chili hot without leaking through bottom seams', 'Microwave safe and suitable for cold refrigerator meal preparation'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.40, total: 200 },
+      { qty: 1000, pricePerUnit: 0.34, total: 340 },
+      { qty: 2500, pricePerUnit: 0.28, total: 700 },
+      { qty: 5000, pricePerUnit: 0.22, total: 1100 }
+    ],
+    specs: { 'Capacity': '750 ml / 26 fl oz', 'Barrier': 'Water-borne aqueous dispersion', 'Heat Seal': 'Ultrasonic' }
+  },
+  {
+    id: 'degradable-portion-pots',
+    name: 'Degradable Portion/Sauce Pots',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'degradable-portion-pots',
+    subtitle: 'Compostable 2 oz and 4 oz dip cups for salad dressings, sauces, and condiments.',
+    price: 0.09,
+    moq: 1000,
+    unit: 'pot',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 94,
+    badge: 'Zero Microplastic',
+    material: 'Sugarcane Bagasse Pulp or Clear Cornstarch PLA',
+    boardWeight: 'Precision molded rim',
+    coating: 'Food grade oil resistant treatment',
+    dimensionsPreset: '2 oz (60 ml / 62mm diameter)',
+    dimensionsAvailable: ['1 oz Dressing (30ml)', '2 oz Standard Dip (60ml)', '3.25 oz Salsa (95ml)', '4 oz Slaw (120ml)'],
+    finishOptions: ['Natural Ivory Bagasse', 'Ultra-Clear Plant PLA'],
+    ecoBadges: ['100% Biodegradable', 'Matching Snap Lids Available', 'Compostable'],
+    leadTime: '2-3 business days',
+    history: 'Small plastic sauce portion cups (polypropylene #5) are notoriously non-recyclable because recycling machinery infrared optical sorters cannot identify objects smaller than 2 inches.',
+    environmentalImpact: 'Replaces millions of small plastic cups that slip through municipal screens into rivers and oceans. Decomposes naturally in compost without microplastic shedding.',
+    features: ['Snap-fit tight seal prevents salad dressing and soy sauce spills in delivery bags', 'Fits both cold dressings and warm BBQ or fondue sauces', 'Pairs with either sugarcane fiber or crystal-clear PLA plant lids'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.11, total: 110 },
+      { qty: 2500, pricePerUnit: 0.09, total: 225 },
+      { qty: 5000, pricePerUnit: 0.075, total: 375 },
+      { qty: 10000, pricePerUnit: 0.06, total: 600 }
+    ],
+    specs: { 'Volume': '60 ml / 2 oz', 'Lid Fit': '62mm standard snap rim', 'Compost Standard': 'EN 13432' }
+  },
+  {
+    id: 'wooden-bamboo-cutlery-sets',
+    name: 'Wooden & Bamboo Cutlery Sets',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'wooden-bamboo-cutlery',
+    subtitle: 'Ultra-smooth, splinter-free disposable cutlery sets crafted from natural birch and bamboo.',
+    price: 0.14,
+    moq: 1000,
+    unit: 'set',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 260,
+    badge: 'Splinter-Free Birch',
+    material: '100% Certified Sustainable Birch Wood & Moso Bamboo',
+    boardWeight: '160mm Heavy-Gauge Cutlery',
+    coating: 'Mechanical steam press polishing (Zero chemical lacquers)',
+    dimensionsPreset: '6.3" Length (160 mm) 4-in-1 Set (Knife, Fork, Spoon, Napkin)',
+    dimensionsAvailable: ['Fork Only (160mm)', 'Knife Only (165mm)', 'Spoon Only (160mm)', 'Wrapped 4-in-1 Kit (Kraft wrapped)'],
+    finishOptions: ['Natural Pale Birch', 'Caramelized Heat-Treated Bamboo'],
+    ecoBadges: ['FSC® 100% Certified Birch', '100% Home Compostable', 'Plastic Ban Compliant'],
+    leadTime: '1-3 business days',
+    history: 'The single-use plastic cutlery ban across the EU, UK, and Canada outlawed polystyrene plastic forks. PackNStir uses rapid-growing Scandinavian birch and Moso bamboo steam-formed into ergonomic shapes.',
+    environmentalImpact: 'Grown without pesticides. Polished with natural carnauba wax or steam. Completely biodegrades in residential gardens within 40 to 60 days.',
+    features: ['Serrated knife edge slices through steaks and crisp takeaway crusts effortlessly', 'Deep spoon bowl and reinforced fork tines withstand heavy pasta salads', 'Wrapped in unbleached kraft paper wrappers for sanitary food service delivery'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.17, total: 170 },
+      { qty: 2500, pricePerUnit: 0.14, total: 350 },
+      { qty: 5000, pricePerUnit: 0.115, total: 575 },
+      { qty: 10000, pricePerUnit: 0.095, total: 950 }
+    ],
+    specs: { 'Length': '160 mm', 'Material': 'Scandinavian white birch', 'Sterilization': 'High-temperature steam' }
+  },
+  {
+    id: 'bamboo-bottles-flasks',
+    name: 'Bamboo Bottles & Flasks',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'bamboo-bottle',
+    subtitle: 'Vacuum-insulated stainless steel drink flasks wrapped in authentic carved natural bamboo.',
+    price: 8.90,
+    moq: 50,
+    unit: 'flask',
+    featured: false,
+    rating: 5.0,
+    reviewCount: 65,
+    badge: 'Reusable Keepsake',
+    material: 'Food-Grade 18/8 Stainless Steel Wrapped in Carved Moso Bamboo',
+    boardWeight: 'Double-Wall Vacuum Insulation',
+    coating: 'Natural organic oil burnished bamboo surface',
+    dimensionsPreset: '500 ml / 17 oz (240mm height × 70mm diameter)',
+    dimensionsAvailable: ['350 ml Tumbler', '500 ml Travel Flask', '750 ml Sport Bottle'],
+    finishOptions: ['Natural Blonde Bamboo with Laser Engraved Logo', 'Dark Smoked Bamboo'],
+    ecoBadges: ['Replaces 1,400 Plastic Bottles', 'Zero BPA / Phthalates', 'Carbon-Sequestering Bamboo'],
+    leadTime: '5-7 business days',
+    history: 'Bamboo is the fastest-growing woody plant on Earth, growing up to 90 cm in 24 hours. Indigenous cultures have utilized hollow bamboo culms as water containers for millennia.',
+    environmentalImpact: 'Bamboo plants produce 35% more oxygen and absorb 5 times more greenhouse gases than equivalent trees. Each reusable flask prevents over 1,400 single-use plastic bottles over its lifespan.',
+    features: ['Double-wall vacuum insulation keeps drinks steaming hot for 12 hours or iced cold for 24 hours', 'Includes removable stainless steel tea infuser and fruit basket', 'Exterior stays cool to the touch with tactile, non-slip natural wood grain'],
+    pricingTiers: [
+      { qty: 50, pricePerUnit: 10.50, total: 525 },
+      { qty: 100, pricePerUnit: 8.90, total: 890 },
+      { qty: 250, pricePerUnit: 7.60, total: 1900 },
+      { qty: 500, pricePerUnit: 6.40, total: 3200 }
+    ],
+    specs: { 'Capacity': '500 ml', 'Insulation': '12h Hot / 24h Cold', 'Laser Engraving': 'Precision vector etch' }
+  },
+  {
+    id: 'compostable-pla-cold-cups',
+    name: 'Compostable PLA Cold Cups',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'pla-cold-cups',
+    subtitle: 'Crystal-clear takeaway cold drink tumblers made from renewable cornstarch bioplastic.',
+    price: 0.16,
+    moq: 1000,
+    unit: 'cup',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 142,
+    badge: 'Plant Bioplastic',
+    material: '100% Ingeo™ Polylactic Acid (Cornstarch PLA)',
+    boardWeight: 'Heavyweight clear thermoform',
+    coating: 'Zero petroleum plastic; optical clarity',
+    dimensionsPreset: '16 oz (470 ml / 96mm rim diameter)',
+    dimensionsAvailable: ['12 oz Small (350ml)', '16 oz Standard (470ml)', '20 oz Large (590ml)', '24 oz Iced Tea (700ml)'],
+    finishOptions: ['Crystal Clear Unprinted', 'Green Leaf Certified Print', 'Custom Branded Print'],
+    ecoBadges: ['BPI Certified Compostable', 'Zero Petroleum Content', 'Carbon Footprint 75% Lower'],
+    leadTime: '2-4 business days',
+    history: 'Polylactic acid (PLA) was discovered by Wallace Carothers in 1932. Commercialized by fermenting plant dextrose derived from corn and cassava roots, it provides the transparent luster of plastic with zero fossil fuel oil.',
+    environmentalImpact: 'Generates 75% fewer greenhouse gas emissions during raw resin production than conventional PET plastics. Composts completely in commercial composting facilities.',
+    features: ['Flawless glass-like transparency highlights cold brew coffees, juices, and boba', 'Pairs with matching flat straw-slot lids or dome lids for smoothies', 'Shatter-resistant rim ensures leak-proof snap with lids'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.20, total: 200 },
+      { qty: 2500, pricePerUnit: 0.16, total: 400 },
+      { qty: 5000, pricePerUnit: 0.13, total: 650 },
+      { qty: 10000, pricePerUnit: 0.105, total: 1050 }
+    ],
+    specs: { 'Temperature Limit': 'Up to 40°C (Cold drinks only)', 'Material': 'Ingeo™ Biopolymer', 'Recycle': 'Industrial Compost' }
+  },
+  {
+    id: 'double-wall-kraft-hot-cups',
+    name: 'Double-Wall Kraft Hot Cups',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'kraft-hot-cups',
+    subtitle: 'Thermal-insulating dual-layer coffee cups lined with water-based dispersion barrier (no PE plastic).',
+    price: 0.18,
+    moq: 1000,
+    unit: 'cup',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 275,
+    badge: 'No Sleeve Needed',
+    material: 'Double-Layer FSC® Certified Kraft Paperboard',
+    boardWeight: '300 GSM Inner + 250 GSM Outer Corrugated Air Gap',
+    coating: 'Plant-derived water-based dispersion (Zero PE lining)',
+    dimensionsPreset: '12 oz (350 ml / 90mm rim)',
+    dimensionsAvailable: ['8 oz Espresso (230ml)', '12 oz Regular (350ml)', '16 oz Large (470ml)'],
+    finishOptions: ['Natural Brown Kraft', 'Clean White Kraft', 'Custom All-Over Soy Print'],
+    ecoBadges: ['Curbside Paper Mill Recyclable', 'Zero Single-Use Plastic Cup Ban Compliant', 'No Chemical Smell'],
+    leadTime: '2-4 business days',
+    history: 'Billions of coffee cups end up in landfills annually because traditional paper cups are fused with a polyethylene plastic liner that paper mills cannot separate. PackNStir uses an aqueous dispersion that breaks down like ordinary paper.',
+    environmentalImpact: 'Certified repulpable in standard blue paper recycling bins. Dual-wall design traps an air insulating pocket, eliminating the need for 1 billion secondary cardboard cup sleeves annually.',
+    features: ['Thermal insulation keeps coffee piping hot while outside remains cool in hand', 'Aqueous barrier prevents coffee crema and hot oils from softening the cup wall', 'Rolled rim ensures a tight, drip-free fit with compostable CPLA or bagasse lids'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.22, total: 220 },
+      { qty: 2500, pricePerUnit: 0.18, total: 450 },
+      { qty: 5000, pricePerUnit: 0.145, total: 725 },
+      { qty: 10000, pricePerUnit: 0.12, total: 1200 }
+    ],
+    specs: { 'Rim Diameter': '90 mm', 'Heat Retention': '45 minutes >65°C', 'Recyclability': 'PTS Method Certified Repulpable' }
+  },
+  {
+    id: 'greaseproof-paper',
+    name: 'Greaseproof Paper',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'greaseproof-paper',
+    subtitle: 'High-density unbleached parchment sheets and rolls that repel grease without toxic fluorochemicals (PFAS).',
+    price: 0.05,
+    moq: 1000,
+    unit: 'sheet',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 198,
+    badge: 'PFAS-Free Barrier',
+    material: '38 GSM Heavily Calendered Natural Kraft Fibers',
+    boardWeight: '38 GSM High-Density Paper',
+    coating: 'Mechanical hydration refinement (Zero fluorochemicals)',
+    dimensionsPreset: '12" × 12" (305 × 305 mm) Sheet',
+    dimensionsAvailable: ['10" × 10" Basket Liner', '12" × 12" Burger Wrap', '12" × 16" Tray Liner', 'Continuous 500m Dispenser Roll'],
+    finishOptions: ['Natural Unbleached Brown', 'Clean White', 'Custom Repeating Soy Ink Logo Print'],
+    ecoBadges: ['100% Home Compostable', 'Zero Fluorochemicals (PFAS-Free)', 'Oven Safe up to 220°C'],
+    leadTime: '2-4 business days',
+    history: 'Real greaseproof paper is produced through intense mechanical refining (beating) of wood pulp fibers until they break down into a gelatinous slurry. When dried and hot-calendered, the pore spaces are smaller than oil molecules.',
+    environmentalImpact: 'Eliminates carcinogenic PFAS "forever chemicals" that historically coated burger wraps. Breaks down in compost in under 3 weeks into rich garden soil nutrients.',
+    features: ['Resists butter, hot animal fats, melted cheddar, and vinegar salad dressings', 'Safe for conventional ovens up to 220°C and microwave reheating', 'Provides an authentic artisan farm-to-table presentation in food baskets'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.065, total: 65 },
+      { qty: 2500, pricePerUnit: 0.05, total: 125 },
+      { qty: 5000, pricePerUnit: 0.038, total: 190 },
+      { qty: 10000, pricePerUnit: 0.028, total: 280 }
+    ],
+    specs: { 'GSM': '38 GSM', 'Oil Kit Test': 'Kit 8+ Grease Resistance', 'Oven Safe': 'Up to 220°C' }
+  },
+  {
+    id: 'custom-printed-paper-carrier-bags',
+    name: 'Custom Printed Paper Carrier Bags',
+    category: 'takeaway',
+    filterKey: 'takeaway',
+    categoryName: 'Sustainable Takeaway & Tableware',
+    svgType: 'custom-carrier-bags',
+    subtitle: 'Reinforced kraft paper carry totes with twisted paper handles and square flat block bottoms.',
+    price: 0.35,
+    moq: 500,
+    unit: 'bag',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 310,
+    badge: '12kg Load Rating',
+    material: '110 - 140 GSM Heavy Virgin & Post-Consumer Recycled Kraft',
+    boardWeight: '120 GSM High Tear-Resistance Kraft',
+    coating: 'Zero plastic film laminates; soy ink printed',
+    dimensionsPreset: '10" × 6" × 12" (260 × 160 × 310 mm)',
+    dimensionsAvailable: ['Small Bakery (8"×5"×10")', 'Medium Restaurant (10"×6"×12")', 'Wide Base Takeaway (12"×10"×15")', 'Large Grocery (13"×7"×17")'],
+    finishOptions: ['Natural Brown Kraft with Black Print', 'White Bleached Kraft', 'Full Color Edge-to-Edge Print'],
+    ecoBadges: ['Supports Up to 12kg Load', '100% Paper Twisted Rope Handles', 'FSC® Recycled'],
+    leadTime: '3-5 business days',
+    history: 'In 1852, Francis Wolle invented the first automatic paper bag machine. Later in 1883, Charles Stilwell engineered the flat-bottom pleated bag (the SOS or Self-Opening Sack) that stands upright on counters unsupported.',
+    environmentalImpact: 'Eliminates plastic supermarket carrier bags. The handles, base glue, and paper body are 100% repulpable together in the blue paper recycling bin.',
+    features: ['Wide flat block bottom prevents soup containers and meal trays from tipping over', 'Tightly twisted 6-ply paper rope handles are glued with reinforced internal patches', 'High-tensile long-fiber kraft paper holds up to 12 kg of takeaway orders without tearing'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.42, total: 210 },
+      { qty: 1000, pricePerUnit: 0.35, total: 350 },
+      { qty: 2500, pricePerUnit: 0.28, total: 700 },
+      { qty: 5000, pricePerUnit: 0.22, total: 1100 }
+    ],
+    specs: { 'Handle': 'Twisted paper cord with patch reinforcement', 'Load Capacity': '12 kg', 'Recycled Fiber': '80%' }
+  },
+
+  // =========================================================================
+  // CATEGORY 4: PROTECTIVE PACKAGING & VOID FILL (8 Products)
+  // =========================================================================
+  {
+    id: 'honeycomb-paper-wrap',
+    name: 'Honeycomb Paper Wrap',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'honeycomb-paper-wrap',
+    subtitle: 'Innovative die-cut expandable kraft paper that locks into a protective 3D hexagonal mesh.',
+    price: 32.00,
+    moq: 1,
+    unit: 'roll (250m)',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 420,
+    badge: 'Bubble Wrap Slayer',
+    material: '80 GSM Precision Slitted Natural Kraft Paper',
+    boardWeight: '80 GSM Kraft expanding to 3D hexagonal mesh',
+    coating: 'Zero plastic; mechanical slit expander',
+    dimensionsPreset: '15" width × 820 feet length (380mm × 250m roll)',
+    dimensionsAvailable: ['Standard Roll (380mm × 250m)', 'Wide Roll (500mm × 250m)', 'Manual Countertop Dispenser Bundle'],
+    finishOptions: ['Natural Brown Kraft', 'Pure Bleached White'],
+    ecoBadges: ['Replaces Plastic Bubble Wrap', 'Interlocking (Zero Tape Needed)', '100% Curbside Recyclable'],
+    leadTime: '1-2 business days',
+    history: 'Inspired by the hexagonal architecture of natural bee honeycombs. When tensioned through a dispenser, precision-angled slashes expand into interlocking angled cells that provide 3D cushioning.',
+    environmentalImpact: 'Replaces miles of non-biodegradable polyethylene bubble wrap. Uses 60% less storage space than pre-inflated bubble rolls and drops directly into curbside paper recycling.',
+    features: ['Expanding cells interlock with themselves, completely eliminating the need for plastic tape', 'Cushions glassware, ceramics, cosmetics, and fine wine bottles against drop shocks', 'One 250m roll expands to over 400m of packaging protection'],
+    pricingTiers: [
+      { qty: 1, pricePerUnit: 36.00, total: 36 },
+      { qty: 4, pricePerUnit: 32.00, total: 128 },
+      { qty: 10, pricePerUnit: 28.50, total: 285 },
+      { qty: 25, pricePerUnit: 24.00, total: 600 }
+    ],
+    specs: { 'Expansion Ratio': '1:1.6 expansion', 'Paper Weight': '80 GSM', 'Tensile Strength': 'High longitudinal' }
+  },
+  {
+    id: 'corrugated-paper-rolls',
+    name: 'Corrugated Paper Rolls',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'corrugated-paper-rolls',
+    subtitle: 'Flexible single-face fluted cardboard rolls for wrapping cylindrical goods and furniture.',
+    price: 24.50,
+    moq: 2,
+    unit: 'roll (75m)',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 88,
+    badge: 'Single-Face Flute',
+    material: 'Single-Face Corrugated Cardboard (One flat liner + one exposed flute)',
+    boardWeight: '140 GSM Fluting + 100 GSM Liner',
+    coating: 'Natural kraft paper',
+    dimensionsPreset: '24" width × 246 feet (600mm × 75m roll)',
+    dimensionsAvailable: ['Narrow (300mm × 75m)', 'Standard (600mm × 75m)', 'Wide Furniture (900mm × 75m)', 'Master (1200mm × 75m)'],
+    finishOptions: ['Natural Brown Kraft Single-Face'],
+    ecoBadges: ['100% Recycled Post-Consumer Paper', 'Conforms to Irregular Shapes', 'Curbside Recyclable'],
+    leadTime: '1-3 business days',
+    history: 'Single-face corrugated was the first form of fluted packaging manufactured in the late 19th century before machines were invented to glue a second flat linerboard on top.',
+    environmentalImpact: 'Constructed from 100% post-consumer cardboard waste. Avoids landfill disposal and provides a heavy shock-absorbent wrap for heavy industrial parts and mirrors.',
+    features: ['Exposed flute arches bend effortlessly around curves, table legs, and mirrors', 'Protects surfaces against transit friction, scuffing, and vibrations', 'Cuts easily with packing scissors or utility blades'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 28.00, total: 56 },
+      { qty: 6, pricePerUnit: 24.50, total: 147 },
+      { qty: 15, pricePerUnit: 21.00, total: 315 },
+      { qty: 30, pricePerUnit: 18.50, total: 555 }
+    ],
+    specs: { 'Flute Type': 'B-Flute (3.0mm thickness)', 'Length': '75 meters per roll', 'Recycled': '100%' }
+  },
+  {
+    id: 'biodegradable-starch-peanuts',
+    name: 'Biodegradable Starch Peanuts',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'starch-peanuts',
+    subtitle: 'Water-soluble loose-fill packaging peanuts extruded from natural corn and potato starch.',
+    price: 22.00,
+    moq: 2,
+    unit: 'bag (15 cu ft)',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 334,
+    badge: 'Dissolves in Water',
+    material: '100% Extruded Plant Starch (Corn and Potato Starch)',
+    boardWeight: 'Ultra-lightweight closed-cell starch foam',
+    coating: 'Zero static coating; non-toxic',
+    dimensionsPreset: '15 Cubic Feet Bulk Sack (approx. 425 Liters)',
+    dimensionsAvailable: ['Small Sack (5 cu ft)', 'Standard Sack (15 cu ft)', 'Wholesale Pallet (4 × 15 cu ft)'],
+    finishOptions: ['Natural Off-White Ivory', 'Pastel Eco-Green (Colored with plant chlorophyll)'],
+    ecoBadges: ['Dissolves in Water in 10 Seconds', 'Static-Free (Electronics Safe)', 'Compostable EN 13432'],
+    leadTime: '1-2 business days',
+    history: 'Invented in the early 1990s as a direct response to toxic expanded polystyrene (EPS/Styrofoam) peanuts, which persist in oceans for centuries and present choking hazards to wildlife.',
+    environmentalImpact: 'Pour water over them in a sink and they melt away completely in seconds without toxic chemicals. Certified safe for municipal wastewater treatment systems and home compost.',
+    features: ['Zero electrostatic charge—ideal for sensitive computer parts, GPUs, and circuitry', 'Flows seamlessly around complex, odd-shaped items for total 360-degree lock', 'Clean, odorless, and completely non-toxic to household pets or curious toddlers'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 25.50, total: 51 },
+      { qty: 5, pricePerUnit: 22.00, total: 110 },
+      { qty: 12, pricePerUnit: 18.50, total: 222 },
+      { qty: 24, pricePerUnit: 15.50, total: 372 }
+    ],
+    specs: { 'Volume': '15 cubic feet / 425L', 'Solubility': '100% in warm water', 'Anti-Static': 'Naturally static-dissipative' }
+  },
+  {
+    id: 'embossed-paper-rolls',
+    name: 'Embossed Paper Rolls',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'embossed-paper-rolls',
+    subtitle: 'Multi-layer textured dimple-embossed kraft paper providing high surface friction damping.',
+    price: 18.50,
+    moq: 2,
+    unit: 'roll (100m)',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 72,
+    badge: 'Dimple Cushioned',
+    material: '100% Recycled High-Strength Kraft Paper (120 GSM)',
+    boardWeight: '120 GSM Heavy Embossed Paper',
+    coating: 'Porous unbleached kraft',
+    dimensionsPreset: '19.5" width × 328 feet (500mm × 100m roll)',
+    dimensionsAvailable: ['Narrow (350mm × 100m)', 'Standard (500mm × 100m)', 'Wide (750mm × 100m)'],
+    finishOptions: ['Natural Brown Dimple Embossed', 'Bleached White Dimple Embossed'],
+    ecoBadges: ['100% Recycled Post-Consumer Paper', 'Zero Plastic Bubble Alternative', 'Curbside Recyclable'],
+    leadTime: '2-3 business days',
+    history: 'Developed by papermakers who ran moist kraft paper through patterned engraved embossing cylinders to create permanent raised hemispherical bumps that trap air pockets.',
+    environmentalImpact: 'Uses pure mechanical paper deformation rather than petroleum plastic polymers to create protective cushioning. 100% curbside recyclable.',
+    features: ['Raised dimples prevent wrapped bottles and ceramics from sliding against each other', 'Highly flexible and wraps tightly around odd shapes without spring-back', 'Provides clean, dust-free warehouse packing stations'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 21.00, total: 42 },
+      { qty: 6, pricePerUnit: 18.50, total: 111 },
+      { qty: 15, pricePerUnit: 15.80, total: 237 },
+      { qty: 30, pricePerUnit: 13.50, total: 405 }
+    ],
+    specs: { 'GSM': '120 GSM', 'Roll Length': '100 meters', 'Pattern': 'Offset hemispherical dimples' }
+  },
+  {
+    id: 'paper-void-fill-crumpled',
+    name: 'Paper Void Fill (Crumpled)',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'paper-void-fill',
+    subtitle: 'High-yield fan-folded paper packs engineered for manual and automated box void-fill dispensing.',
+    price: 26.00,
+    moq: 2,
+    unit: 'box (500m)',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 154,
+    badge: 'High Yield Fill',
+    material: 'Fan-Folded 70 GSM Recycled Kraft Paper',
+    boardWeight: '70 GSM Long-Fiber Kraft',
+    coating: 'Zero coating',
+    dimensionsPreset: '15" width × 1640 feet (380mm × 500m pack)',
+    dimensionsAvailable: ['Standard 70 GSM (500m)', 'Heavy Duty 90 GSM (350m)'],
+    finishOptions: ['Natural Brown Kraft', 'Clean White'],
+    ecoBadges: ['100% Recycled Paper', 'Takes Up 90% Less Storage than Peanuts', 'Curbside Recyclable'],
+    leadTime: '1-3 business days',
+    history: 'Dispenser-crimped void paper was invented in the 1970s to eliminate massive warehouse silos required to store voluminous plastic foam peanuts. One compact box of paper expands to 1.5 cubic meters of void fill.',
+    environmentalImpact: 'Dramatically reduces transport emissions: 1 pallet of fan-folded paper replaces 24 truckloads of plastic air pillows or foam peanuts. 100% recyclable.',
+    features: ['Crimps into structural spring-like accordions that lock items in box centers', 'Dust-free and lint-free formulation protects optical lenses and apparel', 'Dispenses rapidly from tabletop cartons or automated overhead hoppers'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 29.50, total: 59 },
+      { qty: 5, pricePerUnit: 26.00, total: 130 },
+      { qty: 15, pricePerUnit: 22.50, total: 337.5 },
+      { qty: 30, pricePerUnit: 19.50, total: 585 }
+    ],
+    specs: { 'Length': '500 meters per pack', 'GSM': '70 GSM', 'Yield': 'Approx. 1.5 m³ expanded volume' }
+  },
+  {
+    id: 'cardboard-edge-corner-protectors',
+    name: 'Cardboard Edge & Corner Protectors',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'edge-corner-protectors',
+    subtitle: 'Extremely rigid right-angled laminated cardboard edge-boards for pallet stabilization and strap reinforcement.',
+    price: 0.65,
+    moq: 100,
+    unit: 'piece',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 118,
+    badge: 'Pallet Armor',
+    material: 'Multi-Ply Laminated Recycled Kraftboard Bonded with Starch Glue',
+    boardWeight: '3.0mm - 4.0mm Solid Cardboard Caliper',
+    coating: 'Water-resistant outer kraft liner',
+    dimensionsPreset: '2" × 2" × 39" (50 × 50 × 1000 mm × 3mm thick)',
+    dimensionsAvailable: ['Short Corner Protectors (50×50×100mm)', 'Medium Edge Guard (50×50×500mm)', 'Pallet Height (50×50×1000mm)', 'Tall Freight (60×60×1800mm)'],
+    finishOptions: ['Standard Raw Brown Kraft', 'White Coated Exterior'],
+    ecoBadges: ['Enables 2x Pallet Stacking', '100% Repulpable Solid Board', 'Eliminates Strap Cut Damage'],
+    leadTime: '2-4 business days',
+    history: 'Invented to prevent high-tension plastic or steel strapping bands from cutting into cardboard shipping cartons during sea container rocking.',
+    environmentalImpact: 'Allows double-stacking of freight pallets in shipping trucks without crushing, improving fleet fuel efficiency. Completely repulpable in standard paper mills.',
+    features: ['90-degree angle distributes tension evenly along entire pallet corner edges', 'Provides extraordinary column compression strength for vertical pallet stacking', 'Also available in pre-cut 3-way corner blocks for fine art and picture frames'],
+    pricingTiers: [
+      { qty: 100, pricePerUnit: 0.78, total: 78 },
+      { qty: 250, pricePerUnit: 0.65, total: 162.5 },
+      { qty: 500, pricePerUnit: 0.54, total: 270 },
+      { qty: 1000, pricePerUnit: 0.44, total: 440 }
+    ],
+    specs: { 'Leg Dimensions': '50mm × 50mm', 'Thickness': '3.0 mm', 'Material': 'Multi-ply laminated board' }
+  },
+  {
+    id: 'acid-free-tissue-paper',
+    name: 'Acid-Free Tissue Paper',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'tissue-paper',
+    subtitle: 'Silky 18 GSM translucent archival wrapping tissue that protects delicates without tarnishing.',
+    price: 0.12,
+    moq: 1000,
+    unit: 'sheet',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 280,
+    badge: 'Museum Grade',
+    material: '100% Pure Virgin Acid-Free Sulfite Pulp',
+    boardWeight: '18 GSM Calendered Tissue',
+    coating: 'Zero coating; neutral pH 7.5',
+    dimensionsPreset: '20" × 30" (500 × 750 mm) Large Sheet',
+    dimensionsAvailable: ['Small Jewelry (15"×20")', 'Standard Apparel (20"×30")', 'Continuous Roll (500m)'],
+    finishOptions: ['Crisp Pure White', 'Warm Kraft Tan', 'Custom Repeating Botanical Soy Ink Print'],
+    ecoBadges: ['Acid-Free & Lignin-Free', 'Zero VOC Vegetable Inks', 'Biodegrades in 21 Days in Soil'],
+    leadTime: '2-4 business days',
+    history: 'Standard wood-pulp papers contain natural lignin, which produces acid as it oxidizes, causing yellowing and brittleness. Acid-free tissue removes lignin and adds a calcium carbonate buffer to guarantee archival permanence.',
+    environmentalImpact: 'Non-toxic, chlorine-free bleached, and printed using plant-derived soy and algae inks. Degrades naturally in backyard compost piles within 3 weeks.',
+    features: ['Guaranteed safe for heirloom textiles, silks, silver jewelry, and ceramics', 'Distinctive crisp sensory crinkle enhances luxury retail unboxing experiences', 'Prevents garment scuffing, static attraction, and atmospheric moisture tarnishing'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.15, total: 150 },
+      { qty: 2500, pricePerUnit: 0.12, total: 300 },
+      { qty: 5000, pricePerUnit: 0.09, total: 450 },
+      { qty: 10000, pricePerUnit: 0.065, total: 650 }
+    ],
+    specs: { 'GSM': '18 GSM', 'pH Level': 'Neutral pH 7.5', 'Buffer': 'Calcium carbonate archival buffer' }
+  },
+  {
+    id: 'wood-wool',
+    name: 'Wood Wool',
+    category: 'protective',
+    filterKey: 'protective',
+    categoryName: 'Protective Packaging & Void Fill',
+    svgType: 'wood-wool',
+    subtitle: 'Fine curly kiln-dried ribbons of sustainably harvested spruce and pine timber.',
+    price: 28.00,
+    moq: 1,
+    unit: 'bale (10 kg)',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 92,
+    badge: 'Kiln-Dried Timber',
+    material: '100% Natural Plantation Spruce and Pine Shavings',
+    boardWeight: 'Airy, resilient wood excelsior fibers',
+    coating: 'Pure untreated timber',
+    dimensionsPreset: '10 kg Compressed Bale (Yields approx. 400L unpacked volume)',
+    dimensionsAvailable: ['5 kg Craft Bale', '10 kg Hamper Bale', '20 kg Bulk Commercial Bale'],
+    finishOptions: ['Natural Pale Spruce Ribbon'],
+    ecoBadges: ['100% Natural Raw Forest Timber', 'Zero Chemical Additives', 'Backyard Compostable & Mulch Safe'],
+    leadTime: '1-3 business days',
+    history: 'Also known as *excelsior*, wood wool was patented in the USA in the mid-19th century as a natural cushion for fragile chinaware and wine bottles before plastic foam existed.',
+    environmentalImpact: 'Manufactured from forestry thinning residues that support healthy timberland management. Untreated with chemicals, it doubles as garden mulch or compost carbon.',
+    features: ['Intertwined curled timber strands cradle heavy luxury wine bottles and gift hampers', 'Kiln-dried to under 12% moisture to eliminate mold, fungi, and natural pests', 'Emits a fresh, natural pine forest scent that communicates authentic organic origin'],
+    pricingTiers: [
+      { qty: 1, pricePerUnit: 32.00, total: 32 },
+      { qty: 3, pricePerUnit: 28.00, total: 84 },
+      { qty: 8, pricePerUnit: 24.50, total: 196 },
+      { qty: 20, pricePerUnit: 21.00, total: 420 }
+    ],
+    specs: { 'Moisture Content': '< 12% kiln dried', 'Strand Width': 'Approx. 2mm', 'Yield': '40 liters per kg' }
+  },
+
+  // =========================================================================
+  // CATEGORY 5: TAPE, LABELS, BAGS & STRAPPING (12 Products)
+  // =========================================================================
+  {
+    id: 'water-activated-gummed-paper-tape',
+    name: 'Water-Activated Gummed Paper Tape',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'water-activated-tape',
+    subtitle: 'Tamper-evident reinforced kraft tape that fuses molecularly with cardboard carton fibers.',
     price: 12.50,
     moq: 10,
     unit: 'roll (450 ft)',
-    featured: false,
-    rating: 4.8,
-    reviewCount: 156,
-    badge: 'Tamper Proof',
-    material: 'Natural Kraft Paper Reinforced with Biodegradable Fiber Filaments',
-    boardWeight: '70 GSM Heavy Kraft Carrier',
-    coating: 'Dried Plant-Starch Adhesive (Water-Activated)',
-    dimensionsPreset: '2.75" width × 450 feet length (70mm × 137m)',
-    dimensionsAvailable: ['Standard 2.75" (70mm)', 'Heavy Duty 3.0" (76mm)', 'Custom Width On Demand'],
-    finishOptions: ['Natural Brown Kraft with 1-Color Black Print', 'Natural Brown with 2-Color Print', 'White Reinforced Kraft Tape'],
-    ecoBadges: ['Bonds Directly to Corrugated Cardboard', 'Tamper Evident Fiber Tear', '100% Recyclable with Box'],
-    leadTime: '3-5 business days',
-    description: 'Unlike plastic pressure-sensitive tape that peels off cleanly or contaminates cardboard recycling streams, water-activated tape (WAT) fuses directly with the paper fibers of the carton. Once dried, it creates a permanent molecular bond that cannot be opened without leaving an obvious torn footprint, deterring in-transit pilferage.',
-    features: [
-      'Molecular adhesive fusion: becomes an integral part of the box rather than a tape layer',
-      'Single strip seals cartons securely, using 60% less total tape length than plastic alternatives',
-      'High-tensile cross-weave fiber strands prevent tearing under heavy package shifting',
-      'Recycles directly with the shipping carton without needing to be peeled off prior to pulping'
-    ],
+    featured: true,
+    rating: 5.0,
+    reviewCount: 290,
+    badge: 'Pilfer Proof',
+    material: '70 GSM Natural Kraft Paper Reinforced with Fiberglass / Natural Fibers',
+    boardWeight: '70 GSM Kraft Carrier + Starch Adhesive',
+    coating: 'Dried potato & corn starch adhesive (activates with water)',
+    dimensionsPreset: '2.75" width × 450 feet (70mm × 137m roll)',
+    dimensionsAvailable: ['2.75" (70mm) Standard', '3.0" (76mm) Heavy Duty', 'Custom Printed Branded Tape'],
+    finishOptions: ['Natural Brown Kraft with 1-Color Print', 'White Reinforced Tape', 'Plain Unprinted Kraft'],
+    ecoBadges: ['100% Recyclable with the Box', 'Forms Fiber-Tear Permanent Bond', 'Uses 60% Less Tape Than Plastic'],
+    leadTime: '1-3 business days',
+    history: 'Invented in the early 20th century, water-activated tape became the industrial standard for transit packaging because potato starch penetrates deep into cardboard pores when wetted.',
+    environmentalImpact: 'Unlike plastic packing tape that contaminates cardboard recycling streams, gummed paper tape enters the hydropulper alongside the box without needing removal.',
+    features: ['Cannot be peeled off without tearing the box flap, offering 100% pilfer evidence', 'A single strip across carton seams seals boxes that previously required multiple plastic tape layers', 'Performs reliably in dusty, extreme sub-zero, and tropical humid transit conditions'],
     pricingTiers: [
       { qty: 10, pricePerUnit: 14.50, total: 145 },
       { qty: 25, pricePerUnit: 12.50, total: 312.5 },
       { qty: 50, pricePerUnit: 10.80, total: 540 },
       { qty: 100, pricePerUnit: 9.20, total: 920 }
     ],
-    specs: {
-      'Roll Length': '450 linear feet / 137 meters per roll',
-      'Reinforcement': 'Cross-woven organic polymer filaments (Class 240 rated)',
-      'Adhesive': 'Corn & potato starch water-soluble formula'
-    }
-  },
-
-  // ==========================================
-  // 🛍️ PAPER BAGS & ACCESSORIES
-  // ==========================================
-  {
-    id: 'luxury-twisted-bags',
-    name: 'Luxury Twisted-Handle Boutique Shopping Bags',
-    category: 'bags',
-    categoryName: 'Paper Bags & Accessories',
-    svgType: 'luxury-bag',
-    subtitle: 'Heavy 250 GSM paper carrier bags with reinforced turn-tops and twisted cord.',
-    price: 0.95,
-    moq: 300,
-    unit: 'bag',
-    featured: true,
-    rating: 4.9,
-    reviewCount: 184,
-    badge: 'Boutique Grade',
-    material: '250 GSM High-Tensile Virgin White Kraft / Recycled Kraft',
-    boardWeight: '250 GSM Heavy Board with 400 GSM Base Board',
-    coating: 'Matte Mineral Varnish & Hot-Foil Stamp',
-    dimensionsPreset: '12" × 16" × 6" (305 × 406 × 152 mm)',
-    dimensionsAvailable: ['Small Boutique (8"×10"×4")', 'Medium Fashion (12"×16"×6")', 'Large Department (16"×19"×7")', 'Wine / Slim (6"×15"×4")'],
-    finishOptions: ['Deep Forest Green with Gold Foil', 'Crisp White with Cotton Twisted Handle', 'Raw Kraft with Black Cord', 'Custom Dyed Colorway'],
-    ecoBadges: ['Supports Up to 15kg Load', '100% Repulpable Twisted Paper Handle', 'FSC® Certified'],
-    leadTime: '5-7 business days',
-    description: 'Elevate physical retail and in-store customer experiences. Built from heavyweight 250 GSM virgin paperboard with a turned-top reinforced hem that conceals the handle anchors. Reinforced with a 400 GSM cardboard floor insert, ensuring the bag stands proud and maintains its clean silhouette even under heavy loads.',
-    features: [
-      '100% paper twisted cord handles are comfortable to hold and fully recyclable',
-      'Reinforced top turnover hem and heavy cardboard floor base support up to 15 kg',
-      'Crisp gusset creases fold flat for compact under-counter storage in busy boutiques',
-      'Finished with hot foil stamping, debossing, or velvety matte eco-coatings'
-    ],
-    pricingTiers: [
-      { qty: 300, pricePerUnit: 1.18, total: 354 },
-      { qty: 600, pricePerUnit: 0.95, total: 570 },
-      { qty: 1500, pricePerUnit: 0.78, total: 1170 },
-      { qty: 3000, pricePerUnit: 0.65, total: 1950 }
-    ],
-    specs: {
-      'Paper Weight': '250 GSM high tear-resistance paper',
-      'Handle': '6-ply tightly twisted paper rope with glued anchor pads',
-      'Load Rating': 'Tested to 15 kg / 33 lbs static load'
-    }
+    specs: { 'Length': '450 ft / 137 m', 'Width': '70 mm', 'Adhesive': 'Corn & potato starch' }
   },
   {
-    id: 'grocery-bags',
-    name: 'Square-Bottom Flat-Handle Kraft Grocery Bags',
-    category: 'bags',
-    categoryName: 'Paper Bags & Accessories',
-    svgType: 'grocery-bag',
-    subtitle: 'High-volume square-bottom kraft bags with internal flat folded handles.',
-    price: 0.29,
-    moq: 500,
-    unit: 'bag',
-    featured: false,
-    rating: 4.7,
-    reviewCount: 128,
-    badge: 'High Volume',
-    material: '100% Recycled Post-Consumer Brown Kraft Paper',
-    boardWeight: '110 GSM High-Tensile Ribbed Kraft',
-    coating: 'Natural uncoated porous breathable kraft',
-    dimensionsPreset: '12" × 7" × 17" (305 × 178 × 432 mm)',
-    dimensionsAvailable: ['Small Bakery (8"×5"×10")', 'Medium Takeout (10"×6"×12")', 'Standard Supermarket (12"×7"×17")', 'Wide Base Caterer (13"×10"×14")'],
-    finishOptions: ['Natural Brown Kraft with 1-Color Stamp', '2-Color Water Inks', 'Unprinted Natural'],
-    ecoBadges: ['100% Post-Consumer Content', 'Serrate Die-Cut Safety Edge', 'Food Safe Direct Contact'],
-    leadTime: '2-4 business days',
-    description: 'The ubiquitous, trusted packaging companion for organic supermarkets, artisan bakeries, and gourmet delis. Crafted from 100% post-consumer recycled brown kraft paper with a wide, stable block bottom that stands upright unsupported while clerks and customers pack goods.',
-    features: [
-      'Self-standing flat block bottom makes rapid packing effortless on checkout counters',
-      'Internal glued flat kraft handles withstand energetic lifting without tearing',
-      'Serrated top edge prevents paper cuts during rapid retail transactions',
-      'Breathable natural fibers prevent bakery bread and fresh produce from steaming soft'
-    ],
-    pricingTiers: [
-      { qty: 500, pricePerUnit: 0.36, total: 180 },
-      { qty: 1000, pricePerUnit: 0.29, total: 290 },
-      { qty: 2500, pricePerUnit: 0.24, total: 600 },
-      { qty: 5000, pricePerUnit: 0.20, total: 1000 }
-    ],
-    specs: {
-      'GSM': '110 GSM unbleached high-strength kraft',
-      'Bottom Construction': 'SOS (Self-Opening Sack) block bottom',
-      'Carrying Load': 'Guaranteed up to 9 kg / 20 lbs'
-    }
-  },
-  {
-    id: 'wine-bottle-bags',
-    name: 'Reinforced Dual-Bottle Wine & Spirits Gift Bags',
-    category: 'bags',
-    categoryName: 'Paper Bags & Accessories',
-    svgType: 'wine-bag',
-    subtitle: 'Tall structural gift bags with internal bottle dividing partition.',
-    price: 0.85,
-    moq: 200,
-    unit: 'bag',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 73,
-    badge: 'Cellar Edition',
-    material: '220 GSM Heavyweight Ribbed Kraft / Artboard',
-    boardWeight: '220 GSM Paper + 450 GSM Base & Divider',
-    coating: 'Matte Eco-Shield & Hot Foil Accents',
-    dimensionsPreset: '7.5" × 3.75" × 14.5" (190 × 95 × 368 mm)',
-    dimensionsAvailable: ['Single Bottle (4"×3.5"×14")', 'Dual Bottle with Divider (7.5"×3.75"×14.5")', 'Champagne Magnum (5"×5"×16")'],
-    finishOptions: ['Matte Forest Green with Gold Foil Crest', 'Classic Kraft with Cotton Ribbon', 'Deep Burgundy Linen'],
-    ecoBadges: ['Drop-Tested Base Board', 'Zero Plastic Handle Eyelets', 'FSC® Forest Stewardship'],
-    leadTime: '4-6 business days',
-    description: 'Engineered specifically for vineyards, boutique distilleries, and wine merchants. Features an integrated collapsible internal paper divider that prevents bottles from clinking together during walking transit. Supported by an ultra-thick baseboard that distributes glass weight evenly across the reinforced bottom fold.',
-    features: [
-      'Interlocking center fold keeps two full wine bottles separated, preventing glass clatter',
-      'Thick woven cotton or twisted rope handles anchored into double-ply turned rims',
-      'Fits Bordeaux, Burgundy, Champagne, and artisanal olive oil bottle shapes',
-      'Hot-stamp your vineyard estate crest or distillery monogram in metallic foil'
-    ],
-    pricingTiers: [
-      { qty: 200, pricePerUnit: 1.05, total: 210 },
-      { qty: 500, pricePerUnit: 0.85, total: 425 },
-      { qty: 1000, pricePerUnit: 0.72, total: 720 },
-      { qty: 2500, pricePerUnit: 0.60, total: 1500 }
-    ],
-    specs: {
-      'Bottle Capacity': 'Holds 2 × 750ml standard wine or spirits bottles',
-      'Baseboard': '450 GSM heavyweight caliper cardboard insert',
-      'Burst Resistance': 'Reinforced seams hold up to 6.5 kg'
-    }
-  },
-  {
-    id: 'tissue-paper',
-    name: 'Custom Branded Acid-Free Tissue Paper',
-    category: 'bags',
-    categoryName: 'Paper Bags & Accessories',
-    svgType: 'tissue-paper',
-    subtitle: 'Silky 18 GSM translucent wrapping tissue printed with zero-VOC soy inks.',
-    price: 0.12,
-    moq: 1000,
-    unit: 'sheet',
+    id: 'self-adhesive-kraft-paper-tape',
+    name: 'Self-Adhesive Kraft Paper Tape',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'self-adhesive-kraft-tape',
+    subtitle: 'Pressure-sensitive kraft paper tape that sticks instantly without requiring water dispensers.',
+    price: 7.20,
+    moq: 12,
+    unit: 'roll (50m)',
     featured: false,
     rating: 4.8,
-    reviewCount: 139,
-    badge: 'Delicate Wrap',
-    material: '18 GSM Pure Acid-Free Sulfite Paper',
-    boardWeight: '18 GSM Ultra-Lightweight Parchment',
-    coating: 'None (Natural calendered finish)',
-    dimensionsPreset: '20" × 30" (508 × 762 mm) Large Sheet',
-    dimensionsAvailable: ['15" × 20" Compact Sheet', '20" × 30" Standard Retail Sheet', 'Continuous Roll (500m)'],
-    finishOptions: ['Single-Color Repeated Pattern', '2-Color Botanical Print', 'Metallic Gold Soy Ink Stamp', 'Unprinted Pure Cream'],
-    ecoBadges: ['100% Acid-Free & Lignin-Free', 'Zero Heavy Metals', 'Breaks Down in Compost in 21 Days'],
-    leadTime: '4-6 business days',
-    description: 'Transform every product unboxing into a tactile ceremony. Our 18 GSM acid-free and lignin-free tissue paper protects delicate fabrics, ceramics, and jewelry from yellowing or micro-scratches. Printed using zero-VOC soy inks that do not bleed onto garments or moisture-rich items.',
-    features: [
-      'Acid-free and lignin-free formulation guarantees archival safety for heirlooms and silks',
-      'Delicate, crisp tactile crinkle creates an extraordinary sensory unboxing experience',
-      'Zero-bleed vegetable soy inks ensure crisp repeating logo patterns without smudging',
-      'Breaks down in residential compost piles within three weeks'
-    ],
+    reviewCount: 178,
+    badge: 'Quick Seal',
+    material: 'Natural Flatback Kraft Paper with Natural Rubber Adhesive',
+    boardWeight: '90 GSM Flatback Paper',
+    coating: 'Solvent-free natural rubber adhesive',
+    dimensionsPreset: '2" width × 164 feet (50mm × 50m roll)',
+    dimensionsAvailable: ['1" (25mm)', '2" (50mm)', '3" (75mm)'],
+    finishOptions: ['Natural Brown Kraft', 'Custom 1-Color Printed Logo'],
+    ecoBadges: ['Tearable by Hand', 'Natural Rubber Adhesive', 'Recyclable with Box'],
+    leadTime: '1-2 business days',
+    history: 'Engineered as a convenient alternative for packing stations that do not have dedicated electronic water dispensers. Uses natural rubber sap harvested from rubber trees.',
+    environmentalImpact: 'Replaces PVC and polypropylene pressure-sensitive plastic tapes with natural paper and tree-rubber adhesive that pulps down cleanly in recycling mills.',
+    features: ['Tears cleanly by hand—no metal tape gun or scissors required at the packaging desk', 'Sticks instantly with firm finger pressure on cardboard, paper envelopes, and tissue wraps', 'Silently unwinds from the roll without the high-pitched screech of plastic tape'],
     pricingTiers: [
-      { qty: 1000, pricePerUnit: 0.16, total: 160 },
-      { qty: 2500, pricePerUnit: 0.12, total: 300 },
-      { qty: 5000, pricePerUnit: 0.09, total: 450 },
-      { qty: 10000, pricePerUnit: 0.065, total: 650 }
+      { qty: 12, pricePerUnit: 8.50, total: 102 },
+      { qty: 36, pricePerUnit: 7.20, total: 259.2 },
+      { qty: 72, pricePerUnit: 6.10, total: 439.2 },
+      { qty: 144, pricePerUnit: 5.20, total: 748.8 }
     ],
-    specs: {
-      'Paper Weight': '18 GSM (+/- 1 GSM) semi-translucent tissue',
-      'pH Level': 'Neutral pH 7.2 - 7.8 (Acid-free)',
-      'Ink System': 'Soy & algae-derived water-dispersed pigments'
-    }
+    specs: { 'Core': 'Standard 3" (76mm) core', 'Adhesive': 'Natural rubber', 'Hand Tearable': 'Yes' }
   },
   {
-    id: 'paper-stickers',
-    name: 'Roll-Fed Compostable Logo Paper Stickers',
-    category: 'bags',
-    categoryName: 'Paper Bags & Accessories',
-    svgType: 'paper-stickers',
-    subtitle: 'Circular kraft & white paper seal stickers backed with plant-based adhesive.',
-    price: 0.07,
+    id: 'glassine-document-wallets',
+    name: 'Glassine Document Wallets',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'glassine-document-wallets',
+    subtitle: 'Translucent paper "Documents Enclosed" packing slip pouches that replace plastic stick-on envelopes.',
+    price: 0.14,
+    moq: 500,
+    unit: 'wallet',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 165,
+    badge: 'Zero Plastic Enclosed',
+    material: '100% Calendered Glassine Paper + Paper Backing Release Liner',
+    boardWeight: '45 GSM Translucent Paper',
+    coating: 'Plant-based adhesive backing',
+    dimensionsPreset: '6.5" × 5" (165 × 125 mm) A6 Size',
+    dimensionsAvailable: ['A7 Mini (120×90mm)', 'A6 Standard (165×125mm)', 'A5 Half Sheet (225×165mm)', 'A4 Full Invoice (315×225mm)'],
+    finishOptions: ['Printed "DOCUMENTS ENCLOSED"', 'Plain Translucent Window'],
+    ecoBadges: ['Replaces Plastic Slip Pouches', '100% Curbside Recyclable with Box', 'Biodegradable'],
+    leadTime: '2-3 business days',
+    history: 'Standard "Documents Enclosed" wallets are made of thick polyethylene plastic with synthetic sticky glue. Because they are plastered on the outside of boxes, they are one of the primary contaminants in paper recycling.',
+    environmentalImpact: 'PackNStir glassine wallets are 100% paper and water-soluble glue. Couriers scan barcodes through the translucent paper, and paper recycling mills repulp them effortlessly.',
+    features: ['High transparency allows shipping carrier barcodes and addresses to scan cleanly', 'Strong self-adhesive peel-back sticks permanently to corrugated boxes and paper mailers', 'Weather-resistant calendered paper shields invoices from light rain during transit'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.18, total: 90 },
+      { qty: 1000, pricePerUnit: 0.14, total: 140 },
+      { qty: 2500, pricePerUnit: 0.11, total: 275 },
+      { qty: 5000, pricePerUnit: 0.085, total: 425 }
+    ],
+    specs: { 'Material': 'Calendered glassine paper', 'Barcode Scannable': 'Yes', 'Recycle': '100% with box' }
+  },
+  {
+    id: 'eco-friendly-labels-stickers',
+    name: 'Eco-Friendly Labels & Stickers',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'eco-labels-stickers',
+    subtitle: 'Roll-fed compostable paper sealing stickers with plant-based emulsion adhesive.',
+    price: 0.06,
     moq: 1000,
     unit: 'sticker',
     featured: false,
-    rating: 4.9,
-    reviewCount: 221,
-    badge: 'Eco Seals',
-    material: 'Natural Kraft Paper / Matte White Woodfree Paper',
-    boardWeight: '80 GSM Face Stock + Glassine Liner',
-    coating: 'Compostable Pressure-Sensitive Starch Adhesive',
+    rating: 4.8,
+    reviewCount: 210,
+    badge: 'Zero Vinyl',
+    material: 'Unbleached Kraft Paper or FSC® White Woodfree Paper',
+    boardWeight: '80 GSM Face Stock + Recyclable Glassine Liner',
+    coating: 'Water-dispersed compostable acrylic emulsion',
     dimensionsPreset: '2.0" Round Diameter (50 mm)',
-    dimensionsAvailable: ['1.5" Mini Round (38mm)', '2.0" Standard Round (50mm)', '2.5" Large Round (63mm)', '2" × 3" Rectangular Label'],
-    finishOptions: ['Natural Brown Kraft Face', 'Matte Chalk White Face', 'Foil Stamped Accent Ring'],
-    ecoBadges: ['DIN CERTCO Compostable Adhesive', 'Glassine Release Liner Recyclable', 'Zero Vinyl / Zero Plastic Film'],
-    leadTime: '3-5 business days',
-    description: 'The finishing touch for tissue paper wraps, box closures, and branded takeout bags. Unlike conventional vinyl stickers that leach microplastics and ruin paper recycling, our stickers are made with unbleached paper face stock and a certified compostable rubber-starch adhesive that washes out safely in paper mills.',
-    features: [
-      'Zero plastic: replaces vinyl and polypropylene stickers with pure paper fibers',
-      'Certified compostable adhesive adheres strongly to kraft paper, glass, and metal',
-      'Supplied on convenient continuous dispenser rolls with recyclable glassine liners',
-      'Crisp high-resolution digital print with rich soy-based blacks, colors, and metallics'
-    ],
+    dimensionsAvailable: ['1.5" Round (38mm)', '2.0" Round (50mm)', '2" × 3" Rectangle (50×76mm)', 'Direct Thermal 4"×6" Shipping Label'],
+    finishOptions: ['Natural Brown Kraft', 'Matte Chalk White', 'Metallic Eco-Foil Edge'],
+    ecoBadges: ['DIN CERTCO Compostable Certified', 'Zero Polypropylene Vinyl', 'Repulpable in Mills'],
+    leadTime: '2-4 business days',
+    history: 'Traditional vinyl and glossy synthetic labels shed microplastics when shredded at paper recycling plants. PackNStir uses pure woodfree paper stock and plant-derived water-soluble adhesive.',
+    environmentalImpact: 'Certified OK Compost Home and Industrial. Does not impede paper pulp recycling or leave sticky residue on paper mill screens.',
+    features: ['Supplied on continuous rolls for rapid manual application or automatic label dispensers', 'Prints sharp, high-resolution branding, barcodes, and sustainability messages', 'Adheres firmly to kraft paper boxes, glass bottles, and tin containers'],
     pricingTiers: [
-      { qty: 1000, pricePerUnit: 0.095, total: 95 },
-      { qty: 2500, pricePerUnit: 0.07, total: 175 },
-      { qty: 5000, pricePerUnit: 0.052, total: 260 },
-      { qty: 10000, pricePerUnit: 0.038, total: 380 }
+      { qty: 1000, pricePerUnit: 0.08, total: 80 },
+      { qty: 2500, pricePerUnit: 0.06, total: 150 },
+      { qty: 5000, pricePerUnit: 0.045, total: 225 },
+      { qty: 10000, pricePerUnit: 0.032, total: 320 }
     ],
-    specs: {
-      'Face Stock': '80 GSM unbleached kraft or 85 GSM FSC white art paper',
-      'Adhesive': 'Plant-derived water-dispersed emulsion adhesive',
-      'Certifications': 'OK Compost Industrial & Home certified'
-    }
+    specs: { 'Core': '76mm / 3 inch roll core', 'Adhesive': 'Compostable acrylic emulsion', 'Face': '80 GSM paper' }
+  },
+  {
+    id: 'compostable-zip-lock-bags',
+    name: 'Compostable Zip-Lock Bags',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'compostable-zip-lock',
+    subtitle: 'Resealable plant-based storage bags with compostable zipper closures for apparel and accessories.',
+    price: 0.26,
+    moq: 500,
+    unit: 'bag',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 145,
+    badge: 'Resealable Eco',
+    material: 'Plant-Based PLA & PBAT Biopolymer',
+    boardWeight: '50 Micron Translucent Bio-Film',
+    coating: 'Silky tactile finish; breathable',
+    dimensionsPreset: '10" × 14" (254 × 355 mm) Apparel Size',
+    dimensionsAvailable: ['Mini (4"×6")', 'Medium Apparel (10"×14")', 'Large Knitwear (14"×18")'],
+    finishOptions: ['Translucent Matte with Green Leaf Print', 'Unprinted Clear'],
+    ecoBadges: ['TÜV OK Compost Home', 'Zipper Track 100% Compostable', 'Replaces Polybags'],
+    leadTime: '2-4 business days',
+    history: 'Designed specifically to eliminate the billions of clear polyethylene "polybags" used by global apparel brands to protect garments during container shipping from overseas factories.',
+    environmentalImpact: 'Breaks down into water, CO2, and fertile compost in home compost bins in 90 to 180 days. Eliminates non-recyclable plastic zipper sliders.',
+    features: ['Durable integrated zip track opens and reseals dozens of times', 'Micro-perforated air hole allows trapped air to escape for flat garment palletizing', 'Silky, dust-free surface protects luxury silks, wools, and organic cotton from moisture'],
+    pricingTiers: [
+      { qty: 500, pricePerUnit: 0.32, total: 160 },
+      { qty: 1000, pricePerUnit: 0.26, total: 260 },
+      { qty: 2500, pricePerUnit: 0.21, total: 525 },
+      { qty: 5000, pricePerUnit: 0.17, total: 850 }
+    ],
+    specs: { 'Thickness': '50 microns', 'Zipper': 'Compostable bio-resin track', 'Certification': 'AS 5810' }
+  },
+  {
+    id: 'glassine-bags',
+    name: 'Glassine Bags',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'glassine-document-wallets',
+    subtitle: 'Crisp semi-translucent paper envelopes with delicate glassine sheen for stationery and pastries.',
+    price: 0.11,
+    moq: 1000,
+    unit: 'bag',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 119,
+    badge: '100% Wood Pulp',
+    material: 'Pure Bleached Chemical Wood Pulp (Acid-Free)',
+    boardWeight: '40 GSM High-Density Glassine',
+    coating: 'Zero coating; super-calendered mechanical finish',
+    dimensionsPreset: '5" × 7" (127 × 178 mm) Flat Bag',
+    dimensionsAvailable: ['Small Stamp (3"×4")', 'Card & Photo (5"×7")', 'Large Apparel (9"×12")'],
+    finishOptions: ['Translucent White Glassine', 'Custom Brand Hot Foil / Soy Stamp'],
+    ecoBadges: ['100% Biodegradable & Recyclable', 'Grease Resistant', 'Acid-Free Archival'],
+    leadTime: '2-3 business days',
+    history: 'Glassine is created through an intensive paper-making process called super-calendering: after the pulp is pressed, paper sheets are passed through alternating steel and fiber rolls under extreme heat and pressure until the fibers collapse into a smooth, glass-like sheet.',
+    environmentalImpact: 'Zero plastic content. Completely biodegradable, backyard compostable, and recyclable in standard paper streams. Sourced from FSC-certified wood pulp.',
+    features: ['Semi-transparent sheen allows contents to be viewed without opening', 'Naturally air, water, and grease resistant without synthetic fluorochemical coatings', 'Classic vintage aesthetic loved by artisan bakeries, florists, and jewelers'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.14, total: 140 },
+      { qty: 2500, pricePerUnit: 0.11, total: 275 },
+      { qty: 5000, pricePerUnit: 0.085, total: 425 },
+      { qty: 10000, pricePerUnit: 0.065, total: 650 }
+    ],
+    specs: { 'GSM': '40 GSM', 'Transparency': 'High semi-translucent', 'Acid-Free': 'Yes' }
+  },
+  {
+    id: 'pla-cornstarch-clear-bags',
+    name: 'PLA (Cornstarch) Clear Bags',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'pla-cold-cups',
+    subtitle: 'High-clarity display bags made from fermented cornstarch resin that mimics cellophane.',
+    price: 0.13,
+    moq: 1000,
+    unit: 'bag',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 93,
+    badge: 'Cornstarch Clear',
+    material: '100% Polylactic Acid (PLA) Biopolymer',
+    boardWeight: '30 Micron High-Clarity Film',
+    coating: 'Zero petroleum plastic',
+    dimensionsPreset: '6" × 9" (152 × 229 mm) Peel & Seal',
+    dimensionsAvailable: ['Cards / Postcards (5"×7")', 'Prints / Confectionery (6"×9")', 'Art Prints (9"×12")', 'A4 Display (8.5"×11")'],
+    finishOptions: ['High-Gloss Crystal Clear'],
+    ecoBadges: ['Commercially Compostable', 'Zero Petroleum Carbon', 'Food Contact Safe'],
+    leadTime: '2-4 business days',
+    history: 'Cornstarch PLA was commercialized to give artisan chocolatiers, greeting card publishers, and dry food makers the crystal-clear display window of polypropylene without petroleum plastic.',
+    environmentalImpact: 'Manufactured from annual renewable corn starch harvests rather than crude oil. Diverts fossil fuel extraction and reduces manufacturing energy by 65%.',
+    features: ['Crystal-clear optical clarity displays greeting cards and confectionery brilliantly', 'Peel-and-seal adhesive lip allows rapid packing and resealing', 'High barrier against food odors, dust, and handling smudges'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.16, total: 160 },
+      { qty: 2500, pricePerUnit: 0.13, total: 325 },
+      { qty: 5000, pricePerUnit: 0.10, total: 500 },
+      { qty: 10000, pricePerUnit: 0.08, total: 800 }
+    ],
+    specs: { 'Thickness': '30 microns', 'Material': '100% cornstarch PLA', 'Closure': 'Self-seal lip' }
+  },
+  {
+    id: 'natureflex-wood-pulp-bags',
+    name: 'NatureFlex (Wood Pulp) Bags',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'bio-mailer',
+    subtitle: 'High-barrier transparent bio-film bags derived from FSC certified renewable wood pulp.',
+    price: 0.19,
+    moq: 1000,
+    unit: 'bag',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 172,
+    badge: 'Home Compostable Film',
+    material: 'NatureFlex™ Regenerated Cellulose (Wood Pulp Derived)',
+    boardWeight: '30 Micron High-Barrier Film',
+    coating: 'Natural bio-coating for moisture & aroma barrier',
+    dimensionsPreset: '4" × 6" (100 × 150 mm) Heat Sealable Pouch',
+    dimensionsAvailable: ['Small Pouch (4"×6")', 'Medium Pouch (6"×9")', 'Coffee & Tea Bag (8"×12")'],
+    finishOptions: ['Ultra Clear High Gloss with Home Compost Logo'],
+    ecoBadges: ['TÜV OK Compost Home Certified', 'Derived from Managed Wood Pulp', 'Exceptional Aroma Barrier'],
+    leadTime: '3-5 business days',
+    history: 'Invented by Futamura, NatureFlex is the modern evolution of traditional cellophane. Engineered from renewable wood pulp sourced from certified plantations, it is one of the only transparent films in the world certified for home garden compost.',
+    environmentalImpact: 'Breaks down in domestic garden compost bins within 42 days, leaving zero toxic residues. Exceptional oxygen and moisture barrier prevents food waste.',
+    features: ['High aroma barrier keeps specialty loose-leaf teas and coffee beans fresh', 'Heat-sealable on standard commercial pouch sealing machinery', 'Certified home compostable under both European and American standards'],
+    pricingTiers: [
+      { qty: 1000, pricePerUnit: 0.24, total: 240 },
+      { qty: 2500, pricePerUnit: 0.19, total: 475 },
+      { qty: 5000, pricePerUnit: 0.155, total: 775 },
+      { qty: 10000, pricePerUnit: 0.125, total: 1250 }
+    ],
+    specs: { 'Material': 'NatureFlex™ cellulose', 'Compost Time': '42 days (Home compost)', 'Barrier': 'High gas & aroma' }
+  },
+  {
+    id: 'biodegradable-bin-liners-sacks',
+    name: 'Biodegradable Bin Liners & Sacks',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'bio-mailer',
+    subtitle: 'Heavy-gauge plant-based compost caddy liners and commercial waste sacks.',
+    price: 0.22,
+    moq: 250,
+    unit: 'roll (25 liners)',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 135,
+    badge: 'Zero Tear',
+    material: 'Plant Starch PLA, PBAT & Plant Extracts',
+    boardWeight: '20 Micron (Home Caddy) to 40 Micron (Heavy Sack)',
+    coating: 'Moisture and grease resistant',
+    dimensionsPreset: '10 Litre Countertop Caddy (Roll of 25 bags)',
+    dimensionsAvailable: ['7L Kitchen Caddy', '10L Standard (Roll of 25)', '30L Pedal Bin', '140L Wheelie Bin Sack'],
+    finishOptions: ['Translucent Earth Green with OK Compost Printing'],
+    ecoBadges: ['Composts with Food Waste', 'Certified EN 13432', 'Leak-Proof Star Seal Base'],
+    leadTime: '1-3 business days',
+    history: 'Created to solve municipal organic waste collection challenges. When organic food waste is bagged in plastic, councils must either reject the load or install expensive debagging shredders.',
+    environmentalImpact: 'Allows restaurants, offices, and homeowners to bag food scraps and coffee grounds together. The bag breaks down completely in industrial composting facilities alongside the food waste.',
+    features: ['Reinforced star-seal base distributes heavy, wet vegetable peels without leaking', 'Breathable film reduces moisture buildup and foul food odor emissions', 'Approved by local councils and municipal green-waste composting programs worldwide'],
+    pricingTiers: [
+      { qty: 10, pricePerUnit: 4.50, total: 45 },
+      { qty: 25, pricePerUnit: 3.80, total: 95 },
+      { qty: 50, pricePerUnit: 3.10, total: 155 },
+      { qty: 100, pricePerUnit: 2.50, total: 250 }
+    ],
+    specs: { 'Capacity': '10 Litres', 'Bags per Roll': '25 count', 'Base': 'Leakproof Star Sealed' }
+  },
+  {
+    id: 'paper-pallet-wrap-stretch-paper',
+    name: 'Paper Pallet Wrap / Stretch Paper',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'paper-pallet-wrap',
+    subtitle: 'High-elongation creped kraft paper roll designed to secure palletized loads without plastic cling stretch wrap.',
+    price: 38.00,
+    moq: 2,
+    unit: 'roll (300m)',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 84,
+    badge: 'Pallet Wrap Disruptor',
+    material: 'High-Tensile Elasticized Creped Kraft Paper',
+    boardWeight: '60 GSM Specialized Stretch Paper',
+    coating: 'Zero plastic polymers; high inter-layer friction',
+    dimensionsPreset: '19.5" width × 984 feet (500mm × 300m roll)',
+    dimensionsAvailable: ['Hand Roll (500mm × 300m)', 'Machine Dispenser Roll (500mm × 600m)'],
+    finishOptions: ['Natural Brown Elastic Kraft'],
+    ecoBadges: ['Replaces Plastic Cling Stretch Film', '100% Recyclable with Pallet Boxes', 'Puncture Resistant'],
+    leadTime: '2-4 business days',
+    history: 'Plastic stretch cling wrap (LLDPE) accounts for over 2.5 million metric tons of unrecyclable plastic waste globally. PackNStir stretch paper uses micro-creped fibers that elongate up to 30% under wrapping tension.',
+    environmentalImpact: 'Replaces miles of thin plastic film wrapped around pallets that typically ends up in landfills. Eliminates pallet unwrapping disposal charges for retail receiving docks.',
+    features: ['30% elongation capability creates high holding force around palletized cartons', 'High inter-layer friction prevents boxes from shifting during abrupt truck braking', 'Compatible with standard manual hand-wrap dispensers or automated wrapping turntables'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 44.00, total: 88 },
+      { qty: 6, pricePerUnit: 38.00, total: 228 },
+      { qty: 16, pricePerUnit: 32.50, total: 520 },
+      { qty: 32, pricePerUnit: 27.00, total: 864 }
+    ],
+    specs: { 'Stretch Capacity': 'Up to 30% elongation', 'Roll Width': '500 mm', 'Tensile Hold': 'High load security' }
+  },
+  {
+    id: 'paper-strapping-bands',
+    name: 'Paper Strapping Bands',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'paper-strapping',
+    subtitle: 'Eco-friendly alternative to polypropylene plastic strapping bands with up to 250kg tensile strength.',
+    price: 48.00,
+    moq: 2,
+    unit: 'coil (1000m)',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 66,
+    badge: '250kg Tensile Paper',
+    material: 'Tightly Twisted Multi-Ply High-Tensile Kraft Paper Cord',
+    boardWeight: '12mm × 1000m Machine / Hand Coil',
+    coating: 'Biodegradable vegetable starch binder',
+    dimensionsPreset: '12mm width × 3,280 feet (12mm × 1000m coil)',
+    dimensionsAvailable: ['9mm Light Duty (1500m)', '12mm Standard (1000m)', '16mm Heavy Duty (800m)'],
+    finishOptions: ['Natural Brown Kraft', 'Clean White Band'],
+    ecoBadges: ['Replaces Polypropylene Strapping', '100% Repulpable with Box', 'Safe on Hands (No Sharp Edges)'],
+    leadTime: '2-4 business days',
+    history: 'Invented to replace sharp plastic and steel strapping that commonly cuts into cardboard cartons and causes handling injuries during warehouse opening.',
+    environmentalImpact: 'Polypropylene plastic strapping cannot be recycled through standard paper streams and tangles inside municipal sorting rotors. Paper strapping recycles directly with the box.',
+    features: ['Compatible with semi-automatic strapping machines, friction weld tools, or metal buckles', 'Smooth paper edges eliminate worker finger lacerations and handling injuries', 'High break strain up to 250 kg holds pallet cartons and timber securely'],
+    pricingTiers: [
+      { qty: 2, pricePerUnit: 54.00, total: 108 },
+      { qty: 6, pricePerUnit: 48.00, total: 288 },
+      { qty: 12, pricePerUnit: 41.00, total: 492 },
+      { qty: 24, pricePerUnit: 35.00, total: 840 }
+    ],
+    specs: { 'Tensile Break': 'Up to 250 kg (550 lbs)', 'Width': '12 mm', 'Machine Compatible': 'Yes' }
+  },
+  {
+    id: 'kraft-pallet-top-covers',
+    name: 'Kraft Pallet Top Covers',
+    category: 'tape-bags',
+    filterKey: 'tape-bags',
+    categoryName: 'Tape, Labels, Bags & Strapping',
+    svgType: 'single-wall-box',
+    subtitle: 'Heavyweight protective paper sheets for shielding palletized goods from dust and warehouse moisture.',
+    price: 0.85,
+    moq: 100,
+    unit: 'sheet',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 52,
+    badge: 'Dust & Moisture Shield',
+    material: '150 GSM Water-Resistant Heavyweight Kraft Paper',
+    boardWeight: '150 GSM Heavy Board Sheet',
+    coating: 'Hydrophobic cellulose treatment',
+    dimensionsPreset: '48" × 48" (1200 × 1200 mm) Pre-Cut Sheet',
+    dimensionsAvailable: ['Euro Pallet (1200×800mm)', 'Standard Square (1200×1200mm)', 'Continuous Perforated Roll'],
+    finishOptions: ['Natural Brown Kraft'],
+    ecoBadges: ['Replaces Plastic Top Sheets', '100% Recyclable', 'FSC® Certified'],
+    leadTime: '2-3 business days',
+    history: 'Standard palletizing uses thin polyethylene plastic sheets laid over the top tier of stacked boxes to keep dust off. PackNStir uses water-resistant heavy kraft sheets.',
+    environmentalImpact: 'Eliminates disposable plastic sheets from warehouse operations. Can be reused multiple times or baled directly with cardboard scrap.',
+    features: ['Pre-cut to overhang standard pallets, guarding top boxes from forklift dust and rain', 'Breathable fibers prevent condensation droplets from forming on top boxes', 'Tear-resistant 150 GSM kraft stands up to vigorous outdoor loading dock handling'],
+    pricingTiers: [
+      { qty: 100, pricePerUnit: 1.05, total: 105 },
+      { qty: 250, pricePerUnit: 0.85, total: 212.5 },
+      { qty: 500, pricePerUnit: 0.70, total: 350 },
+      { qty: 1000, pricePerUnit: 0.58, total: 580 }
+    ],
+    specs: { 'Dimensions': '1200 mm × 1200 mm', 'GSM': '150 GSM', 'Water Resistant': 'Yes' }
   }
 ];
 
@@ -1414,7 +2372,7 @@ function getProductById(id) {
 
 function getProductsByCategory(category) {
   if (!category || category === 'all') return PRODUCTS;
-  return PRODUCTS.filter(p => p.category === category);
+  return PRODUCTS.filter(p => p.category === category || p.filterKey === category);
 }
 
 function getFeaturedProducts() {
@@ -1439,7 +2397,7 @@ const TIMELINE_MILESTONES = [
     tag: 'R&D Innovation',
     title: 'The Honeycomb Breakthrough',
     headline: 'Replacing plastic bubble wrap forever.',
-    description: 'After 14 months of physical drop testing and finite element analysis, EcoPack Studio launched the Honeycomb Padded Paper Mailer. By precision-cutting recycled kraft paper into an interlocking hexagonal grid, we engineered shock absorption equal to 3/16" plastic bubble wrap—yet 100% curbside repulpable in standard blue paper bins.',
+    description: 'After 14 months of physical drop testing and finite element analysis, PackNStir launched the Honeycomb Padded Paper Mailer. By precision-cutting recycled kraft paper into an interlocking hexagonal grid, we engineered shock absorption equal to 3/16" plastic bubble wrap—yet 100% curbside repulpable in standard blue paper bins.',
     impact: 'Over 2.4 million meters of plastic bubble film replaced in Year 1.',
     stat: '14 Months of Drop Testing',
     imageType: 'honeycomb'
@@ -1459,7 +2417,7 @@ const TIMELINE_MILESTONES = [
     tag: 'Architectural Craft',
     title: 'Luxury Meets the Circular Economy',
     headline: 'Rigid presentation boxes without petroleum foam.',
-    description: 'Luxury brands long believed that premium unboxing required plastic EVA foam cavities and glossy synthetic film lamination. EcoPack Studio debuted our Heirloom Setup Boxes: 1200 GSM recycled greyboard covered in fine-milled FSC paper with contour-molded bamboo cellulose cushions and natural cotton velvet linings.',
+    description: 'Luxury brands long believed that premium unboxing required plastic EVA foam cavities and glossy synthetic film lamination. PackNStir debuted our Heirloom Setup Boxes: 1200 GSM recycled greyboard covered in fine-milled FSC paper with contour-molded bamboo cellulose cushions and natural cotton velvet linings.',
     impact: 'Adopted by 85+ haute parfumerie, fine jewelry, and boutique fashion houses.',
     stat: 'Zero EVA Foam',
     imageType: 'luxury'
@@ -1479,7 +2437,7 @@ const TIMELINE_MILESTONES = [
     tag: 'The Horizon',
     title: 'Algae Inks & Regenerative Agriculture',
     headline: 'Packaging that actively heals the soil.',
-    description: 'Today, EcoPack Studio is piloting carbon-negative black and colored inks derived from spirulina algae and sourcing non-wood fibers from regenerative agricultural residues like hemp and wheat straw. Our mission remains unwavering: zero single-use plastics, uncompromising luxury aesthetics, and total circularity.',
+    description: 'Today, PackNStir is piloting carbon-negative black and colored inks derived from spirulina algae and sourcing non-wood fibers from regenerative agricultural residues like hemp and wheat straw. Our mission remains unwavering: zero single-use plastics, uncompromising luxury aesthetics, and total circularity.',
     impact: 'Sequestering 1.8 kg of CO2 per ton of virgin paper alternative produced.',
     stat: 'Carbon Negative Inks',
     imageType: 'future'
@@ -1526,7 +2484,7 @@ const MATERIALS_GUIDE = [
 
 const TESTIMONIALS = [
   {
-    quote: 'Switching our nationwide pizza chain to EcoPack’s micro-flute boxes eliminated 420,000 plastic-lined boxes a year. Customers constantly compliment how crisp the crust stays on delivery—the ventilation engineering is second to none.',
+    quote: 'Switching our nationwide pizza chain to PackNStir’s micro-flute boxes eliminated 420,000 plastic-lined boxes a year. Customers constantly compliment how crisp the crust stays on delivery—the ventilation engineering is second to none.',
     author: 'Marco Bellini',
     role: 'Founder & Head Chef',
     company: 'Farina Artisanal Pizza, San Francisco',
@@ -1534,7 +2492,7 @@ const TESTIMONIALS = [
     highlight: '420k plastic boxes eliminated'
   },
   {
-    quote: 'For our luxury botanical perfume line, we refused to use cheap EVA plastic foam. EcoPack engineered a custom molded cellulose insert wrapped in black velvet paper that feels even more luxurious than traditional boxes, with zero guilt.',
+    quote: 'For our luxury botanical perfume line, we refused to use cheap EVA plastic foam. PackNStir engineered a custom molded cellulose insert wrapped in black velvet paper that feels even more luxurious than traditional boxes, with zero guilt.',
     author: 'Claire Delacroix',
     role: 'Creative Director',
     company: 'Maison Botanique, Paris',
@@ -1561,7 +2519,7 @@ const TESTIMONIALS = [
 
 
 // === Module: src/state/cartState.js ===
-// EcoPack Studio - Reactive Shopping Cart & Checkout State Store
+// PackNStir - Reactive Shopping Cart & Checkout State Store
 
 class CartStore {
   constructor() {
@@ -2537,7 +3495,7 @@ function renderCheckoutModal() {
             <div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-700"></span>
-                <span class="text-xs uppercase tracking-widest text-emerald-800 font-bold">EcoPack Studio Secure Checkout</span>
+                <span class="text-xs uppercase tracking-widest text-emerald-800 font-bold">PackNStir Secure Checkout</span>
               </div>
               <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight">Finalize Your Order</h2>
             </div>
@@ -3179,78 +4137,92 @@ function initQuickViewModal() {
 // === Module: src/components/Navbar.js ===
 function renderNavbar() {
   return `
-    <header id="site-header" class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
+    <header id="site-header" class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#EBDDC8] transition-all duration-300">
       
       <!-- Top Eco Announcement Bar -->
       <div class="bg-emerald-950 text-emerald-200 text-[11px] font-medium py-1.5 px-4 text-center flex items-center justify-center gap-2 overflow-hidden">
         <span class="inline-flex items-center gap-1.5 font-bold text-white uppercase tracking-wider text-[9px] bg-emerald-800 px-2 py-0.5 rounded-full">
-          Plastic-Free Guarantee
+          Zero-Plastic Certified
         </span>
-        <span class="truncate">All packaging 100% curbside recyclable & home compostable. Free carbon-neutral shipping over $150.</span>
-        <a href="#quote" class="underline font-bold text-emerald-100 hover:text-white hidden sm:inline ml-1">Request Free Sample Kit →</a>
+        <span class="truncate">PackNStir: 100% Biodegradable & Recyclable Packaging. Free carbon-neutral freight on orders over $150.</span>
+        <a href="#showcase" class="underline font-bold text-emerald-300 hover:text-white hidden sm:inline ml-1">Explore Eco-Heritage Showcase →</a>
       </div>
 
       <!-- Main Navigation Bar -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           
-          <!-- Logo & Brand Identity -->
+          <!-- Logo & Brand Identity (PackNStir) -->
           <a href="#home" class="flex items-center gap-3 group">
             <div class="w-10 h-10 rounded-xl bg-emerald-900 group-hover:bg-emerald-800 transition-colors flex items-center justify-center text-emerald-300 shadow-md shadow-emerald-950/20">
               <svg class="w-5 h-5 transition-transform group-hover:rotate-12 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
               </svg>
             </div>
             <div>
-              <span class="font-extrabold text-xl tracking-tight text-stone-900 block font-serif">
-                EcoPack <span class="text-emerald-800 font-sans font-bold">Studio</span>
+              <span class="font-black text-2xl tracking-tight text-stone-950 block font-serif">
+                Pack<span class="text-emerald-800 font-sans font-extrabold">N</span>Stir
               </span>
-              <span class="text-[10px] tracking-widest uppercase text-stone-500 font-semibold block -mt-1">
-                Circular Packaging Lab
+              <span class="text-[9px] tracking-widest uppercase text-stone-500 font-bold block -mt-1">
+                Zero-Plastic Packaging
               </span>
             </div>
           </a>
 
           <!-- Desktop Navigation Links -->
-          <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-700">
+          <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-stone-700">
             <a href="#home" class="nav-link hover:text-emerald-800 transition-colors py-1 relative">Home</a>
             
-            <!-- Products with Category Dropdown Indicator -->
+            <!-- Dedicated Eco-Heritage Master Page Link -->
+            <a href="#showcase" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5 text-emerald-900">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+              <span>The Eco-Showcase</span>
+              <span class="text-[9px] font-black bg-emerald-100 text-emerald-950 px-1.5 py-0.5 rounded-full">46</span>
+            </a>
+
+            <!-- Shop Dropdown / Catalog -->
             <div class="relative group">
-              <a href="#products" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1">
-                <span>Products Catalog</span>
+              <a href="#shop" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1">
+                <span>Shop</span>
                 <svg class="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-800 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </a>
 
               <!-- Dropdown Menu -->
               <div class="absolute left-0 top-full pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                <div class="w-64 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 space-y-1">
-                  <a href="#products?category=food" class="flex items-center gap-3 p-2 rounded-xl hover:bg-stone-50 transition-colors text-xs font-semibold text-stone-800">
-                    <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm">🍕</span>
+                <div class="w-72 bg-white rounded-2xl shadow-2xl border border-[#EBDDC8] p-2.5 space-y-1">
+                  <a href="#shop?category=boxes" class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FBF8F3] transition-colors text-xs font-semibold text-stone-900">
+                    <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center text-sm">📦</span>
                     <div>
-                      <div class="font-bold">Food & Beverage</div>
-                      <div class="text-[10px] text-stone-500 font-normal">Pizza, lunch & cake boxes</div>
+                      <div class="font-bold">Cardboard Boxes & Cartons</div>
+                      <div class="text-[10px] text-stone-500 font-normal">Single, double, tri-wall & crash-lock</div>
                     </div>
                   </a>
-                  <a href="#products?category=luxury" class="flex items-center gap-3 p-2 rounded-xl hover:bg-stone-50 transition-colors text-xs font-semibold text-stone-800">
-                    <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-900 flex items-center justify-center text-sm">✨</span>
+                  <a href="#shop?category=postal" class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FBF8F3] transition-colors text-xs font-semibold text-stone-900">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-900 flex items-center justify-center text-sm">✉️</span>
                     <div>
-                      <div class="font-bold">Luxury & Retail</div>
-                      <div class="text-[10px] text-stone-500 font-normal">Rigid setup, perfume & watch</div>
+                      <div class="font-bold">Postal & E-Commerce</div>
+                      <div class="text-[10px] text-stone-500 font-normal">Bio mailers, book wraps & tubes</div>
                     </div>
                   </a>
-                  <a href="#products?category=shipping" class="flex items-center gap-3 p-2 rounded-xl hover:bg-stone-50 transition-colors text-xs font-semibold text-stone-800">
-                    <span class="w-7 h-7 rounded-lg bg-amber-50 text-stone-800 flex items-center justify-center text-sm">📦</span>
+                  <a href="#shop?category=takeaway" class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FBF8F3] transition-colors text-xs font-semibold text-stone-900">
+                    <span class="w-7 h-7 rounded-lg bg-amber-50 text-stone-800 flex items-center justify-center text-sm">🥗</span>
                     <div>
-                      <div class="font-bold">E-Commerce & Shipping</div>
-                      <div class="text-[10px] text-stone-500 font-normal">Mailers, honeycomb & cartons</div>
+                      <div class="font-bold">Sustainable Takeaway</div>
+                      <div class="text-[10px] text-stone-500 font-normal">Sugarcane, palm leaf & hot cups</div>
                     </div>
                   </a>
-                  <a href="#products?category=bags" class="flex items-center gap-3 p-2 rounded-xl hover:bg-stone-50 transition-colors text-xs font-semibold text-stone-800">
-                    <span class="w-7 h-7 rounded-lg bg-stone-100 text-stone-800 flex items-center justify-center text-sm">🛍️</span>
+                  <a href="#shop?category=protective" class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FBF8F3] transition-colors text-xs font-semibold text-stone-900">
+                    <span class="w-7 h-7 rounded-lg bg-stone-100 text-stone-800 flex items-center justify-center text-sm">🛡️</span>
                     <div>
-                      <div class="font-bold">Paper Bags & Accessories</div>
-                      <div class="text-[10px] text-stone-500 font-normal">Twisted totes, tissue & stickers</div>
+                      <div class="font-bold">Protective & Void Fill</div>
+                      <div class="text-[10px] text-stone-500 font-normal">Honeycomb wrap & starch peanuts</div>
+                    </div>
+                  </a>
+                  <a href="#shop?category=tape-bags" class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FBF8F3] transition-colors text-xs font-semibold text-stone-900">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-900 flex items-center justify-center text-sm">🏷️</span>
+                    <div>
+                      <div class="font-bold">Tape, Bags & Strapping</div>
+                      <div class="text-[10px] text-stone-500 font-normal">Gummed tape, stretch paper & strapping</div>
                     </div>
                   </a>
                 </div>
@@ -3258,24 +4230,23 @@ function renderNavbar() {
             </div>
 
             <a href="#about" class="nav-link hover:text-emerald-800 transition-colors py-1">About Us</a>
-            <a href="#story" class="nav-link hover:text-emerald-800 transition-colors py-1">Our Story</a>
             <a href="#quote" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5">
               <span>Custom Quote</span>
-              <span class="text-[9px] font-bold bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded-full">Bespoke</span>
+              <span class="text-[9px] font-bold bg-[#EBDDC8] text-stone-800 px-2 py-0.5 rounded-full">CAD</span>
             </a>
           </nav>
 
           <!-- Right Action Items: Cart & Mobile Menu -->
           <div class="flex items-center gap-3">
             
-            <!-- Custom Quote Pill Button (Desktop) -->
-            <a href="#quote" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-emerald-900 hover:bg-emerald-800 text-white shadow-sm transition-all">
+            <!-- Custom Quote CTA Button (Desktop) -->
+            <a href="#quote" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-800 hover:bg-emerald-900 text-white shadow-md shadow-emerald-950/20 transition-all">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
               <span>Instant CAD Quote</span>
             </a>
 
             <!-- Cart Trigger Button -->
-            <button id="nav-cart-trigger" class="relative p-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-200 transition-colors flex items-center gap-2" aria-label="Shopping Cart">
+            <button id="nav-cart-trigger" class="relative p-2.5 rounded-xl bg-white hover:bg-[#F6EFE3] text-stone-900 border border-[#DEC6A6] transition-colors flex items-center gap-2" aria-label="Shopping Cart">
               <svg class="w-5 h-5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
               <span class="text-xs font-bold hidden sm:inline text-stone-900">Cart</span>
               <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-emerald-700 text-white text-[11px] font-black flex items-center justify-center shadow">
@@ -3294,20 +4265,23 @@ function renderNavbar() {
       </div>
 
       <!-- Mobile Navigation Drawer -->
-      <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-xl">
-        <div class="flex flex-col space-y-3 font-semibold text-stone-800 text-base">
+      <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-2xl">
+        <div class="flex flex-col space-y-3 font-bold text-stone-900 text-base">
           <a href="#home" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">Home</a>
-          <a href="#products" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
-            <span>Products & Catalog</span>
-            <span class="text-xs bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded-full">19 items</span>
+          <a href="#showcase" class="mobile-nav-link text-emerald-900 hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
+            <span>The Eco-Showcase (Master Archive)</span>
+            <span class="text-xs bg-emerald-100 text-emerald-950 px-2 py-0.5 rounded-full font-black">46</span>
+          </a>
+          <a href="#shop" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
+            <span>Shop All Products</span>
+            <span class="text-xs bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full">5 Categories</span>
           </a>
           <a href="#about" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">About Us & Mission</a>
-          <a href="#story" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">Our Story & Timeline</a>
           <a href="#quote" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">Contact & Custom Quote</a>
         </div>
         <div class="pt-2">
-          <a href="#quote" class="w-full py-3 bg-emerald-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow">
-            <span>Build Bespoke Custom Quote</span>
+          <a href="#quote" class="w-full py-3.5 bg-emerald-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow">
+            <span>Build Bespoke CAD Quote</span>
           </a>
         </div>
       </div>
@@ -3353,13 +4327,13 @@ function renderFooter() {
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div class="lg:col-span-7 space-y-2">
               <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-400 border border-emerald-800/50">
-                🌱 The Circular Packaging Dispatch
+                🌱 The Zero-Plastic Circular Dispatch
               </span>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-serif">
-                Join 2,400+ Sustainable Brand Founders
+                Join 3,200+ Eco-Conscious Brand Leaders
               </h3>
               <p class="text-stone-400 text-xs sm:text-sm max-w-xl">
-                Get monthly deep dives on zero-plastic barrier coatings, regulatory packaging updates across the EU & North America, and $25 off your first sample order.
+                Get monthly deep dives on zero-plastic barrier coatings, regulatory packaging updates across the EU & North America, and £25 off your first wholesale sample run.
               </p>
             </div>
 
@@ -3367,7 +4341,7 @@ function renderFooter() {
               <form id="newsletter-form" class="space-y-2">
                 <div class="flex flex-col sm:flex-row gap-2">
                   <input type="email" id="newsletter-email" placeholder="founder@yourbrand.com" class="flex-1 px-4 py-3 bg-stone-950 border border-stone-700 rounded-xl text-xs text-white placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" required />
-                  <button type="submit" class="px-5 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 flex-shrink-0">
+                  <button type="submit" class="px-5 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer">
                     <span>Subscribe</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </button>
@@ -3398,17 +4372,30 @@ function renderFooter() {
           <!-- Column 1: Brand Info (2 cols) -->
           <div class="col-span-2 space-y-4 pr-4">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-xl bg-emerald-900 flex items-center justify-center text-emerald-300">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+              <div class="w-9 h-9 rounded-xl bg-emerald-800 flex items-center justify-center text-white shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
               </div>
-              <span class="font-extrabold text-xl text-white font-serif">EcoPack <span class="text-emerald-400 font-sans">Studio</span></span>
+              <span class="font-extrabold text-2xl text-white font-serif tracking-tight">Pack<span class="text-emerald-400 font-sans">N</span>Stir</span>
             </div>
             <p class="text-xs text-stone-400 max-w-sm leading-relaxed">
-              Pioneering circular paper, micro-flute corrugated, and rigid cardboard packaging for forward-thinking food, retail, luxury, and e-commerce brands. Zero single-use plastics, always.
+              Pioneering circular paper, micro-flute corrugated cardboard, compostable tableware, and zero-plastic protective packaging for retail, hospitality, and e-commerce. 100% curbside recyclable and biodegradable.
             </p>
             <div class="text-xs text-stone-500 space-y-1">
-              <div>📍 Innovation HQ: 482 Greenleaf Way, Portland, OR 97201</div>
-              <div>⚡ Powered 100% by rooftop solar arrays & closed-loop water systems</div>
+              <div>📍 Global Distribution Hub & Cleanroom Lab</div>
+              <div>⚡ 100% Powered by rooftop solar arrays & closed-loop water conversion</div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="flex items-center gap-3 pt-2">
+              <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-emerald-400 hover:border-emerald-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter / X" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-emerald-400 hover:border-emerald-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-emerald-400 hover:border-emerald-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
             </div>
           </div>
 
@@ -3416,36 +4403,36 @@ function renderFooter() {
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Product Catalog</h4>
             <ul class="space-y-2 text-xs text-stone-400">
-              <li><a href="#products?category=food" class="hover:text-emerald-400 transition-colors">Micro-Flute Pizza Boxes</a></li>
-              <li><a href="#products?category=food" class="hover:text-emerald-400 transition-colors">Leak-Proof Takeaway Containers</a></li>
-              <li><a href="#products?category=luxury" class="hover:text-emerald-400 transition-colors">Magnetic Rigid Setup Boxes</a></li>
-              <li><a href="#products?category=shipping" class="hover:text-emerald-400 transition-colors">Roll-End Tuck Front Mailers</a></li>
-              <li><a href="#products?category=shipping" class="hover:text-emerald-400 transition-colors">Honeycomb Padded Mailers</a></li>
-              <li><a href="#products?category=bags" class="hover:text-emerald-400 transition-colors">Boutique Twisted Paper Bags</a></li>
+              <li><a href="#shop?category=boxes" class="hover:text-emerald-400 transition-colors">Cardboard Boxes & Cartons (9)</a></li>
+              <li><a href="#shop?category=postal" class="hover:text-emerald-400 transition-colors">Postal & E-Commerce (7)</a></li>
+              <li><a href="#shop?category=takeaway" class="hover:text-emerald-400 transition-colors">Sustainable Takeaway (10)</a></li>
+              <li><a href="#shop?category=protective" class="hover:text-emerald-400 transition-colors">Protective Packaging (8)</a></li>
+              <li><a href="#shop?category=tape-bags" class="hover:text-emerald-400 transition-colors">Tape, Bags & Strapping (12)</a></li>
+              <li><a href="#shop" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1">Browse All 46 Products →</a></li>
             </ul>
           </div>
 
-          <!-- Column 3: Sustainability & Science -->
+          <!-- Column 3: The Eco-Heritage Showcase -->
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Sustainability</h4>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">The Eco-Heritage</h4>
             <ul class="space-y-2 text-xs text-stone-400">
-              <li><a href="#about" class="hover:text-emerald-400 transition-colors">PFAS-Free Aqueous Coatings</a></li>
-              <li><a href="#about" class="hover:text-emerald-400 transition-colors">Zero-Plastic Honeycomb Mesh</a></li>
-              <li><a href="#about" class="hover:text-emerald-400 transition-colors">FSC® Forest Stewardship</a></li>
-              <li><a href="#about" class="hover:text-emerald-400 transition-colors">Soy & Algae-Based Inks</a></li>
-              <li><a href="#story" class="hover:text-emerald-400 transition-colors">Solar Facility Tour</a></li>
+              <li><a href="#showcase" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Master Showcase (46 items)</a></li>
+              <li><a href="#showcase#cat-boxes" class="hover:text-emerald-400 transition-colors">Corrugated Fiber Origins</a></li>
+              <li><a href="#showcase#cat-takeaway" class="hover:text-emerald-400 transition-colors">Bagasse & Palm Degradation</a></li>
+              <li><a href="#showcase#cat-protective" class="hover:text-emerald-400 transition-colors">Starch Peanuts & Honeycomb</a></li>
+              <li><a href="#showcase#cat-tape-bags" class="hover:text-emerald-400 transition-colors">Gummed Tape Science</a></li>
             </ul>
           </div>
 
           <!-- Column 4: Studio & B2B -->
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Custom & B2B</h4>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Company & Support</h4>
             <ul class="space-y-2 text-xs text-stone-400">
-              <li><a href="#quote" class="hover:text-emerald-400 transition-colors">Bespoke CAD Configurator</a></li>
+              <li><a href="#quote" class="hover:text-emerald-400 transition-colors">Custom CAD Quote Tool</a></li>
+              <li><a href="#about" class="hover:text-emerald-400 transition-colors">Zero-Plastic Mission & Vision</a></li>
+              <li><a href="#story" class="hover:text-emerald-400 transition-colors">Our Founding Timeline</a></li>
+              <li><a href="#about" class="hover:text-emerald-400 transition-colors">Materials Science Guide</a></li>
               <li><a href="#quote" class="hover:text-emerald-400 transition-colors">Free Unprinted CAD Samples</a></li>
-              <li><a href="#quote" class="hover:text-emerald-400 transition-colors">Wholesale & Enterprise Supply</a></li>
-              <li><a href="#about" class="hover:text-emerald-400 transition-colors">Artwork & Dieline Guidelines</a></li>
-              <li><a href="#story" class="hover:text-emerald-400 transition-colors">Our Founding Story</a></li>
             </ul>
           </div>
 
@@ -3453,11 +4440,11 @@ function renderFooter() {
 
         <!-- Bottom Copyright & Legal -->
         <div class="border-t border-stone-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
-          <p>© 2026 EcoPack Studio Inc. All rights reserved. 100% Repulpable & Compostable Packaging.</p>
+          <p>© 2026 PackNStir Inc. All rights reserved. 100% Repulpable, Plastic-Free & Compostable Packaging.</p>
           <div class="flex items-center gap-6">
             <a href="#about" class="hover:text-stone-300">Privacy Policy</a>
             <a href="#about" class="hover:text-stone-300">Terms of Supply</a>
-            <a href="#about" class="hover:text-stone-300">Chain of Custody Certificate</a>
+            <a href="#about" class="hover:text-stone-300">FSC® Chain of Custody</a>
           </div>
         </div>
 
@@ -3478,7 +4465,7 @@ function initFooter() {
       if (!email) return;
 
       msg.classList.remove('hidden');
-      msg.textContent = '🎉 Welcome to the circular packaging movement! Check your inbox for your $25 sample code.';
+      msg.textContent = '🎉 Welcome to the PackNStir circular packaging community! Check your inbox for your sample voucher.';
       input.value = '';
     });
   }
@@ -3490,63 +4477,64 @@ function renderHomeView() {
   const featured = getFeaturedProducts();
 
   return `
-    <div class="space-y-24 sm:space-y-32">
+    <div class="space-y-24 sm:space-y-32 bg-white">
       
       <!-- ========================================== -->
-      <!-- 1. HERO SECTION WITH 3D PACKAGING VIEWER   -->
+      <!-- 1. HERO SECTION: CLEAN WHITE & GREEN CTA   -->
       <!-- ========================================== -->
-      <section class="relative pt-12 pb-8 sm:pt-20 sm:pb-16 overflow-hidden">
-        <!-- Ambient background gradient -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-emerald-100/40 via-amber-100/30 to-stone-200/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <section class="relative pt-12 pb-12 sm:pt-20 sm:pb-20 overflow-hidden bg-white">
+        <!-- Floating subtle kraft background aura -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-gradient-to-tr from-[#F6EFE3]/50 via-emerald-50/40 to-[#FAF8F5] rounded-full blur-3xl pointer-events-none -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             <!-- Left Headline & Value Prop (6 cols) -->
             <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-900/10 text-emerald-900 border border-emerald-900/20 text-xs font-bold tracking-wide">
-                <span class="w-2 h-2 rounded-full bg-emerald-700 animate-ping"></span>
-                <span>Zero Single-Use Plastics • 100% Repulpable</span>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-950 border border-emerald-300 text-xs font-black tracking-wide shadow-2xs">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
+                <span>Zero Single-Use Plastics • 100% Natural Packaging</span>
               </div>
 
-              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.1] font-serif">
-                Bespoke Sustainable Packaging <span class="italic text-emerald-900 font-serif">Engineered</span> for Modern Brands.
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.08] font-serif">
+                Zero-Plastic Packaging <br/>
+                <span class="italic text-emerald-800 font-serif">Engineered</span> to Dissolve Back to Earth.
               </h1>
 
               <p class="text-stone-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans">
-                Replace plastic polybags, foam peanuts, and toxic laminations with high-performance FSC®-certified corrugated cardboard, rigid setup boxes, and food-grade aqueous barriers.
+                PackNStir replaces synthetic bubble wrap, poly mailers, and plastic takeaway linings with 100% repulpable single/double-wall corrugated cartons, sugarcane bagasse, and water-activated gummed paper.
               </p>
 
-              <!-- CTA Buttons -->
+              <!-- Green CTAs -->
               <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-900 hover:bg-emerald-800 active:scale-[0.99] text-white font-bold text-sm shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2 group">
-                  <span>Explore Product Catalog</span>
-                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2.5 group">
+                  <span>Explore The Eco-Showcase</span>
+                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
-                <a href="#quote" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                  <span>Build Custom CAD Quote</span>
+                
+                <a href="#shop" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-[#F6EFE3] hover:bg-[#EBDDC8] border border-[#DEC6A6] text-stone-900 font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2">
+                  <span>Shop 46 Products</span>
                 </a>
               </div>
 
               <!-- Trust Stats Row -->
-              <div class="pt-6 border-t border-stone-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+              <div class="pt-6 border-t border-[#EBDDC8] grid grid-cols-3 gap-4 text-center lg:text-left">
                 <div>
-                  <span class="block text-xl sm:text-2xl font-black text-stone-900">2,400+</span>
-                  <span class="text-xs text-stone-500 font-medium">Brands Powered</span>
+                  <span class="block text-2xl sm:text-3xl font-black text-emerald-950 font-serif">0%</span>
+                  <span class="text-xs text-stone-500 font-bold uppercase tracking-wider">Plastic Content</span>
                 </div>
                 <div>
-                  <span class="block text-xl sm:text-2xl font-black text-stone-900">0%</span>
-                  <span class="text-xs text-stone-500 font-medium">Fossil Plastic Used</span>
+                  <span class="block text-2xl sm:text-3xl font-black text-emerald-950 font-serif">46+</span>
+                  <span class="text-xs text-stone-500 font-bold uppercase tracking-wider">Circular Formats</span>
                 </div>
                 <div>
-                  <span class="block text-xl sm:text-2xl font-black text-stone-900">48h</span>
-                  <span class="text-xs text-stone-500 font-medium">CAD Prototyping</span>
+                  <span class="block text-2xl sm:text-3xl font-black text-emerald-950 font-serif">&lt; 90d</span>
+                  <span class="text-xs text-stone-500 font-bold uppercase tracking-wider">Compost Cycle</span>
                 </div>
               </div>
             </div>
 
-            <!-- Right Interactive 3D Packaging Visualizer (6 cols) -->
+            <!-- Right: Interactive Floating 3D Packaging Visualizer (6 cols) -->
             <div class="lg:col-span-6">
               ${renderBoxVisualizer()}
             </div>
@@ -3557,51 +4545,75 @@ function renderHomeView() {
 
 
       <!-- ========================================== -->
-      <!-- 2. EXPLORE CATEGORIES GRID                 -->
+      <!-- 2. FOUR SPECIFIED CATEGORIES GRID          -->
       <!-- ========================================== -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block mb-2">Architectural Systems</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight font-serif">
-            Packaging Engineered by Industry
+          <span class="text-xs uppercase font-black tracking-widest text-emerald-800 block mb-2">Engineered by Material Architecture</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-950 tracking-tight font-serif">
+            Essential Sustainable Categories
           </h2>
           <p class="text-stone-600 text-sm mt-3">
-            Every category utilizes certified sustainable pulp, water-soluble starch adhesives, and zero synthetic plastic films.
+            Pure plant fibers, starch molecular adhesives, and food-grade aqueous barrier coatings.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          ${CATEGORIES.map(cat => `
-            <div class="group relative rounded-3xl bg-white border border-stone-200/90 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-emerald-700/40 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          ${HOME_FEATURED_CATEGORIES.map(cat => `
+            <a href="${cat.link}" class="group rounded-3xl bg-[#FAF8F5] border-2 border-[#EBDDC8] p-7 shadow-xs hover:shadow-xl hover:border-emerald-700 transition-all duration-300 flex flex-col justify-between">
               <div class="space-y-4">
                 <div class="flex items-center justify-between">
-                  <span class="w-12 h-12 rounded-2xl bg-stone-100 group-hover:bg-emerald-900 group-hover:text-white transition-colors flex items-center justify-center text-2xl shadow-xs">
-                    ${cat.id === 'food' ? '🍕' : cat.id === 'luxury' ? '✨' : cat.id === 'shipping' ? '📦' : '🛍️'}
+                  <span class="w-14 h-14 rounded-2xl bg-white border border-[#EBDDC8] group-hover:bg-emerald-900 group-hover:text-white transition-all flex items-center justify-center text-3xl shadow-xs">
+                    ${cat.icon}
                   </span>
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 bg-stone-100 px-2.5 py-1 rounded-full">
-                    ${cat.itemCount} Styles
+                  <span class="text-[10px] font-black uppercase tracking-wider text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded-full">
+                    ${cat.items}
                   </span>
                 </div>
 
                 <div>
-                  <h3 class="text-lg font-bold text-stone-900 group-hover:text-emerald-950 transition-colors">
-                    ${cat.name}
+                  <h3 class="text-xl font-bold text-stone-950 group-hover:text-emerald-900 transition-colors font-serif">
+                    ${cat.title}
                   </h3>
-                  <p class="text-xs text-stone-500 mt-2 leading-relaxed">
-                    ${cat.description}
+                  <p class="text-xs font-semibold text-emerald-800 mt-1">${cat.subtitle}</p>
+                  <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+                    ${cat.desc}
                   </p>
                 </div>
               </div>
 
-              <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
-                  ${cat.highlight}
-                </span>
-                <a href="#products?category=${cat.id}" class="text-xs font-bold text-stone-900 group-hover:text-emerald-800 flex items-center gap-1">
-                  <span>View All</span>
-                  <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
+              <div class="pt-6 mt-6 border-t border-[#EBDDC8] flex items-center justify-between text-xs font-bold text-stone-900 group-hover:text-emerald-800">
+                <span>View Formats</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </div>
+            </a>
+          `).join('')}
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- 3. ANIMATED ECO-CREDENTIALS SECTION        -->
+      <!-- ========================================== -->
+      <section class="bg-[#1E3A2F] text-white rounded-3xl sm:rounded-[40px] p-8 sm:p-16 relative overflow-hidden max-w-7xl mx-auto shadow-2xl">
+        <div class="relative z-10 max-w-3xl mb-12">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-300 block mb-2">Verified Circular Credentials</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-serif text-white">
+            0% Fossil Plastic. 100% Compostable.
+          </h2>
+          <p class="text-emerald-100/80 text-sm sm:text-base mt-4 leading-relaxed font-sans">
+            Every fiber harvested carries full Forest Stewardship Council® chain-of-custody tracking. Certified by TÜV Austria for non-toxic backyard compost decomposition.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          ${SUSTAINABILITY_STATS.map(stat => `
+            <div class="bg-emerald-900/40 border border-emerald-700/50 rounded-3xl p-6 sm:p-8 space-y-2 backdrop-blur-sm">
+              <span class="text-4xl sm:text-5xl font-black text-emerald-300 font-serif tracking-tight block">
+                ${stat.displayValue}
+              </span>
+              <h3 class="text-sm font-bold text-white">${stat.label}</h3>
+              <p class="text-xs text-emerald-200/75 leading-relaxed">${stat.subtext}</p>
             </div>
           `).join('')}
         </div>
@@ -3609,29 +4621,29 @@ function renderHomeView() {
 
 
       <!-- ========================================== -->
-      <!-- 3. FEATURED PRODUCTS SHOWCASE               -->
+      <!-- 4. HIGHLIGHTS & FEATURED PRODUCTS          -->
       <!-- ========================================== -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block mb-1">Stock & Custom Formats</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight font-serif">
-              Featured Packaging Solutions
+            <span class="text-xs uppercase font-black tracking-widest text-emerald-800 block mb-1">Sustainable Stock Items</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-950 tracking-tight font-serif">
+              Flagship Packaging Solutions
             </h2>
           </div>
-          <a href="#products" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-900 hover:text-emerald-700 transition-colors">
-            <span>Explore All 19 Products</span>
+          <a href="#showcase" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 hover:text-emerald-700 transition-colors">
+            <span>Explore All 46 in The Eco-Showcase</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           ${featured.slice(0, 6).map(prod => `
-            <div class="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-emerald-800/30 transition-all duration-300 flex flex-col justify-between group">
+            <div class="bg-white rounded-3xl border-2 border-[#EBDDC8] overflow-hidden shadow-xs hover:shadow-xl hover:border-emerald-700 transition-all duration-300 flex flex-col justify-between group">
               
-              <!-- Visual Card Header -->
-              <div class="relative bg-gradient-to-b from-stone-50 to-stone-100/60 p-6 flex items-center justify-center h-64 border-b border-stone-100 overflow-hidden">
-                <span class="absolute top-4 left-4 z-10 text-[10px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-full shadow-xs">
+              <!-- Card Visual Header -->
+              <div class="relative bg-gradient-to-b from-[#FBF8F3] to-[#F4EFE6] p-6 flex items-center justify-center h-64 border-b border-[#EBDDC8] overflow-hidden">
+                <span class="absolute top-4 left-4 z-10 text-[10px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 px-3 py-1 rounded-full shadow-xs">
                   ${prod.badge || 'FSC® Certified'}
                 </span>
                 
@@ -3639,8 +4651,8 @@ function renderHomeView() {
                   ${getProductSvg(prod.svgType, 'card')}
                 </div>
 
-                <!-- Hover Quick View Action Button -->
-                <button data-quickview-id="${prod.id}" class="btn-trigger-quickview absolute bottom-3 right-3 px-3 py-1.5 bg-white/95 hover:bg-emerald-900 hover:text-white text-stone-700 text-xs font-bold rounded-xl shadow-md border border-stone-200 transition-all opacity-0 group-hover:opacity-100 flex items-center gap-1.5">
+                <!-- Quick View Trigger -->
+                <button data-quickview-id="${prod.id}" class="btn-trigger-quickview absolute bottom-3 right-3 px-3 py-1.5 bg-white/95 hover:bg-emerald-900 hover:text-white text-stone-800 text-xs font-bold rounded-xl shadow-md border border-stone-200 transition-all opacity-0 group-hover:opacity-100 flex items-center gap-1.5">
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                   <span>Quick View</span>
                 </button>
@@ -3650,28 +4662,28 @@ function renderHomeView() {
               <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
                 <div>
                   <div class="flex items-center justify-between text-[11px] text-stone-500 mb-1">
-                    <span class="uppercase tracking-wider font-semibold text-emerald-900">${prod.categoryName}</span>
-                    <span>MOQ: ${prod.moq} pcs</span>
+                    <span class="uppercase tracking-wider font-bold text-emerald-900">${prod.categoryName}</span>
+                    <span class="font-semibold bg-[#F6EFE3] px-2 py-0.5 rounded text-stone-800">MOQ: ${prod.moq} pcs</span>
                   </div>
-                  <h3 class="text-base font-bold text-stone-900 group-hover:text-emerald-900 transition-colors leading-snug">
+                  <h3 class="text-lg font-bold text-stone-950 group-hover:text-emerald-900 transition-colors leading-snug font-serif">
                     <a href="#product/${prod.id}">${prod.name}</a>
                   </h3>
-                  <p class="text-xs text-stone-500 mt-1 line-clamp-2">${prod.subtitle}</p>
+                  <p class="text-xs text-stone-600 mt-1 line-clamp-2">${prod.subtitle}</p>
                 </div>
 
                 <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                   <div>
-                    <span class="text-xs text-stone-400 block -mb-0.5">Starting at</span>
-                    <span class="text-lg font-black text-stone-900">$${prod.price.toFixed(2)}</span>
+                    <span class="text-[10px] text-stone-400 block -mb-0.5">Starting at</span>
+                    <span class="text-xl font-black text-stone-950">$${prod.price.toFixed(2)}</span>
                     <span class="text-xs text-stone-500">/ ${prod.unit}</span>
                   </div>
 
                   <div class="flex items-center gap-2">
-                    <button data-add-quick-id="${prod.id}" class="btn-card-quick-add px-3.5 py-2 bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5" title="Add Minimum Order to Cart">
+                    <button data-add-quick-id="${prod.id}" class="btn-card-quick-add px-4 py-2 bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5" title="Add Minimum Order to Cart">
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                       <span>Add</span>
                     </button>
-                    <a href="#product/${prod.id}" class="p-2 text-stone-400 hover:text-stone-800 hover:bg-stone-100 rounded-xl transition-colors" title="View Full Specs">
+                    <a href="#product/${prod.id}" class="p-2 text-stone-400 hover:text-stone-900 hover:bg-[#F6EFE3] rounded-xl transition-colors" title="View Full Specs">
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                   </div>
@@ -3686,150 +4698,34 @@ function renderHomeView() {
 
 
       <!-- ========================================== -->
-      <!-- 4. ECO-CREDENTIALS COUNTER & STATISTICS     -->
-      <!-- ========================================== -->
-      <section class="bg-emerald-950 text-white rounded-3xl sm:rounded-[40px] p-8 sm:p-16 relative overflow-hidden max-w-7xl mx-auto shadow-2xl">
-        <!-- Botanical pattern overlay -->
-        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#FFF_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-
-        <div class="relative z-10 max-w-3xl mb-12 sm:mb-16">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-400 block mb-2">Verified Environmental Impact</span>
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-serif text-white">
-            Real Metrics. Real Trees. Zero Greenwashing.
-          </h2>
-          <p class="text-emerald-200/80 text-sm sm:text-base mt-4 leading-relaxed font-sans">
-            Every millimeter of paperboard we mill is certified by the Forest Stewardship Council®. Our closed-loop manufacturing system returns 94% of process water clean to local aquifers.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-          ${SUSTAINABILITY_STATS.map(stat => `
-            <div class="bg-emerald-900/50 border border-emerald-800/60 rounded-3xl p-6 sm:p-8 space-y-2 backdrop-blur-sm">
-              <span class="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-300 font-serif tracking-tight block">
-                ${stat.displayValue}
-              </span>
-              <h3 class="text-sm font-bold text-white">${stat.label}</h3>
-              <p class="text-xs text-emerald-200/70 leading-relaxed">${stat.subtext}</p>
-            </div>
-          `).join('')}
-        </div>
-      </section>
-
-
-      <!-- ========================================== -->
-      <!-- 5. BARRIER TECH COMPARISON SECTION         -->
-      <!-- ========================================== -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div class="lg:col-span-6 space-y-6">
-            <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block">Clean Chemistry Breakthrough</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight font-serif">
-              Why Traditional "Paper" Packaging Still Fails the Planet
-            </h2>
-            <p class="text-stone-600 text-sm leading-relaxed">
-              Standard takeaway containers, coffee cups, and glossy cosmetic boxes are secretly lined with a microscopic film of polyethylene (PE) plastic or fluorochemical (PFAS) coatings to stop grease. This plastic layer gums up recycling pulpers, forcing 91% of them straight into municipal incinerators and landfills.
-            </p>
-
-            <div class="space-y-4 pt-2">
-              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200">
-                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 font-bold">✓</div>
-                <div>
-                  <h4 class="text-xs font-bold text-stone-900">EcoPack Aqueous Dispersion</h4>
-                  <p class="text-xs text-stone-500 mt-0.5">Water-borne plant starches repel hot oil and grease. Dissolves cleanly in standard paper mill hydro-pulpers for 100% fiber recovery.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 p-4 rounded-2xl bg-stone-100/80 border border-stone-200">
-                <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-800 flex items-center justify-center flex-shrink-0 font-bold">✗</div>
-                <div>
-                  <h4 class="text-xs font-bold text-stone-900">Conventional Polyethylene (PE) Lining</h4>
-                  <p class="text-xs text-stone-500 mt-0.5">Petroleum plastic fused to paperboard. Rejects municipal paper sorting; takes 450+ years to degrade into microplastics.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Infographic Visual Box -->
-          <div class="lg:col-span-6">
-            <div class="bg-gradient-to-br from-stone-900 to-stone-950 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-stone-800 space-y-6">
-              <div class="flex items-center justify-between border-b border-stone-800 pb-4">
-                <span class="text-xs font-mono text-emerald-400 font-bold">LAB SPECIFICATION #EP-2026</span>
-                <span class="text-xs text-stone-400">EN 13432 Compost Standard</span>
-              </div>
-
-              <div class="space-y-4">
-                <div class="space-y-1">
-                  <div class="flex justify-between text-xs">
-                    <span class="text-stone-300">Curbside Blue Bin Repulpability</span>
-                    <span class="text-emerald-400 font-bold">100% (Full Grade 1 Recyclable)</span>
-                  </div>
-                  <div class="w-full bg-stone-800 rounded-full h-2 overflow-hidden">
-                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
-                  </div>
-                </div>
-
-                <div class="space-y-1">
-                  <div class="flex justify-between text-xs">
-                    <span class="text-stone-300">Soil Biodegradation Window</span>
-                    <span class="text-emerald-400 font-bold">&lt; 84 Days in Backyard Soil</span>
-                  </div>
-                  <div class="w-full bg-stone-800 rounded-full h-2 overflow-hidden">
-                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 95%"></div>
-                  </div>
-                </div>
-
-                <div class="space-y-1">
-                  <div class="flex justify-between text-xs">
-                    <span class="text-stone-300">PFAS & Heavy Metal Concentration</span>
-                    <span class="text-emerald-400 font-bold">0.00 ppm (Non-Detectable)</span>
-                  </div>
-                  <div class="w-full bg-stone-800 rounded-full h-2 overflow-hidden">
-                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-stone-800 text-xs text-stone-400 flex items-center justify-between">
-                <span>Verified by TÜV Austria OK Compost</span>
-                <a href="#about" class="text-emerald-400 hover:text-emerald-300 font-bold underline">Read Whitepaper →</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      <!-- ========================================== -->
-      <!-- 6. CLIENT TESTIMONIALS                     -->
+      <!-- 5. CLIENT TRUST & TESTIMONIALS             -->
       <!-- ========================================== -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block mb-2">Client Trust</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight font-serif">
-            Loved by Fast-Growing D2C & Hospitality Leaders
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-950 tracking-tight font-serif">
+            Loved by 2,400+ Sustainable Businesses
           </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           ${TESTIMONIALS.map(t => `
-            <div class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-6">
+            <div class="bg-[#FAF8F5] rounded-3xl p-8 border-2 border-[#EBDDC8] shadow-xs flex flex-col justify-between space-y-6">
               <div class="space-y-4">
-                <div class="flex items-center gap-1 text-amber-500 text-sm">
+                <div class="flex items-center gap-1 text-emerald-700 text-sm">
                   ★ ★ ★ ★ ★
                 </div>
-                <p class="text-stone-700 text-sm sm:text-base leading-relaxed italic font-serif">
+                <p class="text-stone-800 text-sm sm:text-base leading-relaxed italic font-serif">
                   "${t.quote}"
                 </p>
               </div>
 
-              <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <div class="pt-4 border-t border-[#DEC6A6] flex items-center justify-between">
                 <div>
                   <h4 class="text-xs font-bold text-stone-900">${t.author}</h4>
                   <p class="text-[11px] text-stone-500">${t.role} • ${t.company}</p>
                 </div>
-                <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">
+                <span class="text-[11px] font-bold text-emerald-950 bg-emerald-100 px-3 py-1 rounded-full">
                   ${t.highlight}
                 </span>
               </div>
@@ -3868,30 +4764,295 @@ function initHomeView() {
 }
 
 
+// === Module: src/views/ShowcaseView.js ===
+function renderShowcaseView() {
+  return `
+    <div class="bg-white min-h-screen text-stone-900 pb-24">
+      
+      <!-- ========================================== -->
+      <!-- 1. HERO STORYTELLING HEADER                -->
+      <!-- ========================================== -->
+      <section class="relative bg-gradient-to-b from-[#FBF8F3] via-white to-white py-16 sm:py-24 border-b border-stone-200/80 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950 text-emerald-300 text-xs font-bold border border-emerald-800/60 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>The Master Eco-Heritage Archive</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-stone-950 font-serif max-w-4xl mx-auto leading-tight">
+            The Eco-Heritage <span class="italic text-emerald-800">Product Showcase</span>
+          </h1>
+
+          <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-sans">
+            A visual, storytelling-driven exploration of all 46 plastic-free packaging innovations. Uncover the origins of our sustainable materials and inspect their verified environmental impact.
+          </p>
+
+          <!-- Category Quick-Jump Nav -->
+          <div class="pt-4 flex items-center justify-center gap-2 flex-wrap text-xs font-bold">
+            <button data-cat="all" class="showcase-nav-pill active px-4 py-2 rounded-xl bg-emerald-900 text-white shadow-sm transition-all">
+              All 46 Formats
+            </button>
+            ${CATEGORIES.map(c => `
+              <button data-cat="${c.id}" class="showcase-nav-pill px-4 py-2 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 border border-stone-300/80 transition-all">
+                ${c.shortName} (${c.itemCount})
+              </button>
+            `).join('')}
+          </div>
+
+          <!-- Live Search Bar within Showcase -->
+          <div class="pt-2 max-w-md mx-auto">
+            <div class="relative">
+              <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input type="text" id="showcase-search" placeholder="Search product history, material, or environmental impact..." class="w-full pl-10 pr-4 py-3 bg-white border border-stone-300 rounded-2xl text-xs text-stone-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-700" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. SCROLL-TRIGGERED 46 PRODUCT STORY GRID -->
+      <!-- ========================================== -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div id="showcase-cards-container" class="space-y-16">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+    </div>
+  `;
+}
+
+function initShowcaseView() {
+  const container = document.getElementById('showcase-cards-container');
+  const searchInput = document.getElementById('showcase-search');
+  const navPills = document.querySelectorAll('.showcase-nav-pill');
+  if (!container) return;
+
+  let activeCat = 'all';
+  let searchQuery = '';
+
+  function renderCards() {
+    let filtered = PRODUCTS;
+    if (activeCat !== 'all') {
+      filtered = filtered.filter(p => p.category === activeCat);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(p => 
+        p.name.toLowerCase().includes(q) ||
+        p.subtitle.toLowerCase().includes(q) ||
+        p.history.toLowerCase().includes(q) ||
+        p.environmentalImpact.toLowerCase().includes(q) ||
+        p.material.toLowerCase().includes(q)
+      );
+    }
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="text-center py-24 bg-[#FBF8F3] rounded-3xl border border-stone-200">
+          <p class="text-base font-bold text-stone-800">No matching packaging formats found.</p>
+          <p class="text-xs text-stone-500 mt-1">Try another search term or click "All 46 Formats".</p>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = filtered.map((prod, index) => {
+      const isReversed = index % 2 === 1;
+
+      return `
+        <article class="showcase-item bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            
+            <!-- Column A: Visual Placeholder & Key Badges (5 cols) -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-[#FBF8F3] to-[#F4EFE6] p-8 sm:p-12 flex flex-col justify-between items-center relative border-b lg:border-b-0 ${isReversed ? 'lg:order-2 lg:border-l' : 'lg:border-r'} border-[#EBDDC8]">
+              
+              <!-- Top Badges -->
+              <div class="w-full flex items-center justify-between gap-2 z-10">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 px-3 py-1 rounded-full shadow-xs">
+                  ${prod.badge || 'FSC® Certified'}
+                </span>
+                <span class="text-[11px] font-mono text-stone-500 font-semibold">
+                  SKU #PNS-${String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              <!-- Product Graphic -->
+              <div class="w-full h-56 sm:h-64 flex items-center justify-center my-4 transform group-hover:scale-105 transition-transform duration-500">
+                ${getProductSvg(prod.svgType, 'showcase')}
+              </div>
+
+              <!-- Spec Summary Pill -->
+              <div class="w-full pt-4 border-t border-stone-300/60 flex items-center justify-between text-xs font-semibold text-stone-600">
+                <span>MOQ: <strong class="text-stone-900">${prod.moq} pcs</strong></span>
+                <span>From <strong class="text-emerald-900 font-extrabold text-sm">$${prod.price.toFixed(2)}</strong> / ${prod.unit}</span>
+              </div>
+
+            </div>
+
+            <!-- Column B: Storytelling, History & Environmental Impact (7 cols) -->
+            <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between space-y-6 ${isReversed ? 'lg:order-1' : ''}">
+              
+              <div class="space-y-4">
+                
+                <!-- Category and Title -->
+                <div>
+                  <div class="flex items-center gap-2 mb-1.5">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800">${prod.categoryName}</span>
+                    <span class="text-stone-300">•</span>
+                    <span class="text-xs text-stone-500 font-medium">${prod.material.split('(')[0]}</span>
+                  </div>
+                  <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 font-serif leading-tight">
+                    <a href="#product/${prod.id}" class="hover:text-emerald-800 transition-colors">${prod.name}</a>
+                  </h2>
+                  <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
+                    ${prod.subtitle}
+                  </p>
+                </div>
+
+                <!-- SECTION 1: PRODUCT HISTORY (Material Origins) -->
+                <div class="p-5 rounded-2xl bg-[#FBF8F3] border border-[#DEC6A6]/60 space-y-1.5 relative overflow-hidden">
+                  <div class="flex items-center gap-2 text-stone-800 font-serif font-bold text-xs uppercase tracking-wider">
+                    <span>📜 Origin & Material History</span>
+                  </div>
+                  <p class="text-xs text-stone-700 leading-relaxed font-sans">
+                    ${prod.history}
+                  </p>
+                </div>
+
+                <!-- SECTION 2: ENVIRONMENTAL IMPACT (Green Highlighted Section) -->
+                <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-700/40 space-y-2 relative overflow-hidden">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 text-emerald-950 font-bold text-xs uppercase tracking-wider">
+                      <span class="w-2 h-2 rounded-full bg-emerald-700"></span>
+                      <span>🌱 Environmental Impact & Circular Metrics</span>
+                    </div>
+                    <span class="text-[10px] font-extrabold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">100% Repulpable</span>
+                  </div>
+                  <p class="text-xs text-emerald-950 font-medium leading-relaxed font-sans">
+                    ${prod.environmentalImpact}
+                  </p>
+                  
+                  <!-- Eco Badges tags -->
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    ${prod.ecoBadges.map(badge => `
+                      <span class="text-[10px] font-semibold bg-white text-emerald-900 px-2 py-0.5 rounded border border-emerald-300/60 shadow-2xs">
+                        ✓ ${badge}
+                      </span>
+                    `).join('')}
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-xs text-stone-500 font-medium">
+                  Standard sizing: <span class="text-stone-900 font-semibold">${prod.dimensionsPreset}</span>
+                </div>
+
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                  <button data-quick-add-id="${prod.id}" class="btn-showcase-add flex-1 sm:flex-none px-5 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white font-bold text-xs shadow-md shadow-emerald-950/20 transition-all flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <span>Order Batch (${prod.moq} pcs)</span>
+                  </button>
+
+                  <a href="#product/${prod.id}" class="px-4 py-3 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold text-xs border border-stone-300 transition-colors flex items-center justify-center gap-1.5">
+                    <span>Technical PDP</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    // Attach Add to Cart listeners
+    container.querySelectorAll('.btn-showcase-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-quick-add-id');
+        const prod = PRODUCTS.find(p => p.id === id);
+        if (prod) {
+          cart.addItem(prod, prod.moq);
+        }
+      });
+    });
+
+    // GSAP Scroll Reveal for cards
+    if (window.gsap && window.ScrollTrigger) {
+      const items = container.querySelectorAll('.showcase-item');
+      items.forEach((item) => {
+        window.gsap.fromTo(item, 
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          }
+        );
+      });
+    }
+  }
+
+  // Nav pills filter
+  navPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      navPills.forEach(p => {
+        p.className = 'showcase-nav-pill px-4 py-2 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 border border-stone-300/80 transition-all';
+      });
+      pill.className = 'showcase-nav-pill active px-4 py-2 rounded-xl bg-emerald-900 text-white shadow-sm transition-all';
+      activeCat = pill.getAttribute('data-cat');
+      renderCards();
+    });
+  });
+
+  // Search input
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+  }
+
+  // Initial render
+  renderCards();
+}
+
+
 // === Module: src/views/ProductsView.js ===
 function renderProductsView(activeCategory = 'all', searchQuery = '') {
   return `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 bg-white">
       
       <!-- Catalog Page Header -->
-      <div class="bg-gradient-to-r from-stone-900 to-stone-950 text-white rounded-3xl p-8 sm:p-12 border border-stone-800 shadow-xl relative overflow-hidden">
-        <div class="absolute -right-8 -top-8 w-72 h-72 bg-emerald-900/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="bg-gradient-to-r from-[#1E3A2F] to-[#12271E] text-white rounded-3xl sm:rounded-[36px] p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-8 -top-8 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 max-w-2xl space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 text-xs font-bold border border-emerald-800/60">
-            <span>Stock & Custom Runs</span> • <span>Direct Mill Pricing</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900 text-emerald-300 text-xs font-bold border border-emerald-700/60">
+            <span>PackNStir Complete Shop</span> • <span>46 Formats Available</span>
           </div>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-serif text-white">
-            Sustainable Packaging Catalog
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-serif text-white">
+            E-Commerce Packaging Catalog
           </h1>
-          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
-            Every product is engineered with zero plastic films, non-toxic water-based inks, and certified FSC® fibers. Filter by industry, compare MOQ tiers, or order instant CAD samples.
+          <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed">
+            Filter our exhaustive database of 46 plastic-free paper, corrugated, sugarcane, and cellulose solutions. All available in stock or bespoke custom dimensions.
           </p>
         </div>
       </div>
 
       <!-- Filter Controls & Search Toolbar -->
-      <div class="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200 shadow-sm space-y-4">
+      <div class="bg-[#FAF8F5] rounded-3xl p-5 sm:p-6 border-2 border-[#EBDDC8] shadow-xs space-y-5">
         
         <!-- Top Toolbar: Search & Sort -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
@@ -3899,13 +5060,13 @@ function renderProductsView(activeCategory = 'all', searchQuery = '') {
           <!-- Search Bar -->
           <div class="relative flex-1 max-w-md">
             <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="catalog-search-input" value="${searchQuery}" placeholder="Search pizza boxes, perfume rigid boxes, mailers..." class="w-full pl-10 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-emerald-700" />
+            <input type="text" id="catalog-search-input" value="${searchQuery}" placeholder="Search single wall, mailers, bagasse, honeycomb, strapping..." class="w-full pl-10 pr-4 py-3 bg-white border border-[#DEC6A6] rounded-2xl text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-emerald-700 shadow-2xs" />
           </div>
 
           <!-- Sort Dropdown -->
           <div class="flex items-center gap-3 justify-end">
-            <span class="text-xs text-stone-500 font-semibold hidden sm:inline">Sort:</span>
-            <select id="catalog-sort-select" class="text-xs font-semibold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-stone-800">
+            <span class="text-xs text-stone-600 font-bold hidden sm:inline">Sort by:</span>
+            <select id="catalog-sort-select" class="text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-stone-900 shadow-2xs">
               <option value="featured">Featured First</option>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
@@ -3915,44 +5076,44 @@ function renderProductsView(activeCategory = 'all', searchQuery = '') {
           </div>
         </div>
 
-        <!-- Category Tabs -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs font-bold pt-2 border-t border-stone-100">
-          <button data-cat="all" class="cat-pill-btn px-4 py-2 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'all' ? 'bg-emerald-900 text-white shadow-sm' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
-            All Formats (${PRODUCTS.length})
+        <!-- Category Tabs matching the 5 exact required filter buckets -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs font-bold pt-2 border-t border-[#EBDDC8]">
+          <button data-cat="all" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'all' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            All (${PRODUCTS.length})
           </button>
-          ${CATEGORIES.map(c => `
-            <button data-cat="${c.id}" class="cat-pill-btn px-4 py-2 rounded-xl transition-all whitespace-nowrap ${activeCategory === c.id ? 'bg-emerald-900 text-white shadow-sm' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
-              ${c.shortName} (${c.itemCount})
-            </button>
-          `).join('')}
+          
+          <button data-cat="boxes" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'boxes' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            📦 Boxes (9)
+          </button>
+
+          <button data-cat="postal" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'postal' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            ✉️ Postal (7)
+          </button>
+
+          <button data-cat="takeaway" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'takeaway' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            🥗 Takeaway (10)
+          </button>
+
+          <button data-cat="protective" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'protective' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            🛡️ Protective (8)
+          </button>
+
+          <button data-cat="tape-bags" class="cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === 'tape-bags' ? 'bg-emerald-800 text-white shadow-sm' : 'bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]'}">
+            🏷️ Tape/Bags (12)
+          </button>
         </div>
 
       </div>
 
       <!-- Results Count Status -->
-      <div class="flex items-center justify-between text-xs text-stone-500 font-semibold px-1">
+      <div class="flex items-center justify-between text-xs text-stone-600 font-bold px-1">
         <span id="catalog-results-count">Showing products</span>
-        <span class="text-emerald-800">🌱 100% Curbside Repulpable Verified</span>
+        <span class="text-emerald-800">🌱 100% Zero-Plastic Guarantee</span>
       </div>
 
       <!-- Product Cards Grid -->
       <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <!-- Rendered via JS -->
-      </div>
-
-      <!-- Custom Packaging CTA Banner -->
-      <div class="bg-amber-50/80 rounded-3xl p-8 border border-amber-200/80 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="space-y-2 text-center md:text-left">
-          <span class="text-xs uppercase font-extrabold tracking-wider text-amber-900">Custom Sizing & CAD Samples</span>
-          <h3 class="text-xl font-extrabold text-stone-900 font-serif">Need Bespoke Dimensions or Unique Die-Cuts?</h3>
-          <p class="text-xs text-stone-600 max-w-xl">
-            Our structural packaging lab crafts tailored dielines within 24 hours. We ship physical unprinted CAD mockups made on our automated digital cutting table in 48 hours.
-          </p>
-        </div>
-        <a href="#quote" class="px-6 py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition-all flex-shrink-0 flex items-center gap-2">
-          <span>Launch Custom CAD Configurator</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
       </div>
 
     </div>
@@ -3994,24 +5155,19 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     } else if (currentSort === 'rating') {
       list.sort((a, b) => b.rating - a.rating);
     } else {
-      // Featured first
       list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
     }
 
-    // Update counter
     if (resultsCount) {
-      resultsCount.textContent = `Showing ${list.length} of ${PRODUCTS.length} packaging solutions`;
+      resultsCount.textContent = `Showing ${list.length} of ${PRODUCTS.length} sustainable packaging formats`;
     }
 
     if (list.length === 0) {
       grid.innerHTML = `
-        <div class="col-span-full py-16 text-center">
-          <div class="w-16 h-16 rounded-2xl bg-stone-100 flex items-center justify-center text-stone-400 mx-auto mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-stone-900 mb-1">No matching packaging found</h3>
-          <p class="text-xs text-stone-500 max-w-sm mx-auto mb-4">Try searching for "pizza", "mailer", "rigid", or clear your category filter.</p>
-          <button id="btn-reset-filters" class="px-4 py-2 bg-emerald-800 text-white text-xs font-bold rounded-xl shadow">Reset Filters</button>
+        <div class="col-span-full py-16 text-center bg-[#FAF8F5] rounded-3xl border border-[#EBDDC8]">
+          <h3 class="text-base font-bold text-stone-900 mb-1">No matching packaging formats found</h3>
+          <p class="text-xs text-stone-500 max-w-sm mx-auto mb-4">Try searching for "box", "bagasse", "mailer", or click "All" above.</p>
+          <button id="btn-reset-filters" class="px-5 py-2.5 bg-emerald-800 text-white text-xs font-bold rounded-xl shadow">Reset Filters</button>
         </div>
       `;
       const btnReset = document.getElementById('btn-reset-filters');
@@ -4028,12 +5184,12 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     }
 
     grid.innerHTML = list.map(prod => `
-      <div class="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-emerald-800/40 transition-all duration-300 flex flex-col justify-between group">
+      <div class="bg-white rounded-3xl border-2 border-[#EBDDC8] overflow-hidden shadow-xs hover:shadow-xl hover:border-emerald-700 transition-all duration-300 flex flex-col justify-between group">
         
-        <!-- Image Area with Badges & Quick View -->
-        <div class="relative bg-gradient-to-b from-stone-50 to-stone-100/70 p-5 flex items-center justify-center h-56 border-b border-stone-100 overflow-hidden">
-          <span class="absolute top-3.5 left-3.5 z-10 text-[10px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 px-2.5 py-0.5 rounded-full shadow-xs">
-            ${prod.badge || 'FSC® 100%'}
+        <!-- Image Area -->
+        <div class="relative bg-gradient-to-b from-[#FBF8F3] to-[#F4EFE6] p-5 flex items-center justify-center h-52 border-b border-[#EBDDC8] overflow-hidden">
+          <span class="absolute top-3 left-3 z-10 text-[9px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 px-2.5 py-0.5 rounded-full shadow-xs">
+            ${prod.badge || 'FSC® Certified'}
           </span>
           
           <div class="w-full h-full flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500">
@@ -4041,7 +5197,7 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
           </div>
 
           <!-- Quick View Trigger -->
-          <button data-quickview-id="${prod.id}" class="btn-grid-quickview absolute bottom-3 right-3 px-3 py-1.5 bg-white/95 hover:bg-emerald-900 hover:text-white text-stone-700 text-xs font-bold rounded-xl shadow-md border border-stone-200 transition-all opacity-0 group-hover:opacity-100 flex items-center gap-1.5">
+          <button data-quickview-id="${prod.id}" class="btn-grid-quickview absolute bottom-3 right-3 px-3 py-1.5 bg-white/95 hover:bg-emerald-900 hover:text-white text-stone-800 text-xs font-bold rounded-xl shadow-md border border-stone-200 transition-all opacity-0 group-hover:opacity-100 flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
             <span>Quick View</span>
           </button>
@@ -4051,32 +5207,32 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
         <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-[10px] text-stone-500 mb-1">
-              <span class="uppercase tracking-wider font-bold text-emerald-900">${prod.categoryName}</span>
-              <span class="bg-stone-100 px-2 py-0.5 rounded font-medium">MOQ: ${prod.moq} pcs</span>
+              <span class="uppercase tracking-wider font-extrabold text-emerald-900">${prod.categoryName}</span>
+              <span class="bg-[#F6EFE3] px-2 py-0.5 rounded font-bold text-stone-800">MOQ: ${prod.moq} pcs</span>
             </div>
-            <h3 class="text-sm font-bold text-stone-900 group-hover:text-emerald-900 transition-colors leading-snug">
+            <h3 class="text-sm font-bold text-stone-950 group-hover:text-emerald-900 transition-colors leading-snug font-serif">
               <a href="#product/${prod.id}">${prod.name}</a>
             </h3>
-            <p class="text-[11px] text-stone-500 mt-1 line-clamp-2">${prod.subtitle}</p>
-            <div class="mt-2 text-[10px] text-stone-400 font-medium">
-              Board: <span class="text-stone-700">${prod.material.split('(')[0]}</span>
+            <p class="text-[11px] text-stone-600 mt-1 line-clamp-2">${prod.subtitle}</p>
+            <div class="mt-2 text-[10px] text-stone-500 font-medium">
+              Material: <span class="text-stone-900 font-semibold">${prod.material.split('(')[0]}</span>
             </div>
           </div>
 
           <!-- Bottom Actions -->
-          <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
+          <div class="pt-3 border-t border-[#EBDDC8] flex items-center justify-between">
             <div>
               <span class="text-[10px] text-stone-400 block -mb-1">From</span>
-              <span class="text-base font-black text-stone-900">$${prod.price.toFixed(2)}</span>
+              <span class="text-base font-black text-stone-950">$${prod.price.toFixed(2)}</span>
               <span class="text-[10px] text-stone-500">/ ${prod.unit}</span>
             </div>
 
             <div class="flex items-center gap-1.5">
-              <button data-add-prod-id="${prod.id}" class="btn-grid-add px-3 py-1.5 bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1" title="Add MOQ to Cart">
+              <button data-add-prod-id="${prod.id}" class="btn-grid-add px-3.5 py-2 bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1" title="Add MOQ to Cart">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 <span>Add</span>
               </button>
-              <a href="#product/${prod.id}" class="p-1.5 text-stone-400 hover:text-stone-900 hover:bg-stone-100 rounded-xl transition-colors" title="View Specifications">
+              <a href="#product/${prod.id}" class="p-2 text-stone-400 hover:text-stone-900 hover:bg-[#F6EFE3] rounded-xl transition-colors" title="View Full Specifications">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </a>
             </div>
@@ -4087,7 +5243,7 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
       </div>
     `).join('');
 
-    // Attach event listeners to buttons
+    // Attach event listeners
     grid.querySelectorAll('.btn-grid-quickview').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = e.currentTarget.getAttribute('data-quickview-id');
@@ -4110,14 +5266,13 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     catButtons.forEach(btn => {
       const cat = btn.getAttribute('data-cat');
       if (cat === currentCategory) {
-        btn.className = 'cat-pill-btn px-4 py-2 rounded-xl transition-all whitespace-nowrap bg-emerald-900 text-white shadow-sm';
+        btn.className = 'cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap bg-emerald-800 text-white shadow-sm';
       } else {
-        btn.className = 'cat-pill-btn px-4 py-2 rounded-xl transition-all whitespace-nowrap bg-stone-100 text-stone-600 hover:bg-stone-200';
+        btn.className = 'cat-pill-btn px-4 py-2.5 rounded-xl transition-all whitespace-nowrap bg-white text-stone-700 border border-[#DEC6A6] hover:bg-[#F6EFE3]';
       }
     });
   }
 
-  // Category Buttons
   catButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       currentCategory = btn.getAttribute('data-cat');
@@ -4126,7 +5281,6 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     });
   });
 
-  // Search input live filtering
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       currentSearch = e.target.value;
@@ -4134,7 +5288,6 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     });
   }
 
-  // Sort select
   if (sortSelect) {
     sortSelect.addEventListener('change', (e) => {
       currentSort = e.target.value;
@@ -4142,7 +5295,6 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
     });
   }
 
-  // Initial render
   filterAndRender();
 }
 
@@ -4152,15 +5304,15 @@ function renderProductDetailView(productId) {
   const product = getProductById(productId) || PRODUCTS[0];
 
   return `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 bg-white">
       
       <!-- Breadcrumbs -->
-      <nav class="flex items-center text-xs font-semibold text-stone-500 gap-2">
+      <nav class="flex items-center text-xs font-bold text-stone-500 gap-2">
         <a href="#home" class="hover:text-emerald-800 transition-colors">Home</a>
         <span>/</span>
-        <a href="#products" class="hover:text-emerald-800 transition-colors">Catalog</a>
+        <a href="#shop" class="hover:text-emerald-800 transition-colors">Shop</a>
         <span>/</span>
-        <a href="#products?category=${product.category}" class="hover:text-emerald-800 transition-colors">${product.categoryName}</a>
+        <a href="#shop?category=${product.category}" class="hover:text-emerald-800 transition-colors">${product.categoryName}</a>
         <span>/</span>
         <span class="text-stone-900 truncate max-w-xs">${product.name}</span>
       </nav>
@@ -4172,68 +5324,67 @@ function renderProductDetailView(productId) {
         <div class="lg:col-span-6 space-y-4">
           
           <!-- Main Visual Stage Box -->
-          <div class="relative bg-gradient-to-b from-stone-50 to-stone-100/80 rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm flex items-center justify-center min-h-[380px] sm:min-h-[460px] overflow-hidden group">
+          <div class="relative bg-gradient-to-b from-[#FBF8F3] to-[#F4EFE6] rounded-3xl sm:rounded-[36px] p-8 sm:p-12 border-2 border-[#EBDDC8] shadow-xs flex items-center justify-center min-h-[380px] sm:min-h-[460px] overflow-hidden group">
             
             <!-- Top Badges -->
             <div class="absolute top-5 left-5 flex items-center gap-2 z-10">
-              <span class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 shadow-xs">
+              <span class="px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 shadow-xs">
                 ${product.badge || 'FSC® Certified'}
               </span>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/90 text-stone-700 border border-stone-200 shadow-xs hidden sm:inline-block">
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-white text-stone-700 border border-[#DEC6A6] shadow-xs hidden sm:inline-block">
                 ${product.coating.split('(')[0]}
               </span>
             </div>
 
-            <!-- Visual SVG Stage with dynamic angle transitions -->
+            <!-- Visual SVG Stage -->
             <div id="pdp-main-stage" class="w-full h-full max-h-80 flex items-center justify-center transition-all duration-300">
               ${getProductSvg(product.svgType, 'pdp')}
             </div>
 
-            <!-- Eco Watermark -->
             <div class="absolute bottom-4 right-4 text-[10px] text-stone-400 font-mono tracking-wider">
-              100% RECYCLABLE / BIO-DEGRADABLE
+              PACKNSTIR • ZERO-PLASTIC GUARANTEE
             </div>
           </div>
 
           <!-- Angle Thumbnail Selector -->
           <div class="grid grid-cols-4 gap-3">
             <button data-view="perspective" class="pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-900">3D Angle</span>
             </button>
 
-            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"/></svg>
               </div>
-              <span class="text-[10px] font-bold text-stone-600">Open Box</span>
+              <span class="text-[10px] font-bold text-stone-600">Open View</span>
             </button>
 
-            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">CAD Dieline</span>
             </button>
 
-            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">Macro Zoom</span>
             </button>
           </div>
 
-          <!-- Eco Badges Row -->
-          <div class="p-4 bg-emerald-50/70 border border-emerald-100 rounded-2xl flex flex-wrap items-center justify-between gap-2 text-xs">
-            ${product.ecoBadges.map(badge => `
-              <span class="flex items-center gap-1 text-emerald-950 font-bold">
-                <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                <span>${badge}</span>
-              </span>
-            `).join('')}
+          <!-- Environmental Callout Box -->
+          <div class="p-5 bg-emerald-50 border-2 border-emerald-600/40 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950">
+              <span>🌱 Eco-Heritage Environmental Impact:</span>
+            </div>
+            <p class="text-xs text-emerald-950 font-medium leading-relaxed">
+              ${product.environmentalImpact}
+            </p>
           </div>
 
         </div>
@@ -4243,41 +5394,41 @@ function renderProductDetailView(productId) {
           
           <div>
             <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold uppercase tracking-widest text-emerald-900">${product.categoryName}</span>
-              <span class="text-xs text-stone-400">•</span>
-              <span class="text-xs text-amber-900 font-semibold bg-amber-50 px-2 py-0.5 rounded">Lead Time: ${product.leadTime.split('(')[0]}</span>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-900">${product.categoryName}</span>
+              <span class="text-stone-300">•</span>
+              <span class="text-xs text-stone-700 font-semibold bg-[#F6EFE3] px-2.5 py-0.5 rounded">Lead Time: ${product.leadTime}</span>
             </div>
 
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight leading-snug font-serif">
+            <h1 class="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-snug font-serif">
               ${product.name}
             </h1>
 
             <p class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
-              ${product.description}
+              ${product.description || product.subtitle}
             </p>
           </div>
 
           <!-- Live Tier Pricing Display -->
-          <div class="p-5 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="p-6 bg-[#FAF8F5] rounded-3xl border-2 border-[#EBDDC8] shadow-xs space-y-4">
             <div class="flex items-baseline justify-between">
               <div>
-                <span class="text-xs text-stone-400 block -mb-1">Active Unit Price</span>
-                <span id="pdp-active-unit-price" class="text-3xl font-black text-stone-900">$${product.price.toFixed(2)}</span>
+                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Active Unit Price</span>
+                <span id="pdp-active-unit-price" class="text-3xl font-black text-stone-950">$${product.price.toFixed(2)}</span>
                 <span class="text-xs text-stone-500">/ ${product.unit}</span>
               </div>
               <div class="text-right">
-                <span class="text-xs text-stone-400 block -mb-1">Estimated Line Total</span>
-                <span id="pdp-active-total" class="text-xl font-extrabold text-emerald-900">$${(product.price * product.moq).toFixed(2)}</span>
+                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Estimated Line Total</span>
+                <span id="pdp-active-total" class="text-2xl font-black text-emerald-900">$${(product.price * product.moq).toFixed(2)}</span>
               </div>
             </div>
 
             <!-- Tiered Pricing Matrix Table -->
-            <div class="pt-3 border-t border-stone-100">
-              <span class="text-[11px] font-bold text-stone-500 uppercase tracking-wider block mb-2">Volume Tier Discounts</span>
+            <div class="pt-3 border-t border-[#EBDDC8]">
+              <span class="text-[10px] font-black text-stone-600 uppercase tracking-wider block mb-2">Volume Tier Discounts</span>
               <div class="grid grid-cols-4 gap-2 text-center text-xs">
                 ${product.pricingTiers.map((tier, idx) => `
-                  <button data-tier-qty="${tier.qty}" data-tier-price="${tier.pricePerUnit}" class="btn-tier-select p-2 rounded-xl border ${idx === 1 ? 'border-emerald-800 bg-emerald-50/60 font-bold text-emerald-950' : 'border-stone-200 bg-stone-50 text-stone-700 hover:border-stone-400'} transition-all">
-                    <span class="block text-[11px] font-bold">${tier.qty.toLocaleString()} pcs</span>
+                  <button data-tier-qty="${tier.qty}" data-tier-price="${tier.pricePerUnit}" class="btn-tier-select p-2 rounded-xl border ${idx === 1 ? 'border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 shadow-2xs' : 'border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400'} transition-all">
+                    <span class="block text-[10px] font-bold">${tier.qty.toLocaleString()} pcs</span>
                     <span class="block text-xs font-black text-stone-900 mt-0.5">$${tier.pricePerUnit.toFixed(2)}</span>
                   </button>
                 `).join('')}
@@ -4291,18 +5442,18 @@ function renderProductDetailView(productId) {
             <!-- Dimensions Selector -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Select Dimensions & Volume</span>
-                <a href="#quote" class="text-emerald-800 font-semibold hover:underline">Need Custom Sizing?</a>
+                <span>Select Dimensions</span>
+                <a href="#quote" class="text-emerald-800 font-bold hover:underline">Custom Sizing?</a>
               </label>
-              <select id="pdp-select-size" class="w-full text-xs font-semibold px-3.5 py-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900">
+              <select id="pdp-select-size" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
                 ${product.dimensionsAvailable.map(d => `<option value="${d}">${d}</option>`).join('')}
               </select>
             </div>
 
-            <!-- Finish & Printing Selection -->
+            <!-- Finish Selection -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5">Surface Finish & Inks</label>
-              <select id="pdp-select-finish" class="w-full text-xs font-semibold px-3.5 py-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900">
+              <select id="pdp-select-finish" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
                 ${product.finishOptions.map(f => `<option value="${f}">${f}</option>`).join('')}
               </select>
             </div>
@@ -4310,16 +5461,16 @@ function renderProductDetailView(productId) {
             <!-- Quantity Stepper -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Production Quantity (Units)</span>
+                <span>Production Quantity</span>
                 <span class="text-stone-500 font-normal">Minimum Order Quantity: ${product.moq}</span>
               </label>
               <div class="flex items-center gap-3">
-                <div class="flex items-center border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs flex-1">
-                  <button id="pdp-qty-minus" class="px-4 py-2.5 text-stone-600 hover:bg-stone-100 font-bold text-sm">-</button>
+                <div class="flex items-center border border-[#DEC6A6] rounded-xl bg-white overflow-hidden shadow-2xs flex-1">
+                  <button id="pdp-qty-minus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">-</button>
                   <input type="number" id="pdp-qty-input" value="${product.moq}" min="${product.moq}" step="50" class="w-full text-center text-xs font-bold py-2.5 focus:outline-none" />
-                  <button id="pdp-qty-plus" class="px-4 py-2.5 text-stone-600 hover:bg-stone-100 font-bold text-sm">+</button>
+                  <button id="pdp-qty-plus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">+</button>
                 </div>
-                <button id="btn-request-sample" class="px-4 py-2.5 text-xs font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-xl transition-colors border border-stone-200 whitespace-nowrap">
+                <button id="btn-request-sample" class="px-4 py-2.5 text-xs font-bold text-stone-800 bg-[#F6EFE3] hover:bg-[#EBDDC8] rounded-xl transition-colors border border-[#DEC6A6] whitespace-nowrap">
                   Request $15 Sample Kit
                 </button>
               </div>
@@ -4327,19 +5478,19 @@ function renderProductDetailView(productId) {
 
           </div>
 
-          <!-- Add to Cart & Quote Actions -->
+          <!-- Add to Cart & Custom Quote Actions -->
           <div class="space-y-3 pt-2">
-            <button id="pdp-btn-add-cart" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2">
+            <button id="pdp-btn-add-cart" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
               <span id="pdp-btn-add-text">Add ${product.moq} Units to Cart</span>
             </button>
 
             <div class="grid grid-cols-2 gap-3">
-              <a href="#quote" class="py-3 text-center bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold text-stone-800 transition-colors">
-                Upload Custom Artwork / CAD
+              <a href="#quote" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-stone-800 transition-colors">
+                Request Bespoke CAD Quote
               </a>
-              <a href="#about" class="py-3 text-center bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold text-emerald-900 transition-colors">
-                Download Dieline PDF (.ai)
+              <a href="#showcase" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-emerald-900 transition-colors">
+                View in Eco-Showcase →
               </a>
             </div>
           </div>
@@ -4350,53 +5501,53 @@ function renderProductDetailView(productId) {
 
 
       <!-- ========================================== -->
-      <!-- TECHNICAL SPECS, ECO IMPACT & LEAD TABS    -->
+      <!-- TABS: SPECS, HISTORY, ECO IMPACT & LOGISTICS -->
       <!-- ========================================== -->
-      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 space-y-8">
+      <div class="bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] p-6 sm:p-10 space-y-8 shadow-xs">
         
         <!-- Tabs Header -->
-        <div class="flex items-center border-b border-stone-200 gap-8 overflow-x-auto text-xs font-bold text-stone-500 pb-3">
+        <div class="flex items-center border-b border-[#EBDDC8] gap-8 overflow-x-auto text-xs font-bold text-stone-500 pb-3">
           <button data-tab="tab-specs" class="pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap">
-            Technical Engineering Specs
+            Technical Specs
+          </button>
+          <button data-tab="tab-history" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
+            Product History & Material Origins
           </button>
           <button data-tab="tab-eco" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Sustainability & Disposal Guide
-          </button>
-          <button data-tab="tab-artwork" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Artwork & Dieline Guidelines
+            Environmental Impact
           </button>
           <button data-tab="tab-shipping" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Production & Freight Logistics
+            Production & Freight Lead Times
           </button>
         </div>
 
         <!-- TAB 1: SPECS -->
         <div id="tab-specs" class="pdp-tab-content space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Composition</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Material</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.material}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Weight / GSM</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Weight / Caliper</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.boardWeight}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Barrier Coating</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Coating</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.coating}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Standard Preset Size</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Dimensions</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.dimensionsPreset}</span>
             </div>
           </div>
 
           <div class="space-y-3 pt-2">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700">Structural Highlights</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700">Engineering Highlights</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              ${product.features.map(f => `
+              ${(product.features || []).map(f => `
                 <div class="flex items-center gap-2.5 text-xs text-stone-700">
-                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
+                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-900 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
                   <span>${f}</span>
                 </div>
               `).join('')}
@@ -4404,80 +5555,40 @@ function renderProductDetailView(productId) {
           </div>
         </div>
 
-        <!-- TAB 2: ECO -->
-        <div id="tab-eco" class="pdp-tab-content hidden space-y-4">
-          <div class="p-6 bg-emerald-950 text-white rounded-2xl space-y-3">
-            <h4 class="text-sm font-bold text-emerald-300">100% Curbside Repulpable Certification</h4>
-            <p class="text-xs text-emerald-100/80 leading-relaxed">
-              Unlike traditional packaging with laminated PE plastic or metallic foils that require industrial separation, this product can be disposed directly into residential blue paper bins. The paper fibers dissolve cleanly in commercial paper mills to become new corrugated cartons within 14 days.
+        <!-- TAB 2: HISTORY (Origins of material) -->
+        <div id="tab-history" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-[#FAF8F5] border border-[#EBDDC8] rounded-2xl space-y-2">
+            <h4 class="text-sm font-bold text-stone-950 font-serif">Origins & Evolution of the Format</h4>
+            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
+              ${product.history}
             </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Curbside Recycling</h5>
-              <p class="text-[11px] text-stone-500">100% blue bin recyclable in North America, UK, and European Union.</p>
-            </div>
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Compostability</h5>
-              <p class="text-[11px] text-stone-500">Disintegrates in under 90 days in commercial or backyard soil without toxicity.</p>
-            </div>
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Non-Toxic Inks</h5>
-              <p class="text-[11px] text-stone-500">Printed with plant-based soy and algae inks free from volatile organic compounds (VOCs).</p>
-            </div>
           </div>
         </div>
 
-        <!-- TAB 3: ARTWORK -->
-        <div id="tab-artwork" class="pdp-tab-content hidden space-y-4">
-          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs space-y-2">
-            <h4 class="font-bold text-stone-900">Digital Artwork File Requirements:</h4>
-            <ul class="list-disc pl-5 space-y-1 text-stone-600">
-              <li>Submit vector artwork in Adobe Illustrator (.AI), PDF, or EPS format.</li>
-              <li>Maintain 3mm (1/8") external bleed past all dieline trim cuts.</li>
-              <li>Keep all critical logos and copy 5mm inside fold crease lines.</li>
-              <li>Color profile: CMYK or Pantone Solid Coated / Uncoated.</li>
-              <li>Minimum text size: 6pt for positive type, 8pt for reversed knocked-out type.</li>
-            </ul>
+        <!-- TAB 3: ECO IMPACT -->
+        <div id="tab-eco" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-emerald-50 border-2 border-emerald-700/40 rounded-2xl space-y-2">
+            <h4 class="text-sm font-bold text-emerald-950 font-serif">Environmental Impact & Waste Diversion</h4>
+            <p class="text-xs sm:text-sm text-emerald-950 font-medium leading-relaxed font-sans">
+              ${product.environmentalImpact}
+            </p>
           </div>
         </div>
 
         <!-- TAB 4: SHIPPING -->
         <div id="tab-shipping" class="pdp-tab-content hidden space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div class="p-4 rounded-2xl border border-stone-200 space-y-1">
-              <span class="font-bold text-stone-900 block">Stock Blank Format</span>
-              <p class="text-stone-500">Ships within 48 to 72 hours from our Portland, OR or Antwerp logistics hubs.</p>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8] space-y-1">
+              <span class="font-bold text-stone-900 block">Standard Stock Dispatch</span>
+              <p class="text-stone-600">Dispatches within 24 to 48 hours via carbon-neutral road freight.</p>
             </div>
-            <div class="p-4 rounded-2xl border border-stone-200 space-y-1">
-              <span class="font-bold text-stone-900 block">Custom Printed Run</span>
-              <p class="text-stone-500">Standard production time is 7-10 business days following digital proof approval.</p>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8] space-y-1">
+              <span class="font-bold text-stone-900 block">Custom Print & Sizing Runs</span>
+              <p class="text-stone-600">Standard lead time is 7 to 10 business days following digital PDF proof sign-off.</p>
             </div>
           </div>
         </div>
 
-      </div>
-
-
-      <!-- ========================================== -->
-      <!-- RELATED PACKAGING SOLUTIONS                -->
-      <!-- ========================================== -->
-      <div class="space-y-6 pt-6">
-        <h3 class="text-xl font-bold text-stone-900 font-serif">Frequently Paired Packaging</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          ${PRODUCTS.filter(p => p.id !== product.id && (p.category === product.category || p.category === 'shipping')).slice(0, 3).map(rel => `
-            <a href="#product/${rel.id}" class="p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-700/40 shadow-xs hover:shadow-md transition-all flex items-center gap-4 group">
-              <div class="w-16 h-16 rounded-xl bg-stone-100 flex-shrink-0 p-1 flex items-center justify-center">
-                ${getProductSvg(rel.svgType, 'thumb')}
-              </div>
-              <div>
-                <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">${rel.categoryName}</span>
-                <h4 class="text-xs font-bold text-stone-900 group-hover:text-emerald-900 transition-colors leading-tight mt-0.5">${rel.name}</h4>
-                <span class="text-xs font-black text-stone-800 mt-1 block">$${rel.price.toFixed(2)} / ${rel.unit}</span>
-              </div>
-            </a>
-          `).join('')}
-        </div>
       </div>
 
     </div>
@@ -4502,7 +5613,6 @@ function initProductDetailView(productId) {
   const btnSample = document.getElementById('btn-request-sample');
 
   function recalculatePrice() {
-    // Determine unit price based on tiered pricing matrix
     let matchedTier = product.pricingTiers[0];
     for (const tier of product.pricingTiers) {
       if (currentQty >= tier.qty) {
@@ -4510,35 +5620,30 @@ function initProductDetailView(productId) {
       }
     }
     currentUnitPrice = matchedTier.pricePerUnit;
-
     const lineTotal = currentUnitPrice * currentQty;
 
     if (unitPriceEl) unitPriceEl.textContent = `$${currentUnitPrice.toFixed(2)}`;
     if (totalEl) totalEl.textContent = `$${lineTotal.toFixed(2)}`;
     if (btnAddText) btnAddText.textContent = `Add ${currentQty.toLocaleString()} Units to Cart • $${lineTotal.toFixed(2)}`;
 
-    // Highlight tier button
     document.querySelectorAll('.btn-tier-select').forEach(btn => {
       const q = parseInt(btn.getAttribute('data-tier-qty'));
       if (q === matchedTier.qty) {
-        btn.className = 'btn-tier-select p-2 rounded-xl border border-emerald-800 bg-emerald-50/60 font-bold text-emerald-950 transition-all';
+        btn.className = 'btn-tier-select p-2 rounded-xl border border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 transition-all shadow-2xs';
       } else {
-        btn.className = 'btn-tier-select p-2 rounded-xl border border-stone-200 bg-stone-50 text-stone-700 hover:border-stone-400 transition-all';
+        btn.className = 'btn-tier-select p-2 rounded-xl border border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400 transition-all';
       }
     });
   }
 
-  // Tier buttons click
   document.querySelectorAll('.btn-tier-select').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const q = parseInt(e.currentTarget.getAttribute('data-tier-qty'));
-      currentQty = q;
+      currentQty = parseInt(e.currentTarget.getAttribute('data-tier-qty'));
       if (qtyInput) qtyInput.value = currentQty;
       recalculatePrice();
     });
   });
 
-  // Quantity Stepper
   if (qtyMinus) {
     qtyMinus.addEventListener('click', () => {
       currentQty = Math.max(product.moq, currentQty - 50);
@@ -4563,7 +5668,6 @@ function initProductDetailView(productId) {
     });
   }
 
-  // Add To Cart
   if (btnAddToCart) {
     btnAddToCart.addEventListener('click', () => {
       const size = sizeSelect ? sizeSelect.value : product.dimensionsPreset;
@@ -4575,14 +5679,12 @@ function initProductDetailView(productId) {
         customPrice: currentUnitPrice
       });
 
-      // Quick feedback toast or button animation
       if (window.gsap) {
         window.gsap.fromTo(btnAddToCart, { scale: 0.97 }, { scale: 1, duration: 0.25, ease: 'power2.out' });
       }
     });
   }
 
-  // Request Sample Kit
   if (btnSample) {
     btnSample.addEventListener('click', () => {
       cart.addItem({
@@ -4600,12 +5702,12 @@ function initProductDetailView(productId) {
     });
   }
 
-  // Angle View Selector
+  // Thumbnails view switcher
   const stage = document.getElementById('pdp-main-stage');
   document.querySelectorAll('.pdp-thumb-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.pdp-thumb-btn').forEach(b => {
-        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all';
+        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all';
       });
       btn.className = 'pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all';
 
@@ -4646,7 +5748,6 @@ function initProductDetailView(productId) {
     });
   });
 
-  // Run initial recalculation
   recalculatePrice();
 }
 
@@ -4654,149 +5755,160 @@ function initProductDetailView(productId) {
 // === Module: src/views/AboutView.js ===
 function renderAboutView() {
   return `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-20">
-      
-      <!-- Mission Hero -->
-      <div class="text-center max-w-3xl mx-auto space-y-4">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-400 border border-emerald-800/60">
-          🌱 Zero Plastic Manifesto
-        </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight font-serif">
-          Engineered for Beauty. Made to Disappear.
-        </h1>
-        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
-          At EcoPack Studio, we believe packaging should never outlive the product it protects. Our mission is to permanently eliminate single-use plastics from global commerce by creating architectural, repulpable paperboard packaging that decomposes back into rich forest soil.
-        </p>
-      </div>
-
-      <!-- Core Commitments Pillar Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold text-xl">
-            01
-          </div>
-          <h3 class="text-lg font-bold text-stone-900 font-serif">Zero Synthetic Plastics</h3>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            We do not manufacture or sell packaging with polyethylene (PE) linings, petroleum bubble wrap, polyvinyl chloride (PVC), or EVA foam cavities. Every liner, window, and adhesive is derived from plant cellulose, tree resin, or corn starches.
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 space-y-20">
+        
+        <!-- Mission Hero -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+            🌱 Zero-Plastic Manifesto
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight font-serif">
+            Engineered for Beauty. Made to Disappear.
+          </h1>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+            At <strong class="text-stone-900 font-semibold">PackNStir</strong>, we believe packaging should never outlive the product it protects. Our mission is to permanently eliminate single-use plastics from global commerce by creating architectural, repulpable paperboard, molded fiber, and sugarcane packaging that decomposes back into nutrient-rich soil.
           </p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-xl">
-            02
-          </div>
-          <h3 class="text-lg font-bold text-stone-900 font-serif">Closed-Loop Agroforestry</h3>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            100% of our virgin fiber is harvested from certified FSC® replenishing plantations where 3 saplings are planted for every mature tree harvested. Over 70% of our corrugated fluting comes from post-consumer recycled cardboard.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-stone-100 text-stone-900 flex items-center justify-center font-bold text-xl">
-            03
-          </div>
-          <h3 class="text-lg font-bold text-stone-900 font-serif">Architectural Craftsmanship</h3>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            Sustainability without luxury is a compromise modern brands shouldn't have to make. We engineer crisp mitered v-grooves, satisfying magnetic snaps, and buttery soft-touch tactile varnishes that rival traditional luxury packaging.
-          </p>
-        </div>
-      </div>
-
-      <!-- Circular Life Cycle Interactive Diagram -->
-      <div class="bg-stone-950 text-white rounded-3xl sm:rounded-[40px] p-8 sm:p-14 border border-stone-800 shadow-2xl relative overflow-hidden">
-        <div class="max-w-2xl mb-12">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-400 block mb-2">The Closed-Loop Model</span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold font-serif">From Forest Canopy to Soil Nutrient</h2>
-          <p class="text-stone-400 text-xs sm:text-sm mt-3">
-            How EcoPack Studio's circular supply chain ensures zero landfill footprint at every touchpoint.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
-            <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 01</span>
-            <h4 class="text-sm font-bold text-white">Responsible Agroforestry</h4>
-            <p class="text-[11px] text-stone-400">Certified FSC-managed forests capture carbon while supplying replenishing pine and birch pulp.</p>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
-            <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 02</span>
-            <h4 class="text-sm font-bold text-white">Solar-Powered Milling</h4>
-            <p class="text-[11px] text-stone-400">Pulp processed using closed-loop water treatment that recycles 94% of water and runs on 100% rooftop solar.</p>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
-            <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 03</span>
-            <h4 class="text-sm font-bold text-white">Aqueous Coating & Soy Inks</h4>
-            <p class="text-[11px] text-stone-400">Water-borne dispersion barriers replace plastic laminates; printed with heavy-metal-free vegetable soy inks.</p>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
-            <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 04</span>
-            <h4 class="text-sm font-bold text-white">Brand Experience</h4>
-            <p class="text-[11px] text-stone-400">Delivers an extraordinary sensory unboxing moment with structural integrity and zero plastic waste guilt.</p>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
-            <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 05</span>
-            <h4 class="text-sm font-bold text-white">Curbside Repulping</h4>
-            <p class="text-[11px] text-stone-400">Customers toss box directly into paper recycling or home compost. Returns to soil nutrients in &lt; 90 days.</p>
+          <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <a href="#showcase" class="px-5 py-2.5 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2">
+              <span>Explore The Eco-Heritage Showcase (46 Products)</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="#quote" class="px-5 py-2.5 bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold text-xs rounded-xl border border-[#DEC6A6] transition-all">
+              Request Custom CAD Prototype
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- Materials Deep Dive Guide -->
-      <div class="space-y-8">
-        <div class="text-center max-w-2xl mx-auto">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block mb-1">Materials Science</span>
-          <h2 class="text-3xl font-extrabold text-stone-900 font-serif">Comprehensive Sustainable Materials Guide</h2>
-          <p class="text-stone-600 text-xs sm:text-sm mt-2">
-            Understanding the physical properties, GSM calipers, and environmental classifications of our packaging substrates.
-          </p>
+        <!-- Core Commitments Pillar Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-[#FAF8F5] rounded-3xl p-8 border border-[#EBDDC8] shadow-sm space-y-4 hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold text-xl">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-stone-900 font-serif">Zero Synthetic Plastics</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              We do not manufacture or sell packaging with polyethylene (PE) linings, petroleum bubble wrap, polyvinyl chloride (PVC), or EVA foam cavities. Every liner, window, and adhesive is derived from plant cellulose, tree resin, or corn starches.
+            </p>
+          </div>
+
+          <div class="bg-[#FAF8F5] rounded-3xl p-8 border border-[#EBDDC8] shadow-sm space-y-4 hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-xl">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-stone-900 font-serif">Closed-Loop Agroforestry</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              100% of our virgin fiber is harvested from certified FSC® replenishing plantations where 3 saplings are planted for every mature tree harvested. Over 70% of our corrugated fluting comes from post-consumer recycled cardboard.
+            </p>
+          </div>
+
+          <div class="bg-[#FAF8F5] rounded-3xl p-8 border border-[#EBDDC8] shadow-sm space-y-4 hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-stone-200 text-stone-900 flex items-center justify-center font-bold text-xl">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-stone-900 font-serif">Architectural Craftsmanship</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Sustainability without luxury is a compromise modern brands shouldn't have to make. We engineer crisp mitered v-grooves, satisfying magnetic snaps, and buttery soft-touch tactile varnishes that rival traditional luxury packaging.
+            </p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          ${MATERIALS_GUIDE.map(mat => `
-            <div class="p-6 bg-white rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
-                ${mat.gsmRange}
-              </span>
-              <h3 class="text-base font-bold text-stone-900">${mat.name}</h3>
-              <p class="text-xs text-stone-500 leading-relaxed">${mat.description}</p>
-              
-              <div class="pt-3 border-t border-stone-100 text-[11px] space-y-1">
-                <div><span class="font-bold text-stone-700">Ideal For:</span> <span class="text-stone-500">${mat.useCase}</span></div>
-                <div><span class="font-bold text-stone-700">Disposal:</span> <span class="text-emerald-800 font-semibold">${mat.sustainability}</span></div>
+        <!-- Circular Life Cycle Diagram -->
+        <div class="bg-stone-950 text-white rounded-3xl sm:rounded-[40px] p-8 sm:p-14 border border-stone-800 shadow-2xl relative overflow-hidden">
+          <div class="max-w-2xl mb-12">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-400 block mb-2">The Closed-Loop Model</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold font-serif">From Forest Canopy to Soil Nutrient</h2>
+            <p class="text-stone-400 text-xs sm:text-sm mt-3">
+              How PackNStir's circular supply chain ensures zero landfill footprint at every touchpoint.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 01</span>
+              <h4 class="text-sm font-bold text-white">Responsible Agroforestry</h4>
+              <p class="text-[11px] text-stone-400">Certified FSC-managed forests capture carbon while supplying replenishing pine and birch pulp.</p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 02</span>
+              <h4 class="text-sm font-bold text-white">Solar-Powered Milling</h4>
+              <p class="text-[11px] text-stone-400">Pulp processed using closed-loop water treatment that recycles 94% of water and runs on 100% rooftop solar.</p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 03</span>
+              <h4 class="text-sm font-bold text-white">Aqueous Coating & Soy Inks</h4>
+              <p class="text-[11px] text-stone-400">Water-borne dispersion barriers replace plastic laminates; printed with heavy-metal-free vegetable soy inks.</p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 04</span>
+              <h4 class="text-sm font-bold text-white">Brand Experience</h4>
+              <p class="text-[11px] text-stone-400">Delivers an extraordinary sensory unboxing moment with structural integrity and zero plastic waste guilt.</p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-900/60 border border-stone-800 space-y-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">STAGE 05</span>
+              <h4 class="text-sm font-bold text-white">Curbside Repulping</h4>
+              <p class="text-[11px] text-stone-400">Customers toss box directly into paper recycling or home compost. Returns to soil nutrients in &lt; 90 days.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Materials Deep Dive Guide -->
+        <div class="space-y-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-800 block mb-1">Materials Science</span>
+            <h2 class="text-3xl font-extrabold text-stone-900 font-serif">Comprehensive Sustainable Materials Guide</h2>
+            <p class="text-stone-600 text-xs sm:text-sm mt-2">
+              Understanding the physical properties, GSM calipers, and environmental classifications of our packaging substrates.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${MATERIALS_GUIDE.map(mat => `
+              <div class="p-6 bg-[#FAF8F5] rounded-3xl border border-[#EBDDC8] shadow-sm space-y-3">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  ${mat.gsmRange}
+                </span>
+                <h3 class="text-base font-bold text-stone-900">${mat.name}</h3>
+                <p class="text-xs text-stone-500 leading-relaxed">${mat.description}</p>
+                
+                <div class="pt-3 border-t border-[#EBDDC8] text-[11px] space-y-1">
+                  <div><span class="font-bold text-stone-700">Ideal For:</span> <span class="text-stone-600">${mat.useCase}</span></div>
+                  <div><span class="font-bold text-stone-700">Disposal:</span> <span class="text-emerald-800 font-semibold">${mat.sustainability}</span></div>
+                </div>
               </div>
-            </div>
-          `).join('')}
+            `).join('')}
+          </div>
         </div>
-      </div>
 
-      <!-- Certifications Matrix -->
-      <div class="bg-stone-100 rounded-3xl p-8 sm:p-12 border border-stone-200 text-center space-y-6">
-        <h3 class="text-xl sm:text-2xl font-bold text-stone-900 font-serif">Third-Party Environmental Verifications</h3>
-        <p class="text-xs text-stone-600 max-w-xl mx-auto">
-          We submit all paper grades, inks, and adhesives for strict independent laboratory analysis against international packaging benchmarks.
-        </p>
+        <!-- Certifications Matrix -->
+        <div class="bg-[#F6EFE3] rounded-3xl p-8 sm:p-12 border border-[#DEC6A6] text-center space-y-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-stone-900 font-serif">Third-Party Environmental Verifications</h3>
+          <p class="text-xs text-stone-600 max-w-xl mx-auto">
+            We submit all paper grades, inks, and adhesives for strict independent laboratory analysis against international packaging benchmarks.
+          </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
-          ${CERTIFICATIONS.map(c => `
-            <div class="p-4 bg-white rounded-2xl border border-stone-200/80 shadow-xs">
-              <span class="text-xs font-bold text-emerald-900 block">${c.name}</span>
-              <span class="text-[10px] font-mono text-stone-400 block mb-1">${c.code}</span>
-              <p class="text-[11px] text-stone-500 leading-snug">${c.description}</p>
-            </div>
-          `).join('')}
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+            ${CERTIFICATIONS.map(c => `
+              <div class="p-4 bg-white rounded-2xl border border-[#EBDDC8] shadow-xs">
+                <span class="text-xs font-bold text-emerald-900 block">${c.name}</span>
+                <span class="text-[10px] font-mono text-stone-400 block mb-1">${c.code}</span>
+                <p class="text-[11px] text-stone-500 leading-snug">${c.description}</p>
+              </div>
+            `).join('')}
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   `;
 }
 
 function initAboutView() {
-  // Page is primarily informative; smoothly scrolls to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
@@ -4931,34 +6043,34 @@ function initStoryView() {
 // === Module: src/views/ContactQuoteView.js ===
 function renderContactQuoteView() {
   return `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-20 bg-white">
       
       <!-- Page Header -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-400 border border-emerald-800/60">
-          📐 Bespoke Structural Engineering
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/60">
+          📐 Bespoke Packaging Lab
         </span>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight font-serif">
-          Request a Custom Packaging Quote
+        <h1 class="text-4xl sm:text-5xl font-black text-stone-950 tracking-tight font-serif">
+          Custom Dimensions & CAD Prototyping
         </h1>
         <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
-          Need a non-standard size, unique die-cut flap, or full interior-exterior CMYK soy printing? Configure your exact requirements below for an instant price range and digital CAD proof within 24 hours.
+          Need custom length, width, and depth ($L \times W \times D$)? Configure your exact structural packaging requirements below. Receive an instant estimate and a custom CAD dieline within 24 hours.
         </p>
       </div>
 
-      <!-- Split Layout: Contact Info & FAQ (Left) vs Interactive Configurator (Right) -->
+      <!-- Split Layout: Contact Info & Mission (Left) vs Interactive Configurator (Right) -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         
-        <!-- Left: Studio Info, Engineer Contact & FAQ (5 cols) -->
+        <!-- Left: Studio Info, Engineer Contact & Timeline Highlights (5 cols) -->
         <div class="lg:col-span-5 space-y-8">
           
           <!-- Direct Studio Info Box -->
-          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
-            <h3 class="text-lg font-bold text-stone-900 font-serif">Packaging Studio & Plant</h3>
+          <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-8 border-2 border-[#EBDDC8] shadow-xs space-y-6">
+            <h3 class="text-xl font-bold text-stone-950 font-serif">PackNStir Engineering Lab</h3>
             
             <div class="space-y-4 text-xs text-stone-600">
               <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center flex-shrink-0">
+                <div class="w-8 h-8 rounded-xl bg-emerald-900 text-emerald-300 flex items-center justify-center flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
@@ -4968,85 +6080,67 @@ function renderContactQuoteView() {
               </div>
 
               <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center flex-shrink-0">
+                <div class="w-8 h-8 rounded-xl bg-emerald-900 text-emerald-300 flex items-center justify-center flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
                   <span class="font-bold text-stone-900 block text-xs">Direct Engineering Inquiries:</span>
-                  <span>cad@ecopackstudio.com</span>
+                  <span>cad@packnstir.com</span>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center flex-shrink-0">
+                <div class="w-8 h-8 rounded-xl bg-emerald-900 text-emerald-300 flex items-center justify-center flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </div>
                 <div>
                   <span class="font-bold text-stone-900 block text-xs">Direct Phone Line:</span>
-                  <span>+1 (800) 419-PACK (Mon - Fri, 8am - 6pm PST)</span>
+                  <span>+1 (800) 419-STIR (Mon - Fri, 8am - 6pm PST)</span>
                 </div>
               </div>
             </div>
 
             <!-- Speak with a Packaging Engineer Badge -->
             <div class="p-4 bg-emerald-950 text-emerald-200 rounded-2xl flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
-                EP
+              <div class="w-10 h-10 rounded-full bg-emerald-800 text-white font-black flex items-center justify-center text-xs flex-shrink-0">
+                PNS
               </div>
               <div class="text-xs">
                 <span class="font-bold text-white block">Dedicated Structural Engineer</span>
-                <span>Assigned to review every CAD submission within 4 business hours.</span>
+                <span>Assigned to review every custom submission within 4 business hours.</span>
               </div>
             </div>
           </div>
 
-          <!-- Custom Quote FAQs -->
-          <div class="space-y-3">
-            <h4 class="text-sm font-bold text-stone-900 font-serif">Frequently Asked Questions</h4>
-            
-            <details class="bg-white rounded-2xl border border-stone-200 p-4 text-xs group cursor-pointer" open>
-              <summary class="font-bold text-stone-900 flex justify-between items-center">
-                <span>How fast do custom CAD dielines take?</span>
-                <span class="text-stone-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="mt-2 text-stone-600 leading-relaxed">
-                Our CAD team turns around vector Adobe Illustrator (.ai) and PDF dieline templates within 24 hours of form submission.
-              </p>
-            </details>
-
-            <details class="bg-white rounded-2xl border border-stone-200 p-4 text-xs group cursor-pointer">
-              <summary class="font-bold text-stone-900 flex justify-between items-center">
-                <span>Can I receive a physical prototype before ordering?</span>
-                <span class="text-stone-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="mt-2 text-stone-600 leading-relaxed">
-                Yes! We cut unprinted physical CAD prototypes directly on our digital flatbed cutters and express courier them to your office in 48 hours for $25 (credited toward your production order).
-              </p>
-            </details>
-
-            <details class="bg-white rounded-2xl border border-stone-200 p-4 text-xs group cursor-pointer">
-              <summary class="font-bold text-stone-900 flex justify-between items-center">
-                <span>What are the minimum order quantities for custom sizes?</span>
-                <span class="text-stone-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="mt-2 text-stone-600 leading-relaxed">
-                Custom corrugated mailers and takeaway boxes start at only 500 units. Custom rigid setup boxes start at 250 units.
-              </p>
-            </details>
+          <!-- Mission Timeline Highlights -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-stone-950 font-serif">Our Zero-Plastic Mission Milestones</h3>
+            <div class="space-y-3">
+              ${TIMELINE_MILESTONES.slice(0, 3).map(m => `
+                <div class="p-4 rounded-2xl bg-[#FBF8F3] border border-[#EBDDC8] text-xs space-y-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-black text-emerald-900 font-serif">${m.year}</span>
+                    <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">${m.tag}</span>
+                  </div>
+                  <h4 class="font-bold text-stone-900">${m.title}</h4>
+                  <p class="text-stone-600 leading-snug">${m.headline}</p>
+                </div>
+              `).join('')}
+            </div>
           </div>
 
         </div>
 
-        <!-- Right: Interactive 4-Step Custom Quote Estimator (7 cols) -->
-        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-sm space-y-8">
+        <!-- Right: Interactive Custom Quote Estimator (7 cols) -->
+        <div class="lg:col-span-7 bg-white rounded-3xl sm:rounded-[36px] p-6 sm:p-10 border-2 border-[#EBDDC8] shadow-sm space-y-8">
           
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-800">Interactive Estimator</span>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-800">Bespoke Estimator</span>
               <span class="text-xs font-mono text-stone-400">Step 1 of 4</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-extrabold text-stone-900 font-serif">
-              Configure Your Packaging Specification
+            <h3 class="text-2xl font-black text-stone-950 font-serif">
+              Configure Custom Specifications
             </h3>
           </div>
 
@@ -5058,90 +6152,90 @@ function renderContactQuoteView() {
                 1. Select Packaging Architecture *
               </label>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                <label class="quote-style-card active p-3 rounded-2xl border-2 border-emerald-800 bg-emerald-50/50 cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="mailer" checked class="hidden" />
-                  <span class="text-lg">📦</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Corrugated Mailer</span>
+                <label class="quote-style-card active p-3 rounded-2xl border-2 border-emerald-800 bg-emerald-50 cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="single-wall" checked class="hidden" />
+                  <span class="text-xl">📦</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Single Wall Carton</span>
+                  <span class="text-[10px] text-stone-500">B-Flute 125# Test</span>
+                </label>
+
+                <label class="quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="double-wall" class="hidden" />
+                  <span class="text-xl">📦</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Double Wall Box</span>
+                  <span class="text-[10px] text-stone-500">Heavy duty 275# 48 ECT</span>
+                </label>
+
+                <label class="quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="postal-mailer" class="hidden" />
+                  <span class="text-xl">✉️</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Die-Cut Mailer</span>
                   <span class="text-[10px] text-stone-500">Roll-end tuck front</span>
                 </label>
 
-                <label class="quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="rigid" class="hidden" />
-                  <span class="text-lg">✨</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Rigid Setup Box</span>
-                  <span class="text-[10px] text-stone-500">Magnetic luxury</span>
-                </label>
-
-                <label class="quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="food" class="hidden" />
-                  <span class="text-lg">🍕</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Food / Takeaway</span>
+                <label class="quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="takeaway-box" class="hidden" />
+                  <span class="text-xl">🥗</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Takeaway / Food</span>
                   <span class="text-[10px] text-stone-500">Aqueous barrier coated</span>
                 </label>
 
-                <label class="quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="honeycomb" class="hidden" />
-                  <span class="text-lg">✉️</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Padded Mailer</span>
-                  <span class="text-[10px] text-stone-500">Honeycomb paper</span>
+                <label class="quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="crash-lock" class="hidden" />
+                  <span class="text-xl">⚡</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Crash-Lock Base</span>
+                  <span class="text-[10px] text-stone-500">Auto instant assembly</span>
                 </label>
 
-                <label class="quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="bag" class="hidden" />
-                  <span class="text-lg">🛍️</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Paper Bag / Tote</span>
-                  <span class="text-[10px] text-stone-500">Twisted handle kraft</span>
-                </label>
-
-                <label class="quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
-                  <input type="radio" name="box-style" value="custom" class="hidden" />
-                  <span class="text-lg">⚙️</span>
-                  <span class="text-xs font-bold text-stone-900 block mt-2">Custom Shape</span>
-                  <span class="text-[10px] text-stone-500">Bespoke CAD dieline</span>
+                <label class="quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all">
+                  <input type="radio" name="box-style" value="custom-dieline" class="hidden" />
+                  <span class="text-xl">📐</span>
+                  <span class="text-xs font-bold text-stone-900 block mt-2">Custom Geometry</span>
+                  <span class="text-[10px] text-stone-500">Bespoke laser CAD dieline</span>
                 </label>
               </div>
             </div>
 
-            <!-- STEP 2: Custom Dimensions Input (Length, Width, Height) -->
+            <!-- STEP 2: Custom Dimensions (LxWxD) -->
             <div class="space-y-3 pt-2">
               <label class="block text-xs font-bold text-stone-800 uppercase tracking-wider">
-                2. Interior Dimensions (L × W × H) *
+                2. Interior Dimensions: Length × Width × Depth (LxWxD in mm) *
               </label>
               
               <div class="grid grid-cols-3 gap-3">
                 <div>
                   <label class="block text-[11px] font-semibold text-stone-600 mb-1">Length (mm)</label>
-                  <input type="number" id="dim-length" value="250" min="50" max="1000" class="w-full text-xs font-bold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
+                  <input type="number" id="dim-length" value="300" min="50" max="1200" class="w-full text-xs font-bold px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
                 </div>
                 <div>
                   <label class="block text-[11px] font-semibold text-stone-600 mb-1">Width (mm)</label>
-                  <input type="number" id="dim-width" value="180" min="50" max="1000" class="w-full text-xs font-bold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
+                  <input type="number" id="dim-width" value="200" min="50" max="1000" class="w-full text-xs font-bold px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
                 </div>
                 <div>
-                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Depth / Height (mm)</label>
-                  <input type="number" id="dim-height" value="65" min="20" max="500" class="w-full text-xs font-bold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
+                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Depth (mm)</label>
+                  <input type="number" id="dim-depth" value="100" min="20" max="800" class="w-full text-xs font-bold px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <div>
-                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Substrate Material & Flute</label>
-                  <select id="quote-select-material" class="w-full text-xs font-semibold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-                    <option value="kraft-e">Recycled Natural Kraft (E-Flute 1.6mm)</option>
-                    <option value="kraft-b">Heavy-Duty Kraft (B-Flute 3.0mm)</option>
-                    <option value="white-e">Bleached White Liner (E-Flute 1.6mm)</option>
-                    <option value="greyboard">1200 GSM Compressed Greyboard (Rigid)</option>
-                    <option value="foodgrade">PFAS-Free Aqueous Food Grade Board</option>
+                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Material Substrate</label>
+                  <select id="quote-select-material" class="w-full text-xs font-semibold px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                    <option value="kraft-b">Natural Recycled Kraft (Single Wall B-Flute)</option>
+                    <option value="kraft-bc">Heavy-Duty Double Wall (B/C Flute)</option>
+                    <option value="kraft-e">Micro-Flute E-Flute (High Print Definition)</option>
+                    <option value="bagasse">Thermoformed Sugarcane Bagasse Pulp</option>
+                    <option value="white-sbs">FSC® Solid Bleached Sulfate White Paperboard</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Exterior & Interior Printing</label>
-                  <select id="quote-select-print" class="w-full text-xs font-semibold px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                  <label class="block text-[11px] font-semibold text-stone-600 mb-1">Printing & Inks</label>
+                  <select id="quote-select-print" class="w-full text-xs font-semibold px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none">
                     <option value="unprinted">Raw Natural (Unprinted)</option>
-                    <option value="1color">1-Color Flexo Soy Ink Stamp</option>
+                    <option value="1color">1-Color Flexo Plant Soy Ink</option>
                     <option value="cmyk-ext">Full Exterior CMYK Soy Inks</option>
                     <option value="cmyk-both">Full Exterior & Interior CMYK Print</option>
-                    <option value="foil">Hot-Foil Stamping (Gold/Silver/Copper)</option>
+                    <option value="foil">Metallic Foil Stamping (Gold/Copper)</option>
                   </select>
                 </div>
               </div>
@@ -5151,13 +6245,13 @@ function renderContactQuoteView() {
             <div class="space-y-3 pt-2">
               <div class="flex items-center justify-between">
                 <label class="block text-xs font-bold text-stone-800 uppercase tracking-wider">
-                  3. Order Quantity: <span id="quote-qty-display" class="text-emerald-900 font-black">2,500 units</span>
+                  3. Order Quantity: <span id="quote-qty-display" class="text-emerald-900 font-black text-sm">2,500 units</span>
                 </label>
-                <span class="text-xs text-stone-500 font-semibold" id="quote-moq-notice">Volume Tier: Mid-Scale Production</span>
+                <span class="text-xs text-stone-500 font-semibold" id="quote-moq-notice">Standard Commercial Run</span>
               </div>
-              <input type="range" id="quote-qty-slider" min="500" max="25000" step="250" value="2500" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-800" />
+              <input type="range" id="quote-qty-slider" min="250" max="25000" step="250" value="2500" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-800" />
               <div class="flex justify-between text-[10px] text-stone-400 font-mono">
-                <span>500 (MOQ)</span>
+                <span>250 (MOQ)</span>
                 <span>2,500 (Best Value)</span>
                 <span>10,000</span>
                 <span>25,000+</span>
@@ -5167,54 +6261,54 @@ function renderContactQuoteView() {
             <!-- STEP 4: Artwork Upload & Contact Details -->
             <div class="space-y-3 pt-2">
               <label class="block text-xs font-bold text-stone-800 uppercase tracking-wider">
-                4. Upload Artwork / Dieline & Contact
+                4. Upload Artwork File & Contact
               </label>
 
               <!-- Drag & Drop File Upload Box -->
-              <div id="drop-zone" class="border-2 border-dashed border-stone-300 hover:border-emerald-700 rounded-2xl p-6 text-center cursor-pointer transition-colors bg-stone-50/60">
+              <div id="drop-zone" class="border-2 border-dashed border-[#DEC6A6] hover:border-emerald-700 rounded-2xl p-6 text-center cursor-pointer transition-colors bg-[#FAF8F5]">
                 <input type="file" id="artwork-file-input" class="hidden" accept=".ai,.pdf,.eps,.psd,.svg,.png" />
-                <div class="w-10 h-10 rounded-xl bg-stone-200/80 text-stone-600 flex items-center justify-center mx-auto mb-2">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                <div class="w-10 h-10 rounded-xl bg-white border border-[#EBDDC8] text-stone-600 flex items-center justify-center mx-auto mb-2">
+                  <svg class="w-5 h-5 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
                 </div>
-                <div class="text-xs font-bold text-stone-800" id="file-upload-title">Drop your vector artwork or dieline here</div>
+                <div class="text-xs font-bold text-stone-800" id="file-upload-title">Drop your dieline or vector logo here</div>
                 <div class="text-[11px] text-stone-500 mt-0.5">Supports .AI, .PDF, .EPS, .SVG (Up to 50MB)</div>
               </div>
 
               <!-- Contact Inputs -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div>
-                  <input type="text" id="quote-name" placeholder="Your Name *" class="w-full text-xs px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" required />
+                  <input type="text" id="quote-name" placeholder="Contact Name *" class="w-full text-xs px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" required />
                 </div>
                 <div>
-                  <input type="email" id="quote-email" placeholder="Work Email *" class="w-full text-xs px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" required />
+                  <input type="email" id="quote-email" placeholder="Business Email *" class="w-full text-xs px-3 py-2.5 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none" required />
                 </div>
               </div>
               <div>
-                <textarea id="quote-notes" rows="2" placeholder="Specific notes (e.g., custom window cutout, fragile glass jar weight, timeline)..." class="w-full text-xs p-3 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none"></textarea>
+                <textarea id="quote-notes" rows="2" placeholder="Specific requirements (e.g., tear strip, food contact oil rating, target budget)..." class="w-full text-xs p-3 bg-[#FAF8F5] border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none"></textarea>
               </div>
             </div>
 
-            <!-- Real-Time Price Preview Callout -->
-            <div class="p-5 bg-gradient-to-r from-emerald-950 to-stone-900 text-white rounded-2xl shadow-lg flex items-center justify-between">
+            <!-- Price Preview Callout -->
+            <div class="p-6 bg-[#1E3A2F] text-white rounded-2xl shadow-lg flex items-center justify-between">
               <div>
-                <span class="text-[10px] text-emerald-400 uppercase font-mono font-bold block">Estimated Unit Price Range</span>
-                <span id="est-unit-price" class="text-2xl font-black text-white">$0.54 - $0.62</span>
-                <span class="text-xs text-stone-400 block mt-0.5">Estimated Total: <span id="est-total-cost" class="font-bold text-emerald-300">$1,350.00</span></span>
+                <span class="text-[10px] text-emerald-300 uppercase font-mono font-bold block">Estimated Unit Price</span>
+                <span id="est-unit-price" class="text-2xl sm:text-3xl font-black text-white">$0.48 - $0.56</span>
+                <span class="text-xs text-emerald-100/70 block mt-0.5">Estimated Total: <span id="est-total-cost" class="font-bold text-emerald-300">$1,200.00</span></span>
               </div>
               <div class="text-right">
-                <span class="text-[10px] text-emerald-400 bg-emerald-900/60 px-2 py-1 rounded-full font-semibold">CAD Sample Ready in 48h</span>
+                <span class="text-[10px] text-emerald-950 bg-emerald-300 px-2.5 py-1 rounded-full font-bold">CAD Proof in 24h</span>
               </div>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" id="btn-submit-quote" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-bold text-sm rounded-2xl shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2">
+            <!-- Submit Button (Green CTA) -->
+            <button type="submit" id="btn-submit-quote" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-bold text-sm rounded-2xl shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2">
               <span id="btn-quote-text">Submit Bespoke CAD Request</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
 
-            <!-- Success Message Notification -->
+            <!-- Success Notification -->
             <div id="quote-success-banner" class="hidden p-4 bg-emerald-100 border border-emerald-300 rounded-2xl text-emerald-950 text-xs space-y-1">
-              <p class="font-bold">✓ Quote Request Received! Reference: <span id="quote-ref-id" class="font-mono font-black">#EPQ-91823</span></p>
+              <p class="font-bold">✓ Quote Request Received! Reference: <span id="quote-ref-id" class="font-mono font-black">#PNS-CAD-74291</span></p>
               <p>Our structural packaging engineer has been assigned to your file and will reply with a 3D digital PDF proof and formal quotation within 4 hours.</p>
             </div>
 
@@ -5246,36 +6340,35 @@ function initContactQuoteView() {
 
   const styleCards = document.querySelectorAll('.quote-style-card');
 
-  // Box style cards
   styleCards.forEach(card => {
     card.addEventListener('click', () => {
       styleCards.forEach(c => {
-        c.className = 'quote-style-card p-3 rounded-2xl border border-stone-200 hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all';
+        c.className = 'quote-style-card p-3 rounded-2xl border border-[#DEC6A6] hover:border-stone-400 bg-white cursor-pointer flex flex-col justify-between transition-all';
       });
-      card.className = 'quote-style-card active p-3 rounded-2xl border-2 border-emerald-800 bg-emerald-50/50 cursor-pointer flex flex-col justify-between transition-all';
+      card.className = 'quote-style-card active p-3 rounded-2xl border-2 border-emerald-800 bg-emerald-50 cursor-pointer flex flex-col justify-between transition-all';
       updatePriceEstimate();
     });
   });
 
   function updatePriceEstimate() {
+    if (!slider) return;
     const qty = parseInt(slider.value);
     if (qtyDisplay) qtyDisplay.textContent = `${qty.toLocaleString()} units`;
 
-    // Base calculation
-    let basePrice = 1.10;
-    if (qty >= 1000) basePrice = 0.82;
-    if (qty >= 2500) basePrice = 0.58;
-    if (qty >= 5000) basePrice = 0.44;
-    if (qty >= 10000) basePrice = 0.32;
+    let basePrice = 0.95;
+    if (qty >= 1000) basePrice = 0.68;
+    if (qty >= 2500) basePrice = 0.48;
+    if (qty >= 5000) basePrice = 0.38;
+    if (qty >= 10000) basePrice = 0.28;
 
     const printVal = printSelect ? printSelect.value : 'unprinted';
-    if (printVal === '1color') basePrice += 0.08;
-    if (printVal === 'cmyk-ext') basePrice += 0.16;
-    if (printVal === 'cmyk-both') basePrice += 0.28;
-    if (printVal === 'foil') basePrice += 0.35;
+    if (printVal === '1color') basePrice += 0.06;
+    if (printVal === 'cmyk-ext') basePrice += 0.14;
+    if (printVal === 'cmyk-both') basePrice += 0.24;
+    if (printVal === 'foil') basePrice += 0.30;
 
-    const low = (basePrice * 0.95).toFixed(2);
-    const high = (basePrice * 1.12).toFixed(2);
+    const low = (basePrice * 0.94).toFixed(2);
+    const high = (basePrice * 1.10).toFixed(2);
     const totalEst = (basePrice * qty).toFixed(2);
 
     if (estUnitPrice) estUnitPrice.textContent = `$${low} - $${high}`;
@@ -5286,27 +6379,25 @@ function initContactQuoteView() {
   if (materialSelect) materialSelect.addEventListener('change', updatePriceEstimate);
   if (printSelect) printSelect.addEventListener('change', updatePriceEstimate);
 
-  // File drag & drop
   if (dropZone && fileInput) {
     dropZone.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', (e) => {
       if (e.target.files && e.target.files[0]) {
         fileTitle.textContent = `Attached: ${e.target.files[0].name} (${(e.target.files[0].size / 1024 / 1024).toFixed(2)} MB)`;
-        dropZone.classList.add('border-emerald-600', 'bg-emerald-50/50');
+        dropZone.classList.add('border-emerald-600', 'bg-emerald-50');
       }
     });
   }
 
-  // Submit quote
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const ref = 'EPQ-' + Math.floor(10000 + Math.random() * 90000);
+      const ref = 'PNS-CAD-' + Math.floor(10000 + Math.random() * 90000);
       if (quoteRefId) quoteRefId.textContent = '#' + ref;
       if (successBanner) successBanner.classList.remove('hidden');
       if (btnSubmit) {
         btnSubmit.disabled = true;
-        btnSubmit.textContent = 'Quote Request Submitted ✓';
+        btnSubmit.textContent = 'CAD Request Submitted ✓';
         btnSubmit.classList.add('bg-stone-600');
       }
     });
@@ -5325,7 +6416,6 @@ class Router {
 
   init() {
     window.addEventListener('hashchange', () => this.handleRoute());
-    // Initial route
     this.handleRoute();
   }
 
@@ -5334,7 +6424,7 @@ class Router {
     const [pathPart, queryPart] = rawHash.split('?');
     const path = pathPart.toLowerCase();
 
-    // Parse query params (e.g. category=food)
+    // Parse query params (e.g. category=boxes)
     const params = new URLSearchParams(queryPart || '');
     const categoryParam = params.get('category') || 'all';
 
@@ -5348,7 +6438,10 @@ class Router {
       if (path === 'home') {
         this.container.innerHTML = renderHomeView();
         initHomeView();
-      } else if (path === 'products') {
+      } else if (path === 'showcase' || path === 'eco-showcase') {
+        this.container.innerHTML = renderShowcaseView();
+        initShowcaseView();
+      } else if (path === 'shop' || path === 'products') {
         this.container.innerHTML = renderProductsView(categoryParam);
         initProductsView(categoryParam);
       } else if (path.startsWith('product/')) {
@@ -5358,14 +6451,10 @@ class Router {
       } else if (path === 'about') {
         this.container.innerHTML = renderAboutView();
         initAboutView();
-      } else if (path === 'story') {
-        this.container.innerHTML = renderStoryView();
-        initStoryView();
       } else if (path === 'quote' || path === 'contact') {
         this.container.innerHTML = renderContactQuoteView();
         initContactQuoteView();
       } else {
-        // Fallback to home
         this.container.innerHTML = renderHomeView();
         initHomeView();
       }
@@ -5374,7 +6463,7 @@ class Router {
       if (window.gsap) {
         window.gsap.fromTo(this.container, 
           { opacity: 0, y: 15 }, 
-          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+          { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
         );
       }
     };
@@ -5396,7 +6485,8 @@ class Router {
       const href = link.getAttribute('href') || '';
       const linkPath = href.replace('#', '').split('?')[0].toLowerCase();
       
-      if (currentPath === linkPath || (currentPath.startsWith('product') && linkPath === 'products')) {
+      if (currentPath === linkPath || 
+         ((currentPath === 'shop' || currentPath.startsWith('product')) && (linkPath === 'shop' || linkPath === 'products'))) {
         link.classList.add('text-emerald-900', 'font-black');
         link.classList.remove('text-stone-700');
       } else {

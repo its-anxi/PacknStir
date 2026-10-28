@@ -14,7 +14,7 @@ export const TIMELINE_MILESTONES = [
     tag: 'R&D Innovation',
     title: 'The Honeycomb Breakthrough',
     headline: 'Replacing plastic bubble wrap forever.',
-    description: 'After 14 months of physical drop testing and finite element analysis, EcoPack Studio launched the Honeycomb Padded Paper Mailer. By precision-cutting recycled kraft paper into an interlocking hexagonal grid, we engineered shock absorption equal to 3/16" plastic bubble wrap—yet 100% curbside repulpable in standard blue paper bins.',
+    description: 'After 14 months of physical drop testing and finite element analysis, PackNStir launched the Honeycomb Padded Paper Mailer. By precision-cutting recycled kraft paper into an interlocking hexagonal grid, we engineered shock absorption equal to 3/16" plastic bubble wrap—yet 100% curbside repulpable in standard blue paper bins.',
     impact: 'Over 2.4 million meters of plastic bubble film replaced in Year 1.',
     stat: '14 Months of Drop Testing',
     imageType: 'honeycomb'
@@ -34,7 +34,7 @@ export const TIMELINE_MILESTONES = [
     tag: 'Architectural Craft',
     title: 'Luxury Meets the Circular Economy',
     headline: 'Rigid presentation boxes without petroleum foam.',
-    description: 'Luxury brands long believed that premium unboxing required plastic EVA foam cavities and glossy synthetic film lamination. EcoPack Studio debuted our Heirloom Setup Boxes: 1200 GSM recycled greyboard covered in fine-milled FSC paper with contour-molded bamboo cellulose cushions and natural cotton velvet linings.',
+    description: 'Luxury brands long believed that premium unboxing required plastic EVA foam cavities and glossy synthetic film lamination. PackNStir debuted our Heirloom Setup Boxes: 1200 GSM recycled greyboard covered in fine-milled FSC paper with contour-molded bamboo cellulose cushions and natural cotton velvet linings.',
     impact: 'Adopted by 85+ haute parfumerie, fine jewelry, and boutique fashion houses.',
     stat: 'Zero EVA Foam',
     imageType: 'luxury'
@@ -54,7 +54,7 @@ export const TIMELINE_MILESTONES = [
     tag: 'The Horizon',
     title: 'Algae Inks & Regenerative Agriculture',
     headline: 'Packaging that actively heals the soil.',
-    description: 'Today, EcoPack Studio is piloting carbon-negative black and colored inks derived from spirulina algae and sourcing non-wood fibers from regenerative agricultural residues like hemp and wheat straw. Our mission remains unwavering: zero single-use plastics, uncompromising luxury aesthetics, and total circularity.',
+    description: 'Today, PackNStir is piloting carbon-negative black and colored inks derived from spirulina algae and sourcing non-wood fibers from regenerative agricultural residues like hemp and wheat straw. Our mission remains unwavering: zero single-use plastics, uncompromising luxury aesthetics, and total circularity.',
     impact: 'Sequestering 1.8 kg of CO2 per ton of virgin paper alternative produced.',
     stat: 'Carbon Negative Inks',
     imageType: 'future'
@@ -101,7 +101,7 @@ export const MATERIALS_GUIDE = [
 
 export const TESTIMONIALS = [
   {
-    quote: 'Switching our nationwide pizza chain to EcoPack’s micro-flute boxes eliminated 420,000 plastic-lined boxes a year. Customers constantly compliment how crisp the crust stays on delivery—the ventilation engineering is second to none.',
+    quote: 'Switching our nationwide pizza chain to PackNStir’s micro-flute boxes eliminated 420,000 plastic-lined boxes a year. Customers constantly compliment how crisp the crust stays on delivery—the ventilation engineering is second to none.',
     author: 'Marco Bellini',
     role: 'Founder & Head Chef',
     company: 'Farina Artisanal Pizza, San Francisco',
@@ -109,7 +109,7 @@ export const TESTIMONIALS = [
     highlight: '420k plastic boxes eliminated'
   },
   {
-    quote: 'For our luxury botanical perfume line, we refused to use cheap EVA plastic foam. EcoPack engineered a custom molded cellulose insert wrapped in black velvet paper that feels even more luxurious than traditional boxes, with zero guilt.',
+    quote: 'For our luxury botanical perfume line, we refused to use cheap EVA plastic foam. PackNStir engineered a custom molded cellulose insert wrapped in black velvet paper that feels even more luxurious than traditional boxes, with zero guilt.',
     author: 'Claire Delacroix',
     role: 'Creative Director',
     company: 'Maison Botanique, Paris',

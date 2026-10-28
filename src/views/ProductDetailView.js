@@ -6,15 +6,15 @@ export function renderProductDetailView(productId) {
   const product = getProductById(productId) || PRODUCTS[0];
 
   return `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 bg-white">
       
       <!-- Breadcrumbs -->
-      <nav class="flex items-center text-xs font-semibold text-stone-500 gap-2">
+      <nav class="flex items-center text-xs font-bold text-stone-500 gap-2">
         <a href="#home" class="hover:text-emerald-800 transition-colors">Home</a>
         <span>/</span>
-        <a href="#products" class="hover:text-emerald-800 transition-colors">Catalog</a>
+        <a href="#shop" class="hover:text-emerald-800 transition-colors">Shop</a>
         <span>/</span>
-        <a href="#products?category=${product.category}" class="hover:text-emerald-800 transition-colors">${product.categoryName}</a>
+        <a href="#shop?category=${product.category}" class="hover:text-emerald-800 transition-colors">${product.categoryName}</a>
         <span>/</span>
         <span class="text-stone-900 truncate max-w-xs">${product.name}</span>
       </nav>
@@ -26,68 +26,67 @@ export function renderProductDetailView(productId) {
         <div class="lg:col-span-6 space-y-4">
           
           <!-- Main Visual Stage Box -->
-          <div class="relative bg-gradient-to-b from-stone-50 to-stone-100/80 rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm flex items-center justify-center min-h-[380px] sm:min-h-[460px] overflow-hidden group">
+          <div class="relative bg-gradient-to-b from-[#FBF8F3] to-[#F4EFE6] rounded-3xl sm:rounded-[36px] p-8 sm:p-12 border-2 border-[#EBDDC8] shadow-xs flex items-center justify-center min-h-[380px] sm:min-h-[460px] overflow-hidden group">
             
             <!-- Top Badges -->
             <div class="absolute top-5 left-5 flex items-center gap-2 z-10">
-              <span class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 shadow-xs">
+              <span class="px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-950 text-emerald-300 shadow-xs">
                 ${product.badge || 'FSC® Certified'}
               </span>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/90 text-stone-700 border border-stone-200 shadow-xs hidden sm:inline-block">
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-white text-stone-700 border border-[#DEC6A6] shadow-xs hidden sm:inline-block">
                 ${product.coating.split('(')[0]}
               </span>
             </div>
 
-            <!-- Visual SVG Stage with dynamic angle transitions -->
+            <!-- Visual SVG Stage -->
             <div id="pdp-main-stage" class="w-full h-full max-h-80 flex items-center justify-center transition-all duration-300">
               ${getProductSvg(product.svgType, 'pdp')}
             </div>
 
-            <!-- Eco Watermark -->
             <div class="absolute bottom-4 right-4 text-[10px] text-stone-400 font-mono tracking-wider">
-              100% RECYCLABLE / BIO-DEGRADABLE
+              PACKNSTIR • ZERO-PLASTIC GUARANTEE
             </div>
           </div>
 
           <!-- Angle Thumbnail Selector -->
           <div class="grid grid-cols-4 gap-3">
             <button data-view="perspective" class="pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-900">3D Angle</span>
             </button>
 
-            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"/></svg>
               </div>
-              <span class="text-[10px] font-bold text-stone-600">Open Box</span>
+              <span class="text-[10px] font-bold text-stone-600">Open View</span>
             </button>
 
-            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">CAD Dieline</span>
             </button>
 
-            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
-              <div class="w-8 h-8 flex items-center justify-center">
+            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+              <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">Macro Zoom</span>
             </button>
           </div>
 
-          <!-- Eco Badges Row -->
-          <div class="p-4 bg-emerald-50/70 border border-emerald-100 rounded-2xl flex flex-wrap items-center justify-between gap-2 text-xs">
-            ${product.ecoBadges.map(badge => `
-              <span class="flex items-center gap-1 text-emerald-950 font-bold">
-                <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                <span>${badge}</span>
-              </span>
-            `).join('')}
+          <!-- Environmental Callout Box -->
+          <div class="p-5 bg-emerald-50 border-2 border-emerald-600/40 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950">
+              <span>🌱 Eco-Heritage Environmental Impact:</span>
+            </div>
+            <p class="text-xs text-emerald-950 font-medium leading-relaxed">
+              ${product.environmentalImpact}
+            </p>
           </div>
 
         </div>
@@ -97,41 +96,41 @@ export function renderProductDetailView(productId) {
           
           <div>
             <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold uppercase tracking-widest text-emerald-900">${product.categoryName}</span>
-              <span class="text-xs text-stone-400">•</span>
-              <span class="text-xs text-amber-900 font-semibold bg-amber-50 px-2 py-0.5 rounded">Lead Time: ${product.leadTime.split('(')[0]}</span>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-900">${product.categoryName}</span>
+              <span class="text-stone-300">•</span>
+              <span class="text-xs text-stone-700 font-semibold bg-[#F6EFE3] px-2.5 py-0.5 rounded">Lead Time: ${product.leadTime}</span>
             </div>
 
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight leading-snug font-serif">
+            <h1 class="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-snug font-serif">
               ${product.name}
             </h1>
 
             <p class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
-              ${product.description}
+              ${product.description || product.subtitle}
             </p>
           </div>
 
           <!-- Live Tier Pricing Display -->
-          <div class="p-5 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="p-6 bg-[#FAF8F5] rounded-3xl border-2 border-[#EBDDC8] shadow-xs space-y-4">
             <div class="flex items-baseline justify-between">
               <div>
-                <span class="text-xs text-stone-400 block -mb-1">Active Unit Price</span>
-                <span id="pdp-active-unit-price" class="text-3xl font-black text-stone-900">$${product.price.toFixed(2)}</span>
+                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Active Unit Price</span>
+                <span id="pdp-active-unit-price" class="text-3xl font-black text-stone-950">$${product.price.toFixed(2)}</span>
                 <span class="text-xs text-stone-500">/ ${product.unit}</span>
               </div>
               <div class="text-right">
-                <span class="text-xs text-stone-400 block -mb-1">Estimated Line Total</span>
-                <span id="pdp-active-total" class="text-xl font-extrabold text-emerald-900">$${(product.price * product.moq).toFixed(2)}</span>
+                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Estimated Line Total</span>
+                <span id="pdp-active-total" class="text-2xl font-black text-emerald-900">$${(product.price * product.moq).toFixed(2)}</span>
               </div>
             </div>
 
             <!-- Tiered Pricing Matrix Table -->
-            <div class="pt-3 border-t border-stone-100">
-              <span class="text-[11px] font-bold text-stone-500 uppercase tracking-wider block mb-2">Volume Tier Discounts</span>
+            <div class="pt-3 border-t border-[#EBDDC8]">
+              <span class="text-[10px] font-black text-stone-600 uppercase tracking-wider block mb-2">Volume Tier Discounts</span>
               <div class="grid grid-cols-4 gap-2 text-center text-xs">
                 ${product.pricingTiers.map((tier, idx) => `
-                  <button data-tier-qty="${tier.qty}" data-tier-price="${tier.pricePerUnit}" class="btn-tier-select p-2 rounded-xl border ${idx === 1 ? 'border-emerald-800 bg-emerald-50/60 font-bold text-emerald-950' : 'border-stone-200 bg-stone-50 text-stone-700 hover:border-stone-400'} transition-all">
-                    <span class="block text-[11px] font-bold">${tier.qty.toLocaleString()} pcs</span>
+                  <button data-tier-qty="${tier.qty}" data-tier-price="${tier.pricePerUnit}" class="btn-tier-select p-2 rounded-xl border ${idx === 1 ? 'border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 shadow-2xs' : 'border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400'} transition-all">
+                    <span class="block text-[10px] font-bold">${tier.qty.toLocaleString()} pcs</span>
                     <span class="block text-xs font-black text-stone-900 mt-0.5">$${tier.pricePerUnit.toFixed(2)}</span>
                   </button>
                 `).join('')}
@@ -145,18 +144,18 @@ export function renderProductDetailView(productId) {
             <!-- Dimensions Selector -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Select Dimensions & Volume</span>
-                <a href="#quote" class="text-emerald-800 font-semibold hover:underline">Need Custom Sizing?</a>
+                <span>Select Dimensions</span>
+                <a href="#quote" class="text-emerald-800 font-bold hover:underline">Custom Sizing?</a>
               </label>
-              <select id="pdp-select-size" class="w-full text-xs font-semibold px-3.5 py-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900">
+              <select id="pdp-select-size" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
                 ${product.dimensionsAvailable.map(d => `<option value="${d}">${d}</option>`).join('')}
               </select>
             </div>
 
-            <!-- Finish & Printing Selection -->
+            <!-- Finish Selection -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5">Surface Finish & Inks</label>
-              <select id="pdp-select-finish" class="w-full text-xs font-semibold px-3.5 py-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900">
+              <select id="pdp-select-finish" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
                 ${product.finishOptions.map(f => `<option value="${f}">${f}</option>`).join('')}
               </select>
             </div>
@@ -164,16 +163,16 @@ export function renderProductDetailView(productId) {
             <!-- Quantity Stepper -->
             <div>
               <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Production Quantity (Units)</span>
+                <span>Production Quantity</span>
                 <span class="text-stone-500 font-normal">Minimum Order Quantity: ${product.moq}</span>
               </label>
               <div class="flex items-center gap-3">
-                <div class="flex items-center border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs flex-1">
-                  <button id="pdp-qty-minus" class="px-4 py-2.5 text-stone-600 hover:bg-stone-100 font-bold text-sm">-</button>
+                <div class="flex items-center border border-[#DEC6A6] rounded-xl bg-white overflow-hidden shadow-2xs flex-1">
+                  <button id="pdp-qty-minus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">-</button>
                   <input type="number" id="pdp-qty-input" value="${product.moq}" min="${product.moq}" step="50" class="w-full text-center text-xs font-bold py-2.5 focus:outline-none" />
-                  <button id="pdp-qty-plus" class="px-4 py-2.5 text-stone-600 hover:bg-stone-100 font-bold text-sm">+</button>
+                  <button id="pdp-qty-plus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">+</button>
                 </div>
-                <button id="btn-request-sample" class="px-4 py-2.5 text-xs font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-xl transition-colors border border-stone-200 whitespace-nowrap">
+                <button id="btn-request-sample" class="px-4 py-2.5 text-xs font-bold text-stone-800 bg-[#F6EFE3] hover:bg-[#EBDDC8] rounded-xl transition-colors border border-[#DEC6A6] whitespace-nowrap">
                   Request $15 Sample Kit
                 </button>
               </div>
@@ -181,19 +180,19 @@ export function renderProductDetailView(productId) {
 
           </div>
 
-          <!-- Add to Cart & Quote Actions -->
+          <!-- Add to Cart & Custom Quote Actions -->
           <div class="space-y-3 pt-2">
-            <button id="pdp-btn-add-cart" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2">
+            <button id="pdp-btn-add-cart" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
               <span id="pdp-btn-add-text">Add ${product.moq} Units to Cart</span>
             </button>
 
             <div class="grid grid-cols-2 gap-3">
-              <a href="#quote" class="py-3 text-center bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold text-stone-800 transition-colors">
-                Upload Custom Artwork / CAD
+              <a href="#quote" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-stone-800 transition-colors">
+                Request Bespoke CAD Quote
               </a>
-              <a href="#about" class="py-3 text-center bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold text-emerald-900 transition-colors">
-                Download Dieline PDF (.ai)
+              <a href="#showcase" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-emerald-900 transition-colors">
+                View in Eco-Showcase →
               </a>
             </div>
           </div>
@@ -204,53 +203,53 @@ export function renderProductDetailView(productId) {
 
 
       <!-- ========================================== -->
-      <!-- TECHNICAL SPECS, ECO IMPACT & LEAD TABS    -->
+      <!-- TABS: SPECS, HISTORY, ECO IMPACT & LOGISTICS -->
       <!-- ========================================== -->
-      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 space-y-8">
+      <div class="bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] p-6 sm:p-10 space-y-8 shadow-xs">
         
         <!-- Tabs Header -->
-        <div class="flex items-center border-b border-stone-200 gap-8 overflow-x-auto text-xs font-bold text-stone-500 pb-3">
+        <div class="flex items-center border-b border-[#EBDDC8] gap-8 overflow-x-auto text-xs font-bold text-stone-500 pb-3">
           <button data-tab="tab-specs" class="pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap">
-            Technical Engineering Specs
+            Technical Specs
+          </button>
+          <button data-tab="tab-history" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
+            Product History & Material Origins
           </button>
           <button data-tab="tab-eco" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Sustainability & Disposal Guide
-          </button>
-          <button data-tab="tab-artwork" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Artwork & Dieline Guidelines
+            Environmental Impact
           </button>
           <button data-tab="tab-shipping" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Production & Freight Logistics
+            Production & Freight Lead Times
           </button>
         </div>
 
         <!-- TAB 1: SPECS -->
         <div id="tab-specs" class="pdp-tab-content space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Composition</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Material</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.material}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Board Weight / GSM</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Weight / Caliper</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.boardWeight}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Barrier Coating</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Coating</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.coating}</span>
             </div>
-            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Standard Preset Size</span>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8]">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Dimensions</span>
               <span class="text-xs font-extrabold text-stone-900 block">${product.dimensionsPreset}</span>
             </div>
           </div>
 
           <div class="space-y-3 pt-2">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700">Structural Highlights</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700">Engineering Highlights</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              ${product.features.map(f => `
+              ${(product.features || []).map(f => `
                 <div class="flex items-center gap-2.5 text-xs text-stone-700">
-                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
+                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-900 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
                   <span>${f}</span>
                 </div>
               `).join('')}
@@ -258,80 +257,40 @@ export function renderProductDetailView(productId) {
           </div>
         </div>
 
-        <!-- TAB 2: ECO -->
-        <div id="tab-eco" class="pdp-tab-content hidden space-y-4">
-          <div class="p-6 bg-emerald-950 text-white rounded-2xl space-y-3">
-            <h4 class="text-sm font-bold text-emerald-300">100% Curbside Repulpable Certification</h4>
-            <p class="text-xs text-emerald-100/80 leading-relaxed">
-              Unlike traditional packaging with laminated PE plastic or metallic foils that require industrial separation, this product can be disposed directly into residential blue paper bins. The paper fibers dissolve cleanly in commercial paper mills to become new corrugated cartons within 14 days.
+        <!-- TAB 2: HISTORY (Origins of material) -->
+        <div id="tab-history" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-[#FAF8F5] border border-[#EBDDC8] rounded-2xl space-y-2">
+            <h4 class="text-sm font-bold text-stone-950 font-serif">Origins & Evolution of the Format</h4>
+            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
+              ${product.history}
             </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Curbside Recycling</h5>
-              <p class="text-[11px] text-stone-500">100% blue bin recyclable in North America, UK, and European Union.</p>
-            </div>
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Compostability</h5>
-              <p class="text-[11px] text-stone-500">Disintegrates in under 90 days in commercial or backyard soil without toxicity.</p>
-            </div>
-            <div class="p-4 rounded-2xl border border-stone-200">
-              <h5 class="text-xs font-bold text-stone-900 mb-1">Non-Toxic Inks</h5>
-              <p class="text-[11px] text-stone-500">Printed with plant-based soy and algae inks free from volatile organic compounds (VOCs).</p>
-            </div>
           </div>
         </div>
 
-        <!-- TAB 3: ARTWORK -->
-        <div id="tab-artwork" class="pdp-tab-content hidden space-y-4">
-          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs space-y-2">
-            <h4 class="font-bold text-stone-900">Digital Artwork File Requirements:</h4>
-            <ul class="list-disc pl-5 space-y-1 text-stone-600">
-              <li>Submit vector artwork in Adobe Illustrator (.AI), PDF, or EPS format.</li>
-              <li>Maintain 3mm (1/8") external bleed past all dieline trim cuts.</li>
-              <li>Keep all critical logos and copy 5mm inside fold crease lines.</li>
-              <li>Color profile: CMYK or Pantone Solid Coated / Uncoated.</li>
-              <li>Minimum text size: 6pt for positive type, 8pt for reversed knocked-out type.</li>
-            </ul>
+        <!-- TAB 3: ECO IMPACT -->
+        <div id="tab-eco" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-emerald-50 border-2 border-emerald-700/40 rounded-2xl space-y-2">
+            <h4 class="text-sm font-bold text-emerald-950 font-serif">Environmental Impact & Waste Diversion</h4>
+            <p class="text-xs sm:text-sm text-emerald-950 font-medium leading-relaxed font-sans">
+              ${product.environmentalImpact}
+            </p>
           </div>
         </div>
 
         <!-- TAB 4: SHIPPING -->
         <div id="tab-shipping" class="pdp-tab-content hidden space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div class="p-4 rounded-2xl border border-stone-200 space-y-1">
-              <span class="font-bold text-stone-900 block">Stock Blank Format</span>
-              <p class="text-stone-500">Ships within 48 to 72 hours from our Portland, OR or Antwerp logistics hubs.</p>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8] space-y-1">
+              <span class="font-bold text-stone-900 block">Standard Stock Dispatch</span>
+              <p class="text-stone-600">Dispatches within 24 to 48 hours via carbon-neutral road freight.</p>
             </div>
-            <div class="p-4 rounded-2xl border border-stone-200 space-y-1">
-              <span class="font-bold text-stone-900 block">Custom Printed Run</span>
-              <p class="text-stone-500">Standard production time is 7-10 business days following digital proof approval.</p>
+            <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8] space-y-1">
+              <span class="font-bold text-stone-900 block">Custom Print & Sizing Runs</span>
+              <p class="text-stone-600">Standard lead time is 7 to 10 business days following digital PDF proof sign-off.</p>
             </div>
           </div>
         </div>
 
-      </div>
-
-
-      <!-- ========================================== -->
-      <!-- RELATED PACKAGING SOLUTIONS                -->
-      <!-- ========================================== -->
-      <div class="space-y-6 pt-6">
-        <h3 class="text-xl font-bold text-stone-900 font-serif">Frequently Paired Packaging</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          ${PRODUCTS.filter(p => p.id !== product.id && (p.category === product.category || p.category === 'shipping')).slice(0, 3).map(rel => `
-            <a href="#product/${rel.id}" class="p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-700/40 shadow-xs hover:shadow-md transition-all flex items-center gap-4 group">
-              <div class="w-16 h-16 rounded-xl bg-stone-100 flex-shrink-0 p-1 flex items-center justify-center">
-                ${getProductSvg(rel.svgType, 'thumb')}
-              </div>
-              <div>
-                <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">${rel.categoryName}</span>
-                <h4 class="text-xs font-bold text-stone-900 group-hover:text-emerald-900 transition-colors leading-tight mt-0.5">${rel.name}</h4>
-                <span class="text-xs font-black text-stone-800 mt-1 block">$${rel.price.toFixed(2)} / ${rel.unit}</span>
-              </div>
-            </a>
-          `).join('')}
-        </div>
       </div>
 
     </div>
@@ -356,7 +315,6 @@ export function initProductDetailView(productId) {
   const btnSample = document.getElementById('btn-request-sample');
 
   function recalculatePrice() {
-    // Determine unit price based on tiered pricing matrix
     let matchedTier = product.pricingTiers[0];
     for (const tier of product.pricingTiers) {
       if (currentQty >= tier.qty) {
@@ -364,35 +322,30 @@ export function initProductDetailView(productId) {
       }
     }
     currentUnitPrice = matchedTier.pricePerUnit;
-
     const lineTotal = currentUnitPrice * currentQty;
 
     if (unitPriceEl) unitPriceEl.textContent = `$${currentUnitPrice.toFixed(2)}`;
     if (totalEl) totalEl.textContent = `$${lineTotal.toFixed(2)}`;
     if (btnAddText) btnAddText.textContent = `Add ${currentQty.toLocaleString()} Units to Cart • $${lineTotal.toFixed(2)}`;
 
-    // Highlight tier button
     document.querySelectorAll('.btn-tier-select').forEach(btn => {
       const q = parseInt(btn.getAttribute('data-tier-qty'));
       if (q === matchedTier.qty) {
-        btn.className = 'btn-tier-select p-2 rounded-xl border border-emerald-800 bg-emerald-50/60 font-bold text-emerald-950 transition-all';
+        btn.className = 'btn-tier-select p-2 rounded-xl border border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 transition-all shadow-2xs';
       } else {
-        btn.className = 'btn-tier-select p-2 rounded-xl border border-stone-200 bg-stone-50 text-stone-700 hover:border-stone-400 transition-all';
+        btn.className = 'btn-tier-select p-2 rounded-xl border border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400 transition-all';
       }
     });
   }
 
-  // Tier buttons click
   document.querySelectorAll('.btn-tier-select').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const q = parseInt(e.currentTarget.getAttribute('data-tier-qty'));
-      currentQty = q;
+      currentQty = parseInt(e.currentTarget.getAttribute('data-tier-qty'));
       if (qtyInput) qtyInput.value = currentQty;
       recalculatePrice();
     });
   });
 
-  // Quantity Stepper
   if (qtyMinus) {
     qtyMinus.addEventListener('click', () => {
       currentQty = Math.max(product.moq, currentQty - 50);
@@ -417,7 +370,6 @@ export function initProductDetailView(productId) {
     });
   }
 
-  // Add To Cart
   if (btnAddToCart) {
     btnAddToCart.addEventListener('click', () => {
       const size = sizeSelect ? sizeSelect.value : product.dimensionsPreset;
@@ -429,14 +381,12 @@ export function initProductDetailView(productId) {
         customPrice: currentUnitPrice
       });
 
-      // Quick feedback toast or button animation
       if (window.gsap) {
         window.gsap.fromTo(btnAddToCart, { scale: 0.97 }, { scale: 1, duration: 0.25, ease: 'power2.out' });
       }
     });
   }
 
-  // Request Sample Kit
   if (btnSample) {
     btnSample.addEventListener('click', () => {
       cart.addItem({
@@ -454,12 +404,12 @@ export function initProductDetailView(productId) {
     });
   }
 
-  // Angle View Selector
+  // Thumbnails view switcher
   const stage = document.getElementById('pdp-main-stage');
   document.querySelectorAll('.pdp-thumb-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.pdp-thumb-btn').forEach(b => {
-        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-stone-200 hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all';
+        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all';
       });
       btn.className = 'pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all';
 
@@ -500,6 +450,5 @@ export function initProductDetailView(productId) {
     });
   });
 
-  // Run initial recalculation
   recalculatePrice();
 }

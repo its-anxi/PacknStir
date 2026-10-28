@@ -1,8 +1,8 @@
 import { renderHomeView, initHomeView } from './views/HomeView.js';
+import { renderShowcaseView, initShowcaseView } from './views/ShowcaseView.js';
 import { renderProductsView, initProductsView } from './views/ProductsView.js';
 import { renderProductDetailView, initProductDetailView } from './views/ProductDetailView.js';
 import { renderAboutView, initAboutView } from './views/AboutView.js';
-import { renderStoryView, initStoryView } from './views/StoryView.js';
 import { renderContactQuoteView, initContactQuoteView } from './views/ContactQuoteView.js';
 
 export class Router {
@@ -13,7 +13,6 @@ export class Router {
 
   init() {
     window.addEventListener('hashchange', () => this.handleRoute());
-    // Initial route
     this.handleRoute();
   }
 
@@ -22,7 +21,7 @@ export class Router {
     const [pathPart, queryPart] = rawHash.split('?');
     const path = pathPart.toLowerCase();
 
-    // Parse query params (e.g. category=food)
+    // Parse query params (e.g. category=boxes)
     const params = new URLSearchParams(queryPart || '');
     const categoryParam = params.get('category') || 'all';
 
@@ -36,7 +35,10 @@ export class Router {
       if (path === 'home') {
         this.container.innerHTML = renderHomeView();
         initHomeView();
-      } else if (path === 'products') {
+      } else if (path === 'showcase' || path === 'eco-showcase') {
+        this.container.innerHTML = renderShowcaseView();
+        initShowcaseView();
+      } else if (path === 'shop' || path === 'products') {
         this.container.innerHTML = renderProductsView(categoryParam);
         initProductsView(categoryParam);
       } else if (path.startsWith('product/')) {
@@ -46,14 +48,10 @@ export class Router {
       } else if (path === 'about') {
         this.container.innerHTML = renderAboutView();
         initAboutView();
-      } else if (path === 'story') {
-        this.container.innerHTML = renderStoryView();
-        initStoryView();
       } else if (path === 'quote' || path === 'contact') {
         this.container.innerHTML = renderContactQuoteView();
         initContactQuoteView();
       } else {
-        // Fallback to home
         this.container.innerHTML = renderHomeView();
         initHomeView();
       }
@@ -62,7 +60,7 @@ export class Router {
       if (window.gsap) {
         window.gsap.fromTo(this.container, 
           { opacity: 0, y: 15 }, 
-          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+          { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
         );
       }
     };
@@ -84,7 +82,8 @@ export class Router {
       const href = link.getAttribute('href') || '';
       const linkPath = href.replace('#', '').split('?')[0].toLowerCase();
       
-      if (currentPath === linkPath || (currentPath.startsWith('product') && linkPath === 'products')) {
+      if (currentPath === linkPath || 
+         ((currentPath === 'shop' || currentPath.startsWith('product')) && (linkPath === 'shop' || linkPath === 'products'))) {
         link.classList.add('text-emerald-900', 'font-black');
         link.classList.remove('text-stone-700');
       } else {
