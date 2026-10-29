@@ -1722,7 +1722,7 @@ export const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Plastic stretch cling wrap (LLDPE) accounts for over 2.5 million metric tons of unrecyclable plastic waste globally. PackNStir stretch paper uses micro-creped fibers that elongate up to 30% under wrapping tension.',
     environmentalImpact: 'Replaces miles of thin plastic film wrapped around pallets that typically ends up in landfills. Eliminates pallet unwrapping disposal charges for retail receiving docks.',
-    ecosystemBenefits: 'A groundbreaking creped paper stretch film that replaces multi-layer LLDPE plastic pallet wrap. Plastic shrink wrap is one of the world's worst ocean pollutants; our paper wrap repulps 100% with the cardboard boxes beneath it.',
+    ecosystemBenefits: 'A groundbreaking creped paper stretch film that replaces multi-layer LLDPE plastic pallet wrap. Plastic shrink wrap is one of the world\\\'s worst ocean pollutants; our paper wrap repulps 100% with the cardboard boxes beneath it.',
     globalWarmingImpact: 'Eliminates 1.2 kg of fossil fuel plastic wrap per shipping pallet, saving 3.65 kg CO2e per wrapped pallet load across global supply chains.',
     co2SavedKg: 3.65,
     plasticAvoidedGrams: 1200,

@@ -184,7 +184,7 @@ export function initCartDrawer() {
 
     const meterText = document.getElementById('shipping-meter-text');
     const progressBar = document.getElementById('shipping-progress-bar');
-    if (meterText && progressBar) {
+    if (meterText && progressBar && progressBar.style) {
       if (progress.isFree) {
         meterText.textContent = '🎉 You unlocked FREE Carbon-Neutral Shipping!';
         progressBar.style.width = '100%';

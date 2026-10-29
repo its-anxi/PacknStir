@@ -5,7 +5,7 @@ import { renderCheckoutModal, initCheckoutModal } from './components/CheckoutMod
 import { renderQuickViewModal, initQuickViewModal } from './components/QuickViewModal.js';
 import { Router } from './router.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function bootstrapApp() {
   const appRoot = document.getElementById('app');
   if (!appRoot) return;
 
@@ -49,4 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize SPA Router
   new Router('main-content');
-});
+}
+
+// Ensure execution whether loaded before or after DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrapApp);
+} else {
+  bootstrapApp();
+}
