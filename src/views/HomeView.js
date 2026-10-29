@@ -39,8 +39,8 @@ export function renderHomeView() {
 
               <!-- Green CTAs -->
               <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2.5 group">
-                  <span>Explore The Eco-Showcase</span>
+                <a href="#eco-impact" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2.5 group cursor-pointer">
+                  <span>🌍 Eco-System & Global Warming (46 Formats)</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
                 
@@ -123,6 +123,51 @@ export function renderHomeView() {
         </div>
       </section>
 
+      <!-- =============================================================== -->
+      <!-- 2.5 DEDICATED ECOSYSTEM & GLOBAL WARMING MASTER DIRECTORY BANNER -->
+      <!-- =============================================================== -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#FAF8F5] via-[#F6EFE3] to-[#EBDDC8] p-8 sm:p-12 border-2 border-[#DEC6A6] shadow-md relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 text-[11px] font-bold border border-emerald-800">
+                <span>🌍 Dedicated Master Archive</span>
+              </div>
+              <h2 class="text-2xl sm:text-4xl font-black text-stone-950 font-serif leading-tight">
+                How Our Packaging Protects Earth's Ecosystems & Fights Global Warming
+              </h2>
+              <p class="text-stone-700 text-xs sm:text-sm leading-relaxed max-w-2xl font-sans">
+                Every single product in our <strong>46-item catalog</strong> has been scientifically analyzed and documented. Explore the material origins of each packaging archetype, learn how it shields oceans and topsoil from toxic microplastics, and inspect its net CO₂e carbon reduction.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">📜 Material History</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">Origins, inventions & timber replacement</span>
+                </div>
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">🌊 Ocean & Soil Biomes</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">0% microplastics; non-toxic biodegradation</span>
+                </div>
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">🌡️ Global Warming Reducer</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">Up to -78% carbon emissions vs plastic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center space-y-3">
+              <a href="#eco-impact" class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white font-extrabold text-xs shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2 text-center group cursor-pointer">
+                <span>Explore Eco-System & Global Warming (46 Formats)</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <span class="text-[11px] text-stone-500 font-medium">Free open-access environmental dataset</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <!-- ========================================== -->
       <!-- 3. ANIMATED ECO-CREDENTIALS SECTION        -->

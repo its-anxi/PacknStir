@@ -10,7 +10,7 @@ export function renderNavbar() {
           Zero-Plastic Certified
         </span>
         <span class="truncate">PackNStir: 100% Biodegradable & Recyclable Packaging. Free carbon-neutral freight on orders over $150.</span>
-        <a href="#showcase" class="underline font-bold text-emerald-300 hover:text-white hidden sm:inline ml-1">Explore Eco-Heritage Showcase →</a>
+        <a href="#eco-impact" class="underline font-bold text-emerald-300 hover:text-white hidden sm:inline ml-1">🌍 Earth Eco-System & Global Warming Directory (All 46 Products) →</a>
       </div>
 
       <!-- Main Navigation Bar -->
@@ -38,10 +38,10 @@ export function renderNavbar() {
           <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-stone-700">
             <a href="#home" class="nav-link hover:text-emerald-800 transition-colors py-1 relative">Home</a>
             
-            <!-- Dedicated Eco-Heritage Master Page Link -->
-            <a href="#showcase" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5 text-emerald-900">
-              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-              <span>The Eco-Showcase</span>
+            <!-- Dedicated Earth Eco-System & Global Warming Master Page Link -->
+            <a href="#eco-impact" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5 text-emerald-900 font-extrabold" title="Complete directory of all 46 products with material history, ecosystem preservation, and global warming carbon data">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span>Eco-System & Global Warming</span>
               <span class="text-[9px] font-black bg-emerald-100 text-emerald-950 px-1.5 py-0.5 rounded-full">46</span>
             </a>
 
@@ -133,8 +133,8 @@ export function renderNavbar() {
       <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-2xl">
         <div class="flex flex-col space-y-3 font-bold text-stone-900 text-base">
           <a href="#home" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">Home</a>
-          <a href="#showcase" class="mobile-nav-link text-emerald-900 hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
-            <span>The Eco-Showcase (Master Archive)</span>
+          <a href="#eco-impact" class="mobile-nav-link text-emerald-900 hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between font-extrabold">
+            <span>🌍 Eco-System & Global Warming (All 46)</span>
             <span class="text-xs bg-emerald-100 text-emerald-950 px-2 py-0.5 rounded-full font-black">46</span>
           </a>
           <a href="#shop" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">

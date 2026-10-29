@@ -24,6 +24,17 @@ export function renderProductsView(activeCategory = 'all', searchQuery = '') {
         </div>
       </div>
 
+      <!-- Dedicated Eco-System & Global Warming Master Page Callout -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-[#F6EFE3] via-white to-emerald-50 border border-[#DEC6A6] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-xs">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">🌍</span>
+          <span class="text-stone-800 font-semibold">Looking for the detailed material history, ocean/soil preservation, and CO₂e carbon reduction metrics for all 46 products?</span>
+        </div>
+        <a href="#eco-impact" class="font-extrabold text-emerald-900 hover:text-emerald-700 underline flex-shrink-0 flex items-center gap-1">
+          <span>Explore Eco-System & Global Warming Directory →</span>
+        </a>
+      </div>
+
       <!-- Filter Controls & Search Toolbar -->
       <div class="bg-[#FAF8F5] rounded-3xl p-5 sm:p-6 border-2 border-[#EBDDC8] shadow-xs space-y-5">
         
@@ -189,6 +200,14 @@ export function initProductsView(initialCategory = 'all', initialSearch = '') {
             <p class="text-[11px] text-stone-600 mt-1 line-clamp-2">${prod.subtitle}</p>
             <div class="mt-2 text-[10px] text-stone-500 font-medium">
               Material: <span class="text-stone-900 font-semibold">${prod.material.split('(')[0]}</span>
+            </div>
+            <div class="mt-2 flex items-center justify-between text-[10px] pt-1">
+              <span class="text-emerald-900 font-extrabold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                🌱 Saves ${(prod.co2SavedKg || 1.25).toFixed(1)}kg CO₂
+              </span>
+              <a href="#eco-impact#product-${prod.id}" class="text-stone-500 hover:text-emerald-800 font-bold underline" title="Read material history & ecosystem impact">
+                Eco Report →
+              </a>
             </div>
           </div>
 

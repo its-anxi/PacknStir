@@ -2,9 +2,9 @@
 """
 PackNStir - Verification and Integrity Test Suite
 Checks:
-1. All critical source files exist and have content (including ShowcaseView.js)
-2. Syntax and exports of all JS modules
-3. All 46 specified packaging products are represented
+1. All critical source files exist and have content
+2. All 46 specified packaging products are represented
+3. Dedicated Earth Eco-System & Global Warming data for all 46 products
 4. HTML contains all necessary scripts and stylesheets
 5. Bundle integrity and completeness
 """
@@ -131,8 +131,50 @@ def check_products():
     print(f"✅ All {len(REQUIRED_PRODUCT_IDS)} products present with detailed history, environmental impact, dimensions, and tier pricing.")
     return True
 
+def check_ecosystem_and_global_warming():
+    print(f"\n🌍 3. Verifying dedicated Earth Eco-System & Global Warming datasets...")
+    with open('src/data/products.js', 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    missing_fields = []
+    for p_id in REQUIRED_PRODUCT_IDS:
+        # Check that each product block has ecosystemBenefits and globalWarmingImpact
+        block_pattern = rf"id:\s*'{p_id}'[\s\S]*?(?=id:|$)"
+        m = re.search(block_pattern, content)
+        if not m:
+            missing_fields.append((p_id, "block not found"))
+            continue
+        block = m.group(0)
+        if 'ecosystemBenefits:' not in block:
+            missing_fields.append((p_id, "missing ecosystemBenefits"))
+        if 'globalWarmingImpact:' not in block:
+            missing_fields.append((p_id, "missing globalWarmingImpact"))
+        if 'co2SavedKg:' not in block:
+            missing_fields.append((p_id, "missing co2SavedKg"))
+
+    if missing_fields:
+        print(f"❌ Missing eco/climate fields on products: {missing_fields[:5]}")
+        return False
+
+    # Check that Navbar links to #eco-impact
+    with open('src/components/Navbar.js', 'r', encoding='utf-8') as f:
+        nav_content = f.read()
+    if 'href="#eco-impact"' not in nav_content or 'Eco-System & Global Warming' not in nav_content:
+        print("❌ Navbar does not prominently feature #eco-impact or Eco-System & Global Warming link.")
+        return False
+
+    # Check router handles #eco-impact
+    with open('src/router.js', 'r', encoding='utf-8') as f:
+        router_content = f.read()
+    if 'eco-impact' not in router_content:
+        print("❌ Router does not route eco-impact.")
+        return False
+
+    print(f"✅ All 46 products have explicit Earth Eco-System & Global Warming datasets, metrics, and navigation routing.")
+    return True
+
 def check_html():
-    print("\n🌐 3. Verifying index.html dependencies...")
+    print("\n🌐 4. Verifying index.html dependencies...")
     with open('index.html', 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -155,7 +197,7 @@ def check_html():
     return all_passed
 
 def check_bundle_completeness():
-    print("\n📦 4. Verifying app.bundle.js contains all key views & modules...")
+    print("\n📦 5. Verifying app.bundle.js contains all key views & modules...")
     with open('dist/app.bundle.js', 'r', encoding='utf-8') as f:
         bundle = f.read()
 
@@ -169,7 +211,10 @@ def check_bundle_completeness():
         'renderNavbar',
         'renderFooter',
         'cartState',
-        'PRODUCTS'
+        'PRODUCTS',
+        'ecosystemBenefits',
+        'globalWarmingImpact',
+        'eco-impact'
     ]
 
     missing_snippets = []
@@ -180,22 +225,23 @@ def check_bundle_completeness():
     if missing_snippets:
         print(f"❌ Bundle is missing symbols: {missing_snippets}")
         return False
-    print(f"✅ App bundle verified: contains all views, state store, and products ({len(bundle):,} bytes).")
+    print(f"✅ App bundle verified: contains all views, state store, eco/climate data, and products ({len(bundle):,} bytes).")
     return True
 
 def main():
-    print("=" * 60)
-    print("PACKNSTIR VERIFICATION RUNNER")
-    print("=" * 60)
+    print("=" * 65)
+    print("PACKNSTIR VERIFICATION RUNNER - ECO-SYSTEM & CLIMATE DIRECTORY")
+    print("=" * 65)
     c1 = check_files()
     c2 = check_products()
-    c3 = check_html()
-    c4 = check_bundle_completeness()
+    c3 = check_ecosystem_and_global_warming()
+    c4 = check_html()
+    c5 = check_bundle_completeness()
 
-    if c1 and c2 and c3 and c4:
-        print("\n" + "="*60)
-        print("🎉 ALL TESTS PASSED! PackNStir application is 100% verified.")
-        print("="*60)
+    if c1 and c2 and c3 and c4 and c5:
+        print("\n" + "="*65)
+        print("🎉 ALL TESTS PASSED! Dedicated Eco-System & Global Warming Directory verified.")
+        print("="*65)
         sys.exit(0)
     else:
         print("\n❌ Verification failed.")

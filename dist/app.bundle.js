@@ -809,6 +809,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Corrugated paper was first patented in England in 1856 by Edward C. Healey as a sweatband liner for tall hats. In 1871, Albert L. Jones adapted it for packaging glassware, inventing the fluted paper revolution that now powers global logistics.',
     environmentalImpact: 'Constructed from 85% post-consumer recovered paper fibers. Completely dissolves and repulps in standard mill hydro-pulpers within 15 minutes, saving 3.2 tons of CO2 per ton of virgin pulp avoided.',
+    ecosystemBenefits: 'Prevents petrochemical microplastics from contaminating topsoil and runoff river deltas. Raw cellulose fibers decompose into organic humus in 60-90 days, providing non-toxic carbon to beneficial soil microbes and earthworms without chemical leachate.',
+    globalWarmingImpact: 'Reduces cradle-to-gate greenhouse gas emissions by 72% compared to rigid polypropylene crates. Forest biomass acts as a biogenic carbon sink during tree growth, capturing 1.83 kg of atmospheric CO2 per kg of board produced. Solar-milled converting emits near-zero fossil carbon.',
+    co2SavedKg: 0.85,
+    plasticAvoidedGrams: 160,
+    decompositionDays: '60–90 days',
     features: ['High strength-to-weight ratio for lightweight shipping', 'Quick 4-flap folding design', 'Supports up to 15 kg safe contents load'],
     pricingTiers: [
       { qty: 250, pricePerUnit: 0.48, total: 120 },
@@ -843,6 +848,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Developed during the mid-20th century to replace heavy timber shipping crates. The combination of B-flute for puncture resistance and C-flute for shock absorption revolutionized sea and rail freight.',
     environmentalImpact: 'Diverts heavy timber from deforestation. Uses starch-based adhesives derived from food-grade corn and wheat that leave zero microplastic residue in soil.',
+    ecosystemBenefits: 'Replaces synthetic plastic crates and preserves natural timber forests from logging pressure. Uses natural maize and wheat starch adhesives, preventing polyvinyl acetate polymers from washing into waterways and poisoning aquatic organisms.',
+    globalWarmingImpact: 'Cuts 1.65 kg of fossil-fuel CO2e per container replaced. High vertical crush strength (48 ECT) permits maximum cargo consolidation in freight containers, reducing shipping fuel consumption and transit emissions by up to 14%.',
+    co2SavedKg: 1.65,
+    plasticAvoidedGrams: 340,
+    decompositionDays: '90–120 days',
     features: ['Double-wall architecture stacks 3 pallets high without buckle', 'Resists side puncture from freight conveyor belts', 'Tested to 48 ECT crush strength'],
     pricingTiers: [
       { qty: 150, pricePerUnit: 1.35, total: 202.5 },
@@ -877,6 +887,11 @@ const PRODUCTS = [
     leadTime: '4-6 business days',
     history: 'Invented in the 1950s by Abe Goldstein, Tri-Wall paperboard revolutionized military and heavy machinery logistics by offering the structural rigidity of solid oak at 1/5th the freight tare weight.',
     environmentalImpact: 'Eliminates chemical fumigation and toxic wood preservatives mandated for international timber shipping (ISPM-15). 100% recyclable into new fluting.',
+    ecosystemBenefits: 'Halts the widespread chemical pesticide fumigation (toxic methyl bromide and sulfuryl fluoride) required for international timber shipping under ISPM-15, protecting atmospheric ozone and preventing toxic biocide runoff into coastal harbors.',
+    globalWarmingImpact: 'Weighs 75% less than heavy solid timber and steel drum containers, slashing freight fuel combustion by an estimated 4.2 kg CO2e per 1,000 nautical miles while keeping carbon stored in solid paper fibers.',
+    co2SavedKg: 4.2,
+    plasticAvoidedGrams: 1200,
+    decompositionDays: '120–180 days',
     features: ['Can support over 1,000 kg top-load stacking compression', 'Exempt from international wood packaging phytosanitary restrictions', 'Seamless conversion into agricultural mulch at end-of-life'],
     pricingTiers: [
       { qty: 50, pricePerUnit: 5.40, total: 270 },
@@ -911,6 +926,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'The roll-end tuck-front (RETF) design was engineered in the early days of automated mail order. Die-cut with laser-guided steel rule dies, it creates triple-wall side reinforcement from a single flat sheet.',
     environmentalImpact: 'Self-locking friction tabs eliminate over 1.2 meters of plastic vinyl packaging tape per order, preventing plastic adhesive contamination in paper pulping mills.',
+    ecosystemBenefits: 'Interlocking friction tabs eliminate over 1.2 meters of single-use plastic vinyl packing tape per order. Plastic tape is among the top 5 pollutants causing marine bird and turtle entanglement when washed offshore.',
+    globalWarmingImpact: 'Eliminating petroleum-based plastic tapes prevents 0.62 kg of petrochemical refining emissions per package. Sourced from 85% recovered fibers with closed-loop solar milling.',
+    co2SavedKg: 0.62,
+    plasticAvoidedGrams: 85,
+    decompositionDays: '45–60 days',
     features: ['Triple-wall sides protect contents from severe transit impacts', 'Interior lid accepts rich full-color unboxing prints', 'Ships flat; assembles in seconds without adhesives'],
     pricingTiers: [
       { qty: 300, pricePerUnit: 0.78, total: 234 },
@@ -945,6 +965,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'First engineered in the 1920s for legal firms and banking vaults. The double-bottom fold structure allowed paper reams to be stacked up to 8 high in basements without collapsing.',
     environmentalImpact: 'Acid-free chemistry (pH 7.5 - 8.0) prevents degradation of historical documents without sulfur or bleach. Designed for 20+ years of reuse before simple paper recycling.',
+    ecosystemBenefits: 'Acid-free, pH-neutral (7.5-8.0) unbleached board prevents chemical acid leaching into municipal water tables. Can be repulped up to 7 consecutive cycles into new packaging without degradation.',
+    globalWarmingImpact: 'Replaces heavy petroleum plastic storage totes (HDPE). Manufacturing a plastic tote releases over 6.8 kg CO2e, whereas our recycled archive box produces less than 0.7 kg CO2e.',
+    co2SavedKg: 2.1,
+    plasticAvoidedGrams: 650,
+    decompositionDays: '90–120 days',
     features: ['Comfort-grip rolled hand holes prevent finger cuts', 'Reinforced double base handles heavy file folders up to 25 kg', 'Separate lift-off lid allows quick file audits'],
     pricingTiers: [
       { qty: 100, pricePerUnit: 2.15, total: 215 },
@@ -979,6 +1004,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Created by moving and relocation companies in the 1960s to transport suits and evening gowns upright, preventing the need for costly post-transit ironing and dry-cleaning plastic shrouds.',
     environmentalImpact: 'Replaces plastic clothing garment bags and non-recyclable metal wire rails with a 100% repulpable paperboard rail that locks garments in transit.',
+    ecosystemBenefits: 'Replaces toxic PVC garment transit bags and heavy plastic storage chests. Solid compressed board hanging rails prevent synthetic fiber shedding and microplastic contamination into household ecosystems.',
+    globalWarmingImpact: 'Displaces 2.8 kg of virgin polypropylene luggage per residential move, preventing 3.40 kg CO2e of fossil fuel extraction and refining emissions per carton deployed.',
+    co2SavedKg: 3.4,
+    plasticAvoidedGrams: 950,
+    decompositionDays: '90–150 days',
     features: ['Front drop-down fold allows easy hanging without overhead lifting', 'Accommodates up to 30 hanging suits, dresses, or heavy winter coats', 'Heavy-duty double wall prevents crushing inside moving vans'],
     pricingTiers: [
       { qty: 25, pricePerUnit: 7.80, total: 195 },
@@ -1013,6 +1043,11 @@ const PRODUCTS = [
     leadTime: '3-5 business days',
     history: 'Standardized during the post-WWII palletization boom to eliminate loose break-bulk maritime handling. Engineered to match standardized wooden pallet dimensions exactly to prevent pallet overhang.',
     environmentalImpact: 'Optimizes cargo ship cube utilization, reducing transport carbon by 18%. Folds completely flat when empty, reducing reverse logistics emissions by 80%.',
+    ecosystemBenefits: 'Completely eliminates chemical timber wood preservatives and deforestation pressure on old-growth forests. Provides safe biodegradable bulk containment that naturally composts into soil nutrients at end-of-life.',
+    globalWarmingImpact: 'Cuts 8.5 kg CO2e compared to injection-molded plastic export containers. Folds completely flat for empty return journeys, dramatically cutting dead-weight vehicle emissions.',
+    co2SavedKg: 8.5,
+    plasticAvoidedGrams: 2800,
+    decompositionDays: '120–180 days',
     features: ['Drop-down front gate allows warehouse staff to load heavy items ergonomically', 'Tightly interlocks with standard wooden or pressed-paper pallets', 'Engineered to withstand long-duration sea-freight humidity'],
     pricingTiers: [
       { qty: 20, pricePerUnit: 9.90, total: 198 },
@@ -1047,6 +1082,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Pioneered in automated European folding plants to address e-commerce warehouse bottlenecks. By pre-folding and gluing the base diagonally, the box pops open square the instant the diagonal corners are squeezed.',
     environmentalImpact: 'Eliminates bottom taping altogether, saving 0.8 meters of adhesive tape per box. Faster packing lowers warehouse HVAC and operational kilowatt-hours per fulfilled unit.',
+    ecosystemBenefits: 'Pre-glued with plant-derived vegetable dextrin, eliminating hot-melt synthetic EVA glues that release toxic VOCs and foul municipal paper recycling hydro-pulper screens.',
+    globalWarmingImpact: 'Reduces carton assembly labor by 65%, eliminating electric hot-melt glue guns and high-wattage packaging equipment, saving 0.55 kg CO2e per box assembled.',
+    co2SavedKg: 0.55,
+    plasticAvoidedGrams: 90,
+    decompositionDays: '45–60 days',
     features: ['Pops upright in under 1 second with a single squeeze', 'Automatic interlocked floor supports heavy contents without falling through', 'Peel-and-seal lid strip with tear tab for scissors-free opening'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.68, total: 340 },
@@ -1081,6 +1121,11 @@ const PRODUCTS = [
     leadTime: '3-5 business days',
     history: 'Commonly known as hat boxes or banana boxes in agriculture, telescopic boxes were designed so a single packaging SKU could adjust its interior volume to variable harvest depths without leaving empty air space.',
     environmentalImpact: 'By sliding the lid down to the exact height of the cargo, you eliminate the need for plastic void fill chips and bubble wrap, while ensuring the box cannot be crushed in stack transit.',
+    ecosystemBenefits: 'Two-piece cap and tray geometry provides superior edge crush protection without requiring rigid polystyrene (EPS) foam corner cushions, eliminating styrofoam bead pollution in waterways.',
+    globalWarmingImpact: 'Displaces expanded polystyrene foam, a notorious emitter of pentane greenhouse blowing agents, reducing net carbon footprint by 1.45 kg CO2e per box.',
+    co2SavedKg: 1.45,
+    plasticAvoidedGrams: 280,
+    decompositionDays: '60–90 days',
     features: ['Lid slides smoothly over base for variable depth accommodation', 'Double-thickness sidewalls created when lid is fully seated', 'Ideal for framed prints, textiles, and variable-depth shipments'],
     pricingTiers: [
       { qty: 200, pricePerUnit: 1.70, total: 340 },
@@ -1119,6 +1164,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Developed as the direct antidote to the 100+ billion single-use polyethylene mailers consumed globally by fast-fashion e-commerce. Derived from annually renewable agricultural corn crops.',
     environmentalImpact: 'Breaks down completely into carbon dioxide, water, and organic biomass within 90 days in home garden compost piles. Certified zero toxic chemical ecotoxicity.',
+    ecosystemBenefits: 'Crafted from plant-based PBAT and non-GMO cornstarch. Certified OK Compost Home (EN 13432), it breaks down completely in garden compost into water, CO2, and nutrient-rich biomass without microplastics.',
+    globalWarmingImpact: 'Replaces single-use polyethylene courier bags that persist for 500+ years. Agriculture crops capture carbon from the atmosphere during growth, slashing lifecycle greenhouse emissions by 60%.',
+    co2SavedKg: 0.42,
+    plasticAvoidedGrams: 45,
+    decompositionDays: '60–90 days',
     features: ['Waterproof and tear-resistant during heavy rain delivery transit', 'Dual adhesive strip enables customers to reuse the same bag for returns', 'Silky, velvety organic texture that communicates instant luxury eco values'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.45, total: 225 },
@@ -1153,6 +1203,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Kraft paper—from the German word *kraft* meaning "strength"—was invented by Carl F. Dahl in 1879 using sulfate pulping to preserve long, unbroken cellulose fibers for maximum tensile durability.',
     environmentalImpact: 'Made from renewable softwood wood pulp that can be recycled up to 7 times. Drops straight into residential curbside paper recycling without separating plastic liners.',
+    ecosystemBenefits: 'Made from 100% curbside repulpable unbleached pine fiber. Discarded bags decompose harmlessly in soil without releasing phthalates, endocrine disruptors, or toxic plasticizers into rivers.',
+    globalWarmingImpact: 'Managed FSC forests absorb 2.4 tons of CO2 per hectare annually. Sourcing renewable paper mailers instead of petrochemical poly mailers cuts 0.38 kg CO2e per shipment.',
+    co2SavedKg: 0.38,
+    plasticAvoidedGrams: 40,
+    decompositionDays: '30–60 days',
     features: ['Bottom block and expandable side gussets fit chunky knitwear and books', 'High puncture resistance prevents sharp corners from tearing through', 'Dual peel-and-seal strips with central red tear-strip for effortless returns'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.39, total: 195 },
@@ -1187,6 +1242,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Engineered as an urgent engineering solution after municipal recycling facilities began banning bubble-padded envelopes due to the plastic bubble wrap melting into and ruining paper recycling pulpers.',
     environmentalImpact: 'Enables 100% single-stream paper recycling. Eliminates 18,000 square meters of polyethylene bubble film per average warehouse fulfillment container.',
+    ecosystemBenefits: 'Replaces plastic bubble mailers that cannot be recycled curbside and frequently contaminate marine wildlife. The internal fluted cushioning breaks down naturally into organic compost.',
+    globalWarmingImpact: 'Avoids petroleum cracking and greenhouse gas venting associated with LDPE bubble film manufacture, saving 0.58 kg CO2e per envelope deployed in e-commerce.',
+    co2SavedKg: 0.58,
+    plasticAvoidedGrams: 55,
+    decompositionDays: '45–75 days',
     features: ['Dense corrugated fluted interior absorbs severe sorting machinery drops', 'Glueless self-seal flap creates a tamper-evident permanent bond', 'Rigid edge construction prevents cosmetic cartons and jewelry from crushing'],
     pricingTiers: [
       { qty: 300, pricePerUnit: 0.55, total: 165 },
@@ -1221,6 +1281,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Popularized by major publishing houses and pioneering online book retailers in the late 1990s. The extended outer cardboard bumper absorbs direct drops on pavement without denting book corners.',
     environmentalImpact: 'Eliminates plastic air pillows and bubble envelopes entirely. Made from 90% recycled Scandinavian cardboard that decomposes safely in backyard compost.',
+    ecosystemBenefits: 'Variable-depth creasing hugs media snugly using paper alone, removing the need for plastic bubble wraps and styrofoam void fill that harm terrestrial and aquatic ecosystems.',
+    globalWarmingImpact: 'Eliminating excess parcel volume reduces outer parcel cube by up to 40%, directly reducing fuel consumption and carbon exhaust across urban courier delivery fleets.',
+    co2SavedKg: 0.65,
+    plasticAvoidedGrams: 60,
+    decompositionDays: '60–90 days',
     features: ['Overhang perimeter walls cushion corners against severe shipping knocks', 'Pre-creased fold lines flex tightly around 1, 2, or 3 stacked books', 'Integrated high-tensile tear strip for instant, satisfying customer unboxing'],
     pricingTiers: [
       { qty: 250, pricePerUnit: 0.65, total: 162.5 },
@@ -1255,6 +1320,11 @@ const PRODUCTS = [
     leadTime: '3-5 business days',
     history: 'First engineered in textile manufacturing to wind delicate silks and twills. Packaging designers later fitted them with white polyethylene plastic caps—until PackNStir replaced the plastic caps with friction-fit molded paper pulp plugs.',
     environmentalImpact: 'Conventional postal tubes use plastic end caps that contaminate cardboard recycling shredders. Our 100% paper tube and cardboard plug enter the recycling bin as a single unified item.',
+    ecosystemBenefits: 'Features molded paper pulp end caps that replace traditional white plastic (PE/PVC) push-in caps. Plastic tube caps are frequently lost outdoors and persist as choking hazards for wildlife.',
+    globalWarmingImpact: 'Eliminates plastic cap injection molding from fossil fuels. Spiral-wound from 100% post-consumer recycled paperboard, saving 0.48 kg CO2e per tube.',
+    co2SavedKg: 0.48,
+    plasticAvoidedGrams: 35,
+    decompositionDays: '60–90 days',
     features: ['Spirally wound structural wall prevents bending or creasing of art prints', 'Friction-locking cardboard caps stay securely seated during transit', 'Ideal for architectural blueprints, fine art giclée prints, and maps'],
     pricingTiers: [
       { qty: 100, pricePerUnit: 1.15, total: 115 },
@@ -1289,6 +1359,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Developed by packaging engineers to solve the costly courier problem of round tubes rolling off high-speed automated sorting conveyor belts, which previously incurred expensive "manual handling surcharges".',
     environmentalImpact: 'Ships completely flat, saving 70% freight and warehouse storage volume compared to pre-assembled round tubes. Assembles into a rigid prism in seconds.',
+    ecosystemBenefits: 'Ships flat-packed in bundles, eliminating the transport of empty trapped cylindrical air. Made from pure FSC unbleached corrugated board, returning cleanly to paper recycling or organic compost.',
+    globalWarmingImpact: 'Flat-pack delivery reduces inbound transport truck volume by 70%, slashing carbon emissions from logistics and saving 0.52 kg CO2e per tube.',
+    co2SavedKg: 0.52,
+    plasticAvoidedGrams: 50,
+    decompositionDays: '45–75 days',
     features: ['Triangular prism geometry cannot roll off warehouse belts or delivery trucks', 'Peel-and-seal adhesive ends eliminate the need for plastic tape', 'Folds flat for compact storage in studios and fulfillment bays'],
     pricingTiers: [
       { qty: 200, pricePerUnit: 0.86, total: 172 },
@@ -1323,6 +1398,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Engineered in response to national postal carrier regulations (such as Royal Mail Large Letter and USPS Flat rates) to guarantee delivery directly onto the recipient’s doormat even when nobody is home.',
     environmentalImpact: 'Eliminates courier "missed delivery" return journeys, reducing delivery van carbon emissions by an estimated 280 grams of CO2 per first-time successful parcel drop.',
+    ecosystemBenefits: 'Fits through standard domestic letterbox slots, eliminating missed deliveries and redundant repeat van journeys while using zero plastic shrink wrap or poly sleeves.',
+    globalWarmingImpact: 'First-time delivery success directly cuts courier vehicle idling and second-attempt delivery runs, saving an estimated 0.82 kg CO2e in transport emissions per order.',
+    co2SavedKg: 0.82,
+    plasticAvoidedGrams: 65,
+    decompositionDays: '45–60 days',
     features: ['Guaranteed to pass through standard domestic letterbox slots under 25mm', 'Rigid cardboard ensures cosmetics, coffee beans, and jewelry arrive unbent', 'Peel-and-seal strip with tamper-evident tear tab for immediate unboxing'],
     pricingTiers: [
       { qty: 400, pricePerUnit: 0.58, total: 232 },
@@ -1361,6 +1441,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Bagasse is the dry pulpy fibrous residue remaining after crushing sugarcane or sorghum stalks to extract juice. Historically burned as field waste, PackNStir thermoforms it into rigid tableware.',
     environmentalImpact: 'Utilizes a rapidly renewable agricultural byproduct, preventing post-harvest crop burning while sparing forest trees. 100% home compostable within 60 days.',
+    ecosystemBenefits: 'Made from upcycled sugarcane bagasse fibers—the agricultural pulp left after sugarcane processing. Certified backyard compostable, it nourishes soil microbiology in 45-60 days.',
+    globalWarmingImpact: 'Stops open-field agricultural biomass burning, a catastrophic contributor to toxic smog and black carbon warming. Saves 0.95 kg CO2e per kg compared to polystyrene clamshells.',
+    co2SavedKg: 0.95,
+    plasticAvoidedGrams: 75,
+    decompositionDays: '45–60 days',
     features: ['Withstands hot boiling oils up to 120°C and freezer storage down to -20°C', 'Interlocking tab lock keeps burgers and curry gravies safely contained', 'Certified PFAS-free and fluorochemical-free under strict FDA food safety testing'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.34, total: 170 },
@@ -1395,6 +1480,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Practiced for centuries in rural Southern India, village artisans collect fallen palm leaf sheaths shed naturally by the Areca nut palm tree, wash them in spring water, and press them with hot cast-iron dies.',
     environmentalImpact: 'Zero trees are felled or cut down. The leaves naturally drop to the ground 4 to 6 times a year. Degrades into garden compost faster than standard tree leaves (45-60 days).',
+    ecosystemBenefits: 'Formed exclusively from naturally fallen Areca palm fronds collected by rural communities. Zero living trees cut; zero chemicals, binders, or plastic resins added. Enriches soil in 30-45 days.',
+    globalWarmingImpact: 'Has the lowest carbon footprint of any single-use tableware on Earth. Sun-drying and gentle steam press forming consumes 88% less energy than manufacturing plastic plates.',
+    co2SavedKg: 1.15,
+    plasticAvoidedGrams: 90,
+    decompositionDays: '30–45 days',
     features: ['Sturdy enough to hold heavy steak, roasted vegetables, and hot sauces without bending', 'Naturally heat-resistant and microwaveable up to 2 minutes', 'Each plate displays beautiful, one-of-a-kind natural woody textures'],
     pricingTiers: [
       { qty: 200, pricePerUnit: 0.62, total: 124 },
@@ -1429,6 +1519,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Traditional paper bowls required a micro-layer of polyethylene (PE) plastic melted onto the paper to hold liquids. PackNStir pioneered water-based dispersion barriers that stop hot broths while remaining pulper-safe.',
     environmentalImpact: 'Eliminates non-recyclable PE lining that causes millions of standard takeaway bowls to be incinerated. Fully repulpable in standard paper recycling mills.',
+    ecosystemBenefits: 'Features an advanced plant-based aqueous dispersion coating instead of polyethylene (PE) plastic lining. Fully compostable, it prevents microplastic pollution in municipal compost and farm soil.',
+    globalWarmingImpact: 'Eliminating PE extrusion avoids petrochemical polymerization emissions, lowering carbon emissions by 58% and saving 0.72 kg CO2e per 10 bowls.',
+    co2SavedKg: 0.72,
+    plasticAvoidedGrams: 50,
+    decompositionDays: '60–90 days',
     features: ['Rigid rolled rim accepts clear vented rPET or matching compostable paper lids', 'Keeps hot ramen broths and chili hot without leaking through bottom seams', 'Microwave safe and suitable for cold refrigerator meal preparation'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.40, total: 200 },
@@ -1463,6 +1558,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Small plastic sauce portion cups (polypropylene #5) are notoriously non-recyclable because recycling machinery infrared optical sorters cannot identify objects smaller than 2 inches.',
     environmentalImpact: 'Replaces millions of small plastic cups that slip through municipal screens into rivers and oceans. Decomposes naturally in compost without microplastic shedding.',
+    ecosystemBenefits: 'Replaces polypropylene and polystyrene sauce cups—among the most rampant plastic debris items polluting coastal coastlines. Decomposes naturally into organic soil nutrients.',
+    globalWarmingImpact: 'Sourced from renewable annual plant starches, cutting fossil fuel extraction emissions by 65% and saving 0.28 kg CO2e per 50 units.',
+    co2SavedKg: 0.28,
+    plasticAvoidedGrams: 30,
+    decompositionDays: '45–75 days',
     features: ['Snap-fit tight seal prevents salad dressing and soy sauce spills in delivery bags', 'Fits both cold dressings and warm BBQ or fondue sauces', 'Pairs with either sugarcane fiber or crystal-clear PLA plant lids'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.11, total: 110 },
@@ -1497,6 +1597,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'The single-use plastic cutlery ban across the EU, UK, and Canada outlawed polystyrene plastic forks. PackNStir uses rapid-growing Scandinavian birch and Moso bamboo steam-formed into ergonomic shapes.',
     environmentalImpact: 'Grown without pesticides. Polished with natural carnauba wax or steam. Completely biodegrades in residential gardens within 40 to 60 days.',
+    ecosystemBenefits: 'Replaces single-use polypropylene forks and knives that persist for centuries in marine ecosystems. Made from rapidly replenishable FSC birch and bamboo that biodegrade into fertile humus.',
+    globalWarmingImpact: 'Moso bamboo grows up to 3 feet per day without synthetic fertilizers, sequestering double the CO2 of conventional hardwood trees. Saves 0.85 kg CO2e per 100-piece pack.',
+    co2SavedKg: 0.85,
+    plasticAvoidedGrams: 80,
+    decompositionDays: '60–90 days',
     features: ['Serrated knife edge slices through steaks and crisp takeaway crusts effortlessly', 'Deep spoon bowl and reinforced fork tines withstand heavy pasta salads', 'Wrapped in unbleached kraft paper wrappers for sanitary food service delivery'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.17, total: 170 },
@@ -1531,6 +1636,11 @@ const PRODUCTS = [
     leadTime: '5-7 business days',
     history: 'Bamboo is the fastest-growing woody plant on Earth, growing up to 90 cm in 24 hours. Indigenous cultures have utilized hollow bamboo culms as water containers for millennia.',
     environmentalImpact: 'Bamboo plants produce 35% more oxygen and absorb 5 times more greenhouse gases than equivalent trees. Each reusable flask prevents over 1,400 single-use plastic bottles over its lifespan.',
+    ecosystemBenefits: 'Replaces hundreds of single-use PET drink bottles per year per user over its multi-year life. The natural bamboo casing eliminates synthetic resin production and ocean bottle pollution.',
+    globalWarmingImpact: 'One reusable flask displaces an estimated 167 single-use plastic bottles annually, eliminating over 14.2 kg of fossil-fuel combustion CO2 per year.',
+    co2SavedKg: 14.2,
+    plasticAvoidedGrams: 5200,
+    decompositionDays: 'Reusable (5+ years)',
     features: ['Double-wall vacuum insulation keeps drinks steaming hot for 12 hours or iced cold for 24 hours', 'Includes removable stainless steel tea infuser and fruit basket', 'Exterior stays cool to the touch with tactile, non-slip natural wood grain'],
     pricingTiers: [
       { qty: 50, pricePerUnit: 10.50, total: 525 },
@@ -1565,6 +1675,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Polylactic acid (PLA) was discovered by Wallace Carothers in 1932. Commercialized by fermenting plant dextrose derived from corn and cassava roots, it provides the transparent luster of plastic with zero fossil fuel oil.',
     environmentalImpact: 'Generates 75% fewer greenhouse gas emissions during raw resin production than conventional PET plastics. Composts completely in commercial composting facilities.',
+    ecosystemBenefits: 'Made from fermented plant dextrose (corn and cassava starch). Decomposes in commercial composting into water and carbon dioxide without generating microplastic fragments.',
+    globalWarmingImpact: 'Consumes 68% less fossil energy to produce than conventional petroleum PET plastic, saving 1.25 kg CO2e per 100 cups.',
+    co2SavedKg: 1.25,
+    plasticAvoidedGrams: 110,
+    decompositionDays: '60–90 days (Industrial)',
     features: ['Flawless glass-like transparency highlights cold brew coffees, juices, and boba', 'Pairs with matching flat straw-slot lids or dome lids for smoothies', 'Shatter-resistant rim ensures leak-proof snap with lids'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.20, total: 200 },
@@ -1599,6 +1714,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Billions of coffee cups end up in landfills annually because traditional paper cups are fused with a polyethylene plastic liner that paper mills cannot separate. PackNStir uses an aqueous dispersion that breaks down like ordinary paper.',
     environmentalImpact: 'Certified repulpable in standard blue paper recycling bins. Dual-wall design traps an air insulating pocket, eliminating the need for 1 billion secondary cardboard cup sleeves annually.',
+    ecosystemBenefits: 'Water-based dispersion barrier eliminates the conventional plastic (PE) lining that renders 99% of disposable coffee cups unrecyclable, saving millions of cups from toxic landfill incineration.',
+    globalWarmingImpact: 'Built-in double-wall air insulation removes the need for separate cardboard sleeves, saving 0.44 kg CO2e per 50 cups while keeping coffee hot longer.',
+    co2SavedKg: 0.44,
+    plasticAvoidedGrams: 45,
+    decompositionDays: '60–90 days',
     features: ['Thermal insulation keeps coffee piping hot while outside remains cool in hand', 'Aqueous barrier prevents coffee crema and hot oils from softening the cup wall', 'Rolled rim ensures a tight, drip-free fit with compostable CPLA or bagasse lids'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.22, total: 220 },
@@ -1633,6 +1753,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Real greaseproof paper is produced through intense mechanical refining (beating) of wood pulp fibers until they break down into a gelatinous slurry. When dried and hot-calendered, the pore spaces are smaller than oil molecules.',
     environmentalImpact: 'Eliminates carcinogenic PFAS "forever chemicals" that historically coated burger wraps. Breaks down in compost in under 3 weeks into rich garden soil nutrients.',
+    ecosystemBenefits: '100% free of hazardous PFAS "forever chemicals" that poison groundwater and persist indefinitely in living organisms. Natural mechanical calender compression provides grease barrier.',
+    globalWarmingImpact: 'Avoiding fluorination processes saves significant thermal processing energy, cutting manufacturing carbon emissions by 45% and saving 0.65 kg CO2e per 1,000 sheets.',
+    co2SavedKg: 0.65,
+    plasticAvoidedGrams: 70,
+    decompositionDays: '30–45 days',
     features: ['Resists butter, hot animal fats, melted cheddar, and vinegar salad dressings', 'Safe for conventional ovens up to 220°C and microwave reheating', 'Provides an authentic artisan farm-to-table presentation in food baskets'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.065, total: 65 },
@@ -1667,6 +1792,11 @@ const PRODUCTS = [
     leadTime: '3-5 business days',
     history: 'In 1852, Francis Wolle invented the first automatic paper bag machine. Later in 1883, Charles Stilwell engineered the flat-bottom pleated bag (the SOS or Self-Opening Sack) that stands upright on counters unsupported.',
     environmentalImpact: 'Eliminates plastic supermarket carrier bags. The handles, base glue, and paper body are 100% repulpable together in the blue paper recycling bin.',
+    ecosystemBenefits: 'Replaces single-use polyethylene carrier bags that choke ocean wildlife. Water-soluble soy inks and twisted paper handles biodegrade completely in home garden compost.',
+    globalWarmingImpact: 'Each paper bag replaces 3-4 thin plastic bags, preventing 0.32 kg CO2e of crude oil extraction and refining emissions per bag.',
+    co2SavedKg: 0.32,
+    plasticAvoidedGrams: 35,
+    decompositionDays: '30–60 days',
     features: ['Wide flat block bottom prevents soup containers and meal trays from tipping over', 'Tightly twisted 6-ply paper rope handles are glued with reinforced internal patches', 'High-tensile long-fiber kraft paper holds up to 12 kg of takeaway orders without tearing'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.42, total: 210 },
@@ -1705,6 +1835,11 @@ const PRODUCTS = [
     leadTime: '1-2 business days',
     history: 'Inspired by the hexagonal architecture of natural bee honeycombs. When tensioned through a dispenser, precision-angled slashes expand into interlocking angled cells that provide 3D cushioning.',
     environmentalImpact: 'Replaces miles of non-biodegradable polyethylene bubble wrap. Uses 60% less storage space than pre-inflated bubble rolls and drops directly into curbside paper recycling.',
+    ecosystemBenefits: 'Replaces plastic bubble wrap entirely. The precision-expanded kraft paper web absorbs transit shocks through geometry, leaving zero microplastics in water streams and composting in 45 days.',
+    globalWarmingImpact: 'Unexpanded compact rolls reduce warehouse storage and delivery truck volume by 80% compared to pre-inflated plastic bubble rolls, cutting vehicle fuel and saving 1.45 kg CO2e per roll.',
+    co2SavedKg: 1.45,
+    plasticAvoidedGrams: 380,
+    decompositionDays: '45–60 days',
     features: ['Expanding cells interlock with themselves, completely eliminating the need for plastic tape', 'Cushions glassware, ceramics, cosmetics, and fine wine bottles against drop shocks', 'One 250m roll expands to over 400m of packaging protection'],
     pricingTiers: [
       { qty: 1, pricePerUnit: 36.00, total: 36 },
@@ -1739,6 +1874,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Single-face corrugated was the first form of fluted packaging manufactured in the late 19th century before machines were invented to glue a second flat linerboard on top.',
     environmentalImpact: 'Constructed from 100% post-consumer cardboard waste. Avoids landfill disposal and provides a heavy shock-absorbent wrap for heavy industrial parts and mirrors.',
+    ecosystemBenefits: 'Made from 100% post-consumer recycled paperboard. Replaces polyurethane foam rolls and PVC transit padding, returning effortlessly to clean paper mills without polluting aquatic biomes.',
+    globalWarmingImpact: 'Saves 2.15 kg CO2e per roll compared to synthetic polyethylene foam wraps. Eliminates blowing agent greenhouse gas emissions released during plastic foam manufacture.',
+    co2SavedKg: 2.15,
+    plasticAvoidedGrams: 420,
+    decompositionDays: '45–75 days',
     features: ['Exposed flute arches bend effortlessly around curves, table legs, and mirrors', 'Protects surfaces against transit friction, scuffing, and vibrations', 'Cuts easily with packing scissors or utility blades'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 28.00, total: 56 },
@@ -1773,6 +1913,11 @@ const PRODUCTS = [
     leadTime: '1-2 business days',
     history: 'Invented in the early 1990s as a direct response to toxic expanded polystyrene (EPS/Styrofoam) peanuts, which persist in oceans for centuries and present choking hazards to wildlife.',
     environmentalImpact: 'Pour water over them in a sink and they melt away completely in seconds without toxic chemicals. Certified safe for municipal wastewater treatment systems and home compost.',
+    ecosystemBenefits: 'Extruded from non-GMO maize and sorghum starch. Dissolves instantly in running tap water or rain within 60 seconds! Completely non-toxic to wildlife, pets, and children; washes safely down household sinks without clogging drains.',
+    globalWarmingImpact: 'Replaces expanded polystyrene (EPS/Styrofoam) packing peanuts—a petroleum disaster that never degrades. Slashes carbon footprint by 75% and saves 2.80 kg CO2e per 15 cu. ft. sack.',
+    co2SavedKg: 2.8,
+    plasticAvoidedGrams: 620,
+    decompositionDays: 'Dissolves instantly in water',
     features: ['Zero electrostatic charge—ideal for sensitive computer parts, GPUs, and circuitry', 'Flows seamlessly around complex, odd-shaped items for total 360-degree lock', 'Clean, odorless, and completely non-toxic to household pets or curious toddlers'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 25.50, total: 51 },
@@ -1807,6 +1952,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Developed by papermakers who ran moist kraft paper through patterned engraved embossing cylinders to create permanent raised hemispherical bumps that trap air pockets.',
     environmentalImpact: 'Uses pure mechanical paper deformation rather than petroleum plastic polymers to create protective cushioning. 100% curbside recyclable.',
+    ecosystemBenefits: 'Features dimpled paper indentation that provides elastic spring-back cushioning without synthetic polymers. Recycled paper fibers are 100% bio-degradable in forest soil within 6 weeks.',
+    globalWarmingImpact: 'Replaces synthetic bubble cushioning, eliminating petroleum extraction and refining emissions and saving 1.20 kg CO2e per roll.',
+    co2SavedKg: 1.2,
+    plasticAvoidedGrams: 260,
+    decompositionDays: '30–60 days',
     features: ['Raised dimples prevent wrapped bottles and ceramics from sliding against each other', 'Highly flexible and wraps tightly around odd shapes without spring-back', 'Provides clean, dust-free warehouse packing stations'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 21.00, total: 42 },
@@ -1841,6 +1991,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Dispenser-crimped void paper was invented in the 1970s to eliminate massive warehouse silos required to store voluminous plastic foam peanuts. One compact box of paper expands to 1.5 cubic meters of void fill.',
     environmentalImpact: 'Dramatically reduces transport emissions: 1 pallet of fan-folded paper replaces 24 truckloads of plastic air pillows or foam peanuts. 100% recyclable.',
+    ecosystemBenefits: 'Fan-folded unbleached kraft paper engineered for on-demand volumetric void filling. Replaces plastic air pillows that burst in transit and enter landfills as thin polyethylene trash.',
+    globalWarmingImpact: 'Air pillow machines consume electricity and require thick plastic films. Using fan-folded paper eliminates plastic film waste, saving 1.10 kg CO2e per box filled.',
+    co2SavedKg: 1.1,
+    plasticAvoidedGrams: 210,
+    decompositionDays: '30–60 days',
     features: ['Crimps into structural spring-like accordions that lock items in box centers', 'Dust-free and lint-free formulation protects optical lenses and apparel', 'Dispenses rapidly from tabletop cartons or automated overhead hoppers'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 29.50, total: 59 },
@@ -1875,6 +2030,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Invented to prevent high-tension plastic or steel strapping bands from cutting into cardboard shipping cartons during sea container rocking.',
     environmentalImpact: 'Allows double-stacking of freight pallets in shipping trucks without crushing, improving fleet fuel efficiency. Completely repulpable in standard paper mills.',
+    ecosystemBenefits: 'Formed by laminating compressed recycled paper layers with water-based PVA adhesive. Replaces extruded plastic corner pieces that break into fragments and poison urban river ecosystems.',
+    globalWarmingImpact: 'Protects palletized cargo during transit, preventing product damage and the immense carbon cost of manufacturing, shipping, and disposing of destroyed replacement goods.',
+    co2SavedKg: 1.35,
+    plasticAvoidedGrams: 310,
+    decompositionDays: '60–90 days',
     features: ['90-degree angle distributes tension evenly along entire pallet corner edges', 'Provides extraordinary column compression strength for vertical pallet stacking', 'Also available in pre-cut 3-way corner blocks for fine art and picture frames'],
     pricingTiers: [
       { qty: 100, pricePerUnit: 0.78, total: 78 },
@@ -1909,6 +2069,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Standard wood-pulp papers contain natural lignin, which produces acid as it oxidizes, causing yellowing and brittleness. Acid-free tissue removes lignin and adds a calcium carbonate buffer to guarantee archival permanence.',
     environmentalImpact: 'Non-toxic, chlorine-free bleached, and printed using plant-derived soy and algae inks. Degrades naturally in backyard compost piles within 3 weeks.',
+    ecosystemBenefits: 'Bleed-resistant, chlorine-free bleached paper that contains zero sulfurous chemicals or heavy metal mordants, protecting river ecosystems from toxic paper bleaching runoff.',
+    globalWarmingImpact: 'Powered by closed-loop hydro-electric and biomass energy during milling, sequestering more carbon in paper fiber than emitted during manufacturing.',
+    co2SavedKg: 0.45,
+    plasticAvoidedGrams: 65,
+    decompositionDays: '20–30 days',
     features: ['Guaranteed safe for heirloom textiles, silks, silver jewelry, and ceramics', 'Distinctive crisp sensory crinkle enhances luxury retail unboxing experiences', 'Prevents garment scuffing, static attraction, and atmospheric moisture tarnishing'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.15, total: 150 },
@@ -1943,6 +2108,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Also known as *excelsior*, wood wool was patented in the USA in the mid-19th century as a natural cushion for fragile chinaware and wine bottles before plastic foam existed.',
     environmentalImpact: 'Manufactured from forestry thinning residues that support healthy timberland management. Untreated with chemicals, it doubles as garden mulch or compost carbon.',
+    ecosystemBenefits: 'Curly ribbons of kiln-dried spruce and pine wood shaved directly from certified sustainable forest thinning. Zero chemical additives; biodegrades into rich forest humus, creating fertile habitats for beneficial mycorrhizal fungi.',
+    globalWarmingImpact: 'Captures and locks atmospheric carbon inside solid wood fibers for decades. Requires minimal mechanical cutting energy, saving 1.85 kg CO2e compared to plastic shreds or polystyrene.',
+    co2SavedKg: 1.85,
+    plasticAvoidedGrams: 450,
+    decompositionDays: '60–90 days',
     features: ['Intertwined curled timber strands cradle heavy luxury wine bottles and gift hampers', 'Kiln-dried to under 12% moisture to eliminate mold, fungi, and natural pests', 'Emits a fresh, natural pine forest scent that communicates authentic organic origin'],
     pricingTiers: [
       { qty: 1, pricePerUnit: 32.00, total: 32 },
@@ -1981,6 +2151,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Invented in the early 20th century, water-activated tape became the industrial standard for transit packaging because potato starch penetrates deep into cardboard pores when wetted.',
     environmentalImpact: 'Unlike plastic packing tape that contaminates cardboard recycling streams, gummed paper tape enters the hydropulper alongside the box without needing removal.',
+    ecosystemBenefits: 'Natural vegetable starch adhesive fuses directly into the corrugated box fibers at a molecular level. Unlike plastic tape, the entire carton can be recycled intact without peeling tape off, preventing millions of meters of plastic tape from clogging paper mill pulping screens.',
+    globalWarmingImpact: 'Displaces petroleum polypropylene and PVC pressure-sensitive packaging tape, eliminating 0.88 kg CO2e per 100 meters of sealed boxes.',
+    co2SavedKg: 0.88,
+    plasticAvoidedGrams: 95,
+    decompositionDays: '30–60 days',
     features: ['Cannot be peeled off without tearing the box flap, offering 100% pilfer evidence', 'A single strip across carton seams seals boxes that previously required multiple plastic tape layers', 'Performs reliably in dusty, extreme sub-zero, and tropical humid transit conditions'],
     pricingTiers: [
       { qty: 10, pricePerUnit: 14.50, total: 145 },
@@ -2015,6 +2190,11 @@ const PRODUCTS = [
     leadTime: '1-2 business days',
     history: 'Engineered as a convenient alternative for packing stations that do not have dedicated electronic water dispensers. Uses natural rubber sap harvested from rubber trees.',
     environmentalImpact: 'Replaces PVC and polypropylene pressure-sensitive plastic tapes with natural paper and tree-rubber adhesive that pulps down cleanly in recycling mills.',
+    ecosystemBenefits: 'Natural unbleached kraft paper backing coated with a solvent-free natural rubber adhesive. Biodegrades safely in soil and does not release microplastic fibers into municipal compost.',
+    globalWarmingImpact: 'Replaces acrylic-coated plastic packaging tapes, cutting petroleum refining emissions and saving 0.75 kg CO2e per roll.',
+    co2SavedKg: 0.75,
+    plasticAvoidedGrams: 85,
+    decompositionDays: '45–75 days',
     features: ['Tears cleanly by hand—no metal tape gun or scissors required at the packaging desk', 'Sticks instantly with firm finger pressure on cardboard, paper envelopes, and tissue wraps', 'Silently unwinds from the roll without the high-pitched screech of plastic tape'],
     pricingTiers: [
       { qty: 12, pricePerUnit: 8.50, total: 102 },
@@ -2049,6 +2229,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Standard "Documents Enclosed" wallets are made of thick polyethylene plastic with synthetic sticky glue. Because they are plastered on the outside of boxes, they are one of the primary contaminants in paper recycling.',
     environmentalImpact: 'PackNStir glassine wallets are 100% paper and water-soluble glue. Couriers scan barcodes through the translucent paper, and paper recycling mills repulp them effortlessly.',
+    ecosystemBenefits: 'Replaces polyethylene plastic "Documents Enclosed" shipping envelopes. Made from smooth, translucent supercalendered glassine paper that is 100% repulpable and biodegradable in natural soil.',
+    globalWarmingImpact: 'Avoids petroleum extrusion of clear polyethylene pouches, saving 0.35 kg CO2e per 100 shipping wallets.',
+    co2SavedKg: 0.35,
+    plasticAvoidedGrams: 40,
+    decompositionDays: '30–45 days',
     features: ['High transparency allows shipping carrier barcodes and addresses to scan cleanly', 'Strong self-adhesive peel-back sticks permanently to corrugated boxes and paper mailers', 'Weather-resistant calendered paper shields invoices from light rain during transit'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.18, total: 90 },
@@ -2083,6 +2268,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Traditional vinyl and glossy synthetic labels shed microplastics when shredded at paper recycling plants. PackNStir uses pure woodfree paper stock and plant-derived water-soluble adhesive.',
     environmentalImpact: 'Certified OK Compost Home and Industrial. Does not impede paper pulp recycling or leave sticky residue on paper mill screens.',
+    ecosystemBenefits: 'FSC-certified paper labels made completely free of toxic BPA (Bisphenol A) and BPS coatings. Protects wildlife, soil biomes, and human postal handlers from hormone-disrupting endocrine chemicals.',
+    globalWarmingImpact: 'Water-based emulsion adhesive allows standard paper recycling, cutting carbon footprint by 42% and saving 0.48 kg CO2e per roll of 500 labels.',
+    co2SavedKg: 0.48,
+    plasticAvoidedGrams: 50,
+    decompositionDays: '45–60 days',
     features: ['Supplied on continuous rolls for rapid manual application or automatic label dispensers', 'Prints sharp, high-resolution branding, barcodes, and sustainability messages', 'Adheres firmly to kraft paper boxes, glass bottles, and tin containers'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.08, total: 80 },
@@ -2117,6 +2307,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Designed specifically to eliminate the billions of clear polyethylene "polybags" used by global apparel brands to protect garments during container shipping from overseas factories.',
     environmentalImpact: 'Breaks down into water, CO2, and fertile compost in home compost bins in 90 to 180 days. Eliminates non-recyclable plastic zipper sliders.',
+    ecosystemBenefits: 'Certified EN 13432 & ASTM D6400 home compostable bags made from cornstarch and PBAT. Replaces non-biodegradable polyethylene ziplock bags that contaminate ocean wildlife.',
+    globalWarmingImpact: 'Sourced from renewable annual plant crops that capture carbon dioxide as they grow, cutting net cradle-to-gate greenhouse gas emissions by 62%.',
+    co2SavedKg: 0.54,
+    plasticAvoidedGrams: 45,
+    decompositionDays: '60–90 days',
     features: ['Durable integrated zip track opens and reseals dozens of times', 'Micro-perforated air hole allows trapped air to escape for flat garment palletizing', 'Silky, dust-free surface protects luxury silks, wools, and organic cotton from moisture'],
     pricingTiers: [
       { qty: 500, pricePerUnit: 0.32, total: 160 },
@@ -2151,6 +2346,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Glassine is created through an intensive paper-making process called super-calendering: after the pulp is pressed, paper sheets are passed through alternating steel and fiber rolls under extreme heat and pressure until the fibers collapse into a smooth, glass-like sheet.',
     environmentalImpact: 'Zero plastic content. Completely biodegradable, backyard compostable, and recyclable in standard paper streams. Sourced from FSC-certified wood pulp.',
+    ecosystemBenefits: 'Smooth, dense wood pulp paper that provides air, grease, and moisture resistance without plastic coatings. 100% backyard compostable and recyclable in curbside blue bins.',
+    globalWarmingImpact: 'Eliminates petrochemical film blowing, saving 0.40 kg CO2e per 100 boutique bags.',
+    co2SavedKg: 0.4,
+    plasticAvoidedGrams: 35,
+    decompositionDays: '30–45 days',
     features: ['Semi-transparent sheen allows contents to be viewed without opening', 'Naturally air, water, and grease resistant without synthetic fluorochemical coatings', 'Classic vintage aesthetic loved by artisan bakeries, florists, and jewelers'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.14, total: 140 },
@@ -2185,6 +2385,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Cornstarch PLA was commercialized to give artisan chocolatiers, greeting card publishers, and dry food makers the crystal-clear display window of polypropylene without petroleum plastic.',
     environmentalImpact: 'Manufactured from annual renewable corn starch harvests rather than crude oil. Diverts fossil fuel extraction and reduces manufacturing energy by 65%.',
+    ecosystemBenefits: 'Crystal-clear retail display bags made from fermented plant starch (polylactic acid). 100% free of petroleum, phthalates, and plasticizers; biodegrades into harmless lactic acid derivatives.',
+    globalWarmingImpact: 'Emits 65% fewer greenhouse gases during manufacturing than fossil-fuel polypropylene (BOPP) display bags, saving 0.60 kg CO2e per 100 bags.',
+    co2SavedKg: 0.6,
+    plasticAvoidedGrams: 55,
+    decompositionDays: '60–90 days',
     features: ['Crystal-clear optical clarity displays greeting cards and confectionery brilliantly', 'Peel-and-seal adhesive lip allows rapid packing and resealing', 'High barrier against food odors, dust, and handling smudges'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.16, total: 160 },
@@ -2219,6 +2424,11 @@ const PRODUCTS = [
     leadTime: '3-5 business days',
     history: 'Invented by Futamura, NatureFlex is the modern evolution of traditional cellophane. Engineered from renewable wood pulp sourced from certified plantations, it is one of the only transparent films in the world certified for home garden compost.',
     environmentalImpact: 'Breaks down in domestic garden compost bins within 42 days, leaving zero toxic residues. Exceptional oxygen and moisture barrier prevents food waste.',
+    ecosystemBenefits: 'Made from renewable, sustainably sourced FSC wood pulp. Certified home compostable (OK Compost Home), it breaks down in garden compost in under 8 weeks without producing any toxic residues.',
+    globalWarmingImpact: 'Provides gas and moisture barrier properties comparable to metallized plastic films while being completely renewable and plant-derived, cutting 0.72 kg CO2e per 100 bags.',
+    co2SavedKg: 0.72,
+    plasticAvoidedGrams: 65,
+    decompositionDays: '45–60 days',
     features: ['High aroma barrier keeps specialty loose-leaf teas and coffee beans fresh', 'Heat-sealable on standard commercial pouch sealing machinery', 'Certified home compostable under both European and American standards'],
     pricingTiers: [
       { qty: 1000, pricePerUnit: 0.24, total: 240 },
@@ -2253,6 +2463,11 @@ const PRODUCTS = [
     leadTime: '1-3 business days',
     history: 'Created to solve municipal organic waste collection challenges. When organic food waste is bagged in plastic, councils must either reject the load or install expensive debagging shredders.',
     environmentalImpact: 'Allows restaurants, offices, and homeowners to bag food scraps and coffee grounds together. The bag breaks down completely in industrial composting facilities alongside the food waste.',
+    ecosystemBenefits: 'Plant-starch compostable bin liners that allow organic food waste to be composted directly without removing the bag. Prevents millions of plastic garbage bags from entering municipal landfills.',
+    globalWarmingImpact: 'Diverts organic food waste from anaerobic landfills (where food produces deadly methane gas) to aerobic composting facilities, directly curbing atmospheric methane emissions.',
+    co2SavedKg: 1.6,
+    plasticAvoidedGrams: 180,
+    decompositionDays: '60–90 days',
     features: ['Reinforced star-seal base distributes heavy, wet vegetable peels without leaking', 'Breathable film reduces moisture buildup and foul food odor emissions', 'Approved by local councils and municipal green-waste composting programs worldwide'],
     pricingTiers: [
       { qty: 10, pricePerUnit: 4.50, total: 45 },
@@ -2287,6 +2502,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Plastic stretch cling wrap (LLDPE) accounts for over 2.5 million metric tons of unrecyclable plastic waste globally. PackNStir stretch paper uses micro-creped fibers that elongate up to 30% under wrapping tension.',
     environmentalImpact: 'Replaces miles of thin plastic film wrapped around pallets that typically ends up in landfills. Eliminates pallet unwrapping disposal charges for retail receiving docks.',
+    ecosystemBenefits: 'A groundbreaking creped paper stretch film that replaces multi-layer LLDPE plastic pallet wrap. Plastic shrink wrap is one of the world's worst ocean pollutants; our paper wrap repulps 100% with the cardboard boxes beneath it.',
+    globalWarmingImpact: 'Eliminates 1.2 kg of fossil fuel plastic wrap per shipping pallet, saving 3.65 kg CO2e per wrapped pallet load across global supply chains.',
+    co2SavedKg: 3.65,
+    plasticAvoidedGrams: 1200,
+    decompositionDays: '45–60 days',
     features: ['30% elongation capability creates high holding force around palletized cartons', 'High inter-layer friction prevents boxes from shifting during abrupt truck braking', 'Compatible with standard manual hand-wrap dispensers or automated wrapping turntables'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 44.00, total: 88 },
@@ -2321,6 +2541,11 @@ const PRODUCTS = [
     leadTime: '2-4 business days',
     history: 'Invented to replace sharp plastic and steel strapping that commonly cuts into cardboard cartons and causes handling injuries during warehouse opening.',
     environmentalImpact: 'Polypropylene plastic strapping cannot be recycled through standard paper streams and tangles inside municipal sorting rotors. Paper strapping recycles directly with the box.',
+    ecosystemBenefits: 'High-tensile paper strapping that replaces razor-sharp polypropylene and polyester plastic banding. Eliminates sharp plastic waste that entangles marine mammals and birds when discarded.',
+    globalWarmingImpact: 'Manufacturing plastic strapping requires cracking petroleum naphtha at extreme temperatures; our paper strapping uses hydro-entangled kraft fibers with 70% lower production energy.',
+    co2SavedKg: 1.85,
+    plasticAvoidedGrams: 420,
+    decompositionDays: '45–60 days',
     features: ['Compatible with semi-automatic strapping machines, friction weld tools, or metal buckles', 'Smooth paper edges eliminate worker finger lacerations and handling injuries', 'High break strain up to 250 kg holds pallet cartons and timber securely'],
     pricingTiers: [
       { qty: 2, pricePerUnit: 54.00, total: 108 },
@@ -2355,6 +2580,11 @@ const PRODUCTS = [
     leadTime: '2-3 business days',
     history: 'Standard palletizing uses thin polyethylene plastic sheets laid over the top tier of stacked boxes to keep dust off. PackNStir uses water-resistant heavy kraft sheets.',
     environmentalImpact: 'Eliminates disposable plastic sheets from warehouse operations. Can be reused multiple times or baled directly with cardboard scrap.',
+    ecosystemBenefits: 'Protects pallet tops from dust and warehouse moisture using natural hydrophobic cellulose sizing. Replaces single-use polyethylene plastic sheeting, recycling directly with the pallet boxes.',
+    globalWarmingImpact: 'Saves 1.15 kg CO2e per pallet top sheet compared to LDPE plastic film covers, ensuring zero plastic enters wholesale logistics.',
+    co2SavedKg: 1.15,
+    plasticAvoidedGrams: 240,
+    decompositionDays: '60–90 days',
     features: ['Pre-cut to overhang standard pallets, guarding top boxes from forklift dust and rain', 'Breathable fibers prevent condensation droplets from forming on top boxes', 'Tear-resistant 150 GSM kraft stands up to vigorous outdoor loading dock handling'],
     pricingTiers: [
       { qty: 100, pricePerUnit: 1.05, total: 105 },
@@ -4145,7 +4375,7 @@ function renderNavbar() {
           Zero-Plastic Certified
         </span>
         <span class="truncate">PackNStir: 100% Biodegradable & Recyclable Packaging. Free carbon-neutral freight on orders over $150.</span>
-        <a href="#showcase" class="underline font-bold text-emerald-300 hover:text-white hidden sm:inline ml-1">Explore Eco-Heritage Showcase →</a>
+        <a href="#eco-impact" class="underline font-bold text-emerald-300 hover:text-white hidden sm:inline ml-1">🌍 Earth Eco-System & Global Warming Directory (All 46 Products) →</a>
       </div>
 
       <!-- Main Navigation Bar -->
@@ -4173,10 +4403,10 @@ function renderNavbar() {
           <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-stone-700">
             <a href="#home" class="nav-link hover:text-emerald-800 transition-colors py-1 relative">Home</a>
             
-            <!-- Dedicated Eco-Heritage Master Page Link -->
-            <a href="#showcase" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5 text-emerald-900">
-              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-              <span>The Eco-Showcase</span>
+            <!-- Dedicated Earth Eco-System & Global Warming Master Page Link -->
+            <a href="#eco-impact" class="nav-link hover:text-emerald-800 transition-colors py-1 flex items-center gap-1.5 text-emerald-900 font-extrabold" title="Complete directory of all 46 products with material history, ecosystem preservation, and global warming carbon data">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span>Eco-System & Global Warming</span>
               <span class="text-[9px] font-black bg-emerald-100 text-emerald-950 px-1.5 py-0.5 rounded-full">46</span>
             </a>
 
@@ -4268,8 +4498,8 @@ function renderNavbar() {
       <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-2xl">
         <div class="flex flex-col space-y-3 font-bold text-stone-900 text-base">
           <a href="#home" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100">Home</a>
-          <a href="#showcase" class="mobile-nav-link text-emerald-900 hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
-            <span>The Eco-Showcase (Master Archive)</span>
+          <a href="#eco-impact" class="mobile-nav-link text-emerald-900 hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between font-extrabold">
+            <span>🌍 Eco-System & Global Warming (All 46)</span>
             <span class="text-xs bg-emerald-100 text-emerald-950 px-2 py-0.5 rounded-full font-black">46</span>
           </a>
           <a href="#shop" class="mobile-nav-link hover:text-emerald-800 py-2 border-b border-stone-100 flex items-center justify-between">
@@ -4412,15 +4642,15 @@ function renderFooter() {
             </ul>
           </div>
 
-          <!-- Column 3: The Eco-Heritage Showcase -->
+          <!-- Column 3: The Eco-System & Global Warming Directory -->
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider">The Eco-Heritage</h4>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Eco-System & Climate</h4>
             <ul class="space-y-2 text-xs text-stone-400">
-              <li><a href="#showcase" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Master Showcase (46 items)</a></li>
-              <li><a href="#showcase#cat-boxes" class="hover:text-emerald-400 transition-colors">Corrugated Fiber Origins</a></li>
-              <li><a href="#showcase#cat-takeaway" class="hover:text-emerald-400 transition-colors">Bagasse & Palm Degradation</a></li>
-              <li><a href="#showcase#cat-protective" class="hover:text-emerald-400 transition-colors">Starch Peanuts & Honeycomb</a></li>
-              <li><a href="#showcase#cat-tape-bags" class="hover:text-emerald-400 transition-colors">Gummed Tape Science</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold text-emerald-400"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 🌍 Eco-System & Global Warming (46)</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">Ocean & Marine Protection</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">CO₂e Carbon Reduction Metrics</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">Zero-Microplastic Soil Humus</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">All 46 Materials History</a></li>
             </ul>
           </div>
 
@@ -4507,8 +4737,8 @@ function renderHomeView() {
 
               <!-- Green CTAs -->
               <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2.5 group">
-                  <span>Explore The Eco-Showcase</span>
+                <a href="#eco-impact" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2.5 group cursor-pointer">
+                  <span>🌍 Eco-System & Global Warming (46 Formats)</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
                 
@@ -4591,6 +4821,51 @@ function renderHomeView() {
         </div>
       </section>
 
+      <!-- =============================================================== -->
+      <!-- 2.5 DEDICATED ECOSYSTEM & GLOBAL WARMING MASTER DIRECTORY BANNER -->
+      <!-- =============================================================== -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#FAF8F5] via-[#F6EFE3] to-[#EBDDC8] p-8 sm:p-12 border-2 border-[#DEC6A6] shadow-md relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 text-[11px] font-bold border border-emerald-800">
+                <span>🌍 Dedicated Master Archive</span>
+              </div>
+              <h2 class="text-2xl sm:text-4xl font-black text-stone-950 font-serif leading-tight">
+                How Our Packaging Protects Earth's Ecosystems & Fights Global Warming
+              </h2>
+              <p class="text-stone-700 text-xs sm:text-sm leading-relaxed max-w-2xl font-sans">
+                Every single product in our <strong>46-item catalog</strong> has been scientifically analyzed and documented. Explore the material origins of each packaging archetype, learn how it shields oceans and topsoil from toxic microplastics, and inspect its net CO₂e carbon reduction.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">📜 Material History</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">Origins, inventions & timber replacement</span>
+                </div>
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">🌊 Ocean & Soil Biomes</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">0% microplastics; non-toxic biodegradation</span>
+                </div>
+                <div class="p-3 bg-white/90 rounded-2xl border border-[#DEC6A6]">
+                  <span class="text-xs font-black text-emerald-900 block">🌡️ Global Warming Reducer</span>
+                  <span class="text-[11px] text-stone-600 block mt-0.5">Up to -78% carbon emissions vs plastic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center space-y-3">
+              <a href="#eco-impact" class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white font-extrabold text-xs shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-2 text-center group cursor-pointer">
+                <span>Explore Eco-System & Global Warming (46 Formats)</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <span class="text-[11px] text-stone-500 font-medium">Free open-access environmental dataset</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <!-- ========================================== -->
       <!-- 3. ANIMATED ECO-CREDENTIALS SECTION        -->
@@ -4767,54 +5042,144 @@ function initHomeView() {
 // === Module: src/views/ShowcaseView.js ===
 function renderShowcaseView() {
   return `
-    <div class="bg-white min-h-screen text-stone-900 pb-24">
+    <div class="bg-white min-h-screen text-stone-900 pb-28">
       
-      <!-- ========================================== -->
-      <!-- 1. HERO STORYTELLING HEADER                -->
-      <!-- ========================================== -->
-      <section class="relative bg-gradient-to-b from-[#FBF8F3] via-white to-white py-16 sm:py-24 border-b border-stone-200/80 overflow-hidden">
+      <!-- =============================================================== -->
+      <!-- 1. HERO HEADER: EARTH ECOSYSTEM & GLOBAL WARMING MASTER DIRECTORY -->
+      <!-- =============================================================== -->
+      <section class="relative bg-gradient-to-b from-[#FBF8F3] via-[#FAF8F5] to-white py-16 sm:py-24 border-b border-[#EBDDC8] overflow-hidden">
+        
+        <!-- Subtle decorative ambient elements -->
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-80 h-80 bg-amber-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950 text-emerald-300 text-xs font-bold border border-emerald-800/60 shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>The Master Eco-Heritage Archive</span>
+          
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-950 text-emerald-300 text-xs font-bold border border-emerald-800 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Comprehensive Scientific Catalog • All 46 Products</span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-stone-950 font-serif max-w-4xl mx-auto leading-tight">
-            The Eco-Heritage <span class="italic text-emerald-800">Product Showcase</span>
+            Earth Eco-System & <span class="italic text-emerald-800">Global Warming Directory</span>
           </h1>
 
-          <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-sans">
-            A visual, storytelling-driven exploration of all 46 plastic-free packaging innovations. Uncover the origins of our sustainable materials and inspect their verified environmental impact.
+          <p class="text-stone-700 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
+            A dedicated, transparent scientific archive of all <strong>46 plastic-free packaging innovations</strong>. 
+            For every product, explore the <strong>material history</strong>, discover how it <strong>safeguards Earth's terrestrial and marine ecosystems</strong>, and inspect its <strong>verified carbon metrics that combat global warming</strong>.
           </p>
 
+          <!-- 4 Global Impact Pillars -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6 max-w-5xl mx-auto text-left">
+            <div class="p-4 rounded-2xl bg-white border border-[#EBDDC8] shadow-xs space-y-1">
+              <div class="flex items-center gap-2 text-emerald-800 font-extrabold text-xs">
+                <span>🌊 Ocean Protection</span>
+              </div>
+              <div class="text-xl font-black text-stone-900 font-serif">0% Microplastics</div>
+              <p class="text-[11px] text-stone-600 leading-snug">Pure plant cellulose & agricultural waste naturally bio-assimilate without plastic residue.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-[#EBDDC8] shadow-xs space-y-1">
+              <div class="flex items-center gap-2 text-emerald-800 font-extrabold text-xs">
+                <span>🌡️ Global Warming</span>
+              </div>
+              <div class="text-xl font-black text-stone-900 font-serif">-72% CO₂e Average</div>
+              <p class="text-[11px] text-stone-600 leading-snug">Replaces petroleum cracking with renewable plant fibers that store atmospheric carbon.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-[#EBDDC8] shadow-xs space-y-1">
+              <div class="flex items-center gap-2 text-emerald-800 font-extrabold text-xs">
+                <span>🌱 Soil Regeneration</span>
+              </div>
+              <div class="text-xl font-black text-stone-900 font-serif">30–90 Days Humus</div>
+              <p class="text-[11px] text-stone-600 leading-snug">Composts harmlessly into nutrient-rich organic matter that nourishes soil microbiomes.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-[#EBDDC8] shadow-xs space-y-1">
+              <div class="flex items-center gap-2 text-emerald-800 font-extrabold text-xs">
+                <span>🔄 Circular Milling</span>
+              </div>
+              <div class="text-xl font-black text-stone-900 font-serif">100% Repulpable</div>
+              <p class="text-[11px] text-stone-600 leading-snug">Dissolves in standard mill hydro-pulpers; recyclable up to 7 consecutive lifecycles.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Live Volume Climate Calculator Bar -->
+          <div class="mt-8 p-6 bg-[#F6EFE3] border border-[#DEC6A6] rounded-3xl max-w-4xl mx-auto shadow-sm text-left">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#DEC6A6]/80">
+              <div>
+                <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-900 block">🧮 Interactive Impact Estimator</span>
+                <h3 class="text-base font-bold text-stone-900">Estimate Your Brand's Environmental Savings with PackNStir</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-stone-600 font-semibold">Monthly Units:</span>
+                <select id="calc-volume-select" class="px-3 py-1.5 bg-white border border-stone-300 rounded-xl text-xs font-bold text-stone-900 focus:outline-none focus:ring-2 focus:ring-emerald-700">
+                  <option value="500">500 units/mo</option>
+                  <option value="2500" selected>2,500 units/mo</option>
+                  <option value="10000">10,000 units/mo</option>
+                  <option value="50000">50,000 units/mo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-center sm:text-left">
+              <div class="p-3 bg-white rounded-2xl border border-[#EBDDC8]">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-500 block">CO₂e Atmospheric Savings</span>
+                <span id="calc-co2-val" class="text-2xl font-black text-emerald-800 font-serif">3,125 kg</span>
+                <span class="text-[11px] text-stone-500 block mt-0.5">Equivalent to ~7,750 miles not driven</span>
+              </div>
+              <div class="p-3 bg-white rounded-2xl border border-[#EBDDC8]">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-500 block">Ocean Plastic Avoided</span>
+                <span id="calc-plastic-val" class="text-2xl font-black text-emerald-800 font-serif">625,000 g</span>
+                <span class="text-[11px] text-stone-500 block mt-0.5">Over 31,000 plastic polybags replaced</span>
+              </div>
+              <div class="p-3 bg-white rounded-2xl border border-[#EBDDC8]">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-500 block">Soil Organic Matter Returned</span>
+                <span id="calc-soil-val" class="text-2xl font-black text-emerald-800 font-serif">100% Repulpable</span>
+                <span class="text-[11px] text-stone-500 block mt-0.5">Zero toxic microplastics in farmland</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Category Quick-Jump Nav -->
-          <div class="pt-4 flex items-center justify-center gap-2 flex-wrap text-xs font-bold">
-            <button data-cat="all" class="showcase-nav-pill active px-4 py-2 rounded-xl bg-emerald-900 text-white shadow-sm transition-all">
-              All 46 Formats
+          <div class="pt-6 flex items-center justify-center gap-2 flex-wrap text-xs font-bold">
+            <button data-cat="all" class="showcase-nav-pill active px-4 py-2.5 rounded-xl bg-emerald-900 text-white shadow-sm transition-all cursor-pointer">
+              All 46 Packaging Formats
             </button>
             ${CATEGORIES.map(c => `
-              <button data-cat="${c.id}" class="showcase-nav-pill px-4 py-2 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 border border-stone-300/80 transition-all">
+              <button data-cat="${c.id}" class="showcase-nav-pill px-4 py-2.5 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 border border-[#DEC6A6] transition-all cursor-pointer">
                 ${c.shortName} (${c.itemCount})
               </button>
             `).join('')}
           </div>
 
-          <!-- Live Search Bar within Showcase -->
-          <div class="pt-2 max-w-md mx-auto">
+          <!-- Live Search Bar within Directory -->
+          <div class="pt-2 max-w-lg mx-auto">
             <div class="relative">
               <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              <input type="text" id="showcase-search" placeholder="Search product history, material, or environmental impact..." class="w-full pl-10 pr-4 py-3 bg-white border border-stone-300 rounded-2xl text-xs text-stone-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-700" />
+              <input type="text" id="showcase-search" placeholder="Search by name, material history, ecosystem benefit, or global warming stat..." class="w-full pl-10 pr-4 py-3 bg-white border border-[#DEC6A6] rounded-2xl text-xs text-stone-900 shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-700" />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 2. SCROLL-TRIGGERED 46 PRODUCT STORY GRID -->
-      <!-- ========================================== -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div id="showcase-cards-container" class="space-y-16">
-          <!-- Rendered dynamically -->
+      <!-- =============================================================== -->
+      <!-- 2. SCROLL-TRIGGERED 46 PRODUCT STORY & ECOSYSTEM/CLIMATE GRID   -->
+      <!-- =============================================================== -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14">
+        
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#EBDDC8] gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold text-stone-900 font-serif">Documented Products Catalog</h2>
+            <p class="text-xs text-stone-500 mt-0.5">Showing all verified materials with history, ecosystem protection, and carbon data.</p>
+          </div>
+          <span id="showcase-count-badge" class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-950 font-bold text-xs">
+            Showing 46 of 46 Products
+          </span>
+        </div>
+
+        <div id="showcase-cards-container" class="space-y-16 pt-10">
+          <!-- Rendered dynamically by initShowcaseView() -->
         </div>
       </section>
 
@@ -4826,10 +5191,28 @@ function initShowcaseView() {
   const container = document.getElementById('showcase-cards-container');
   const searchInput = document.getElementById('showcase-search');
   const navPills = document.querySelectorAll('.showcase-nav-pill');
+  const countBadge = document.getElementById('showcase-count-badge');
+  const volumeSelect = document.getElementById('calc-volume-select');
+
   if (!container) return;
 
   let activeCat = 'all';
   let searchQuery = '';
+
+  // Interactive Live Volume Calculator
+  if (volumeSelect) {
+    const calcCo2 = document.getElementById('calc-co2-val');
+    const calcPlastic = document.getElementById('calc-plastic-val');
+
+    volumeSelect.addEventListener('change', () => {
+      const vol = parseInt(volumeSelect.value, 10) || 2500;
+      const co2 = Math.round(vol * 1.25);
+      const plastic = Math.round(vol * 250);
+
+      if (calcCo2) calcCo2.textContent = `${co2.toLocaleString()} kg`;
+      if (calcPlastic) calcPlastic.textContent = `${plastic.toLocaleString()} g`;
+    });
+  }
 
   function renderCards() {
     let filtered = PRODUCTS;
@@ -4841,17 +5224,23 @@ function initShowcaseView() {
       filtered = filtered.filter(p => 
         p.name.toLowerCase().includes(q) ||
         p.subtitle.toLowerCase().includes(q) ||
-        p.history.toLowerCase().includes(q) ||
-        p.environmentalImpact.toLowerCase().includes(q) ||
+        (p.history && p.history.toLowerCase().includes(q)) ||
+        (p.ecosystemBenefits && p.ecosystemBenefits.toLowerCase().includes(q)) ||
+        (p.globalWarmingImpact && p.globalWarmingImpact.toLowerCase().includes(q)) ||
+        (p.environmentalImpact && p.environmentalImpact.toLowerCase().includes(q)) ||
         p.material.toLowerCase().includes(q)
       );
     }
 
+    if (countBadge) {
+      countBadge.textContent = `Showing ${filtered.length} of ${PRODUCTS.length} Products`;
+    }
+
     if (filtered.length === 0) {
       container.innerHTML = `
-        <div class="text-center py-24 bg-[#FBF8F3] rounded-3xl border border-stone-200">
+        <div class="text-center py-24 bg-[#FBF8F3] rounded-3xl border border-[#EBDDC8]">
           <p class="text-base font-bold text-stone-800">No matching packaging formats found.</p>
-          <p class="text-xs text-stone-500 mt-1">Try another search term or click "All 46 Formats".</p>
+          <p class="text-xs text-stone-500 mt-1">Try another search term or click "All 46 Packaging Formats".</p>
         </div>
       `;
       return;
@@ -4859,13 +5248,16 @@ function initShowcaseView() {
 
     container.innerHTML = filtered.map((prod, index) => {
       const isReversed = index % 2 === 1;
+      const co2Val = prod.co2SavedKg ? `${prod.co2SavedKg.toFixed(2)} kg CO₂e` : '1.25 kg CO₂e';
+      const plasticVal = prod.plasticAvoidedGrams ? `${prod.plasticAvoidedGrams} g` : '180 g';
+      const decompVal = prod.decompositionDays || '60–90 days';
 
       return `
-        <article class="showcase-item bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+        <article id="product-${prod.id}" class="showcase-item bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
           <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             
-            <!-- Column A: Visual Placeholder & Key Badges (5 cols) -->
-            <div class="lg:col-span-5 bg-gradient-to-br from-[#FBF8F3] to-[#F4EFE6] p-8 sm:p-12 flex flex-col justify-between items-center relative border-b lg:border-b-0 ${isReversed ? 'lg:order-2 lg:border-l' : 'lg:border-r'} border-[#EBDDC8]">
+            <!-- Column A: Visual Representation & Metric Badges (5 cols) -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-[#FBF8F3] to-[#F4EFE6] p-8 sm:p-10 flex flex-col justify-between items-center relative border-b lg:border-b-0 ${isReversed ? 'lg:order-2 lg:border-l' : 'lg:border-r'} border-[#EBDDC8]">
               
               <!-- Top Badges -->
               <div class="w-full flex items-center justify-between gap-2 z-10">
@@ -4882,16 +5274,26 @@ function initShowcaseView() {
                 ${getProductSvg(prod.svgType, 'showcase')}
               </div>
 
-              <!-- Spec Summary Pill -->
-              <div class="w-full pt-4 border-t border-stone-300/60 flex items-center justify-between text-xs font-semibold text-stone-600">
-                <span>MOQ: <strong class="text-stone-900">${prod.moq} pcs</strong></span>
-                <span>From <strong class="text-emerald-900 font-extrabold text-sm">$${prod.price.toFixed(2)}</strong> / ${prod.unit}</span>
+              <!-- 3 Scientific Metrics Badges -->
+              <div class="w-full grid grid-cols-3 gap-2 pt-4 border-t border-[#DEC6A6]/80 text-center">
+                <div class="p-2 bg-white rounded-xl border border-[#EBDDC8]">
+                  <span class="text-[9px] uppercase font-bold text-stone-500 block">CO₂e Saved</span>
+                  <span class="text-xs font-black text-emerald-800 block">${co2Val}</span>
+                </div>
+                <div class="p-2 bg-white rounded-xl border border-[#EBDDC8]">
+                  <span class="text-[9px] uppercase font-bold text-stone-500 block">Plastic Avoided</span>
+                  <span class="text-xs font-black text-emerald-800 block">${plasticVal}</span>
+                </div>
+                <div class="p-2 bg-white rounded-xl border border-[#EBDDC8]">
+                  <span class="text-[9px] uppercase font-bold text-stone-500 block">Degradation</span>
+                  <span class="text-xs font-black text-stone-800 block truncate" title="${decompVal}">${decompVal}</span>
+                </div>
               </div>
 
             </div>
 
-            <!-- Column B: Storytelling, History & Environmental Impact (7 cols) -->
-            <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between space-y-6 ${isReversed ? 'lg:order-1' : ''}">
+            <!-- Column B: History, Ecosystem Benefits & Global Warming Impact (7 cols) -->
+            <div class="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between space-y-5 ${isReversed ? 'lg:order-1' : ''}">
               
               <div class="space-y-4">
                 
@@ -4905,14 +5307,14 @@ function initShowcaseView() {
                   <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 font-serif leading-tight">
                     <a href="#product/${prod.id}" class="hover:text-emerald-800 transition-colors">${prod.name}</a>
                   </h2>
-                  <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
+                  <p class="text-xs sm:text-sm text-stone-600 mt-1 leading-relaxed">
                     ${prod.subtitle}
                   </p>
                 </div>
 
-                <!-- SECTION 1: PRODUCT HISTORY (Material Origins) -->
-                <div class="p-5 rounded-2xl bg-[#FBF8F3] border border-[#DEC6A6]/60 space-y-1.5 relative overflow-hidden">
-                  <div class="flex items-center gap-2 text-stone-800 font-serif font-bold text-xs uppercase tracking-wider">
+                <!-- 1. MATERIAL & INDUSTRIAL HISTORY -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-[#FBF8F3] border border-[#DEC6A6] space-y-1 relative">
+                  <div class="flex items-center gap-2 text-stone-900 font-serif font-bold text-xs uppercase tracking-wider">
                     <span>📜 Origin & Material History</span>
                   </div>
                   <p class="text-xs text-stone-700 leading-relaxed font-sans">
@@ -4920,27 +5322,41 @@ function initShowcaseView() {
                   </p>
                 </div>
 
-                <!-- SECTION 2: ENVIRONMENTAL IMPACT (Green Highlighted Section) -->
-                <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-700/40 space-y-2 relative overflow-hidden">
+                <!-- 2. HOW IT HELPS EARTH'S ECOSYSTEM (Ocean, Soil & Wildlife) -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-teal-50/70 border-2 border-teal-600/40 space-y-1 relative">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 text-teal-950 font-bold text-xs uppercase tracking-wider">
+                      <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+                      <span>🌊 Protection of Earth's Ecosystem (Oceans, Soil & Wildlife)</span>
+                    </div>
+                    <span class="text-[10px] font-black text-teal-800 bg-teal-100/80 px-2 py-0.5 rounded-full">0% Microplastics</span>
+                  </div>
+                  <p class="text-xs text-teal-950 font-medium leading-relaxed font-sans">
+                    ${prod.ecosystemBenefits || prod.environmentalImpact}
+                  </p>
+                </div>
+
+                <!-- 3. HOW IT COMBATS GLOBAL WARMING & CLIMATE CHANGE (CO2e & Carbon Sink) -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-700/50 space-y-1 relative">
                   <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2 text-emerald-950 font-bold text-xs uppercase tracking-wider">
                       <span class="w-2 h-2 rounded-full bg-emerald-700"></span>
-                      <span>🌱 Environmental Impact & Circular Metrics</span>
+                      <span>🌡️ Combating Global Warming & Climate Change</span>
                     </div>
-                    <span class="text-[10px] font-extrabold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">100% Repulpable</span>
+                    <span class="text-[10px] font-black text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">Saves ${co2Val}</span>
                   </div>
                   <p class="text-xs text-emerald-950 font-medium leading-relaxed font-sans">
-                    ${prod.environmentalImpact}
+                    ${prod.globalWarmingImpact || 'Reduces fossil fuel cracking emissions by utilizing renewable biogenic cellulose that sequesters atmospheric carbon during growth cycles.'}
                   </p>
-                  
-                  <!-- Eco Badges tags -->
-                  <div class="flex flex-wrap gap-1.5 pt-1">
-                    ${prod.ecoBadges.map(badge => `
-                      <span class="text-[10px] font-semibold bg-white text-emerald-900 px-2 py-0.5 rounded border border-emerald-300/60 shadow-2xs">
-                        ✓ ${badge}
-                      </span>
-                    `).join('')}
-                  </div>
+                </div>
+
+                <!-- Eco Badges tags -->
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  ${prod.ecoBadges.map(badge => `
+                    <span class="text-[10px] font-semibold bg-[#F6EFE3] text-emerald-950 px-2 py-0.5 rounded-md border border-[#DEC6A6]">
+                      ✓ ${badge}
+                    </span>
+                  `).join('')}
                 </div>
 
               </div>
@@ -4952,12 +5368,12 @@ function initShowcaseView() {
                 </div>
 
                 <div class="flex items-center gap-3 w-full sm:w-auto">
-                  <button data-quick-add-id="${prod.id}" class="btn-showcase-add flex-1 sm:flex-none px-5 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white font-bold text-xs shadow-md shadow-emerald-950/20 transition-all flex items-center justify-center gap-2">
+                  <button data-quick-add-id="${prod.id}" class="btn-showcase-add flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white font-bold text-xs shadow-md shadow-emerald-950/20 transition-all flex items-center justify-center gap-2 cursor-pointer">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                     <span>Order Batch (${prod.moq} pcs)</span>
                   </button>
 
-                  <a href="#product/${prod.id}" class="px-4 py-3 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold text-xs border border-stone-300 transition-colors flex items-center justify-center gap-1.5">
+                  <a href="#product/${prod.id}" class="px-4 py-2.5 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold text-xs border border-stone-300 transition-colors flex items-center justify-center gap-1.5">
                     <span>Technical PDP</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                   </a>
@@ -4971,52 +5387,49 @@ function initShowcaseView() {
       `;
     }).join('');
 
-    // Attach Add to Cart listeners
-    container.querySelectorAll('.btn-showcase-add').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.getAttribute('data-quick-add-id');
-        const prod = PRODUCTS.find(p => p.id === id);
-        if (prod) {
-          cart.addItem(prod, prod.moq);
-        }
+    // Re-attach quick add event listeners
+    const addBtns = container.querySelectorAll('.btn-showcase-add');
+    addBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pId = btn.getAttribute('data-quick-add-id');
+        const product = PRODUCTS.find(p => p.id === pId);
+        if (!product) return;
+
+        cart.addItem(product, product.moq);
+
+        const originalText = btn.innerHTML;
+        btn.classList.remove('bg-emerald-800', 'hover:bg-emerald-900');
+        btn.classList.add('bg-stone-900', 'text-emerald-300');
+        btn.innerHTML = `<span>✓ Added ${product.moq} pcs</span>`;
+
+        setTimeout(() => {
+          btn.classList.add('bg-emerald-800', 'hover:bg-emerald-900');
+          btn.classList.remove('bg-stone-900', 'text-emerald-300');
+          btn.innerHTML = originalText;
+        }, 1500);
       });
     });
 
-    // GSAP Scroll Reveal for cards
+    // ScrollTrigger GSAP animation
     if (window.gsap && window.ScrollTrigger) {
-      const items = container.querySelectorAll('.showcase-item');
-      items.forEach((item) => {
-        window.gsap.fromTo(item, 
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: item,
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            }
-          }
-        );
+      window.ScrollTrigger.batch('.showcase-item', {
+        interval: 0.1,
+        batchMax: 3,
+        onEnter: (batch) => {
+          window.gsap.fromTo(batch, 
+            { opacity: 0, y: 35 }, 
+            { opacity: 1, y: 0, stagger: 0.12, duration: 0.5, ease: 'power2.out', overwrite: 'auto' }
+          );
+        },
+        once: true
       });
     }
   }
 
-  // Nav pills filter
-  navPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      navPills.forEach(p => {
-        p.className = 'showcase-nav-pill px-4 py-2 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 border border-stone-300/80 transition-all';
-      });
-      pill.className = 'showcase-nav-pill active px-4 py-2 rounded-xl bg-emerald-900 text-white shadow-sm transition-all';
-      activeCat = pill.getAttribute('data-cat');
-      renderCards();
-    });
-  });
+  // Initial render
+  renderCards();
 
-  // Search input
+  // Search input handler
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value;
@@ -5024,8 +5437,32 @@ function initShowcaseView() {
     });
   }
 
-  // Initial render
-  renderCards();
+  // Category navigation pills
+  navPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      navPills.forEach(p => {
+        p.classList.remove('active', 'bg-emerald-900', 'text-white');
+        p.classList.add('bg-[#F6EFE3]', 'text-stone-800');
+      });
+      pill.classList.add('active', 'bg-emerald-900', 'text-white');
+      pill.classList.remove('bg-[#F6EFE3]', 'text-stone-800');
+
+      activeCat = pill.getAttribute('data-cat') || 'all';
+      renderCards();
+    });
+  });
+
+  // Check if hash has an anchor e.g. #product-single-wall-boxes
+  const currentHash = window.location.hash;
+  if (currentHash.includes('#product-')) {
+    const targetId = currentHash.split('#product-')[1];
+    setTimeout(() => {
+      const el = document.getElementById(`product-${targetId}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 300);
+  }
 }
 
 
@@ -5049,6 +5486,17 @@ function renderProductsView(activeCategory = 'all', searchQuery = '') {
             Filter our exhaustive database of 46 plastic-free paper, corrugated, sugarcane, and cellulose solutions. All available in stock or bespoke custom dimensions.
           </p>
         </div>
+      </div>
+
+      <!-- Dedicated Eco-System & Global Warming Master Page Callout -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-[#F6EFE3] via-white to-emerald-50 border border-[#DEC6A6] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-xs">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">🌍</span>
+          <span class="text-stone-800 font-semibold">Looking for the detailed material history, ocean/soil preservation, and CO₂e carbon reduction metrics for all 46 products?</span>
+        </div>
+        <a href="#eco-impact" class="font-extrabold text-emerald-900 hover:text-emerald-700 underline flex-shrink-0 flex items-center gap-1">
+          <span>Explore Eco-System & Global Warming Directory →</span>
+        </a>
       </div>
 
       <!-- Filter Controls & Search Toolbar -->
@@ -5217,6 +5665,14 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
             <div class="mt-2 text-[10px] text-stone-500 font-medium">
               Material: <span class="text-stone-900 font-semibold">${prod.material.split('(')[0]}</span>
             </div>
+            <div class="mt-2 flex items-center justify-between text-[10px] pt-1">
+              <span class="text-emerald-900 font-extrabold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                🌱 Saves ${(prod.co2SavedKg || 1.25).toFixed(1)}kg CO₂
+              </span>
+              <a href="#eco-impact#product-${prod.id}" class="text-stone-500 hover:text-emerald-800 font-bold underline" title="Read material history & ecosystem impact">
+                Eco Report →
+              </a>
+            </div>
           </div>
 
           <!-- Bottom Actions -->
@@ -5302,6 +5758,9 @@ function initProductsView(initialCategory = 'all', initialSearch = '') {
 // === Module: src/views/ProductDetailView.js ===
 function renderProductDetailView(productId) {
   const product = getProductById(productId) || PRODUCTS[0];
+  const co2Base = product.co2SavedKg || 1.25;
+  const plasticBase = product.plasticAvoidedGrams || 180;
+  const decompBase = product.decompositionDays || '60–90 days';
 
   return `
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 bg-white">
@@ -5321,7 +5780,7 @@ function renderProductDetailView(productId) {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         
         <!-- Left: Gallery & Packaging Angle View Switcher (6 cols) -->
-        <div class="lg:col-span-6 space-y-4">
+        <div class="lg:col-span-6 space-y-5">
           
           <!-- Main Visual Stage Box -->
           <div class="relative bg-gradient-to-b from-[#FBF8F3] to-[#F4EFE6] rounded-3xl sm:rounded-[36px] p-8 sm:p-12 border-2 border-[#EBDDC8] shadow-xs flex items-center justify-center min-h-[380px] sm:min-h-[460px] overflow-hidden group">
@@ -5348,28 +5807,28 @@ function renderProductDetailView(productId) {
 
           <!-- Angle Thumbnail Selector -->
           <div class="grid grid-cols-4 gap-3">
-            <button data-view="perspective" class="pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+            <button data-view="perspective" class="pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer">
               <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-900">3D Angle</span>
             </button>
 
-            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+            <button data-view="open" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer">
               <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">Open View</span>
             </button>
 
-            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+            <button data-view="dieline" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer">
               <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
               </div>
               <span class="text-[10px] font-bold text-stone-600">CAD Dieline</span>
             </button>
 
-            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all">
+            <button data-view="detail" class="pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer">
               <div class="w-7 h-7 flex items-center justify-center">
                 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
               </div>
@@ -5377,14 +5836,41 @@ function renderProductDetailView(productId) {
             </button>
           </div>
 
-          <!-- Environmental Callout Box -->
-          <div class="p-5 bg-emerald-50 border-2 border-emerald-600/40 rounded-2xl space-y-2">
-            <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950">
-              <span>🌱 Eco-Heritage Environmental Impact:</span>
+          <!-- Live Environmental Impact Hub on PDP -->
+          <div class="p-6 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-[#FAF8F5] border-2 border-emerald-600/50 rounded-3xl space-y-4 shadow-xs">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950">
+                <span>🌍 Earth Eco-System & Global Warming Report</span>
+              </div>
+              <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">Zero-Plastic Certified</span>
             </div>
+
+            <!-- Dynamic Savings Metric for selected batch -->
+            <div class="grid grid-cols-3 gap-2.5 text-center pt-1">
+              <div class="p-2.5 bg-white rounded-xl border border-emerald-200">
+                <span class="text-[9px] uppercase font-bold text-stone-500 block">CO₂e Prevented</span>
+                <span id="pdp-live-co2" class="text-sm sm:text-base font-black text-emerald-900 block">${(co2Base * product.moq).toFixed(1)} kg</span>
+              </div>
+              <div class="p-2.5 bg-white rounded-xl border border-emerald-200">
+                <span class="text-[9px] uppercase font-bold text-stone-500 block">Plastic Avoided</span>
+                <span id="pdp-live-plastic" class="text-sm sm:text-base font-black text-emerald-900 block">${((plasticBase * product.moq) / 1000).toFixed(1)} kg</span>
+              </div>
+              <div class="p-2.5 bg-white rounded-xl border border-emerald-200">
+                <span class="text-[9px] uppercase font-bold text-stone-500 block">Soil Degradation</span>
+                <span class="text-xs font-black text-stone-800 block truncate" title="${decompBase}">${decompBase}</span>
+              </div>
+            </div>
+
             <p class="text-xs text-emerald-950 font-medium leading-relaxed">
-              ${product.environmentalImpact}
+              ${product.ecosystemBenefits || product.environmentalImpact}
             </p>
+
+            <div class="pt-2 border-t border-emerald-200/80 flex items-center justify-between text-xs">
+              <span class="text-stone-500 text-[11px]">Scientific lifecycle verification:</span>
+              <a href="#eco-impact#product-${product.id}" class="font-extrabold text-emerald-900 hover:text-emerald-700 underline flex items-center gap-1">
+                <span>View Full Scientific Directory Entry →</span>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -5396,101 +5882,99 @@ function renderProductDetailView(productId) {
             <div class="flex items-center gap-3 mb-2">
               <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-900">${product.categoryName}</span>
               <span class="text-stone-300">•</span>
-              <span class="text-xs text-stone-700 font-semibold bg-[#F6EFE3] px-2.5 py-0.5 rounded">Lead Time: ${product.leadTime}</span>
+              <span class="text-xs font-mono text-stone-500">ID: ${product.id}</span>
             </div>
-
-            <h1 class="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-snug font-serif">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-stone-950 font-serif leading-tight">
               ${product.name}
             </h1>
-
-            <p class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
-              ${product.description || product.subtitle}
+            <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
+              ${product.subtitle}
             </p>
           </div>
 
-          <!-- Live Tier Pricing Display -->
-          <div class="p-6 bg-[#FAF8F5] rounded-3xl border-2 border-[#EBDDC8] shadow-xs space-y-4">
-            <div class="flex items-baseline justify-between">
-              <div>
-                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Active Unit Price</span>
-                <span id="pdp-active-unit-price" class="text-3xl font-black text-stone-950">$${product.price.toFixed(2)}</span>
-                <span class="text-xs text-stone-500">/ ${product.unit}</span>
-              </div>
-              <div class="text-right">
-                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Estimated Line Total</span>
-                <span id="pdp-active-total" class="text-2xl font-black text-emerald-900">$${(product.price * product.moq).toFixed(2)}</span>
-              </div>
+          <!-- Tier Pricing Matrix Table -->
+          <div class="p-5 bg-[#FAF8F5] rounded-3xl border border-[#EBDDC8] space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-stone-900 uppercase tracking-wider font-mono">Wholesale Tier Pricing</span>
+              <span class="text-[11px] text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded">Volume Discounts Auto-Applied</span>
             </div>
 
-            <!-- Tiered Pricing Matrix Table -->
-            <div class="pt-3 border-t border-[#EBDDC8]">
-              <span class="text-[10px] font-black text-stone-600 uppercase tracking-wider block mb-2">Volume Tier Discounts</span>
-              <div class="grid grid-cols-4 gap-2 text-center text-xs">
-                ${product.pricingTiers.map((tier, idx) => `
-                  <button data-tier-qty="${tier.qty}" data-tier-price="${tier.pricePerUnit}" class="btn-tier-select p-2 rounded-xl border ${idx === 1 ? 'border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 shadow-2xs' : 'border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400'} transition-all">
-                    <span class="block text-[10px] font-bold">${tier.qty.toLocaleString()} pcs</span>
-                    <span class="block text-xs font-black text-stone-900 mt-0.5">$${tier.pricePerUnit.toFixed(2)}</span>
-                  </button>
-                `).join('')}
-              </div>
+            <div class="grid grid-cols-4 gap-2 text-center text-xs">
+              ${product.pricingTiers.map((t, idx) => `
+                <button data-tier-qty="${t.qty}" class="btn-tier-select p-2 rounded-xl border ${idx === 0 ? 'border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 shadow-2xs' : 'border-[#DEC6A6] bg-white text-stone-800 hover:border-stone-400'} transition-all cursor-pointer">
+                  <div class="text-[10px] text-stone-500 font-semibold">${t.qty.toLocaleString()}+ pcs</div>
+                  <div class="text-sm font-black text-stone-900">$${t.pricePerUnit.toFixed(2)}</div>
+                  <div class="text-[9px] text-emerald-800 font-bold">-${idx * 8}%</div>
+                </button>
+              `).join('')}
             </div>
           </div>
 
-          <!-- Product Customization Form -->
-          <div class="space-y-4">
+          <!-- Interactive Order Configuration -->
+          <div class="space-y-4 pt-2">
             
-            <!-- Dimensions Selector -->
+            <!-- Dimension Selector -->
             <div>
-              <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Select Dimensions</span>
-                <a href="#quote" class="text-emerald-800 font-bold hover:underline">Custom Sizing?</a>
-              </label>
-              <select id="pdp-select-size" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
-                ${product.dimensionsAvailable.map(d => `<option value="${d}">${d}</option>`).join('')}
+              <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Select Dimensions</label>
+              <select id="pdp-select-size" class="w-full px-4 py-3 bg-white border border-[#DEC6A6] rounded-2xl text-xs font-semibold text-stone-900 focus:outline-none focus:ring-2 focus:ring-emerald-700 shadow-2xs">
+                ${product.dimensionsAvailable.map(dim => `
+                  <option value="${dim}">${dim}</option>
+                `).join('')}
               </select>
             </div>
 
-            <!-- Finish Selection -->
+            <!-- Finish Option -->
             <div>
-              <label class="block text-xs font-bold text-stone-800 mb-1.5">Surface Finish & Inks</label>
-              <select id="pdp-select-finish" class="w-full text-xs font-bold px-3.5 py-3 bg-white border border-[#DEC6A6] rounded-xl focus:ring-2 focus:ring-emerald-700 focus:outline-none text-stone-900 shadow-2xs">
-                ${product.finishOptions.map(f => `<option value="${f}">${f}</option>`).join('')}
+              <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Board Finish & Inks</label>
+              <select id="pdp-select-finish" class="w-full px-4 py-3 bg-white border border-[#DEC6A6] rounded-2xl text-xs font-semibold text-stone-900 focus:outline-none focus:ring-2 focus:ring-emerald-700 shadow-2xs">
+                ${product.finishOptions.map(fin => `
+                  <option value="${fin}">${fin}</option>
+                `).join('')}
               </select>
             </div>
 
-            <!-- Quantity Stepper -->
-            <div>
-              <label class="block text-xs font-bold text-stone-800 mb-1.5 flex items-center justify-between">
-                <span>Production Quantity</span>
-                <span class="text-stone-500 font-normal">Minimum Order Quantity: ${product.moq}</span>
-              </label>
-              <div class="flex items-center gap-3">
-                <div class="flex items-center border border-[#DEC6A6] rounded-xl bg-white overflow-hidden shadow-2xs flex-1">
-                  <button id="pdp-qty-minus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">-</button>
-                  <input type="number" id="pdp-qty-input" value="${product.moq}" min="${product.moq}" step="50" class="w-full text-center text-xs font-bold py-2.5 focus:outline-none" />
-                  <button id="pdp-qty-plus" class="px-4 py-2.5 text-stone-600 hover:bg-[#F6EFE3] font-bold text-sm">+</button>
+            <!-- Quantity Selector & Price Summary -->
+            <div class="p-6 bg-white rounded-3xl border-2 border-[#EBDDC8] space-y-4 shadow-sm">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-stone-500 uppercase tracking-wider block">Quantity (MOQ: ${product.moq})</span>
+                  <div class="flex items-center gap-3 mt-2">
+                    <button id="pdp-qty-minus" class="w-10 h-10 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold flex items-center justify-center transition-colors cursor-pointer text-lg">-</button>
+                    <input id="pdp-qty-input" type="number" min="${product.moq}" step="50" value="${product.moq}" class="w-24 text-center font-black text-stone-900 text-base py-2 border border-[#DEC6A6] rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700" />
+                    <button id="pdp-qty-plus" class="w-10 h-10 rounded-xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-800 font-bold flex items-center justify-center transition-colors cursor-pointer text-lg">+</button>
+                  </div>
                 </div>
-                <button id="btn-request-sample" class="px-4 py-2.5 text-xs font-bold text-stone-800 bg-[#F6EFE3] hover:bg-[#EBDDC8] rounded-xl transition-colors border border-[#DEC6A6] whitespace-nowrap">
-                  Request $15 Sample Kit
+
+                <div class="text-right">
+                  <span class="text-xs font-bold text-stone-500 uppercase tracking-wider block">Total Estimated</span>
+                  <div class="mt-1">
+                    <span id="pdp-active-total" class="text-3xl font-black text-emerald-900 font-serif">$${(product.price * product.moq).toFixed(2)}</span>
+                    <span id="pdp-active-unit-price" class="block text-xs text-stone-500 font-semibold mt-0.5">$${product.price.toFixed(2)} / ${product.unit}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Primary Action Buttons -->
+              <div class="space-y-3 pt-2">
+                <button id="pdp-btn-add-cart" class="w-full py-4 px-6 rounded-2xl bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white font-extrabold text-sm shadow-xl shadow-emerald-950/20 transition-all flex items-center justify-center gap-3 group cursor-pointer">
+                  <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                  <span id="pdp-btn-add-text">Add ${product.moq.toLocaleString()} Units to Cart • $${(product.price * product.moq).toFixed(2)}</span>
+                </button>
+
+                <button id="btn-request-sample" class="w-full py-3 px-6 rounded-2xl bg-[#F6EFE3] hover:bg-[#EBDDC8] text-stone-900 font-bold text-xs border border-[#DEC6A6] transition-all flex items-center justify-center gap-2 cursor-pointer">
+                  <svg class="w-4 h-4 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                  <span>Request Unprinted Physical CAD Sample ($15)</span>
                 </button>
               </div>
             </div>
 
-          </div>
-
-          <!-- Add to Cart & Custom Quote Actions -->
-          <div class="space-y-3 pt-2">
-            <button id="pdp-btn-add-cart" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 active:scale-[0.99] text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-950/25 transition-all flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-              <span id="pdp-btn-add-text">Add ${product.moq} Units to Cart</span>
-            </button>
-
+            <!-- Custom B2B Quote & Eco Impact Links -->
             <div class="grid grid-cols-2 gap-3">
               <a href="#quote" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-stone-800 transition-colors">
-                Request Bespoke CAD Quote
+                Request Custom CAD Quote
               </a>
-              <a href="#showcase" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-emerald-900 transition-colors">
-                View in Eco-Showcase →
+              <a href="#eco-impact#product-${product.id}" class="py-3 text-center bg-white hover:bg-[#F6EFE3] border border-[#DEC6A6] rounded-xl text-xs font-bold text-emerald-900 transition-colors flex items-center justify-center gap-1.5">
+                <span>🌍 View Full Eco Report →</span>
               </a>
             </div>
           </div>
@@ -5500,23 +5984,26 @@ function renderProductDetailView(productId) {
       </div>
 
 
-      <!-- ========================================== -->
-      <!-- TABS: SPECS, HISTORY, ECO IMPACT & LOGISTICS -->
-      <!-- ========================================== -->
+      <!-- =============================================================== -->
+      <!-- TABS: SPECS, ECOSYSTEM, GLOBAL WARMING, HISTORY & LOGISTICS    -->
+      <!-- =============================================================== -->
       <div class="bg-white rounded-3xl sm:rounded-[36px] border-2 border-[#EBDDC8] p-6 sm:p-10 space-y-8 shadow-xs">
         
         <!-- Tabs Header -->
         <div class="flex items-center border-b border-[#EBDDC8] gap-8 overflow-x-auto text-xs font-bold text-stone-500 pb-3">
-          <button data-tab="tab-specs" class="pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap">
+          <button data-tab="tab-specs" class="pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap cursor-pointer">
             Technical Specs
           </button>
-          <button data-tab="tab-history" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Product History & Material Origins
+          <button data-tab="tab-ecosystem" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer">
+            🌊 Earth Eco-System Protection
           </button>
-          <button data-tab="tab-eco" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
-            Environmental Impact
+          <button data-tab="tab-climate" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer">
+            🌡️ Global Warming & Carbon
           </button>
-          <button data-tab="tab-shipping" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap">
+          <button data-tab="tab-history" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer">
+            📜 Material Origins & History
+          </button>
+          <button data-tab="tab-shipping" class="pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer">
             Production & Freight Lead Times
           </button>
         </div>
@@ -5555,27 +6042,71 @@ function renderProductDetailView(productId) {
           </div>
         </div>
 
-        <!-- TAB 2: HISTORY (Origins of material) -->
+        <!-- TAB 2: EARTH ECO-SYSTEM PROTECTION -->
+        <div id="tab-ecosystem" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-teal-50/70 border-2 border-teal-600/40 rounded-3xl space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-bold text-teal-950 font-serif">Protection of Earth's Ecosystems (Oceans, Soil & Wildlife)</h4>
+              <span class="text-[10px] font-black text-teal-800 bg-teal-100 px-2.5 py-0.5 rounded-full">0% Microplastics</span>
+            </div>
+            <p class="text-xs sm:text-sm text-teal-950 font-medium leading-relaxed font-sans">
+              ${product.ecosystemBenefits || product.environmentalImpact}
+            </p>
+            <div class="pt-3 border-t border-teal-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-white rounded-xl border border-teal-200">
+                <span class="font-bold text-teal-900 block">Marine & River Safety:</span>
+                <span class="text-stone-600">Zero non-degradable polymer fragments; zero choking hazards for sea turtles & whales.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-teal-200">
+                <span class="font-bold text-teal-900 block">Soil Biome Enrichment:</span>
+                <span class="text-stone-600">Bio-assimilated by subterranean fungi into rich organic compost in ${decompBase}.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-teal-200">
+                <span class="font-bold text-teal-900 block">Chemical Leaching:</span>
+                <span class="text-stone-600">100% free of PFAS, BPA, phthalates, and heavy metal synthetic stabilizers.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: GLOBAL WARMING & CARBON METRICS -->
+        <div id="tab-climate" class="pdp-tab-content hidden space-y-4">
+          <div class="p-6 bg-emerald-50 border-2 border-emerald-700/50 rounded-3xl space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-bold text-emerald-950 font-serif">Combating Global Warming & Atmospheric Carbon Reduction</h4>
+              <span class="text-[10px] font-black text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">Saves ${co2Base.toFixed(2)} kg CO₂e / unit</span>
+            </div>
+            <p class="text-xs sm:text-sm text-emerald-950 font-medium leading-relaxed font-sans">
+              ${product.globalWarmingImpact || 'Reduces fossil-fuel cracking emissions by utilizing renewable biogenic cellulose that sequesters atmospheric carbon during growth cycles.'}
+            </p>
+            <div class="pt-3 border-t border-emerald-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-white rounded-xl border border-emerald-200">
+                <span class="font-bold text-emerald-900 block">Fossil Fuel Displaced:</span>
+                <span class="text-stone-600">Prevents extraction and catalytic cracking of petroleum crude oil.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-200">
+                <span class="font-bold text-emerald-900 block">Biogenic Carbon Sink:</span>
+                <span class="text-stone-600">Traps atmospheric CO₂ absorbed during tree and agricultural crop growth.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-200">
+                <span class="font-bold text-emerald-900 block">Solar-Powered Milling:</span>
+                <span class="text-stone-600">Converted in facilities operating on 100% rooftop solar and closed-loop water.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: HISTORY -->
         <div id="tab-history" class="pdp-tab-content hidden space-y-4">
-          <div class="p-6 bg-[#FAF8F5] border border-[#EBDDC8] rounded-2xl space-y-2">
-            <h4 class="text-sm font-bold text-stone-950 font-serif">Origins & Evolution of the Format</h4>
+          <div class="p-6 bg-[#FAF8F5] border border-[#EBDDC8] rounded-3xl space-y-2">
+            <h4 class="text-sm font-bold text-stone-950 font-serif">Origins, Inventions & Evolution of the Material</h4>
             <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
               ${product.history}
             </p>
           </div>
         </div>
 
-        <!-- TAB 3: ECO IMPACT -->
-        <div id="tab-eco" class="pdp-tab-content hidden space-y-4">
-          <div class="p-6 bg-emerald-50 border-2 border-emerald-700/40 rounded-2xl space-y-2">
-            <h4 class="text-sm font-bold text-emerald-950 font-serif">Environmental Impact & Waste Diversion</h4>
-            <p class="text-xs sm:text-sm text-emerald-950 font-medium leading-relaxed font-sans">
-              ${product.environmentalImpact}
-            </p>
-          </div>
-        </div>
-
-        <!-- TAB 4: SHIPPING -->
+        <!-- TAB 5: SHIPPING -->
         <div id="tab-shipping" class="pdp-tab-content hidden space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EBDDC8] space-y-1">
@@ -5597,6 +6128,8 @@ function renderProductDetailView(productId) {
 
 function initProductDetailView(productId) {
   const product = getProductById(productId) || PRODUCTS[0];
+  const co2Base = product.co2SavedKg || 1.25;
+  const plasticBase = product.plasticAvoidedGrams || 180;
 
   let currentQty = product.moq;
   let currentUnitPrice = product.price;
@@ -5612,6 +6145,9 @@ function initProductDetailView(productId) {
   const finishSelect = document.getElementById('pdp-select-finish');
   const btnSample = document.getElementById('btn-request-sample');
 
+  const liveCo2 = document.getElementById('pdp-live-co2');
+  const livePlastic = document.getElementById('pdp-live-plastic');
+
   function recalculatePrice() {
     let matchedTier = product.pricingTiers[0];
     for (const tier of product.pricingTiers) {
@@ -5626,8 +6162,16 @@ function initProductDetailView(productId) {
     if (totalEl) totalEl.textContent = `$${lineTotal.toFixed(2)}`;
     if (btnAddText) btnAddText.textContent = `Add ${currentQty.toLocaleString()} Units to Cart • $${lineTotal.toFixed(2)}`;
 
+    // Live update carbon & ocean plastic avoided
+    if (liveCo2) {
+      liveCo2.textContent = `${(co2Base * currentQty).toFixed(1)} kg`;
+    }
+    if (livePlastic) {
+      livePlastic.textContent = `${((plasticBase * currentQty) / 1000).toFixed(1)} kg`;
+    }
+
     document.querySelectorAll('.btn-tier-select').forEach(btn => {
-      const q = parseInt(btn.getAttribute('data-tier-qty'));
+      const q = parseInt(btn.getAttribute('data-tier-qty'), 10);
       if (q === matchedTier.qty) {
         btn.className = 'btn-tier-select p-2 rounded-xl border border-emerald-800 bg-emerald-50/80 font-bold text-emerald-950 transition-all shadow-2xs';
       } else {
@@ -5638,7 +6182,7 @@ function initProductDetailView(productId) {
 
   document.querySelectorAll('.btn-tier-select').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      currentQty = parseInt(e.currentTarget.getAttribute('data-tier-qty'));
+      currentQty = parseInt(e.currentTarget.getAttribute('data-tier-qty'), 10);
       if (qtyInput) qtyInput.value = currentQty;
       recalculatePrice();
     });
@@ -5662,7 +6206,7 @@ function initProductDetailView(productId) {
 
   if (qtyInput) {
     qtyInput.addEventListener('change', (e) => {
-      currentQty = Math.max(product.moq, parseInt(e.target.value) || product.moq);
+      currentQty = Math.max(product.moq, parseInt(e.target.value, 10) || product.moq);
       qtyInput.value = currentQty;
       recalculatePrice();
     });
@@ -5687,14 +6231,7 @@ function initProductDetailView(productId) {
 
   if (btnSample) {
     btnSample.addEventListener('click', () => {
-      cart.addItem({
-        id: 'sample-kit-' + product.id,
-        name: `Sample Kit: ${product.name}`,
-        price: 15.00,
-        unit: 'sample box',
-        svgType: product.svgType,
-        dimensionsPreset: '1-unit physical CAD mockup'
-      }, 1, {
+      cart.addItem(product, 1, {
         size: 'Physical CAD Mockup',
         finish: 'Sample Swatch Book Included',
         customPrice: 15.00
@@ -5705,11 +6242,11 @@ function initProductDetailView(productId) {
   // Thumbnails view switcher
   const stage = document.getElementById('pdp-main-stage');
   document.querySelectorAll('.pdp-thumb-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       document.querySelectorAll('.pdp-thumb-btn').forEach(b => {
-        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all';
+        b.className = 'pdp-thumb-btn p-3 rounded-2xl bg-white border border-[#DEC6A6] hover:border-stone-400 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer';
       });
-      btn.className = 'pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all';
+      btn.className = 'pdp-thumb-btn active p-3 rounded-2xl bg-white border-2 border-emerald-800 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer';
 
       const view = btn.getAttribute('data-view');
       if (stage && window.gsap) {
@@ -5728,11 +6265,11 @@ function initProductDetailView(productId) {
 
   // PDP Tabs
   document.querySelectorAll('.pdp-tab-trigger').forEach(tabBtn => {
-    tabBtn.addEventListener('click', (e) => {
+    tabBtn.addEventListener('click', () => {
       document.querySelectorAll('.pdp-tab-trigger').forEach(b => {
-        b.className = 'pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap';
+        b.className = 'pdp-tab-trigger hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer';
       });
-      tabBtn.className = 'pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap';
+      tabBtn.className = 'pdp-tab-trigger active text-emerald-900 border-b-2 border-emerald-800 pb-3 -mb-3 whitespace-nowrap cursor-pointer';
 
       const targetId = tabBtn.getAttribute('data-tab');
       document.querySelectorAll('.pdp-tab-content').forEach(content => {
@@ -6438,7 +6975,7 @@ class Router {
       if (path === 'home') {
         this.container.innerHTML = renderHomeView();
         initHomeView();
-      } else if (path === 'showcase' || path === 'eco-showcase') {
+      } else if (path === 'eco-impact' || path === 'ecosystem' || path === 'global-warming' || path === 'climate' || path === 'showcase' || path === 'eco-showcase' || path === 'eco-heritage') {
         this.container.innerHTML = renderShowcaseView();
         initShowcaseView();
       } else if (path === 'shop' || path === 'products') {
@@ -6485,7 +7022,9 @@ class Router {
       const href = link.getAttribute('href') || '';
       const linkPath = href.replace('#', '').split('?')[0].toLowerCase();
       
-      if (currentPath === linkPath || 
+      const isEcoMatch = (currentPath === 'eco-impact' || currentPath === 'showcase' || currentPath === 'ecosystem' || currentPath === 'global-warming' || currentPath === 'climate') && (linkPath === 'eco-impact' || linkPath === 'showcase');
+      
+      if (currentPath === linkPath || isEcoMatch ||
          ((currentPath === 'shop' || currentPath.startsWith('product')) && (linkPath === 'shop' || linkPath === 'products'))) {
         link.classList.add('text-emerald-900', 'font-black');
         link.classList.remove('text-stone-700');

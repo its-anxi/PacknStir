@@ -35,7 +35,7 @@ export class Router {
       if (path === 'home') {
         this.container.innerHTML = renderHomeView();
         initHomeView();
-      } else if (path === 'showcase' || path === 'eco-showcase') {
+      } else if (path === 'eco-impact' || path === 'ecosystem' || path === 'global-warming' || path === 'climate' || path === 'showcase' || path === 'eco-showcase' || path === 'eco-heritage') {
         this.container.innerHTML = renderShowcaseView();
         initShowcaseView();
       } else if (path === 'shop' || path === 'products') {
@@ -82,7 +82,9 @@ export class Router {
       const href = link.getAttribute('href') || '';
       const linkPath = href.replace('#', '').split('?')[0].toLowerCase();
       
-      if (currentPath === linkPath || 
+      const isEcoMatch = (currentPath === 'eco-impact' || currentPath === 'showcase' || currentPath === 'ecosystem' || currentPath === 'global-warming' || currentPath === 'climate') && (linkPath === 'eco-impact' || linkPath === 'showcase');
+      
+      if (currentPath === linkPath || isEcoMatch ||
          ((currentPath === 'shop' || currentPath.startsWith('product')) && (linkPath === 'shop' || linkPath === 'products'))) {
         link.classList.add('text-emerald-900', 'font-black');
         link.classList.remove('text-stone-700');

@@ -97,15 +97,15 @@ export function renderFooter() {
             </ul>
           </div>
 
-          <!-- Column 3: The Eco-Heritage Showcase -->
+          <!-- Column 3: The Eco-System & Global Warming Directory -->
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider">The Eco-Heritage</h4>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Eco-System & Climate</h4>
             <ul class="space-y-2 text-xs text-stone-400">
-              <li><a href="#showcase" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Master Showcase (46 items)</a></li>
-              <li><a href="#showcase#cat-boxes" class="hover:text-emerald-400 transition-colors">Corrugated Fiber Origins</a></li>
-              <li><a href="#showcase#cat-takeaway" class="hover:text-emerald-400 transition-colors">Bagasse & Palm Degradation</a></li>
-              <li><a href="#showcase#cat-protective" class="hover:text-emerald-400 transition-colors">Starch Peanuts & Honeycomb</a></li>
-              <li><a href="#showcase#cat-tape-bags" class="hover:text-emerald-400 transition-colors">Gummed Tape Science</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold text-emerald-400"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 🌍 Eco-System & Global Warming (46)</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">Ocean & Marine Protection</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">CO₂e Carbon Reduction Metrics</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">Zero-Microplastic Soil Humus</a></li>
+              <li><a href="#eco-impact" class="hover:text-emerald-400 transition-colors">All 46 Materials History</a></li>
             </ul>
           </div>
 
